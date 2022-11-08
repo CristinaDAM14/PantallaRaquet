@@ -41,7 +41,7 @@ namespace RaquetZone.formularios
 
 
             /* No se comprueban errores */
-            String url = "http://localhost:8081/usuario";
+            String url = "http://localhost:8081/usuario/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
