@@ -65,6 +65,9 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -159,16 +162,46 @@
     <Compile Include="formularios\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\AnyadirCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirCliente.Designer.cs">
+      <DependentUpon>AnyadirCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirProductos.Designer.cs">
+      <DependentUpon>AnyadirProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarClientes.Designer.cs">
+      <DependentUpon>EditarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarProductos.Designer.cs">
+      <DependentUpon>EditarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\GestionClientes.Designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\GestionEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formularios\GestionEmpresas.designer.cs">
       <DependentUpon>GestionEmpresas.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\GestionProductos.cs">
+    <Compile Include="formularios\Rol2\GestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\GestionProductos.Designer.cs">
+    <Compile Include="formularios\Rol2\GestionProductos.Designer.cs">
       <DependentUpon>GestionProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\GestionUsuarios.cs">
@@ -189,10 +222,22 @@
     <Compile Include="formularios\PantallaPrincipal.designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\PantallaPrincipalRol2.cs">
+    <Compile Include="formularios\Rol2\ListadoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\PantallaPrincipalRol2.Designer.cs">
+    <Compile Include="formularios\Rol2\ListadoClientes.Designer.cs">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoProductos.Designer.cs">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\PantallaPrincipalRol2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\PantallaPrincipalRol2.Designer.cs">
       <DependentUpon>PantallaPrincipalRol2.cs</DependentUpon>
     </Compile>
     <Compile Include="funciones\conexion.cs" />
@@ -210,6 +255,7 @@
     </Compile>
     <Compile Include="funciones\empresa.cs" />
     <Compile Include="funciones\funciones.cs" />
+    <Compile Include="funciones\productos.cs" />
     <Compile Include="funciones\usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,10 +277,25 @@
     <EmbeddedResource Include="formularios\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\AnyadirCliente.resx">
+      <DependentUpon>AnyadirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\AnyadirProductos.resx">
+      <DependentUpon>AnyadirProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\EditarClientes.resx">
+      <DependentUpon>EditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\EditarProductos.resx">
+      <DependentUpon>EditarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\GestionEmpresas.resx">
       <DependentUpon>GestionEmpresas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\GestionProductos.resx">
+    <EmbeddedResource Include="formularios\Rol2\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\GestionUsuarios.resx">
@@ -252,7 +313,13 @@
     <EmbeddedResource Include="formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\PantallaPrincipalRol2.resx">
+    <EmbeddedResource Include="formularios\Rol2\ListadoClientes.resx">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\ListadoProductos.resx">
+      <DependentUpon>ListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\PantallaPrincipalRol2.resx">
       <DependentUpon>PantallaPrincipalRol2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -263,6 +330,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -279,7 +347,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\" />
+    <Folder Include="formularios\Rol1\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -292,6 +360,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\chrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\medge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\logo_más_fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\logo_menos_fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\verde.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

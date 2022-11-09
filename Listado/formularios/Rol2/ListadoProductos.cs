@@ -10,24 +10,16 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
-namespace RaquetZone.formularios
+namespace RaquetZone.formularios.Rol2
 {
-    public partial class RaquetZoneUsuarios : MaterialForm
+    public partial class ListadoProductos : MaterialForm
     {
-
-        public RaquetZoneUsuarios()
+        public ListadoProductos()
         {
             InitializeComponent();
         }
 
-        private void editar_Click(object sender, EventArgs e)
-        {
-            EditarUsuario EU1 = new EditarUsuario();
-            EU1.Show();
-            this.Hide();
-        }
-
-        private void RaquetZoneUsuarios_Load(object sender, EventArgs e)
+        private void ListadoProductos_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -38,25 +30,21 @@ namespace RaquetZone.formularios
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            EliminarUsuario EU = new EliminarUsuario();
-            EU.Show();
-        }
 
-        private void buttonMostrar_Click(object sender, EventArgs e)
-        {
-            listaDatos.DataSource = RaquetZone.funciones.funciones.mostrarUsr();
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
+            GestionProductos GP = new GestionProductos();
+            GP.Show();
             this.Hide();
         }
 
-        private void listaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void editarProductos_Click(object sender, EventArgs e)
         {
-
+            EditarProductos EP = new EditarProductos();
+            EP.Show();
+            this.Show();
         }
     }
 }

@@ -28,201 +28,179 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.actText = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.direcText = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.emailText = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.telText = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.webText = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nomText = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cifText = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.anyadirButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.actText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.direcText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.webText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cifText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // actText
             // 
-            this.actText.Location = new System.Drawing.Point(363, 229);
+            this.actText.Depth = 0;
+            this.actText.Hint = "Actividad";
+            this.actText.Location = new System.Drawing.Point(558, 260);
+            this.actText.MouseState = MaterialSkin.MouseState.HOVER;
             this.actText.Name = "actText";
-            this.actText.Size = new System.Drawing.Size(100, 20);
+            this.actText.PasswordChar = '\0';
+            this.actText.SelectedText = "";
+            this.actText.SelectionLength = 0;
+            this.actText.SelectionStart = 0;
+            this.actText.Size = new System.Drawing.Size(142, 23);
             this.actText.TabIndex = 7;
+            this.actText.UseSystemPasswordChar = false;
             // 
-            // label8
+            // buttonEditar
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 232);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Actividad:";
+            this.buttonEditar.Depth = 0;
+            this.buttonEditar.Location = new System.Drawing.Point(388, 365);
+            this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Primary = true;
+            this.buttonEditar.Size = new System.Drawing.Size(123, 38);
+            this.buttonEditar.TabIndex = 8;
+            this.buttonEditar.Text = "Añadir";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Depth = 0;
+            this.buttonVolver.Location = new System.Drawing.Point(168, 365);
+            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Primary = true;
+            this.buttonVolver.Size = new System.Drawing.Size(123, 38);
+            this.buttonVolver.TabIndex = 9;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // direcText
             // 
-            this.direcText.Location = new System.Drawing.Point(363, 203);
+            this.direcText.Depth = 0;
+            this.direcText.Hint = "Dirección";
+            this.direcText.Location = new System.Drawing.Point(388, 196);
+            this.direcText.MouseState = MaterialSkin.MouseState.HOVER;
             this.direcText.Name = "direcText";
-            this.direcText.Size = new System.Drawing.Size(100, 20);
-            this.direcText.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(280, 206);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Dirección:";
+            this.direcText.PasswordChar = '\0';
+            this.direcText.SelectedText = "";
+            this.direcText.SelectionLength = 0;
+            this.direcText.SelectionStart = 0;
+            this.direcText.Size = new System.Drawing.Size(312, 23);
+            this.direcText.TabIndex = 4;
+            this.direcText.UseSystemPasswordChar = false;
             // 
             // emailText
             // 
-            this.emailText.Location = new System.Drawing.Point(363, 177);
+            this.emailText.Depth = 0;
+            this.emailText.Hint = "Email";
+            this.emailText.Location = new System.Drawing.Point(73, 263);
+            this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(100, 20);
+            this.emailText.PasswordChar = '\0';
+            this.emailText.SelectedText = "";
+            this.emailText.SelectionLength = 0;
+            this.emailText.SelectionStart = 0;
+            this.emailText.Size = new System.Drawing.Size(218, 23);
             this.emailText.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(280, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Email:";
+            this.emailText.UseSystemPasswordChar = false;
             // 
             // telText
             // 
-            this.telText.Location = new System.Drawing.Point(363, 151);
+            this.telText.Depth = 0;
+            this.telText.Hint = "Teléfono";
+            this.telText.Location = new System.Drawing.Point(388, 263);
+            this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
-            this.telText.Size = new System.Drawing.Size(100, 20);
-            this.telText.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(280, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Telefono:";
+            this.telText.PasswordChar = '\0';
+            this.telText.SelectedText = "";
+            this.telText.SelectionLength = 0;
+            this.telText.SelectionStart = 0;
+            this.telText.Size = new System.Drawing.Size(142, 23);
+            this.telText.TabIndex = 6;
+            this.telText.UseSystemPasswordChar = false;
             // 
             // webText
             // 
-            this.webText.Location = new System.Drawing.Point(363, 125);
+            this.webText.Depth = 0;
+            this.webText.Hint = "Web";
+            this.webText.Location = new System.Drawing.Point(73, 196);
+            this.webText.MouseState = MaterialSkin.MouseState.HOVER;
             this.webText.Name = "webText";
-            this.webText.Size = new System.Drawing.Size(100, 20);
+            this.webText.PasswordChar = '\0';
+            this.webText.SelectedText = "";
+            this.webText.SelectionLength = 0;
+            this.webText.SelectionStart = 0;
+            this.webText.Size = new System.Drawing.Size(218, 23);
             this.webText.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Web:";
+            this.webText.UseSystemPasswordChar = false;
             // 
             // nomText
             // 
-            this.nomText.Location = new System.Drawing.Point(363, 99);
+            this.nomText.Depth = 0;
+            this.nomText.Hint = "Nombre Social";
+            this.nomText.Location = new System.Drawing.Point(388, 133);
+            this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomText.Name = "nomText";
-            this.nomText.Size = new System.Drawing.Size(100, 20);
+            this.nomText.PasswordChar = '\0';
+            this.nomText.SelectedText = "";
+            this.nomText.SelectionLength = 0;
+            this.nomText.SelectionStart = 0;
+            this.nomText.Size = new System.Drawing.Size(312, 23);
             this.nomText.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Nombre social:";
+            this.nomText.UseSystemPasswordChar = false;
             // 
             // cifText
             // 
-            this.cifText.Location = new System.Drawing.Point(363, 73);
+            this.cifText.Depth = 0;
+            this.cifText.Hint = "CIF";
+            this.cifText.Location = new System.Drawing.Point(73, 133);
+            this.cifText.MouseState = MaterialSkin.MouseState.HOVER;
             this.cifText.Name = "cifText";
-            this.cifText.Size = new System.Drawing.Size(100, 20);
+            this.cifText.PasswordChar = '\0';
+            this.cifText.SelectedText = "";
+            this.cifText.SelectionLength = 0;
+            this.cifText.SelectionStart = 0;
+            this.cifText.Size = new System.Drawing.Size(218, 23);
             this.cifText.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "CIF:";
-            // 
-            // anyadirButton
-            // 
-            this.anyadirButton.Location = new System.Drawing.Point(360, 316);
-            this.anyadirButton.Name = "anyadirButton";
-            this.anyadirButton.Size = new System.Drawing.Size(75, 23);
-            this.anyadirButton.TabIndex = 8;
-            this.anyadirButton.Text = "Añadir";
-            this.anyadirButton.UseVisualStyleBackColor = true;
-            this.anyadirButton.Click += new System.EventHandler(this.anyadirButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 413);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 25);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Volver";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cifText.UseSystemPasswordChar = false;
             // 
             // AnyadirEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.actText);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.buttonEditar);
+            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.direcText);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.emailText);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.telText);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.webText);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.nomText);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.cifText);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.anyadirButton);
             this.Name = "AnyadirEmpresa";
-            this.Text = "Anyadir Empresa";
+            this.Text = "Añadir Empresa";
+            this.Load += new System.EventHandler(this.AnyadirEmpresa_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox actText;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox direcText;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox emailText;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox telText;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox webText;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox nomText;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox cifText;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button anyadirButton;
-        private System.Windows.Forms.Button button2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField actText;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
+        private MaterialSkin.Controls.MaterialSingleLineTextField direcText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField telText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField webText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField cifText;
     }
 }

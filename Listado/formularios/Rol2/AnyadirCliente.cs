@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
-namespace RaquetZone.formularios
+namespace RaquetZone.formularios.Rol2
 {
-    public partial class AnyadirEmpresa : MaterialForm
+    public partial class AnyadirCliente : MaterialForm
     {
-        public AnyadirEmpresa()
+        public AnyadirCliente()
         {
             InitializeComponent();
         }
 
-        private void AnyadirEmpresa_Load(object sender, EventArgs e)
+        private void AnyadirCliente_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -28,46 +28,43 @@ namespace RaquetZone.formularios
 
         }
 
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            RaquetZone.formularios.Rol2.GestionClientes GC = new RaquetZone.formularios.Rol2.GestionClientes();
+            GC.Show();
+            this.Hide();
+        }
+
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             /*
              Aqui se obtienen los datos y se genera la cadena JSON que se envia
              */
 
-            String cif = cifText.Text;
+            String dni = dniText.Text;
             String nombre = nomText.Text;
-            String web = webText.Text;
+            String password = passText.Text;
+            int numHoras = Int32.Parse(numText.Text);
             String telefono = telText.Text;
             String email = emailText.Text;
-            String direccion = direcText.Text;
-            String actividad = actText.Text;
-
 
             /* No se comprueban errores */
-            String url = "http://localhost:8081/empresa/add";
+            String url = "http://localhost:8081/cliente/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""cifemp"": """ + cif + "\"," + "\n" +
-@"        ""nomemp"": """ + nombre + "\"," + "\n" +
-@"        ""webemp"": """ + web + "\"," + "\n" +
-@"        ""telemp"": """ + telefono + "\"," + "\n" +
-@"        ""emailemp"": """ + email + "\"," + "\n" +
-@"        ""direcemp"": """ + direccion + "\"," + "\n" +
-@"        ""activiemp"": """ + actividad + "\"" + "\n" +
+@"        ""dnicli"": """ + dni + "\"," + "\n" +
+@"        ""nombrecli"": """ + nombre + "\"," + "\n" +
+@"        ""passwordcli"": """ + password + "\"," + "\n" +
+@"        ""numhorascli"": """ + numHoras + "\"," + "\n" +
+@"        ""telefonocli"": """ + telefono + "\"," + "\n" +
+@"        ""emailcli"": """ + email + "\"," + "\n" +
 @"    }";
             String res = r.postItem(datos);
 
             MessageBox.Show("Resultado: " + res);
-        }
-
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionEmpresas G1 = new GestionEmpresas();
-            G1.Show();
-            this.Hide();
         }
     }
 }

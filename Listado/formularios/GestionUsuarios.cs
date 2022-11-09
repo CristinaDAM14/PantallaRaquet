@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace RaquetZone.formularios
 {
-    public partial class GestionUsuarios : Form
+    public partial class GestionUsuarios : MaterialForm
     {
         public GestionUsuarios()
         {
@@ -19,20 +21,23 @@ namespace RaquetZone.formularios
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
+            var skinmanager = MaterialSkinManager.Instance;
+            skinmanager.AddFormToManage(this);
+            skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
         }
-
-        private void buttonLU_Click(object sender, EventArgs e)
-        {
-            RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
-            LU1.Show();
-            this.Hide();
-        }
-
-        private void buttonAU_Click(object sender, EventArgs e)
+        private void buttonAU_Click_1(object sender, EventArgs e)
         {
             AnyadirUsuario AU1 = new AnyadirUsuario();
             AU1.Show();
+            this.Hide();
+        }
+
+        private void buttonLU_Click_1(object sender, EventArgs e)
+        {
+            RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
+            LU1.Show();
             this.Hide();
         }
     }

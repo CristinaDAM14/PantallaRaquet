@@ -1,16 +1,17 @@
-﻿namespace RaquetZone.formularios
+﻿
+namespace RaquetZone.formularios.Rol2
 {
-    partial class AnyadirUsuario
+    partial class AnyadirCliente
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,34 +21,33 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.direccText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.numText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.nombreText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.rolCombo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonEditar
             // 
             this.buttonEditar.Depth = 0;
-            this.buttonEditar.Location = new System.Drawing.Point(386, 361);
+            this.buttonEditar.Location = new System.Drawing.Point(421, 362);
             this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Primary = true;
             this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 8;
+            this.buttonEditar.TabIndex = 16;
             this.buttonEditar.Text = "Añadir";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
@@ -55,66 +55,66 @@
             // buttonVolver
             // 
             this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(166, 361);
+            this.buttonVolver.Location = new System.Drawing.Point(201, 362);
             this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Primary = true;
             this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 9;
+            this.buttonVolver.TabIndex = 17;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            // 
-            // direccText
-            // 
-            this.direccText.Depth = 0;
-            this.direccText.Hint = "Dirección";
-            this.direccText.Location = new System.Drawing.Point(386, 192);
-            this.direccText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.direccText.Name = "direccText";
-            this.direccText.PasswordChar = '\0';
-            this.direccText.SelectedText = "";
-            this.direccText.SelectionLength = 0;
-            this.direccText.SelectionStart = 0;
-            this.direccText.Size = new System.Drawing.Size(312, 23);
-            this.direccText.TabIndex = 4;
-            this.direccText.UseSystemPasswordChar = false;
             // 
             // emailText
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(71, 259);
+            this.emailText.Location = new System.Drawing.Point(421, 193);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
             this.emailText.SelectedText = "";
             this.emailText.SelectionLength = 0;
             this.emailText.SelectionStart = 0;
-            this.emailText.Size = new System.Drawing.Size(218, 23);
-            this.emailText.TabIndex = 5;
+            this.emailText.Size = new System.Drawing.Size(312, 23);
+            this.emailText.TabIndex = 13;
             this.emailText.UseSystemPasswordChar = false;
             // 
             // telText
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(386, 259);
+            this.telText.Location = new System.Drawing.Point(106, 260);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
             this.telText.SelectedText = "";
             this.telText.SelectionLength = 0;
             this.telText.SelectionStart = 0;
-            this.telText.Size = new System.Drawing.Size(142, 23);
-            this.telText.TabIndex = 6;
+            this.telText.Size = new System.Drawing.Size(218, 23);
+            this.telText.TabIndex = 14;
             this.telText.UseSystemPasswordChar = false;
+            // 
+            // numText
+            // 
+            this.numText.Depth = 0;
+            this.numText.Hint = "Número de horas";
+            this.numText.Location = new System.Drawing.Point(421, 260);
+            this.numText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.numText.Name = "numText";
+            this.numText.PasswordChar = '\0';
+            this.numText.SelectedText = "";
+            this.numText.SelectionLength = 0;
+            this.numText.SelectionStart = 0;
+            this.numText.Size = new System.Drawing.Size(142, 23);
+            this.numText.TabIndex = 15;
+            this.numText.UseSystemPasswordChar = false;
             // 
             // passText
             // 
             this.passText.Depth = 0;
             this.passText.Hint = "Contraseña";
-            this.passText.Location = new System.Drawing.Point(71, 192);
+            this.passText.Location = new System.Drawing.Point(106, 193);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
             this.passText.PasswordChar = '\0';
@@ -122,29 +122,29 @@
             this.passText.SelectionLength = 0;
             this.passText.SelectionStart = 0;
             this.passText.Size = new System.Drawing.Size(218, 23);
-            this.passText.TabIndex = 3;
+            this.passText.TabIndex = 12;
             this.passText.UseSystemPasswordChar = false;
             // 
-            // nombreText
+            // nomText
             // 
-            this.nombreText.Depth = 0;
-            this.nombreText.Hint = "Nombre";
-            this.nombreText.Location = new System.Drawing.Point(386, 129);
-            this.nombreText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nombreText.Name = "nombreText";
-            this.nombreText.PasswordChar = '\0';
-            this.nombreText.SelectedText = "";
-            this.nombreText.SelectionLength = 0;
-            this.nombreText.SelectionStart = 0;
-            this.nombreText.Size = new System.Drawing.Size(312, 23);
-            this.nombreText.TabIndex = 2;
-            this.nombreText.UseSystemPasswordChar = false;
+            this.nomText.Depth = 0;
+            this.nomText.Hint = "Nombre";
+            this.nomText.Location = new System.Drawing.Point(421, 130);
+            this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nomText.Name = "nomText";
+            this.nomText.PasswordChar = '\0';
+            this.nomText.SelectedText = "";
+            this.nomText.SelectionLength = 0;
+            this.nomText.SelectionStart = 0;
+            this.nomText.Size = new System.Drawing.Size(312, 23);
+            this.nomText.TabIndex = 11;
+            this.nomText.UseSystemPasswordChar = false;
             // 
             // dniText
             // 
             this.dniText.Depth = 0;
             this.dniText.Hint = "DNI";
-            this.dniText.Location = new System.Drawing.Point(71, 129);
+            this.dniText.Location = new System.Drawing.Point(106, 130);
             this.dniText.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniText.Name = "dniText";
             this.dniText.PasswordChar = '\0';
@@ -152,41 +152,25 @@
             this.dniText.SelectionLength = 0;
             this.dniText.SelectionStart = 0;
             this.dniText.Size = new System.Drawing.Size(218, 23);
-            this.dniText.TabIndex = 1;
+            this.dniText.TabIndex = 10;
             this.dniText.UseSystemPasswordChar = false;
             // 
-            // rolCombo
-            // 
-            this.rolCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rolCombo.FormattingEnabled = true;
-            this.rolCombo.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.rolCombo.Location = new System.Drawing.Point(577, 258);
-            this.rolCombo.Name = "rolCombo";
-            this.rolCombo.Size = new System.Drawing.Size(121, 23);
-            this.rolCombo.TabIndex = 7;
-            this.rolCombo.Text = "Rol";
-            // 
-            // AnyadirUsuario
+            // AnyadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.direccText);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
+            this.Controls.Add(this.numText);
             this.Controls.Add(this.passText);
-            this.Controls.Add(this.nombreText);
+            this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
-            this.Controls.Add(this.rolCombo);
-            this.Name = "AnyadirUsuario";
-            this.Text = "Añadir Usuario";
-            this.Load += new System.EventHandler(this.AnyadirUsuario_Load);
+            this.Name = "AnyadirCliente";
+            this.Text = "Añadir Cliente";
+            this.Load += new System.EventHandler(this.AnyadirCliente_Load);
             this.ResumeLayout(false);
 
         }
@@ -195,13 +179,11 @@
 
         private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
-        private MaterialSkin.Controls.MaterialSingleLineTextField direccText;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField numText;
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
-        private MaterialSkin.Controls.MaterialSingleLineTextField nombreText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
-        private System.Windows.Forms.ComboBox rolCombo;
     }
 }
-

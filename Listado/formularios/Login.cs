@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace RaquetZone.formularios
 {
-    public partial class Login : Form
+    public partial class Login : MaterialForm
     {
         public Login()
         {
             InitializeComponent();
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            var skinmanager = MaterialSkinManager.Instance;
+            skinmanager.AddFormToManage(this);
+            skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+        }
 
         //Comprobación de la contraseña
         private void iniciarButton_Click(object sender, EventArgs e)
@@ -30,23 +39,25 @@ namespace RaquetZone.formularios
 
             string persona = r.getItem();
 
-            
+
 
             string rol = "rolusr\":3";
             string rol2 = "rolusr\":2";
+            string rol1 = "rolusr\":1";
 
             bool tipoRol = persona.Contains(rol);
             bool tipoRol2 = persona.Contains(rol2);
+            bool tipoRol1 = persona.Contains(rol1);
 
             if (persona == "[]")
             {
 
-                MessageBox.Show("Error a la hora de incluir los datos","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error a la hora de incluir los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(tipoRol == true)
+            else if (tipoRol == true)
             {
 
-                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario,"Sesión iniciada",MessageBoxButtons.OK);
+                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK);
                 PantallaPrincipal P1 = new PantallaPrincipal();
                 P1.Show();
                 this.Hide();
@@ -56,10 +67,15 @@ namespace RaquetZone.formularios
             {
 
                 MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK);
-                PantallaPrincipalRol2 P2 = new PantallaPrincipalRol2();
+                Rol2.PantallaPrincipalRol2 P2 = new Rol2.PantallaPrincipalRol2();
                 P2.Show();
                 this.Hide();
 
+            }
+            else if (tipoRol1 == true)
+            {
+                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario + ", pero este apartado todavía no está implementado ", "Sesión iniciada", MessageBoxButtons.OK);
+                
             }
             else
             {

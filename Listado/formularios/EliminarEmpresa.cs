@@ -21,7 +21,7 @@ namespace RaquetZone.formularios
         {
             String cif = elimiText.Text;
 
-            String url = "http://localhost:8081/empresa/" + cif;
+            String url = "http://localhost:8081/empresa/delete" + cif;
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 

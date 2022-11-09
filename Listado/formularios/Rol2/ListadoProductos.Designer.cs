@@ -1,7 +1,7 @@
 ﻿
-namespace RaquetZone.formularios
+namespace RaquetZone.formularios.Rol2
 {
-    partial class RaquetZoneUsuarios
+    partial class ListadoProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,25 @@ namespace RaquetZone.formularios
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaquetZoneUsuarios));
-            this.listaDatos = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoProductos));
             this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonMostrar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.editar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).BeginInit();
+            this.listaDatosProductos = new System.Windows.Forms.DataGridView();
+            this.editarProductos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.listaDatosProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listaDatos
-            // 
-            this.listaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaDatos.Location = new System.Drawing.Point(50, 89);
-            this.listaDatos.Name = "listaDatos";
-            this.listaDatos.Size = new System.Drawing.Size(767, 360);
-            this.listaDatos.TabIndex = 0;
-            this.listaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaDatos_CellContentClick);
             // 
             // buttonVolver
             // 
             this.buttonVolver.Depth = 0;
             this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVolver.Location = new System.Drawing.Point(14, 502);
+            this.buttonVolver.Location = new System.Drawing.Point(10, 501);
             this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Primary = true;
             this.buttonVolver.Size = new System.Drawing.Size(73, 39);
-            this.buttonVolver.TabIndex = 40;
+            this.buttonVolver.TabIndex = 45;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
@@ -64,12 +55,12 @@ namespace RaquetZone.formularios
             // buttonEliminar
             // 
             this.buttonEliminar.Depth = 0;
-            this.buttonEliminar.Location = new System.Drawing.Point(484, 467);
+            this.buttonEliminar.Location = new System.Drawing.Point(480, 466);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Primary = true;
             this.buttonEliminar.Size = new System.Drawing.Size(157, 64);
-            this.buttonEliminar.TabIndex = 39;
+            this.buttonEliminar.TabIndex = 44;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
@@ -78,29 +69,36 @@ namespace RaquetZone.formularios
             // 
             this.buttonMostrar.Depth = 0;
             this.buttonMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMostrar.Location = new System.Drawing.Point(236, 467);
+            this.buttonMostrar.Location = new System.Drawing.Point(232, 466);
             this.buttonMostrar.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonMostrar.Name = "buttonMostrar";
             this.buttonMostrar.Primary = true;
             this.buttonMostrar.Size = new System.Drawing.Size(157, 64);
-            this.buttonMostrar.TabIndex = 38;
+            this.buttonMostrar.TabIndex = 43;
             this.buttonMostrar.Text = "Mostrar Lista";
             this.buttonMostrar.UseVisualStyleBackColor = true;
-            this.buttonMostrar.Click += new System.EventHandler(this.buttonMostrar_Click);
             // 
-            // editar
+            // listaDatosProductos
             // 
-            this.editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar.BackgroundImage")));
-            this.editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Location = new System.Drawing.Point(839, 89);
-            this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(39, 34);
-            this.editar.TabIndex = 2;
-            this.editar.UseVisualStyleBackColor = true;
-            this.editar.Click += new System.EventHandler(this.editar_Click);
+            this.listaDatosProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaDatosProductos.Location = new System.Drawing.Point(46, 88);
+            this.listaDatosProductos.Name = "listaDatosProductos";
+            this.listaDatosProductos.Size = new System.Drawing.Size(767, 360);
+            this.listaDatosProductos.TabIndex = 41;
             // 
-            // RaquetZoneUsuarios
+            // editarProductos
+            // 
+            this.editarProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarProductos.BackgroundImage")));
+            this.editarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editarProductos.Location = new System.Drawing.Point(835, 88);
+            this.editarProductos.Name = "editarProductos";
+            this.editarProductos.Size = new System.Drawing.Size(39, 34);
+            this.editarProductos.TabIndex = 42;
+            this.editarProductos.UseVisualStyleBackColor = true;
+            this.editarProductos.Click += new System.EventHandler(this.editarProductos_Click);
+            // 
+            // ListadoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,22 +106,22 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonMostrar);
-            this.Controls.Add(this.editar);
-            this.Controls.Add(this.listaDatos);
-            this.Name = "RaquetZoneUsuarios";
-            this.Text = "Listado de Usuarios";
-            this.Load += new System.EventHandler(this.RaquetZoneUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).EndInit();
+            this.Controls.Add(this.editarProductos);
+            this.Controls.Add(this.listaDatosProductos);
+            this.Name = "ListadoProductos";
+            this.Text = "Listado de Productos";
+            this.Load += new System.EventHandler(this.ListadoProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.listaDatosProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView listaDatos;
-        private System.Windows.Forms.Button editar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonMostrar;
+        private System.Windows.Forms.Button editarProductos;
+        private System.Windows.Forms.DataGridView listaDatosProductos;
     }
 }

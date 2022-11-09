@@ -8,24 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace RaquetZone.formularios
 {
-    public partial class AnyadirUsuario : Form
+    public partial class AnyadirUsuario : MaterialForm
     {
         public AnyadirUsuario()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AnyadirUsuario_Load(object sender, EventArgs e)
         {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
-            this.Hide();
+            var skinmanager = MaterialSkinManager.Instance;
+            skinmanager.AddFormToManage(this);
+            skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+
         }
 
-        private void anyadirButton_Click(object sender, EventArgs e)
+        private void buttonEditar_Click(object sender, EventArgs e)
         {
             /*
              Aqui se obtienen los datos y se genera la cadena JSON que se envia
@@ -41,7 +45,7 @@ namespace RaquetZone.formularios
 
 
             /* No se comprueban errores */
-            String url = "http://localhost:8081/usuario";
+            String url = "http://localhost:8081/usuario/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
@@ -58,6 +62,14 @@ namespace RaquetZone.formularios
             String res = r.postItem(datos);
 
             MessageBox.Show("Resultado: " + datos);
+            
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            GestionUsuarios GU1 = new GestionUsuarios();
+            GU1.Show();
+            this.Hide();
         }
     }
 }

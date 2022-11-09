@@ -29,87 +29,91 @@ namespace RaquetZone.formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.dniText = new System.Windows.Forms.TextBox();
-            this.passwText = new System.Windows.Forms.TextBox();
-            this.dniLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iniciarButton = new System.Windows.Forms.Button();
+            this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.passwText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iniciarButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dniText
             // 
-            this.dniText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dniText.Location = new System.Drawing.Point(126, 90);
+            this.dniText.Depth = 0;
+            this.dniText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dniText.Hint = "DNI";
+            this.dniText.Location = new System.Drawing.Point(67, 111);
+            this.dniText.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniText.Name = "dniText";
-            this.dniText.Size = new System.Drawing.Size(140, 31);
-            this.dniText.TabIndex = 0;
+            this.dniText.PasswordChar = '\0';
+            this.dniText.SelectedText = "";
+            this.dniText.SelectionLength = 0;
+            this.dniText.SelectionStart = 0;
+            this.dniText.Size = new System.Drawing.Size(262, 23);
+            this.dniText.TabIndex = 1;
+            this.dniText.UseSystemPasswordChar = false;
             // 
             // passwText
             // 
-            this.passwText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwText.Location = new System.Drawing.Point(126, 187);
+            this.passwText.BackColor = System.Drawing.Color.White;
+            this.passwText.Depth = 0;
+            this.passwText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwText.Hint = "Contraseña";
+            this.passwText.Location = new System.Drawing.Point(67, 163);
+            this.passwText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passwText.Name = "passwText";
-            this.passwText.Size = new System.Drawing.Size(140, 31);
-            this.passwText.TabIndex = 1;
+            this.passwText.PasswordChar = '*';
+            this.passwText.SelectedText = "";
+            this.passwText.SelectionLength = 0;
+            this.passwText.SelectionStart = 0;
+            this.passwText.Size = new System.Drawing.Size(262, 23);
+            this.passwText.TabIndex = 2;
+            this.passwText.UseSystemPasswordChar = false;
             // 
-            // dniLabel
+            // pictureBox1
             // 
-            this.dniLabel.AutoSize = true;
-            this.dniLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dniLabel.Location = new System.Drawing.Point(121, 62);
-            this.dniLabel.Name = "dniLabel";
-            this.dniLabel.Size = new System.Drawing.Size(44, 25);
-            this.dniLabel.TabIndex = 2;
-            this.dniLabel.Text = "Dni";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Contraseña";
+            this.pictureBox1.Image = global::Listado.Properties.Resources.logo_más_fondo;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 279);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // iniciarButton
             // 
-            this.iniciarButton.BackColor = System.Drawing.SystemColors.Menu;
-            this.iniciarButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iniciarButton.FlatAppearance.BorderSize = 0;
-            this.iniciarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iniciarButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iniciarButton.Location = new System.Drawing.Point(126, 254);
+            this.iniciarButton.Depth = 0;
+            this.iniciarButton.Location = new System.Drawing.Point(206, 229);
+            this.iniciarButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.iniciarButton.Name = "iniciarButton";
-            this.iniciarButton.Size = new System.Drawing.Size(140, 49);
-            this.iniciarButton.TabIndex = 4;
+            this.iniciarButton.Primary = true;
+            this.iniciarButton.Size = new System.Drawing.Size(123, 41);
+            this.iniciarButton.TabIndex = 5;
             this.iniciarButton.Text = "Iniciar Sesión";
-            this.iniciarButton.UseVisualStyleBackColor = false;
+            this.iniciarButton.UseVisualStyleBackColor = true;
             this.iniciarButton.Click += new System.EventHandler(this.iniciarButton_Click);
             // 
             // Login
             // 
-            this.BackColor = System.Drawing.Color.Linen;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(389, 386);
             this.Controls.Add(this.iniciarButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dniLabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwText);
             this.Controls.Add(this.dniText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Login";
+            this.Text = "Iniciar Sesión";
+            this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox dniText;
-        private System.Windows.Forms.TextBox passwText;
-        private System.Windows.Forms.Label dniLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button iniciarButton;
+
+        private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField passwText;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton iniciarButton;
     }
 }

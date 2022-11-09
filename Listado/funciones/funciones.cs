@@ -14,7 +14,7 @@ namespace RaquetZone.funciones
         public static List<usuario> mostrarUsr()
         {
 
-            String url = "http://localhost:8081/usuario";
+            String url = "http://localhost:8081/usuarios";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
 
@@ -41,5 +41,7 @@ namespace RaquetZone.funciones
 
         }
 
+        //Accesos directos
+        
     }
 }

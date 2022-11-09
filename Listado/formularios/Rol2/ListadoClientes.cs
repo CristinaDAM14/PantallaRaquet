@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
-namespace RaquetZone.formularios
+namespace RaquetZone.formularios.Rol2
 {
-    public partial class EditarEmpresa : MaterialForm
+    public partial class ListadoClientes : MaterialForm
     {
-        public EditarEmpresa()
+        public ListadoClientes()
         {
             InitializeComponent();
         }
 
-        private void EditarEmpresa_Load(object sender, EventArgs e)
+        private void ListadoClientes_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -28,15 +28,17 @@ namespace RaquetZone.formularios
 
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
-            LE1.Show();
+            GestionClientes GC = new GestionClientes();
+            GC.Show();
+            this.Hide();
+        }
+
+        private void editarProductos_Click(object sender, EventArgs e)
+        {
+            EditarClientes EC = new EditarClientes();
+            EC.Show();
             this.Hide();
         }
     }

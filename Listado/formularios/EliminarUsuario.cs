@@ -21,7 +21,7 @@ namespace RaquetZone.formularios
         {
             String dni = elimiText.Text;
 
-            String url = "http://localhost:8081/usuario/" + dni;
+            String url = "http://localhost:8081/usuario/delete" + dni;
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
