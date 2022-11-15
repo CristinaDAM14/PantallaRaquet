@@ -18,11 +18,21 @@ namespace RaquetZone.formularios
         public RaquetZoneUsuarios()
         {
             InitializeComponent();
+            MostrarUsuarios();
         }
 
         private void editar_Click(object sender, EventArgs e)
         {
-            EditarUsuario EU1 = new EditarUsuario();
+            string dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
+            string nom = listaDatos.CurrentRow.Cells[1].Value.ToString();
+            string pass = listaDatos.CurrentRow.Cells[2].Value.ToString();
+            string rol = listaDatos.CurrentRow.Cells[3].Value.ToString();
+            string tel = listaDatos.CurrentRow.Cells[4].Value.ToString();
+            string email = listaDatos.CurrentRow.Cells[5].Value.ToString();
+            string direcc = listaDatos.CurrentRow.Cells[6].Value.ToString();
+
+
+            EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc);
             EU1.Show();
             this.Hide();
         }
@@ -38,11 +48,37 @@ namespace RaquetZone.formularios
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            EliminarUsuario EU = new EliminarUsuario();
-            EU.Show();
+            String dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
+            String rol = listaDatos.CurrentRow.Cells[3].Value.ToString();
+
+            if (MessageBox.Show("¿Quieres eliminar el usuario con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+            
+
+                if( rol == "3")
+                {
+                    MessageBox.Show("No puedes eliminar un SuperAdmin");
+                }
+                else
+                {
+                    String url = "http://localhost:8081/usuario/delete" + dni;
+
+                    RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+                    
+                    r.deleteItem(url);
+
+                    MessageBox.Show("Eliminado");
+                }
+              
+                listaDatos.DataSource = RaquetZone.funciones.funciones.mostrarUsr();
+            }
+            else
+            {
+                MessageBox.Show("La operación se ha detenido, no se ha eliminado al usuario");
+            }
         }
 
-        private void buttonMostrar_Click(object sender, EventArgs e)
+        private void MostrarUsuarios()
         {
             listaDatos.DataSource = RaquetZone.funciones.funciones.mostrarUsr();
         }
@@ -57,6 +93,21 @@ namespace RaquetZone.formularios
         private void listaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buscadorButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaDatos.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["dniusr"].Value);
+
+                if (Valor == this.buscarDNI.Text)
+                {
+                    listaDatos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
+                    listaDatos.CurrentCell = listaDatos[0, Convert.ToInt32(strFila)];
+                }
+            }
         }
     }
 }

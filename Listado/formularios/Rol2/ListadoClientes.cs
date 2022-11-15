@@ -17,6 +17,7 @@ namespace RaquetZone.formularios.Rol2
         public ListadoClientes()
         {
             InitializeComponent();
+            MostrarClientes();
         }
 
         private void ListadoClientes_Load(object sender, EventArgs e)
@@ -37,9 +38,61 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarProductos_Click(object sender, EventArgs e)
         {
-            EditarClientes EC = new EditarClientes();
+            string dniText = listaClientes.CurrentRow.Cells[0].Value.ToString();
+            string nomText = listaClientes.CurrentRow.Cells[1].Value.ToString();
+            string passText = listaClientes.CurrentRow.Cells[2].Value.ToString();
+            string numText = listaClientes.CurrentRow.Cells[3].Value.ToString();
+            string telText = listaClientes.CurrentRow.Cells[4].Value.ToString();
+            string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
+
+            EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText);
             EC.Show();
             this.Hide();
+        }
+
+        private void MostrarClientes()
+        {
+            listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCli();
+        }
+
+        private void buscadorButton_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow Row in listaClientes.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["dnicli"].Value);
+
+                if (Valor == this.buscarDNI.Text)
+                {
+                    listaClientes.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
+                    listaClientes.CurrentCell = listaClientes[0, Convert.ToInt32(strFila)];
+                }
+            }
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            String dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
+
+            if (MessageBox.Show("¿Quieres eliminar el cliente con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+
+                String url = "http://localhost:8081/cliente/delete" + dni;
+
+                RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+
+                r.deleteItem(url);
+
+                MessageBox.Show("Eliminado");
+
+                listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCli();
+            }
+            else
+            {
+                MessageBox.Show("La operación se ha detenido, no se ha eliminado al cliente");
+            }
         }
     }
 }

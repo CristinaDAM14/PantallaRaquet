@@ -14,10 +14,19 @@ namespace RaquetZone.formularios
 {
     public partial class EditarUsuario : MaterialForm
     {
-        public EditarUsuario()
+        public EditarUsuario(string dni, string nom, string pass, string rol, string tel, string email, string direcc)
         {
             InitializeComponent();
+
+            dniText.Text = dni;
+            nomText.Text = nom;
+            passText.Text = pass;
+            rolCombo.Text = rol; 
+            telText.Text = tel;
+            emailText.Text = email;
+            direccText.Text = direcc;
         }
+        
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
@@ -37,15 +46,14 @@ namespace RaquetZone.formularios
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            String dni = dniText.Text;
 
-            String url = "http://localhost:8081/usuario/modify" + dni;
+            String url = "http://localhost:8081/usuario/modify" + dniText.Text;
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "PUT");
 
             String body = @"{
 " + "\n" +
-@"        ""dniusr"": """ + dni + "\"," + "\n" +
+@"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
 @"        ""nombreusr"": """ + nomText.Text + "\"," + "\n" +
 @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
 @"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +

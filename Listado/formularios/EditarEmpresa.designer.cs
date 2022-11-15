@@ -30,13 +30,20 @@
         {
             this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.textBox4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox5 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox6 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox7 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.direccText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.webText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cifText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.actiText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.telLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.passLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -65,141 +72,248 @@
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
-            // textBox4
+            // direccText
             // 
-            this.textBox4.Depth = 0;
-            this.textBox4.Hint = "Dirección";
-            this.textBox4.Location = new System.Drawing.Point(380, 193);
-            this.textBox4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '\0';
-            this.textBox4.SelectedText = "";
-            this.textBox4.SelectionLength = 0;
-            this.textBox4.SelectionStart = 0;
-            this.textBox4.Size = new System.Drawing.Size(312, 23);
-            this.textBox4.TabIndex = 53;
-            this.textBox4.UseSystemPasswordChar = false;
+            this.direccText.Depth = 0;
+            this.direccText.Hint = "Dirección";
+            this.direccText.Location = new System.Drawing.Point(449, 193);
+            this.direccText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.direccText.Name = "direccText";
+            this.direccText.PasswordChar = '\0';
+            this.direccText.SelectedText = "";
+            this.direccText.SelectionLength = 0;
+            this.direccText.SelectionStart = 0;
+            this.direccText.Size = new System.Drawing.Size(293, 23);
+            this.direccText.TabIndex = 53;
+            this.direccText.UseSystemPasswordChar = false;
             // 
-            // textBox5
+            // emailText
             // 
-            this.textBox5.Depth = 0;
-            this.textBox5.Hint = "Email";
-            this.textBox5.Location = new System.Drawing.Point(65, 260);
-            this.textBox5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '\0';
-            this.textBox5.SelectedText = "";
-            this.textBox5.SelectionLength = 0;
-            this.textBox5.SelectionStart = 0;
-            this.textBox5.Size = new System.Drawing.Size(218, 23);
-            this.textBox5.TabIndex = 54;
-            this.textBox5.UseSystemPasswordChar = false;
+            this.emailText.Depth = 0;
+            this.emailText.Hint = "Email";
+            this.emailText.Location = new System.Drawing.Point(141, 256);
+            this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailText.Name = "emailText";
+            this.emailText.PasswordChar = '\0';
+            this.emailText.SelectedText = "";
+            this.emailText.SelectionLength = 0;
+            this.emailText.SelectionStart = 0;
+            this.emailText.Size = new System.Drawing.Size(142, 23);
+            this.emailText.TabIndex = 54;
+            this.emailText.UseSystemPasswordChar = false;
             // 
-            // textBox6
+            // telText
             // 
-            this.textBox6.Depth = 0;
-            this.textBox6.Hint = "Teléfono";
-            this.textBox6.Location = new System.Drawing.Point(380, 260);
-            this.textBox6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '\0';
-            this.textBox6.SelectedText = "";
-            this.textBox6.SelectionLength = 0;
-            this.textBox6.SelectionStart = 0;
-            this.textBox6.Size = new System.Drawing.Size(142, 23);
-            this.textBox6.TabIndex = 55;
-            this.textBox6.UseSystemPasswordChar = false;
+            this.telText.Depth = 0;
+            this.telText.Hint = "Teléfono";
+            this.telText.Location = new System.Drawing.Point(449, 256);
+            this.telText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.telText.Name = "telText";
+            this.telText.PasswordChar = '\0';
+            this.telText.SelectedText = "";
+            this.telText.SelectionLength = 0;
+            this.telText.SelectionStart = 0;
+            this.telText.Size = new System.Drawing.Size(88, 23);
+            this.telText.TabIndex = 55;
+            this.telText.UseSystemPasswordChar = false;
             // 
-            // textBox3
+            // webText
             // 
-            this.textBox3.Depth = 0;
-            this.textBox3.Hint = "Web";
-            this.textBox3.Location = new System.Drawing.Point(65, 193);
-            this.textBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '\0';
-            this.textBox3.SelectedText = "";
-            this.textBox3.SelectionLength = 0;
-            this.textBox3.SelectionStart = 0;
-            this.textBox3.Size = new System.Drawing.Size(218, 23);
-            this.textBox3.TabIndex = 52;
-            this.textBox3.UseSystemPasswordChar = false;
+            this.webText.Depth = 0;
+            this.webText.Hint = "Web";
+            this.webText.Location = new System.Drawing.Point(141, 189);
+            this.webText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.webText.Name = "webText";
+            this.webText.PasswordChar = '\0';
+            this.webText.SelectedText = "";
+            this.webText.SelectionLength = 0;
+            this.webText.SelectionStart = 0;
+            this.webText.Size = new System.Drawing.Size(142, 23);
+            this.webText.TabIndex = 52;
+            this.webText.UseSystemPasswordChar = false;
             // 
-            // textBox2
+            // nomText
             // 
-            this.textBox2.Depth = 0;
-            this.textBox2.Hint = "Nombre Social";
-            this.textBox2.Location = new System.Drawing.Point(380, 130);
-            this.textBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '\0';
-            this.textBox2.SelectedText = "";
-            this.textBox2.SelectionLength = 0;
-            this.textBox2.SelectionStart = 0;
-            this.textBox2.Size = new System.Drawing.Size(312, 23);
-            this.textBox2.TabIndex = 51;
-            this.textBox2.UseSystemPasswordChar = false;
+            this.nomText.Depth = 0;
+            this.nomText.Hint = "Nombre Social";
+            this.nomText.Location = new System.Drawing.Point(449, 130);
+            this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nomText.Name = "nomText";
+            this.nomText.PasswordChar = '\0';
+            this.nomText.SelectedText = "";
+            this.nomText.SelectionLength = 0;
+            this.nomText.SelectionStart = 0;
+            this.nomText.Size = new System.Drawing.Size(293, 23);
+            this.nomText.TabIndex = 51;
+            this.nomText.UseSystemPasswordChar = false;
             // 
-            // textBox1
+            // cifText
             // 
-            this.textBox1.Depth = 0;
-            this.textBox1.Hint = "CIF";
-            this.textBox1.Location = new System.Drawing.Point(65, 130);
-            this.textBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '\0';
-            this.textBox1.SelectedText = "";
-            this.textBox1.SelectionLength = 0;
-            this.textBox1.SelectionStart = 0;
-            this.textBox1.Size = new System.Drawing.Size(218, 23);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.UseSystemPasswordChar = false;
+            this.cifText.Depth = 0;
+            this.cifText.Enabled = false;
+            this.cifText.Hint = "CIF";
+            this.cifText.Location = new System.Drawing.Point(141, 130);
+            this.cifText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cifText.Name = "cifText";
+            this.cifText.PasswordChar = '\0';
+            this.cifText.SelectedText = "";
+            this.cifText.SelectionLength = 0;
+            this.cifText.SelectionStart = 0;
+            this.cifText.Size = new System.Drawing.Size(142, 23);
+            this.cifText.TabIndex = 50;
+            this.cifText.UseSystemPasswordChar = false;
             // 
-            // textBox7
+            // actiText
             // 
-            this.textBox7.Depth = 0;
-            this.textBox7.Hint = "Actividad";
-            this.textBox7.Location = new System.Drawing.Point(550, 257);
-            this.textBox7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.PasswordChar = '\0';
-            this.textBox7.SelectedText = "";
-            this.textBox7.SelectionLength = 0;
-            this.textBox7.SelectionStart = 0;
-            this.textBox7.Size = new System.Drawing.Size(142, 23);
-            this.textBox7.TabIndex = 59;
-            this.textBox7.UseSystemPasswordChar = false;
+            this.actiText.Depth = 0;
+            this.actiText.Hint = "Actividad";
+            this.actiText.Location = new System.Drawing.Point(638, 256);
+            this.actiText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.actiText.Name = "actiText";
+            this.actiText.PasswordChar = '\0';
+            this.actiText.SelectedText = "";
+            this.actiText.SelectionLength = 0;
+            this.actiText.SelectionStart = 0;
+            this.actiText.Size = new System.Drawing.Size(104, 23);
+            this.actiText.TabIndex = 59;
+            this.actiText.UseSystemPasswordChar = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(100, 130);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(31, 19);
+            this.materialLabel1.TabIndex = 66;
+            this.materialLabel1.Text = "CIF";
+            // 
+            // horasLabel
+            // 
+            this.horasLabel.AutoSize = true;
+            this.horasLabel.Depth = 0;
+            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.horasLabel.Location = new System.Drawing.Point(553, 256);
+            this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.horasLabel.Name = "horasLabel";
+            this.horasLabel.Size = new System.Drawing.Size(71, 19);
+            this.horasLabel.TabIndex = 65;
+            this.horasLabel.Text = "Actividad";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Depth = 0;
+            this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.emailLabel.Location = new System.Drawing.Point(356, 193);
+            this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(73, 19);
+            this.emailLabel.TabIndex = 64;
+            this.emailLabel.Text = "Dirección";
+            // 
+            // nomLabel
+            // 
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Depth = 0;
+            this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.nomLabel.Location = new System.Drawing.Point(366, 130);
+            this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(63, 19);
+            this.nomLabel.TabIndex = 63;
+            this.nomLabel.Text = "Nombre";
+            // 
+            // telLabel
+            // 
+            this.telLabel.AutoSize = true;
+            this.telLabel.Depth = 0;
+            this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.telLabel.Location = new System.Drawing.Point(360, 256);
+            this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.telLabel.Name = "telLabel";
+            this.telLabel.Size = new System.Drawing.Size(69, 19);
+            this.telLabel.TabIndex = 62;
+            this.telLabel.Text = "Teléfono";
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.Depth = 0;
+            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passLabel.Location = new System.Drawing.Point(84, 260);
+            this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(47, 19);
+            this.passLabel.TabIndex = 61;
+            this.passLabel.Text = "Email";
+            // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.Depth = 0;
+            this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dniLabel.Location = new System.Drawing.Point(93, 189);
+            this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(38, 19);
+            this.dniLabel.TabIndex = 60;
+            this.dniLabel.Text = "Web";
             // 
             // EditarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.horasLabel);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.nomLabel);
+            this.Controls.Add(this.telLabel);
+            this.Controls.Add(this.passLabel);
+            this.Controls.Add(this.dniLabel);
+            this.Controls.Add(this.actiText);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.direccText);
+            this.Controls.Add(this.emailText);
+            this.Controls.Add(this.telText);
+            this.Controls.Add(this.webText);
+            this.Controls.Add(this.nomText);
+            this.Controls.Add(this.cifText);
             this.Name = "EditarEmpresa";
             this.Text = "Editar Empresa";
             this.Load += new System.EventHandler(this.EditarEmpresa_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox5;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox6;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBox7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField direccText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField telText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField webText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField cifText;
+        private MaterialSkin.Controls.MaterialSingleLineTextField actiText;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel horasLabel;
+        private MaterialSkin.Controls.MaterialLabel emailLabel;
+        private MaterialSkin.Controls.MaterialLabel nomLabel;
+        private MaterialSkin.Controls.MaterialLabel telLabel;
+        private MaterialSkin.Controls.MaterialLabel passLabel;
+        private MaterialSkin.Controls.MaterialLabel dniLabel;
     }
 }

@@ -77,16 +77,15 @@ namespace RaquetZone.funciones
 
         }
 
-        public void putItem(String data, String body)
+        public void putItem(String data, String datos)
         {
             var client = new RestClient(data);
             client.Timeout = -1;
             var request = new RestRequest(Method.PUT);
             request.AddHeader("Content-Type", "application/json");
             
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            request.AddParameter("application/json", datos, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);
         }
 
         public void deleteItem(String data)

@@ -69,14 +69,14 @@
             // 
             this.direccText.Depth = 0;
             this.direccText.Hint = "Dirección";
-            this.direccText.Location = new System.Drawing.Point(386, 192);
+            this.direccText.Location = new System.Drawing.Point(416, 192);
             this.direccText.MouseState = MaterialSkin.MouseState.HOVER;
             this.direccText.Name = "direccText";
             this.direccText.PasswordChar = '\0';
             this.direccText.SelectedText = "";
             this.direccText.SelectionLength = 0;
             this.direccText.SelectionStart = 0;
-            this.direccText.Size = new System.Drawing.Size(312, 23);
+            this.direccText.Size = new System.Drawing.Size(282, 23);
             this.direccText.TabIndex = 4;
             this.direccText.UseSystemPasswordChar = false;
             // 
@@ -84,14 +84,14 @@
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(71, 259);
+            this.emailText.Location = new System.Drawing.Point(114, 259);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
             this.emailText.SelectedText = "";
             this.emailText.SelectionLength = 0;
             this.emailText.SelectionStart = 0;
-            this.emailText.Size = new System.Drawing.Size(218, 23);
+            this.emailText.Size = new System.Drawing.Size(175, 23);
             this.emailText.TabIndex = 5;
             this.emailText.UseSystemPasswordChar = false;
             // 
@@ -99,14 +99,14 @@
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(386, 259);
+            this.telText.Location = new System.Drawing.Point(416, 259);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
             this.telText.SelectedText = "";
             this.telText.SelectionLength = 0;
             this.telText.SelectionStart = 0;
-            this.telText.Size = new System.Drawing.Size(142, 23);
+            this.telText.Size = new System.Drawing.Size(128, 23);
             this.telText.TabIndex = 6;
             this.telText.UseSystemPasswordChar = false;
             // 
@@ -114,14 +114,14 @@
             // 
             this.passText.Depth = 0;
             this.passText.Hint = "Contraseña";
-            this.passText.Location = new System.Drawing.Point(71, 192);
+            this.passText.Location = new System.Drawing.Point(114, 192);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
             this.passText.PasswordChar = '\0';
             this.passText.SelectedText = "";
             this.passText.SelectionLength = 0;
             this.passText.SelectionStart = 0;
-            this.passText.Size = new System.Drawing.Size(218, 23);
+            this.passText.Size = new System.Drawing.Size(175, 23);
             this.passText.TabIndex = 3;
             this.passText.UseSystemPasswordChar = false;
             // 
@@ -129,29 +129,30 @@
             // 
             this.nombreText.Depth = 0;
             this.nombreText.Hint = "Nombre";
-            this.nombreText.Location = new System.Drawing.Point(386, 129);
+            this.nombreText.Location = new System.Drawing.Point(416, 129);
             this.nombreText.MouseState = MaterialSkin.MouseState.HOVER;
             this.nombreText.Name = "nombreText";
             this.nombreText.PasswordChar = '\0';
             this.nombreText.SelectedText = "";
             this.nombreText.SelectionLength = 0;
             this.nombreText.SelectionStart = 0;
-            this.nombreText.Size = new System.Drawing.Size(312, 23);
+            this.nombreText.Size = new System.Drawing.Size(282, 23);
             this.nombreText.TabIndex = 2;
             this.nombreText.UseSystemPasswordChar = false;
             // 
             // dniText
             // 
             this.dniText.Depth = 0;
+            this.dniText.Enabled = false;
             this.dniText.Hint = "DNI";
-            this.dniText.Location = new System.Drawing.Point(71, 129);
+            this.dniText.Location = new System.Drawing.Point(114, 129);
             this.dniText.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniText.Name = "dniText";
             this.dniText.PasswordChar = '\0';
             this.dniText.SelectedText = "";
             this.dniText.SelectionLength = 0;
             this.dniText.SelectionStart = 0;
-            this.dniText.Size = new System.Drawing.Size(218, 23);
+            this.dniText.Size = new System.Drawing.Size(175, 23);
             this.dniText.TabIndex = 1;
             this.dniText.UseSystemPasswordChar = false;
             // 
@@ -163,9 +164,9 @@
             "1",
             "2",
             "3"});
-            this.rolCombo.Location = new System.Drawing.Point(577, 258);
+            this.rolCombo.Location = new System.Drawing.Point(594, 259);
             this.rolCombo.Name = "rolCombo";
-            this.rolCombo.Size = new System.Drawing.Size(121, 23);
+            this.rolCombo.Size = new System.Drawing.Size(104, 23);
             this.rolCombo.TabIndex = 7;
             this.rolCombo.Text = "Rol";
             // 

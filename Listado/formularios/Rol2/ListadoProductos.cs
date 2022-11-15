@@ -17,6 +17,7 @@ namespace RaquetZone.formularios.Rol2
         public ListadoProductos()
         {
             InitializeComponent();
+            Mostrar();
         }
 
         private void ListadoProductos_Load(object sender, EventArgs e)
@@ -30,7 +31,26 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            String id = listaProductos.CurrentRow.Cells[0].Value.ToString();
 
+            if (MessageBox.Show("¿Quieres eliminar el producto con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+
+                String url = "http://localhost:8081/producto/delete" + id;
+
+                RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+
+                r.deleteItem(url);
+
+                MessageBox.Show("Eliminado");
+
+                listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProd();
+            }
+            else
+            {
+                MessageBox.Show("La operación se ha detenido, no se ha eliminado el producto");
+            }
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
@@ -42,9 +62,39 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarProductos_Click(object sender, EventArgs e)
         {
-            EditarProductos EP = new EditarProductos();
+
+            string id = listaProductos.CurrentRow.Cells[0].Value.ToString();
+            string nom = listaProductos.CurrentRow.Cells[1].Value.ToString();
+            string cate = listaProductos.CurrentRow.Cells[2].Value.ToString();
+            string precio = listaProductos.CurrentRow.Cells[3].Value.ToString();
+            string iva = listaProductos.CurrentRow.Cells[4].Value.ToString();
+            string descuento = listaProductos.CurrentRow.Cells[5].Value.ToString();
+            string stock = listaProductos.CurrentRow.Cells[6].Value.ToString();
+
+            EditarProductos EP = new EditarProductos(id, nom, cate, precio, iva, descuento, stock);
             EP.Show();
-            this.Show();
+            this.Hide();
+            
+        }
+
+        private void Mostrar()
+        {
+            listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProd();
+        }
+
+        private void buscadorButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaProductos.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["idprod"].Value);
+
+                if (Valor == this.buscarID.Text)
+                {
+                    listaProductos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
+                    listaProductos.CurrentCell = listaProductos[0, Convert.ToInt32(strFila)];
+                }
+            }
         }
     }
 }

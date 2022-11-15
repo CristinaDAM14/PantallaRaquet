@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Listado.funciones
+namespace RaquetZone.funciones
 {
-    class productos
+    public class productos
     {
 
-        public string cifemp { get; set; }
-        public string nomemp { get; set; }
-        public string webemp { get; set; }
-        public string telemp { get; set; }
-        public string emailemp { get; set; }
-        public string direcemp { get; set; }
-        public string activiemp { get; set; }
+        public long idprod { get; set; }
+        public string nombreprod { get; set; }
+        public string categoriaprod { get; set; }
+        public double precioprod { get; set; }
+        public double ivaprod { get; set; }
+        public double descuentoprod { get; set; }
+        public int stockprod { get; set; }
 
     }
 }

@@ -31,33 +31,20 @@ namespace RaquetZone.formularios
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            /*
-             Aqui se obtienen los datos y se genera la cadena JSON que se envia
-             */
 
-            String dni = dniText.Text;
-            String nombre = nombreText.Text;
-            String password = passText.Text;
-            int rol = Int32.Parse(rolCombo.Text);
-            String telefono = telText.Text;
-            String email = emailText.Text;
-            String direccion = direccText.Text;
-
-
-            /* No se comprueban errores */
             String url = "http://localhost:8081/usuario/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""dniusr"": """ + dni + "\"," + "\n" +
-@"        ""nombreusr"": """ + nombre + "\"," + "\n" +
-@"        ""passwordusr"": """ + password + "\"," + "\n" +
-@"        ""rolusr"": """ + rol + "\"," + "\n" +
-@"        ""telefonousr"": """ + telefono + "\"," + "\n" +
-@"        ""emailusr"": """ + email + "\"," + "\n" +
-@"        ""direccionusr"": """ + direccion + "\"" + "\n" +
+@"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
+@"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
+@"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
+@"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +
+@"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
+@"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
+@"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
 @"    }";
             String res = r.postItem(datos);
 

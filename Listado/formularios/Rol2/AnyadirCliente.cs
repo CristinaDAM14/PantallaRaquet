@@ -37,34 +37,27 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            /*
-             Aqui se obtienen los datos y se genera la cadena JSON que se envia
-             */
 
-            String dni = dniText.Text;
-            String nombre = nomText.Text;
-            String password = passText.Text;
-            int numHoras = Int32.Parse(numText.Text);
-            String telefono = telText.Text;
-            String email = emailText.Text;
-
-            /* No se comprueban errores */
             String url = "http://localhost:8081/cliente/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""dnicli"": """ + dni + "\"," + "\n" +
-@"        ""nombrecli"": """ + nombre + "\"," + "\n" +
-@"        ""passwordcli"": """ + password + "\"," + "\n" +
-@"        ""numhorascli"": """ + numHoras + "\"," + "\n" +
-@"        ""telefonocli"": """ + telefono + "\"," + "\n" +
-@"        ""emailcli"": """ + email + "\"," + "\n" +
+@"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
+@"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
+@"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
+@"        ""numhorascli"": " + Int32.Parse(numText.Text) + "," + "\n" +
+@"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
+@"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
 @"    }";
+
             String res = r.postItem(datos);
 
-            MessageBox.Show("Resultado: " + res);
+            MessageBox.Show("Resultado: " + datos);
         }
+
+
+
     }
 }

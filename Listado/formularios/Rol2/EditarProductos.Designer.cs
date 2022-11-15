@@ -37,6 +37,14 @@ namespace RaquetZone.formularios.Rol2
             this.desText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.categoriaText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.telLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.passLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.idText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -50,6 +58,7 @@ namespace RaquetZone.formularios.Rol2
             this.buttonEditar.TabIndex = 32;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonVolver
             // 
@@ -68,14 +77,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.ivaText.Depth = 0;
             this.ivaText.Hint = "IVA";
-            this.ivaText.Location = new System.Drawing.Point(424, 275);
+            this.ivaText.Location = new System.Drawing.Point(659, 262);
             this.ivaText.MouseState = MaterialSkin.MouseState.HOVER;
             this.ivaText.Name = "ivaText";
             this.ivaText.PasswordChar = '\0';
             this.ivaText.SelectedText = "";
             this.ivaText.SelectionLength = 0;
             this.ivaText.SelectionStart = 0;
-            this.ivaText.Size = new System.Drawing.Size(142, 23);
+            this.ivaText.Size = new System.Drawing.Size(77, 23);
             this.ivaText.TabIndex = 29;
             this.ivaText.UseSystemPasswordChar = false;
             // 
@@ -83,14 +92,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.stockText.Depth = 0;
             this.stockText.Hint = "Stock";
-            this.stockText.Location = new System.Drawing.Point(424, 195);
+            this.stockText.Location = new System.Drawing.Point(501, 195);
             this.stockText.MouseState = MaterialSkin.MouseState.HOVER;
             this.stockText.Name = "stockText";
             this.stockText.PasswordChar = '\0';
             this.stockText.SelectedText = "";
             this.stockText.SelectionLength = 0;
             this.stockText.SelectionStart = 0;
-            this.stockText.Size = new System.Drawing.Size(312, 23);
+            this.stockText.Size = new System.Drawing.Size(235, 23);
             this.stockText.TabIndex = 30;
             this.stockText.UseSystemPasswordChar = false;
             // 
@@ -98,14 +107,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.preText.Depth = 0;
             this.preText.Hint = "Precio";
-            this.preText.Location = new System.Drawing.Point(109, 275);
+            this.preText.Location = new System.Drawing.Point(501, 262);
             this.preText.MouseState = MaterialSkin.MouseState.HOVER;
             this.preText.Name = "preText";
             this.preText.PasswordChar = '\0';
             this.preText.SelectedText = "";
             this.preText.SelectionLength = 0;
             this.preText.SelectionStart = 0;
-            this.preText.Size = new System.Drawing.Size(142, 23);
+            this.preText.Size = new System.Drawing.Size(81, 23);
             this.preText.TabIndex = 31;
             this.preText.UseSystemPasswordChar = false;
             // 
@@ -113,14 +122,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.desText.Depth = 0;
             this.desText.Hint = "Descuento";
-            this.desText.Location = new System.Drawing.Point(109, 195);
+            this.desText.Location = new System.Drawing.Point(172, 262);
             this.desText.MouseState = MaterialSkin.MouseState.HOVER;
             this.desText.Name = "desText";
             this.desText.PasswordChar = '\0';
             this.desText.SelectedText = "";
             this.desText.SelectionLength = 0;
             this.desText.SelectionStart = 0;
-            this.desText.Size = new System.Drawing.Size(218, 23);
+            this.desText.Size = new System.Drawing.Size(166, 23);
             this.desText.TabIndex = 28;
             this.desText.UseSystemPasswordChar = false;
             // 
@@ -128,14 +137,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.categoriaText.Depth = 0;
             this.categoriaText.Hint = "Categoría";
-            this.categoriaText.Location = new System.Drawing.Point(424, 132);
+            this.categoriaText.Location = new System.Drawing.Point(501, 132);
             this.categoriaText.MouseState = MaterialSkin.MouseState.HOVER;
             this.categoriaText.Name = "categoriaText";
             this.categoriaText.PasswordChar = '\0';
             this.categoriaText.SelectedText = "";
             this.categoriaText.SelectionLength = 0;
             this.categoriaText.SelectionStart = 0;
-            this.categoriaText.Size = new System.Drawing.Size(312, 23);
+            this.categoriaText.Size = new System.Drawing.Size(235, 23);
             this.categoriaText.TabIndex = 27;
             this.categoriaText.UseSystemPasswordChar = false;
             // 
@@ -143,22 +152,137 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
-            this.nomText.Location = new System.Drawing.Point(109, 132);
+            this.nomText.Location = new System.Drawing.Point(172, 191);
             this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomText.Name = "nomText";
             this.nomText.PasswordChar = '\0';
             this.nomText.SelectedText = "";
             this.nomText.SelectionLength = 0;
             this.nomText.SelectionStart = 0;
-            this.nomText.Size = new System.Drawing.Size(218, 23);
+            this.nomText.Size = new System.Drawing.Size(166, 23);
             this.nomText.TabIndex = 26;
             this.nomText.UseSystemPasswordChar = false;
+            // 
+            // horasLabel
+            // 
+            this.horasLabel.AutoSize = true;
+            this.horasLabel.Depth = 0;
+            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.horasLabel.Location = new System.Drawing.Point(611, 262);
+            this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.horasLabel.Name = "horasLabel";
+            this.horasLabel.Size = new System.Drawing.Size(33, 19);
+            this.horasLabel.TabIndex = 39;
+            this.horasLabel.Text = "IVA";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Depth = 0;
+            this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.emailLabel.Location = new System.Drawing.Point(428, 195);
+            this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(48, 19);
+            this.emailLabel.TabIndex = 38;
+            this.emailLabel.Text = "Stock";
+            // 
+            // nomLabel
+            // 
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Depth = 0;
+            this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.nomLabel.Location = new System.Drawing.Point(402, 132);
+            this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(74, 19);
+            this.nomLabel.TabIndex = 37;
+            this.nomLabel.Text = "Categoría";
+            // 
+            // telLabel
+            // 
+            this.telLabel.AutoSize = true;
+            this.telLabel.Depth = 0;
+            this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.telLabel.Location = new System.Drawing.Point(428, 262);
+            this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.telLabel.Name = "telLabel";
+            this.telLabel.Size = new System.Drawing.Size(52, 19);
+            this.telLabel.TabIndex = 36;
+            this.telLabel.Text = "Precio";
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.Depth = 0;
+            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passLabel.Location = new System.Drawing.Point(63, 262);
+            this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(81, 19);
+            this.passLabel.TabIndex = 35;
+            this.passLabel.Text = "Descuento";
+            // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.Depth = 0;
+            this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dniLabel.Location = new System.Drawing.Point(81, 191);
+            this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(63, 19);
+            this.dniLabel.TabIndex = 34;
+            this.dniLabel.Text = "Nombre";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(121, 132);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(23, 19);
+            this.materialLabel1.TabIndex = 41;
+            this.materialLabel1.Text = "ID";
+            // 
+            // idText
+            // 
+            this.idText.Depth = 0;
+            this.idText.Enabled = false;
+            this.idText.Hint = "ID";
+            this.idText.Location = new System.Drawing.Point(172, 132);
+            this.idText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.idText.Name = "idText";
+            this.idText.PasswordChar = '\0';
+            this.idText.SelectedText = "";
+            this.idText.SelectionLength = 0;
+            this.idText.SelectionStart = 0;
+            this.idText.Size = new System.Drawing.Size(166, 23);
+            this.idText.TabIndex = 40;
+            this.idText.UseSystemPasswordChar = false;
             // 
             // EditarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.idText);
+            this.Controls.Add(this.horasLabel);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.nomLabel);
+            this.Controls.Add(this.telLabel);
+            this.Controls.Add(this.passLabel);
+            this.Controls.Add(this.dniLabel);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.ivaText);
@@ -171,6 +295,7 @@ namespace RaquetZone.formularios.Rol2
             this.Text = "Editar Productos";
             this.Load += new System.EventHandler(this.EditarProductos_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -184,5 +309,13 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialSingleLineTextField desText;
         private MaterialSkin.Controls.MaterialSingleLineTextField categoriaText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
+        private MaterialSkin.Controls.MaterialLabel horasLabel;
+        private MaterialSkin.Controls.MaterialLabel emailLabel;
+        private MaterialSkin.Controls.MaterialLabel nomLabel;
+        private MaterialSkin.Controls.MaterialLabel telLabel;
+        private MaterialSkin.Controls.MaterialLabel passLabel;
+        private MaterialSkin.Controls.MaterialLabel dniLabel;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField idText;
     }
 }

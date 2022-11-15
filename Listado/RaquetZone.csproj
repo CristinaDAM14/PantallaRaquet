@@ -150,18 +150,6 @@
     <Compile Include="formularios\EditarUsuario.designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\EliminarEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\EliminarEmpresa.Designer.cs">
-      <DependentUpon>EliminarEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularios\EliminarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\EliminarUsuario.Designer.cs">
-      <DependentUpon>EliminarUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="formularios\Rol2\AnyadirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +228,7 @@
     <Compile Include="formularios\Rol2\PantallaPrincipalRol2.Designer.cs">
       <DependentUpon>PantallaPrincipalRol2.cs</DependentUpon>
     </Compile>
+    <Compile Include="funciones\clientes.cs" />
     <Compile Include="funciones\conexion.cs" />
     <Compile Include="formularios\ListadoUsuarios.cs">
       <SubType>Form</SubType>
@@ -270,12 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\EliminarEmpresa.resx">
-      <DependentUpon>EliminarEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\EliminarUsuario.resx">
-      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\AnyadirCliente.resx">
       <DependentUpon>AnyadirCliente.cs</DependentUpon>

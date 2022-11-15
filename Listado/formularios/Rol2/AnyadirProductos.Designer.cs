@@ -47,7 +47,7 @@ namespace RaquetZone.formularios.Rol2
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Primary = true;
             this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 24;
+            this.buttonEditar.TabIndex = 7;
             this.buttonEditar.Text = "Añadir";
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
@@ -60,7 +60,7 @@ namespace RaquetZone.formularios.Rol2
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Primary = true;
             this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 25;
+            this.buttonVolver.TabIndex = 8;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
@@ -77,7 +77,7 @@ namespace RaquetZone.formularios.Rol2
             this.ivaText.SelectionLength = 0;
             this.ivaText.SelectionStart = 0;
             this.ivaText.Size = new System.Drawing.Size(142, 23);
-            this.ivaText.TabIndex = 21;
+            this.ivaText.TabIndex = 6;
             this.ivaText.UseSystemPasswordChar = false;
             // 
             // stockText
@@ -92,7 +92,7 @@ namespace RaquetZone.formularios.Rol2
             this.stockText.SelectionLength = 0;
             this.stockText.SelectionStart = 0;
             this.stockText.Size = new System.Drawing.Size(312, 23);
-            this.stockText.TabIndex = 22;
+            this.stockText.TabIndex = 4;
             this.stockText.UseSystemPasswordChar = false;
             // 
             // preText
@@ -107,7 +107,7 @@ namespace RaquetZone.formularios.Rol2
             this.preText.SelectionLength = 0;
             this.preText.SelectionStart = 0;
             this.preText.Size = new System.Drawing.Size(142, 23);
-            this.preText.TabIndex = 23;
+            this.preText.TabIndex = 5;
             this.preText.UseSystemPasswordChar = false;
             // 
             // desText
@@ -122,7 +122,7 @@ namespace RaquetZone.formularios.Rol2
             this.desText.SelectionLength = 0;
             this.desText.SelectionStart = 0;
             this.desText.Size = new System.Drawing.Size(218, 23);
-            this.desText.TabIndex = 20;
+            this.desText.TabIndex = 3;
             this.desText.UseSystemPasswordChar = false;
             // 
             // categoriaText
@@ -137,7 +137,7 @@ namespace RaquetZone.formularios.Rol2
             this.categoriaText.SelectionLength = 0;
             this.categoriaText.SelectionStart = 0;
             this.categoriaText.Size = new System.Drawing.Size(312, 23);
-            this.categoriaText.TabIndex = 19;
+            this.categoriaText.TabIndex = 2;
             this.categoriaText.UseSystemPasswordChar = false;
             // 
             // nomText
@@ -152,7 +152,7 @@ namespace RaquetZone.formularios.Rol2
             this.nomText.SelectionLength = 0;
             this.nomText.SelectionStart = 0;
             this.nomText.Size = new System.Drawing.Size(218, 23);
-            this.nomText.TabIndex = 18;
+            this.nomText.TabIndex = 1;
             this.nomText.UseSystemPasswordChar = false;
             // 
             // AnyadirProductos

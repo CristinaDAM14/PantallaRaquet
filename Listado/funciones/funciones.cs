@@ -41,7 +41,35 @@ namespace RaquetZone.funciones
 
         }
 
-        //Accesos directos
-        
+        //Lista para los productos
+        public static List<productos> mostrarProd()
+        {
+            String url = "http://localhost:8081/productos";
+
+            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+
+            String persona = r.getItem();
+
+            List<productos> RaquetZoneProd = JsonConvert.DeserializeObject<List<productos>>(persona);
+
+            return RaquetZoneProd;
+
+        }
+
+        //Lista para los clientes
+        public static List<clientes> mostrarCli()
+        {
+            String url = "http://localhost:8081/cliente";
+
+            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+
+            String persona = r.getItem();
+
+            List<clientes> RaquetZoneCli = JsonConvert.DeserializeObject<List<clientes>>(persona);
+
+            return RaquetZoneCli;
+
+        }
+
     }
 }

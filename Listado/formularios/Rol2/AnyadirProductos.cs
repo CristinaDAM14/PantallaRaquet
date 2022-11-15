@@ -30,13 +30,31 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            RaquetZone.formularios.Rol2.GestionProductos GP = new RaquetZone.formularios.Rol2.GestionProductos();
+            GestionProductos GP = new GestionProductos();
             GP.Show();
             this.Hide();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+
+            String url = "http://localhost:8081/producto/add";
+
+            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
+
+            String datos = @"{
+" + "\n" +
+@"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
+@"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
+@"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
+@"        ""ivaprod"": """ + Double.Parse(ivaText.Text) + "\"," + "\n" +
+@"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
+@"        ""stockprod"": """ + Int32.Parse(stockText.Text) + "\"" + "\n" +
+@"    }";
+
+            String res = r.postItem(datos);
+
+            MessageBox.Show("Resultado: " + datos);
 
         }
     }

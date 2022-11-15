@@ -17,11 +17,20 @@ namespace RaquetZone.formularios
         public RaquetZoneEmpresas()
         {
             InitializeComponent();
+            MostrarEmpresas();
         }
 
         private void editar_Click(object sender, EventArgs e)
         {
-            EditarEmpresa EU1 = new EditarEmpresa();
+            string cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
+            string nom = listaDatosEmpresas.CurrentRow.Cells[1].Value.ToString();
+            string web = listaDatosEmpresas.CurrentRow.Cells[2].Value.ToString();
+            string tel = listaDatosEmpresas.CurrentRow.Cells[3].Value.ToString();
+            string email = listaDatosEmpresas.CurrentRow.Cells[4].Value.ToString();
+            string direc = listaDatosEmpresas.CurrentRow.Cells[5].Value.ToString();
+            string acti = listaDatosEmpresas.CurrentRow.Cells[6].Value.ToString();
+
+            EditarEmpresa EU1 = new EditarEmpresa(cif, nom, web, tel, email, direc, acti);
             EU1.Show();
             this.Hide();
         }
@@ -37,16 +46,29 @@ namespace RaquetZone.formularios
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            //EliminarEmpresa EE = new EliminarEmpresa();
-            //EE.Show();
+             String cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
 
-            if (MessageBox.Show(" Quieres eliminar?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("¿Quieres eliminar la empresa con CIF " + cif + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                
+
+                String url = "http://localhost:8081/empresa/delete" + cif;
+
+                RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+
+                r.deleteItem(url);
+
                 MessageBox.Show("Eliminado");
+
+                listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
+            }
+            else
+            {
+                MessageBox.Show("La operación se ha detenido, no se ha eliminado la empresa");
             }
         }
 
-        private void buttonMostrar_Click(object sender, EventArgs e)
+        private void MostrarEmpresas()
         {
             listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
         }
@@ -56,6 +78,21 @@ namespace RaquetZone.formularios
             GestionEmpresas GE1 = new GestionEmpresas();
             GE1.Show();
             this.Hide();
+        }
+
+        private void buscadorButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaDatosEmpresas.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["cifemp"].Value);
+
+                if (Valor == this.buscarCIF.Text)
+                {
+                    listaDatosEmpresas.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
+                    listaDatosEmpresas.CurrentCell = listaDatosEmpresas[0, Convert.ToInt32(strFila)];
+                }
+            }
         }
     }
 }

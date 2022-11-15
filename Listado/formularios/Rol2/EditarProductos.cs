@@ -14,9 +14,16 @@ namespace RaquetZone.formularios.Rol2
 {
     public partial class EditarProductos : MaterialForm
     {
-        public EditarProductos()
+        public EditarProductos(string id, string nom, string cate, string precio, string iva, string descuento, string stock)
         {
             InitializeComponent();
+            idText.Text = id;
+            nomText.Text = nom;
+            categoriaText.Text = cate;
+            preText.Text = precio;
+            ivaText.Text = iva;
+            desText.Text = descuento;
+            stockText.Text = stock;
         }
 
         private void EditarProductos_Load(object sender, EventArgs e)
@@ -32,7 +39,29 @@ namespace RaquetZone.formularios.Rol2
         {
             ListadoProductos LP = new ListadoProductos();
             LP.Show();
-            this.Show();
+            this.Hide();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            String url = "http://localhost:8081/producto/modify" + idText.Text;
+
+            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "PUT");
+
+            String datos = @"{
+" + "\n" +
+@"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
+@"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
+@"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
+@"        ""ivaprod"": """ + Double.Parse(ivaText.Text) + "\"," + "\n" +
+@"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
+@"        ""stockprod"": """ + Int32.Parse(stockText.Text) + "\"" + "\n" +
+@"    }";
+
+            r.putItem(url, datos);
+
+            MessageBox.Show("Editado con éxito");
         }
     }
-}
+    }
+
