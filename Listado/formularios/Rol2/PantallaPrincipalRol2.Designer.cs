@@ -36,6 +36,7 @@ namespace RaquetZone.formularios.Rol2
             this.buttonGU = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGC = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGP = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonCompras = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // edgeButton
@@ -93,14 +94,14 @@ namespace RaquetZone.formularios.Rol2
             this.buttonGU.Primary = true;
             this.buttonGU.Size = new System.Drawing.Size(210, 53);
             this.buttonGU.TabIndex = 19;
-            this.buttonGU.Text = "Gestionar Usuarios";
+            this.buttonGU.Text = "Gestionar Empleados";
             this.buttonGU.UseVisualStyleBackColor = true;
             this.buttonGU.Click += new System.EventHandler(this.buttonGU_Click);
             // 
             // buttonGC
             // 
             this.buttonGC.Depth = 0;
-            this.buttonGC.Location = new System.Drawing.Point(49, 263);
+            this.buttonGC.Location = new System.Drawing.Point(49, 252);
             this.buttonGC.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonGC.Name = "buttonGC";
             this.buttonGC.Primary = true;
@@ -123,11 +124,26 @@ namespace RaquetZone.formularios.Rol2
             this.buttonGP.UseVisualStyleBackColor = true;
             this.buttonGP.Click += new System.EventHandler(this.buttonGP_Click);
             // 
+            // buttonCompras
+            // 
+            this.buttonCompras.Depth = 0;
+            this.buttonCompras.Location = new System.Drawing.Point(323, 252);
+            this.buttonCompras.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonCompras.Name = "buttonCompras";
+            this.buttonCompras.Primary = true;
+            this.buttonCompras.Size = new System.Drawing.Size(210, 53);
+            this.buttonCompras.TabIndex = 22;
+            this.buttonCompras.Text = "Gestionar Compras";
+            this.buttonCompras.UseVisualStyleBackColor = true;
+            this.buttonCompras.Click += new System.EventHandler(this.buttonCompras_Click);
+            // 
             // PantallaPrincipalRol2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 380);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonCompras);
             this.Controls.Add(this.buttonGP);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonGU);
@@ -149,5 +165,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton buttonGU;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGC;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGP;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonCompras;
     }
 }

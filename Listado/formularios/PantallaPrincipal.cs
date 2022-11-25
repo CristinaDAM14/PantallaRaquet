@@ -65,8 +65,9 @@ namespace RaquetZone.formularios
         private void loginBotton_Click(object sender, EventArgs e)
         {
             Login L1 = new Login();
+            
             L1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void noteButton_Click(object sender, EventArgs e)

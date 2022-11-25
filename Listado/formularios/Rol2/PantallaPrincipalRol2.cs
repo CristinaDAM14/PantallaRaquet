@@ -12,14 +12,22 @@ using System.Configuration;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
+ 
+            
+
+
 namespace RaquetZone.formularios.Rol2
 {
     public partial class PantallaPrincipalRol2 : MaterialForm
     {
+        
+        public int rolActual = 2;
+       
         public PantallaPrincipalRol2()
         {
             InitializeComponent();
         }
+
 
         private void noteButton_Click(object sender, EventArgs e)
         {
@@ -62,7 +70,7 @@ namespace RaquetZone.formularios.Rol2
         {
             GestionProductos GP = new GestionProductos();
             GP.Show();
-           
+
         }
 
         private void buttonGU_Click(object sender, EventArgs e)
@@ -75,14 +83,24 @@ namespace RaquetZone.formularios.Rol2
         {
             GestionClientes GC = new GestionClientes();
             GC.Show();
-           
+
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Login LU1 = new Login();
             LU1.Show();
-            this.Hide();
+            this.Close();
+
+        }
+
+        private void buttonCompras_Click(object sender, EventArgs e)
+        {
+            GestionCompras LC = new GestionCompras();
+            LC.Show();
         }
     }
 }
+
+
+

@@ -44,6 +44,8 @@
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -76,7 +78,7 @@
             // 
             this.direccText.Depth = 0;
             this.direccText.Hint = "Dirección";
-            this.direccText.Location = new System.Drawing.Point(449, 193);
+            this.direccText.Location = new System.Drawing.Point(445, 227);
             this.direccText.MouseState = MaterialSkin.MouseState.HOVER;
             this.direccText.Name = "direccText";
             this.direccText.PasswordChar = '\0';
@@ -91,7 +93,7 @@
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(141, 256);
+            this.emailText.Location = new System.Drawing.Point(141, 290);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
@@ -106,7 +108,7 @@
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(449, 256);
+            this.telText.Location = new System.Drawing.Point(445, 290);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
@@ -121,7 +123,7 @@
             // 
             this.webText.Depth = 0;
             this.webText.Hint = "Web";
-            this.webText.Location = new System.Drawing.Point(141, 189);
+            this.webText.Location = new System.Drawing.Point(141, 223);
             this.webText.MouseState = MaterialSkin.MouseState.HOVER;
             this.webText.Name = "webText";
             this.webText.PasswordChar = '\0';
@@ -167,7 +169,7 @@
             // 
             this.actiText.Depth = 0;
             this.actiText.Hint = "Actividad";
-            this.actiText.Location = new System.Drawing.Point(638, 256);
+            this.actiText.Location = new System.Drawing.Point(634, 290);
             this.actiText.MouseState = MaterialSkin.MouseState.HOVER;
             this.actiText.Name = "actiText";
             this.actiText.PasswordChar = '\0';
@@ -197,7 +199,7 @@
             this.horasLabel.Depth = 0;
             this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horasLabel.Location = new System.Drawing.Point(553, 256);
+            this.horasLabel.Location = new System.Drawing.Point(549, 290);
             this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horasLabel.Name = "horasLabel";
             this.horasLabel.Size = new System.Drawing.Size(71, 19);
@@ -210,7 +212,7 @@
             this.emailLabel.Depth = 0;
             this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.emailLabel.Location = new System.Drawing.Point(356, 193);
+            this.emailLabel.Location = new System.Drawing.Point(352, 227);
             this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(73, 19);
@@ -236,7 +238,7 @@
             this.telLabel.Depth = 0;
             this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.telLabel.Location = new System.Drawing.Point(360, 256);
+            this.telLabel.Location = new System.Drawing.Point(356, 290);
             this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.telLabel.Name = "telLabel";
             this.telLabel.Size = new System.Drawing.Size(69, 19);
@@ -249,7 +251,7 @@
             this.passLabel.Depth = 0;
             this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.passLabel.Location = new System.Drawing.Point(84, 260);
+            this.passLabel.Location = new System.Drawing.Point(84, 294);
             this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(47, 19);
@@ -262,18 +264,42 @@
             this.dniLabel.Depth = 0;
             this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dniLabel.Location = new System.Drawing.Point(93, 189);
+            this.dniLabel.Location = new System.Drawing.Point(93, 223);
             this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniLabel.Name = "dniLabel";
             this.dniLabel.Size = new System.Drawing.Size(38, 19);
             this.dniLabel.TabIndex = 60;
             this.dniLabel.Text = "Web";
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = null;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(22, 177);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(732, 10);
+            this.materialTabSelector1.TabIndex = 67;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // materialTabSelector2
+            // 
+            this.materialTabSelector2.BaseTabControl = null;
+            this.materialTabSelector2.Depth = 0;
+            this.materialTabSelector2.Location = new System.Drawing.Point(-5, 177);
+            this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector2.Name = "materialTabSelector2";
+            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.TabIndex = 68;
+            this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
             // EditarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialTabSelector2);
+            this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.horasLabel);
             this.Controls.Add(this.emailLabel);
@@ -315,5 +341,7 @@
         private MaterialSkin.Controls.MaterialLabel telLabel;
         private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel dniLabel;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
     }
 }

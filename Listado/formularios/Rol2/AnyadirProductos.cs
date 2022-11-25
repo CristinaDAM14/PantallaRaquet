@@ -32,7 +32,7 @@ namespace RaquetZone.formularios.Rol2
         {
             GestionProductos GP = new GestionProductos();
             GP.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)

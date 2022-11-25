@@ -33,7 +33,7 @@ namespace RaquetZone.formularios.Rol2
         {
             GestionClientes GC = new GestionClientes();
             GC.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void editarProductos_Click(object sender, EventArgs e)
@@ -57,6 +57,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void buscadorButton_Click(object sender, EventArgs e)
         {
+            bool supervisorClientes = false;
 
             foreach (DataGridViewRow Row in listaClientes.Rows)
             {
@@ -67,8 +68,16 @@ namespace RaquetZone.formularios.Rol2
                 {
                     listaClientes.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
                     listaClientes.CurrentCell = listaClientes[0, Convert.ToInt32(strFila)];
+                    supervisorClientes = true;
                 }
             }
+
+            if (supervisorClientes == false)
+            {
+                MessageBox.Show("DNI Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -94,5 +103,6 @@ namespace RaquetZone.formularios.Rol2
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado al cliente");
             }
         }
+
     }
 }

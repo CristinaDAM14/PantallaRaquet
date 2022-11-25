@@ -57,7 +57,7 @@ namespace RaquetZone.formularios.Rol2
         {
             GestionProductos GP = new GestionProductos();
             GP.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void editarProductos_Click(object sender, EventArgs e)
@@ -84,6 +84,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void buscadorButton_Click(object sender, EventArgs e)
         {
+
+            bool supervisorProductos = false;
+
             foreach (DataGridViewRow Row in listaProductos.Rows)
             {
                 String strFila = Row.Index.ToString();
@@ -93,8 +96,16 @@ namespace RaquetZone.formularios.Rol2
                 {
                     listaProductos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
                     listaProductos.CurrentCell = listaProductos[0, Convert.ToInt32(strFila)];
+                    supervisorProductos = true;
                 }
             }
+
+            if (supervisorProductos == false)
+            {
+                MessageBox.Show("ID Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
     }
 }

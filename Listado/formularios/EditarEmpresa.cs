@@ -62,7 +62,7 @@ namespace RaquetZone.formularios
         {
             RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
             LE1.Show();
-            this.Hide();
+            this.Close();
         }
 
     }

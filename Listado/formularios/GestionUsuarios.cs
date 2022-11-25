@@ -17,6 +17,17 @@ namespace RaquetZone.formularios
         public GestionUsuarios()
         {
             InitializeComponent();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+
+               buttonAU.Text = "Añadir Empleado";
+               buttonLU.Text = "Listado de Empleados";
+               this.Text = "Gestión de Empleados";
+
+            }
         }
 
         private void GestionUsuarios_Load(object sender, EventArgs e)

@@ -77,11 +77,13 @@ namespace RaquetZone.formularios
         {
             GestionEmpresas GE1 = new GestionEmpresas();
             GE1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
         {
+            bool supervisorEmpresas = false;
+
             foreach (DataGridViewRow Row in listaDatosEmpresas.Rows)
             {
                 String strFila = Row.Index.ToString();
@@ -91,7 +93,14 @@ namespace RaquetZone.formularios
                 {
                     listaDatosEmpresas.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
                     listaDatosEmpresas.CurrentCell = listaDatosEmpresas[0, Convert.ToInt32(strFila)];
+                    supervisorEmpresas = true;
                 }
+            }
+
+            if (supervisorEmpresas == false)
+            {
+                MessageBox.Show("CIF Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

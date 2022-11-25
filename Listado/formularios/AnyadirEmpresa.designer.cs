@@ -37,13 +37,15 @@
             this.webText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cifText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.SuspendLayout();
             // 
             // actText
             // 
             this.actText.Depth = 0;
             this.actText.Hint = "Actividad";
-            this.actText.Location = new System.Drawing.Point(558, 260);
+            this.actText.Location = new System.Drawing.Point(558, 288);
             this.actText.MouseState = MaterialSkin.MouseState.HOVER;
             this.actText.Name = "actText";
             this.actText.PasswordChar = '\0';
@@ -84,7 +86,7 @@
             // 
             this.direcText.Depth = 0;
             this.direcText.Hint = "Dirección";
-            this.direcText.Location = new System.Drawing.Point(388, 196);
+            this.direcText.Location = new System.Drawing.Point(388, 224);
             this.direcText.MouseState = MaterialSkin.MouseState.HOVER;
             this.direcText.Name = "direcText";
             this.direcText.PasswordChar = '\0';
@@ -99,7 +101,7 @@
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(73, 263);
+            this.emailText.Location = new System.Drawing.Point(73, 291);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
@@ -114,7 +116,7 @@
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(388, 263);
+            this.telText.Location = new System.Drawing.Point(388, 291);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
@@ -129,7 +131,7 @@
             // 
             this.webText.Depth = 0;
             this.webText.Hint = "Web";
-            this.webText.Location = new System.Drawing.Point(73, 196);
+            this.webText.Location = new System.Drawing.Point(73, 224);
             this.webText.MouseState = MaterialSkin.MouseState.HOVER;
             this.webText.Name = "webText";
             this.webText.PasswordChar = '\0';
@@ -170,11 +172,35 @@
             this.cifText.TabIndex = 1;
             this.cifText.UseSystemPasswordChar = false;
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = null;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(12, 180);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(732, 10);
+            this.materialTabSelector1.TabIndex = 43;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // materialTabSelector2
+            // 
+            this.materialTabSelector2.BaseTabControl = null;
+            this.materialTabSelector2.Depth = 0;
+            this.materialTabSelector2.Location = new System.Drawing.Point(-3, 180);
+            this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector2.Name = "materialTabSelector2";
+            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.TabIndex = 44;
+            this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
             // AnyadirEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialTabSelector2);
+            this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.actText);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonVolver);
@@ -202,5 +228,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField webText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField cifText;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
     }
 }

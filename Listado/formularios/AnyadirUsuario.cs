@@ -18,6 +18,18 @@ namespace RaquetZone.formularios
         public AnyadirUsuario()
         {
             InitializeComponent();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+
+                this.Text = "Añadir Empleado";
+                rolCombo.Text = "1";
+                rolCombo.Enabled = false;
+
+            }
+
         }
 
         private void AnyadirUsuario_Load(object sender, EventArgs e)
@@ -56,7 +68,7 @@ namespace RaquetZone.formularios
         {
             GestionUsuarios GU1 = new GestionUsuarios();
             GU1.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

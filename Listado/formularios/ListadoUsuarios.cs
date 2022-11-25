@@ -14,11 +14,12 @@ namespace RaquetZone.formularios
 {
     public partial class RaquetZoneUsuarios : MaterialForm
     {
-
+     
         public RaquetZoneUsuarios()
         {
             InitializeComponent();
             MostrarUsuarios();
+            
         }
 
         private void editar_Click(object sender, EventArgs e)
@@ -37,12 +38,23 @@ namespace RaquetZone.formularios
             this.Hide();
         }
 
+        
+
         private void RaquetZoneUsuarios_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE); 
+            
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Text = "Listado de Empleados";
+                EsconderRol3();
+
+            }
 
         }
 
@@ -63,40 +75,55 @@ namespace RaquetZone.formularios
                 {
                     String url = "http://localhost:8081/usuario/delete" + dni;
 
-                    RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+                    funciones.conexion r = new funciones.conexion(url, "DELETE");
                     
                     r.deleteItem(url);
 
                     MessageBox.Show("Eliminado");
                 }
               
-                listaDatos.DataSource = RaquetZone.funciones.funciones.mostrarUsr();
+                listaDatos.DataSource = funciones.funciones.mostrarUsr();
             }
             else
             {
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado al usuario");
             }
+
         }
 
         private void MostrarUsuarios()
         {
-            listaDatos.DataSource = RaquetZone.funciones.funciones.mostrarUsr();
+            listaDatos.DataSource = funciones.funciones.mostrarUsr();
+        }
+
+        private void EsconderRol3()
+        {
+            foreach (DataGridViewRow Row in listaDatos.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["rolusr"].Value);
+
+                if (Valor == "3")
+                {
+                    listaDatos.CurrentCell = null;
+                    listaDatos.Rows[Convert.ToInt32(strFila)].Visible = false;
+                }
+                   
+            }
+            
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             GestionUsuarios GU1 = new GestionUsuarios();
             GU1.Show();
-            this.Hide();
-        }
-
-        private void listaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            this.Close();
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
         {
+            bool supervisor = false;
+
             foreach (DataGridViewRow Row in listaDatos.Rows)
             {
                 String strFila = Row.Index.ToString();
@@ -106,7 +133,15 @@ namespace RaquetZone.formularios
                 {
                     listaDatos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
                     listaDatos.CurrentCell = listaDatos[0, Convert.ToInt32(strFila)];
+                    supervisor = true;
                 }
+              
+            }
+
+            if(supervisor == false)
+            {
+                MessageBox.Show("DNI Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

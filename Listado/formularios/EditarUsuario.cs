@@ -35,13 +35,21 @@ namespace RaquetZone.formularios
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+
+                this.Text = "Editar Empleado";
+
+            }
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
             LU1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)

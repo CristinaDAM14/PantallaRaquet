@@ -33,6 +33,7 @@ namespace RaquetZone.formularios
             this.passwText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iniciarButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.contraOlvidada = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@ namespace RaquetZone.formularios
             // iniciarButton
             // 
             this.iniciarButton.Depth = 0;
-            this.iniciarButton.Location = new System.Drawing.Point(206, 229);
+            this.iniciarButton.Location = new System.Drawing.Point(206, 246);
             this.iniciarButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.iniciarButton.Name = "iniciarButton";
             this.iniciarButton.Primary = true;
@@ -92,11 +93,28 @@ namespace RaquetZone.formularios
             this.iniciarButton.UseVisualStyleBackColor = true;
             this.iniciarButton.Click += new System.EventHandler(this.iniciarButton_Click);
             // 
+            // contraOlvidada
+            // 
+            this.contraOlvidada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.contraOlvidada.Depth = 0;
+            this.contraOlvidada.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.contraOlvidada.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraOlvidada.Location = new System.Drawing.Point(67, 192);
+            this.contraOlvidada.MouseState = MaterialSkin.MouseState.HOVER;
+            this.contraOlvidada.Name = "contraOlvidada";
+            this.contraOlvidada.Primary = true;
+            this.contraOlvidada.Size = new System.Drawing.Size(130, 21);
+            this.contraOlvidada.TabIndex = 6;
+            this.contraOlvidada.Text = "¿Has olvidado tu contraseña?";
+            this.contraOlvidada.UseVisualStyleBackColor = true;
+            this.contraOlvidada.Click += new System.EventHandler(this.contraOlvidada_Click);
+            // 
             // Login
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(389, 386);
+            this.Controls.Add(this.contraOlvidada);
             this.Controls.Add(this.iniciarButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwText);
@@ -115,5 +133,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialSingleLineTextField passwText;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialRaisedButton iniciarButton;
+        private MaterialSkin.Controls.MaterialRaisedButton contraOlvidada;
     }
 }

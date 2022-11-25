@@ -40,7 +40,7 @@ namespace RaquetZone.formularios.Rol2
         {
             ListadoClientes LC = new ListadoClientes();
             LC.Show();
-            this.Hide();
+            this.Close();
             
         }
 

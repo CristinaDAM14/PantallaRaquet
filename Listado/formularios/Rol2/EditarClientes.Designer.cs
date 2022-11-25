@@ -43,6 +43,8 @@ namespace RaquetZone.formularios.Rol2
             this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -75,7 +77,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(491, 187);
+            this.emailText.Location = new System.Drawing.Point(491, 215);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
@@ -90,7 +92,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(152, 254);
+            this.telText.Location = new System.Drawing.Point(152, 274);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
@@ -105,7 +107,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.numText.Depth = 0;
             this.numText.Hint = "Número de horas";
-            this.numText.Location = new System.Drawing.Point(491, 254);
+            this.numText.Location = new System.Drawing.Point(491, 270);
             this.numText.MouseState = MaterialSkin.MouseState.HOVER;
             this.numText.Name = "numText";
             this.numText.PasswordChar = '\0';
@@ -120,7 +122,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.passText.Depth = 0;
             this.passText.Hint = "Contraseña";
-            this.passText.Location = new System.Drawing.Point(152, 187);
+            this.passText.Location = new System.Drawing.Point(152, 215);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
             this.passText.PasswordChar = '\0';
@@ -168,7 +170,7 @@ namespace RaquetZone.formularios.Rol2
             this.dniLabel.Depth = 0;
             this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dniLabel.Location = new System.Drawing.Point(100, 124);
+            this.dniLabel.Location = new System.Drawing.Point(112, 124);
             this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniLabel.Name = "dniLabel";
             this.dniLabel.Size = new System.Drawing.Size(34, 19);
@@ -181,7 +183,7 @@ namespace RaquetZone.formularios.Rol2
             this.passLabel.Depth = 0;
             this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.passLabel.Location = new System.Drawing.Point(48, 187);
+            this.passLabel.Location = new System.Drawing.Point(60, 215);
             this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(86, 19);
@@ -194,7 +196,7 @@ namespace RaquetZone.formularios.Rol2
             this.telLabel.Depth = 0;
             this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.telLabel.Location = new System.Drawing.Point(65, 254);
+            this.telLabel.Location = new System.Drawing.Point(77, 274);
             this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.telLabel.Name = "telLabel";
             this.telLabel.Size = new System.Drawing.Size(69, 19);
@@ -207,7 +209,7 @@ namespace RaquetZone.formularios.Rol2
             this.nomLabel.Depth = 0;
             this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.nomLabel.Location = new System.Drawing.Point(403, 124);
+            this.nomLabel.Location = new System.Drawing.Point(422, 124);
             this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomLabel.Name = "nomLabel";
             this.nomLabel.Size = new System.Drawing.Size(63, 19);
@@ -220,7 +222,7 @@ namespace RaquetZone.formularios.Rol2
             this.emailLabel.Depth = 0;
             this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.emailLabel.Location = new System.Drawing.Point(419, 187);
+            this.emailLabel.Location = new System.Drawing.Point(438, 215);
             this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(47, 19);
@@ -233,18 +235,42 @@ namespace RaquetZone.formularios.Rol2
             this.horasLabel.Depth = 0;
             this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horasLabel.Location = new System.Drawing.Point(416, 254);
+            this.horasLabel.Location = new System.Drawing.Point(435, 270);
             this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horasLabel.Name = "horasLabel";
             this.horasLabel.Size = new System.Drawing.Size(50, 19);
             this.horasLabel.TabIndex = 31;
             this.horasLabel.Text = "Horas";
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = null;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(21, 174);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(732, 10);
+            this.materialTabSelector1.TabIndex = 43;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // materialTabSelector2
+            // 
+            this.materialTabSelector2.BaseTabControl = null;
+            this.materialTabSelector2.Depth = 0;
+            this.materialTabSelector2.Location = new System.Drawing.Point(-3, 174);
+            this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector2.Name = "materialTabSelector2";
+            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.TabIndex = 44;
+            this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
             // EditarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialTabSelector2);
+            this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.horasLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nomLabel);
@@ -283,5 +309,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel nomLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
         private MaterialSkin.Controls.MaterialLabel horasLabel;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
     }
 }

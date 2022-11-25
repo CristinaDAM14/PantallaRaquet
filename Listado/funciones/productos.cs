@@ -16,6 +16,7 @@ namespace RaquetZone.funciones
         public double ivaprod { get; set; }
         public double descuentoprod { get; set; }
         public int stockprod { get; set; }
+        public string empresa_cif { get; set; }
 
     }
 }

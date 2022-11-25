@@ -44,9 +44,8 @@ namespace RaquetZone.formularios
             this.listaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaDatos.Location = new System.Drawing.Point(50, 145);
             this.listaDatos.Name = "listaDatos";
-            this.listaDatos.Size = new System.Drawing.Size(767, 360);
+            this.listaDatos.Size = new System.Drawing.Size(943, 360);
             this.listaDatos.TabIndex = 0;
-            this.listaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaDatos_CellContentClick);
             // 
             // buttonVolver
             // 
@@ -65,7 +64,7 @@ namespace RaquetZone.formularios
             // buttonEliminar
             // 
             this.buttonEliminar.Depth = 0;
-            this.buttonEliminar.Location = new System.Drawing.Point(348, 520);
+            this.buttonEliminar.Location = new System.Drawing.Point(465, 523);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Primary = true;
@@ -80,7 +79,7 @@ namespace RaquetZone.formularios
             this.editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar.BackgroundImage")));
             this.editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Location = new System.Drawing.Point(839, 145);
+            this.editar.Location = new System.Drawing.Point(999, 145);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(39, 34);
             this.editar.TabIndex = 2;
@@ -121,7 +120,7 @@ namespace RaquetZone.formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 610);
+            this.ClientSize = new System.Drawing.Size(1050, 610);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarDNI);
             this.Controls.Add(this.buttonVolver);

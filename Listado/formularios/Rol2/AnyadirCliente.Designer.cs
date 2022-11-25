@@ -37,6 +37,7 @@ namespace RaquetZone.formularios.Rol2
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.SuspendLayout();
             // 
             // buttonEditar
@@ -69,7 +70,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(421, 193);
+            this.emailText.Location = new System.Drawing.Point(421, 219);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
@@ -84,7 +85,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(106, 260);
+            this.telText.Location = new System.Drawing.Point(106, 286);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
@@ -99,7 +100,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.numText.Depth = 0;
             this.numText.Hint = "Número de horas";
-            this.numText.Location = new System.Drawing.Point(421, 260);
+            this.numText.Location = new System.Drawing.Point(421, 286);
             this.numText.MouseState = MaterialSkin.MouseState.HOVER;
             this.numText.Name = "numText";
             this.numText.PasswordChar = '\0';
@@ -114,7 +115,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.passText.Depth = 0;
             this.passText.Hint = "Contraseña";
-            this.passText.Location = new System.Drawing.Point(106, 193);
+            this.passText.Location = new System.Drawing.Point(106, 219);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
             this.passText.PasswordChar = '\0';
@@ -155,11 +156,23 @@ namespace RaquetZone.formularios.Rol2
             this.dniText.TabIndex = 10;
             this.dniText.UseSystemPasswordChar = false;
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = null;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(-7, 177);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector1.TabIndex = 43;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
             // AnyadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.emailText);
@@ -185,5 +198,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
     }
 }

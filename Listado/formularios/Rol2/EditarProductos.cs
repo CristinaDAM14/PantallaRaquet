@@ -39,7 +39,7 @@ namespace RaquetZone.formularios.Rol2
         {
             ListadoProductos LP = new ListadoProductos();
             LP.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -50,6 +50,7 @@ namespace RaquetZone.formularios.Rol2
 
             String datos = @"{
 " + "\n" +
+@"        ""idprod"": """ + idText.Text + "\"," + "\n" +
 @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
 @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
 @"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +

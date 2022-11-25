@@ -45,7 +45,7 @@ namespace RaquetZone.formularios
             this.listaDatosEmpresas.Location = new System.Drawing.Point(47, 142);
             this.listaDatosEmpresas.Name = "listaDatosEmpresas";
             this.listaDatosEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaDatosEmpresas.Size = new System.Drawing.Size(765, 360);
+            this.listaDatosEmpresas.Size = new System.Drawing.Size(946, 360);
             this.listaDatosEmpresas.TabIndex = 2;
             // 
             // editar
@@ -53,7 +53,7 @@ namespace RaquetZone.formularios
             this.editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar.BackgroundImage")));
             this.editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Location = new System.Drawing.Point(839, 142);
+            this.editar.Location = new System.Drawing.Point(999, 142);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(39, 33);
             this.editar.TabIndex = 4;
@@ -63,7 +63,7 @@ namespace RaquetZone.formularios
             // buttonEliminar
             // 
             this.buttonEliminar.Depth = 0;
-            this.buttonEliminar.Location = new System.Drawing.Point(340, 522);
+            this.buttonEliminar.Location = new System.Drawing.Point(457, 522);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Primary = true;
@@ -121,7 +121,7 @@ namespace RaquetZone.formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 610);
+            this.ClientSize = new System.Drawing.Size(1050, 610);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarCIF);
             this.Controls.Add(this.buttonVolver);

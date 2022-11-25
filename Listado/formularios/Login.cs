@@ -39,8 +39,6 @@ namespace RaquetZone.formularios
 
             string persona = r.getItem();
 
-
-
             string rol = "rolusr\":3";
             string rol2 = "rolusr\":2";
             string rol1 = "rolusr\":1";
@@ -48,16 +46,17 @@ namespace RaquetZone.formularios
             bool tipoRol = persona.Contains(rol);
             bool tipoRol2 = persona.Contains(rol2);
             bool tipoRol1 = persona.Contains(rol1);
+            funciones.funciones F1 = new funciones.funciones();
 
             if (persona == "[]")
             {
 
-                MessageBox.Show("Error a la hora de incluir los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error a la hora de introducir los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (tipoRol == true)
             {
 
-                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK);
+                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK, MessageBoxIcon.None);
                 PantallaPrincipal P1 = new PantallaPrincipal();
                 P1.Show();
                 this.Hide();
@@ -66,7 +65,7 @@ namespace RaquetZone.formularios
             else if (tipoRol2 == true)
             {
 
-                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK);
+                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK, MessageBoxIcon.None);
                 Rol2.PantallaPrincipalRol2 P2 = new Rol2.PantallaPrincipalRol2();
                 P2.Show();
                 this.Hide();
@@ -74,13 +73,16 @@ namespace RaquetZone.formularios
             }
             else if (tipoRol1 == true)
             {
-                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario + ", pero este apartado todavía no está implementado ", "Sesión iniciada", MessageBoxButtons.OK);
+                MessageBox.Show("Acabas de intentar iniciar sesión con el DNI " + usuario + ", pero un empleado no puede entrar ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
             }
-            else
-            {
-                MessageBox.Show("El apartado de clientes todavía no está creado");
-            }
+        }
+
+        private void contraOlvidada_Click(object sender, EventArgs e)
+        {
+            ComprobarCorreo CC = new ComprobarCorreo();
+            CC.Show();
+
         }
     }
 }

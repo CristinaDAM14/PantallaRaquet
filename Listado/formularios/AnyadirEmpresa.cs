@@ -67,7 +67,7 @@ namespace RaquetZone.formularios
         {
             GestionEmpresas G1 = new GestionEmpresas();
             G1.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
