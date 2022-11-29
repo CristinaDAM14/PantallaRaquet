@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.actText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.direcText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -39,6 +37,8 @@
             this.cifText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // actText
@@ -55,32 +55,6 @@
             this.actText.Size = new System.Drawing.Size(142, 23);
             this.actText.TabIndex = 7;
             this.actText.UseSystemPasswordChar = false;
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Depth = 0;
-            this.buttonEditar.Location = new System.Drawing.Point(388, 365);
-            this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Primary = true;
-            this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 8;
-            this.buttonEditar.Text = "Añadir";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(168, 365);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 9;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // direcText
             // 
@@ -190,20 +164,50 @@
             this.materialTabSelector2.Location = new System.Drawing.Point(-3, 180);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.Size = new System.Drawing.Size(811, 10);
             this.materialTabSelector2.TabIndex = 44;
             this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(246, 363);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 61;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(388, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 40);
+            this.button1.TabIndex = 64;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AnyadirEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.actText);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.direcText);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
@@ -220,8 +224,6 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialSingleLineTextField actText;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialSingleLineTextField direcText;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
@@ -230,5 +232,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField cifText;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
+        private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button button1;
     }
 }

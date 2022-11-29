@@ -97,6 +97,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -168,6 +169,12 @@
     <Compile Include="formularios\Rol2\AnyadirCliente.Designer.cs">
       <DependentUpon>AnyadirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\AnyadirCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirCompras.Designer.cs">
+      <DependentUpon>AnyadirCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Rol2\AnyadirProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +186,12 @@
     </Compile>
     <Compile Include="formularios\Rol2\EditarClientes.Designer.cs">
       <DependentUpon>EditarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarCompras.Designer.cs">
+      <DependentUpon>EditarCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\Rol2\EditarProductos.cs">
       <SubType>Form</SubType>
@@ -270,6 +283,7 @@
     <Compile Include="funciones\empresa.cs" />
     <Compile Include="funciones\funciones.cs" />
     <Compile Include="funciones\productos.cs" />
+    <Compile Include="funciones\producto_compra.cs" />
     <Compile Include="funciones\usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,11 +305,17 @@
     <EmbeddedResource Include="formularios\Rol2\AnyadirCliente.resx">
       <DependentUpon>AnyadirCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\AnyadirCompras.resx">
+      <DependentUpon>AnyadirCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\AnyadirProductos.resx">
       <DependentUpon>AnyadirProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EditarClientes.resx">
       <DependentUpon>EditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\EditarCompras.resx">
+      <DependentUpon>EditarCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EditarProductos.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
@@ -395,6 +415,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\verde.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\icono_volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cerrar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\añadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\añadir_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\actualizar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

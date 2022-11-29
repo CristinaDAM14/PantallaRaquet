@@ -53,13 +53,6 @@ namespace RaquetZone.formularios.Rol2
             }
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionProductos GP = new GestionProductos();
-            GP.Show();
-            this.Close();
-        }
-
         private void editarProductos_Click(object sender, EventArgs e)
         {
 
@@ -106,6 +99,13 @@ namespace RaquetZone.formularios.Rol2
 
             }
 
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            GestionProductos GP = new GestionProductos();
+            GP.Show();
+            this.Close();
         }
     }
 }

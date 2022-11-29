@@ -30,28 +30,14 @@ namespace RaquetZone.formularios.Rol2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoProductos));
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaProductos = new System.Windows.Forms.DataGridView();
             this.editarProductos = new System.Windows.Forms.Button();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.bVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVolver.Location = new System.Drawing.Point(12, 554);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(73, 39);
-            this.buttonVolver.TabIndex = 45;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // buttonEliminar
             // 
@@ -116,14 +102,29 @@ namespace RaquetZone.formularios.Rol2
             this.buscarID.TabIndex = 54;
             this.buscarID.UseSystemPasswordChar = false;
             // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(12, 558);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 62;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
             // ListadoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarID);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editarProductos);
             this.Controls.Add(this.listaProductos);
@@ -136,12 +137,11 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private System.Windows.Forms.Button editarProductos;
         private System.Windows.Forms.DataGridView listaProductos;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
+        private System.Windows.Forms.Button bVolver;
     }
 }

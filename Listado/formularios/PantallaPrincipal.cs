@@ -62,14 +62,6 @@ namespace RaquetZone.formularios
             GE.Show();
         }
 
-        private void loginBotton_Click(object sender, EventArgs e)
-        {
-            Login L1 = new Login();
-            
-            L1.Show();
-            this.Close();
-        }
-
         private void noteButton_Click(object sender, EventArgs e)
         {
             Process p;
@@ -78,6 +70,14 @@ namespace RaquetZone.formularios
             p.WaitForExit();
             Console.WriteLine("Aplication finished in date and time {0}", p.ExitTime);
 
+        }
+
+        private void loginBotton_Click_1(object sender, EventArgs e)
+        {
+            Login L1 = new Login();
+            
+            L1.Show();
+            this.Close();
         }
     }
 }

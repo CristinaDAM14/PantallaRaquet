@@ -29,87 +29,32 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.ivaText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.stockText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.preText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.desText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.categoriaText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.idText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.editarB = new System.Windows.Forms.Button();
+            this.passLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.ivaBox = new System.Windows.Forms.ComboBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.stockNumeric = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.stockNumeric)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Depth = 0;
-            this.buttonEditar.Location = new System.Drawing.Point(424, 364);
-            this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Primary = true;
-            this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 32;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(204, 364);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 33;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            // 
-            // ivaText
-            // 
-            this.ivaText.Depth = 0;
-            this.ivaText.Hint = "IVA";
-            this.ivaText.Location = new System.Drawing.Point(652, 223);
-            this.ivaText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ivaText.Name = "ivaText";
-            this.ivaText.PasswordChar = '\0';
-            this.ivaText.SelectedText = "";
-            this.ivaText.SelectionLength = 0;
-            this.ivaText.SelectionStart = 0;
-            this.ivaText.Size = new System.Drawing.Size(88, 23);
-            this.ivaText.TabIndex = 29;
-            this.ivaText.UseSystemPasswordChar = false;
-            // 
-            // stockText
-            // 
-            this.stockText.Depth = 0;
-            this.stockText.Hint = "Stock";
-            this.stockText.Location = new System.Drawing.Point(161, 289);
-            this.stockText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.stockText.Name = "stockText";
-            this.stockText.PasswordChar = '\0';
-            this.stockText.SelectedText = "";
-            this.stockText.SelectionLength = 0;
-            this.stockText.SelectionStart = 0;
-            this.stockText.Size = new System.Drawing.Size(166, 23);
-            this.stockText.TabIndex = 30;
-            this.stockText.UseSystemPasswordChar = false;
             // 
             // preText
             // 
             this.preText.Depth = 0;
             this.preText.Hint = "Precio";
-            this.preText.Location = new System.Drawing.Point(495, 219);
+            this.preText.Location = new System.Drawing.Point(161, 263);
             this.preText.MouseState = MaterialSkin.MouseState.HOVER;
             this.preText.Name = "preText";
             this.preText.PasswordChar = '\0';
@@ -165,32 +110,6 @@ namespace RaquetZone.formularios.Rol2
             this.nomText.TabIndex = 26;
             this.nomText.UseSystemPasswordChar = false;
             // 
-            // horasLabel
-            // 
-            this.horasLabel.AutoSize = true;
-            this.horasLabel.Depth = 0;
-            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horasLabel.Location = new System.Drawing.Point(603, 223);
-            this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.horasLabel.Name = "horasLabel";
-            this.horasLabel.Size = new System.Drawing.Size(33, 19);
-            this.horasLabel.TabIndex = 39;
-            this.horasLabel.Text = "IVA";
-            // 
-            // emailLabel
-            // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Depth = 0;
-            this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.emailLabel.Location = new System.Drawing.Point(81, 289);
-            this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(48, 19);
-            this.emailLabel.TabIndex = 38;
-            this.emailLabel.Text = "Stock";
-            // 
             // nomLabel
             // 
             this.nomLabel.AutoSize = true;
@@ -210,25 +129,12 @@ namespace RaquetZone.formularios.Rol2
             this.telLabel.Depth = 0;
             this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.telLabel.Location = new System.Drawing.Point(420, 219);
+            this.telLabel.Location = new System.Drawing.Point(77, 263);
             this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.telLabel.Name = "telLabel";
             this.telLabel.Size = new System.Drawing.Size(52, 19);
             this.telLabel.TabIndex = 36;
             this.telLabel.Text = "Precio";
-            // 
-            // passLabel
-            // 
-            this.passLabel.AutoSize = true;
-            this.passLabel.Depth = 0;
-            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.passLabel.Location = new System.Drawing.Point(48, 215);
-            this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(81, 19);
-            this.passLabel.TabIndex = 35;
-            this.passLabel.Text = "Descuento";
             // 
             // dniLabel
             // 
@@ -290,29 +196,117 @@ namespace RaquetZone.formularios.Rol2
             this.materialTabSelector2.Location = new System.Drawing.Point(-4, 176);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.Size = new System.Drawing.Size(812, 10);
             this.materialTabSelector2.TabIndex = 44;
             this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(282, 362);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 65;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // editarB
+            // 
+            this.editarB.BackColor = System.Drawing.Color.Transparent;
+            this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
+            this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.FlatAppearance.BorderSize = 0;
+            this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editarB.Location = new System.Drawing.Point(424, 363);
+            this.editarB.Name = "editarB";
+            this.editarB.Size = new System.Drawing.Size(45, 40);
+            this.editarB.TabIndex = 72;
+            this.editarB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editarB.UseVisualStyleBackColor = true;
+            this.editarB.Click += new System.EventHandler(this.editarB_Click);
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.Depth = 0;
+            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passLabel.Location = new System.Drawing.Point(48, 215);
+            this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(81, 19);
+            this.passLabel.TabIndex = 35;
+            this.passLabel.Text = "Descuento";
+            // 
+            // ivaBox
+            // 
+            this.ivaBox.FormattingEnabled = true;
+            this.ivaBox.Items.AddRange(new object[] {
+            "4%",
+            "10%",
+            "21%"});
+            this.ivaBox.Location = new System.Drawing.Point(461, 217);
+            this.ivaBox.Name = "ivaBox";
+            this.ivaBox.Size = new System.Drawing.Size(121, 21);
+            this.ivaBox.TabIndex = 78;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(422, 219);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(33, 19);
+            this.materialLabel2.TabIndex = 77;
+            this.materialLabel2.Text = "IVA";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(634, 219);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(48, 19);
+            this.materialLabel3.TabIndex = 76;
+            this.materialLabel3.Text = "Stock";
+            // 
+            // stockNumeric
+            // 
+            this.stockNumeric.Location = new System.Drawing.Point(688, 218);
+            this.stockNumeric.Name = "stockNumeric";
+            this.stockNumeric.Size = new System.Drawing.Size(49, 20);
+            this.stockNumeric.TabIndex = 75;
             // 
             // EditarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ivaBox);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.stockNumeric);
+            this.Controls.Add(this.editarB);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.idText);
-            this.Controls.Add(this.horasLabel);
-            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.telLabel);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.dniLabel);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.ivaText);
-            this.Controls.Add(this.stockText);
             this.Controls.Add(this.preText);
             this.Controls.Add(this.desText);
             this.Controls.Add(this.categoriaText);
@@ -320,30 +314,30 @@ namespace RaquetZone.formularios.Rol2
             this.Name = "EditarProductos";
             this.Text = "Editar Productos";
             this.Load += new System.EventHandler(this.EditarProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.stockNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
-        private MaterialSkin.Controls.MaterialSingleLineTextField ivaText;
-        private MaterialSkin.Controls.MaterialSingleLineTextField stockText;
         private MaterialSkin.Controls.MaterialSingleLineTextField preText;
         private MaterialSkin.Controls.MaterialSingleLineTextField desText;
         private MaterialSkin.Controls.MaterialSingleLineTextField categoriaText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
-        private MaterialSkin.Controls.MaterialLabel horasLabel;
-        private MaterialSkin.Controls.MaterialLabel emailLabel;
         private MaterialSkin.Controls.MaterialLabel nomLabel;
         private MaterialSkin.Controls.MaterialLabel telLabel;
-        private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel dniLabel;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField idText;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
+        private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button editarB;
+        private MaterialSkin.Controls.MaterialLabel passLabel;
+        private System.Windows.Forms.ComboBox ivaBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.NumericUpDown stockNumeric;
     }
 }

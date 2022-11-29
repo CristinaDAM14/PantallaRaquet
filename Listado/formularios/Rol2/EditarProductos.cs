@@ -21,9 +21,9 @@ namespace RaquetZone.formularios.Rol2
             nomText.Text = nom;
             categoriaText.Text = cate;
             preText.Text = precio;
-            ivaText.Text = iva;
+            ivaBox.Text = iva + "%";
             desText.Text = descuento;
-            stockText.Text = stock;
+            stockNumeric.Value = Int32.Parse(stock);
         }
 
         private void EditarProductos_Load(object sender, EventArgs e)
@@ -35,18 +35,34 @@ namespace RaquetZone.formularios.Rol2
 
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
         {
             ListadoProductos LP = new ListadoProductos();
             LP.Show();
             this.Close();
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void editarB_Click(object sender, EventArgs e)
         {
+
+            string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
+
+            if (iva.Equals("4%"))
+            {
+                iva = "4";
+            }
+            else if (iva.Equals("10%"))
+            {
+                iva = "10";
+            }
+            else
+            {
+                iva = "21";
+            }
+
             String url = "http://localhost:8081/producto/modify" + idText.Text;
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "PUT");
+            funciones.conexion r = new funciones.conexion(url, "PUT");
 
             String datos = @"{
 " + "\n" +
@@ -54,9 +70,9 @@ namespace RaquetZone.formularios.Rol2
 @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
 @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
 @"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
-@"        ""ivaprod"": """ + Double.Parse(ivaText.Text) + "\"," + "\n" +
+@"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
 @"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
-@"        ""stockprod"": """ + Int32.Parse(stockText.Text) + "\"" + "\n" +
+@"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
 @"    }";
 
             r.putItem(url, datos);

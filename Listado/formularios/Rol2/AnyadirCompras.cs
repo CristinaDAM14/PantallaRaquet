@@ -12,14 +12,14 @@ using MaterialSkin;
 
 namespace RaquetZone.formularios.Rol2
 {
-    public partial class AnyadirCliente : MaterialForm
+    public partial class AnyadirCompras : MaterialForm
     {
-        public AnyadirCliente()
+        public AnyadirCompras()
         {
             InitializeComponent();
         }
 
-        private void AnyadirCliente_Load(object sender, EventArgs e)
+        private void AnyadirCompras_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -30,30 +30,26 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            GestionClientes GC = new GestionClientes();
-            GC.Show();
+            GestionCompras PP2 = new GestionCompras();
+            PP2.Show();
             this.Close();
         }
 
-        private void buttonAnyadir_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/cliente/add";
+            String url = "http://localhost:8081/compra/add";
 
-            funciones.conexion r = new funciones.conexion(url, "POST");
+            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
-@"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
-@"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-@"        ""numhorascli"": " + Int32.Parse(numText.Text) + "," + "\n" +
-@"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
+@"        ""fechacomp"": """ + fechaText.Text + "\"," + "\n" +
+@"        ""horacomp"": """ + horaText.Text + "\"," + "\n" +
 @"    }";
 
             String res = r.postItem(datos);
 
-            MessageBox.Show("Cliente añadido a la base de datos");
+            MessageBox.Show("Compra añadida a la base de datos");
         }
     }
 }

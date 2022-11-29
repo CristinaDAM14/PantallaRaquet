@@ -29,14 +29,6 @@ namespace RaquetZone.formularios
 
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-
-            Login PP2 = new Login();
-            PP2.Show();
-            this.Close();
-        }
-
         private void buttonEnviar_Click(object sender, EventArgs e)
         {
 
@@ -62,7 +54,7 @@ namespace RaquetZone.formularios
                         string pass = juser.passwordusr;
                         string body = "La contraseña que olvidaste es " + pass;
                         funciones.funciones.sendEmail(email, body);
-                        MessageBox.Show("El email ha sido enviado " + pass);
+                        MessageBox.Show("El email ha sido enviado ");
                     }
                     else
                     {
@@ -77,11 +69,16 @@ namespace RaquetZone.formularios
             {
                 MessageBox.Show("La operación se ha detenido, alguno de los datos no están bien");
             }
-            
+                       
+        }
 
-           
+        private void bVolver_Click(object sender, EventArgs e)
+        {
 
-            
+            Login PP2 = new Login();
+            PP2.Show();
+            this.Close();
+
         }
     }
 }

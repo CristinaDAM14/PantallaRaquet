@@ -45,19 +45,18 @@ namespace RaquetZone.formularios
             }
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
         {
             RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
             LU1.Show();
             this.Close();
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void editarB_Click(object sender, EventArgs e)
         {
-
             String url = "http://localhost:8081/usuario/modify" + dniText.Text;
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "PUT");
+            funciones.conexion r = new funciones.conexion(url, "PUT");
 
             String body = @"{
 " + "\n" +
@@ -70,7 +69,7 @@ namespace RaquetZone.formularios
 @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
 @"    }";
             r.putItem(url, body);
-            MessageBox.Show("El usuario ha sido modificado");
+            MessageBox.Show("Editado con éxito");
         }
     }
 }

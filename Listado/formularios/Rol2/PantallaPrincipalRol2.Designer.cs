@@ -32,11 +32,11 @@ namespace RaquetZone.formularios.Rol2
             this.edgeButton = new System.Windows.Forms.Button();
             this.chromeButton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
-            this.buttonLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGU = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGC = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGP = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonCompras = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // edgeButton
@@ -71,19 +71,6 @@ namespace RaquetZone.formularios.Rol2
             this.noteButton.TabIndex = 9;
             this.noteButton.UseVisualStyleBackColor = true;
             this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Depth = 0;
-            this.buttonLogin.Location = new System.Drawing.Point(474, 71);
-            this.buttonLogin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Primary = true;
-            this.buttonLogin.Size = new System.Drawing.Size(114, 32);
-            this.buttonLogin.TabIndex = 20;
-            this.buttonLogin.Text = "Cerrar Sesión";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonGU
             // 
@@ -137,15 +124,30 @@ namespace RaquetZone.formularios.Rol2
             this.buttonCompras.UseVisualStyleBackColor = true;
             this.buttonCompras.Click += new System.EventHandler(this.buttonCompras_Click);
             // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogin.BackgroundImage = global::Listado.Properties.Resources.cerrar_sesion;
+            this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Location = new System.Drawing.Point(554, 71);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(34, 32);
+            this.buttonLogin.TabIndex = 60;
+            this.buttonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click_1);
+            // 
             // PantallaPrincipalRol2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 380);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonCompras);
             this.Controls.Add(this.buttonGP);
-            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonGU);
             this.Controls.Add(this.buttonGC);
             this.Controls.Add(this.edgeButton);
@@ -161,10 +163,10 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button noteButton;
         private System.Windows.Forms.Button chromeButton;
         private System.Windows.Forms.Button edgeButton;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonLogin;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGU;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGC;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGP;
         private MaterialSkin.Controls.MaterialRaisedButton buttonCompras;
+        private System.Windows.Forms.Button buttonLogin;
     }
 }

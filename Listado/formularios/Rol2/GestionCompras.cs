@@ -37,7 +37,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonAC_Click(object sender, EventArgs e)
         {
-
+            AnyadirCompras AC = new AnyadirCompras();
+            AC.Show();
+            this.Hide();
         }
     }
 }

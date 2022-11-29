@@ -73,13 +73,6 @@ namespace RaquetZone.formularios
             listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionEmpresas GE1 = new GestionEmpresas();
-            GE1.Show();
-            this.Close();
-        }
-
         private void buscadorButton_Click(object sender, EventArgs e)
         {
             bool supervisorEmpresas = false;
@@ -102,6 +95,13 @@ namespace RaquetZone.formularios
                 MessageBox.Show("CIF Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            GestionEmpresas GE1 = new GestionEmpresas();
+            GE1.Show();
+            this.Close();
         }
     }
 }

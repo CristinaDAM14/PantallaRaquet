@@ -28,46 +28,32 @@ namespace RaquetZone.formularios
 
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
         {
-            /*
-             Aqui se obtienen los datos y se genera la cadena JSON que se envia
-             */
+                     GestionEmpresas G1 = new GestionEmpresas();
+                    G1.Show();
+                    this.Close();
+        }
 
-            String cif = cifText.Text;
-            String nombre = nomText.Text;
-            String web = webText.Text;
-            String telefono = telText.Text;
-            String email = emailText.Text;
-            String direccion = direcText.Text;
-            String actividad = actText.Text;
-
-
-            /* No se comprueban errores */
+        private void button1_Click(object sender, EventArgs e)
+        {
             String url = "http://localhost:8081/empresa/add";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
+            funciones.conexion r = new funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""cifemp"": """ + cif + "\"," + "\n" +
-@"        ""nomemp"": """ + nombre + "\"," + "\n" +
-@"        ""webemp"": """ + web + "\"," + "\n" +
-@"        ""telemp"": """ + telefono + "\"," + "\n" +
-@"        ""emailemp"": """ + email + "\"," + "\n" +
-@"        ""direcemp"": """ + direccion + "\"," + "\n" +
-@"        ""activiemp"": """ + actividad + "\"" + "\n" +
+@"        ""cifemp"": """ + cifText.Text + "\"," + "\n" +
+@"        ""nomemp"": """ + nomText.Text + "\"," + "\n" +
+@"        ""webemp"": """ + webText.Text + "\"," + "\n" +
+@"        ""telemp"": """ + telText.Text + "\"," + "\n" +
+@"        ""emailemp"": """ + emailText.Text + "\"," + "\n" +
+@"        ""direcemp"": """ + direcText.Text + "\"," + "\n" +
+@"        ""activiemp"": """ + actText.Text + "\"" + "\n" +
 @"    }";
             String res = r.postItem(datos);
 
-            MessageBox.Show("Resultado: " + res);
-        }
-
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionEmpresas G1 = new GestionEmpresas();
-            G1.Show();
-            this.Close();
+            MessageBox.Show("Empresa añadida a la base de datos");
         }
     }
 }

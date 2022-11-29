@@ -86,18 +86,17 @@ namespace RaquetZone.formularios.Rol2
 
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            Login LU1 = new Login();
-            LU1.Show();
-            this.Close();
-
-        }
-
         private void buttonCompras_Click(object sender, EventArgs e)
         {
             GestionCompras LC = new GestionCompras();
             LC.Show();
+        }
+
+        private void buttonLogin_Click_1(object sender, EventArgs e)
+        {
+            Login LU1 = new Login();
+            LU1.Show();
+            this.Close();
         }
     }
 }

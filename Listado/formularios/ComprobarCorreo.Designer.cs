@@ -33,7 +33,7 @@ namespace RaquetZone.formularios
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buttonEnviar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -91,25 +91,27 @@ namespace RaquetZone.formularios
             this.buttonEnviar.UseVisualStyleBackColor = true;
             this.buttonEnviar.Click += new System.EventHandler(this.buttonEnviar_Click);
             // 
-            // buttonVolver
+            // bVolver
             // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(59, 259);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(85, 38);
-            this.buttonVolver.TabIndex = 5;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(100, 257);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 61;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
             // ComprobarCorreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 340);
-            this.Controls.Add(this.buttonVolver);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buttonEnviar);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.dniText);
@@ -127,6 +129,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEnviar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
+        private System.Windows.Forms.Button bVolver;
     }
 }

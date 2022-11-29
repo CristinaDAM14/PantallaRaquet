@@ -28,7 +28,7 @@ namespace RaquetZone.funciones
 
             String url = "http://localhost:8081/usuarios";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String user = r.getItem();
 
@@ -43,7 +43,7 @@ namespace RaquetZone.funciones
         {
             String url = "http://localhost:8081/empresa";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String compa = r.getItem();
 
@@ -58,7 +58,7 @@ namespace RaquetZone.funciones
         {
             String url = "http://localhost:8081/productos";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String produ = r.getItem();
 
@@ -73,7 +73,7 @@ namespace RaquetZone.funciones
         {
             String url = "http://localhost:8081/cliente";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String persona = r.getItem();
 
@@ -89,7 +89,7 @@ namespace RaquetZone.funciones
         {
             String url = "http://localhost:8081/compras";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String buy = r.getItem();
 
@@ -104,7 +104,7 @@ namespace RaquetZone.funciones
         {
             String url = "http://localhost:8081/compras/fecha";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
+            conexion r = new conexion(url, "GET");
 
             String buyF = r.getItem();
 
@@ -129,7 +129,7 @@ namespace RaquetZone.funciones
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
-                        smtp.Credentials = new System.Net.NetworkCredential("RaquetZone9@gmail.com", "llhfuvfgmugzrxsv");
+                        smtp.Credentials = new NetworkCredential("RaquetZone9@gmail.com", "llhfuvfgmugzrxsv");
                         smtp.EnableSsl = true;
                         smtp.Send(mail);
                     }
@@ -144,13 +144,22 @@ namespace RaquetZone.funciones
 
         public static void facturasPDF(string id, string fecha)
         {
+
+            // string descuento, string total, string precio, string nombre, string cantidad
+
             Document doc = new Document("Factura.docx");
             doc.Range.Replace("$nombre", id, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$fecha", fecha, new FindReplaceOptions(FindReplaceDirection.Forward));
+            /*doc.Range.Replace("$descuento", descuento, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$precio", precio, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$total", total, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$nombre1", nombre, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$cantidad", cantidad, new FindReplaceOptions(FindReplaceDirection.Forward));
+            */
             doc.Save("Factura.pdf");
 
             Process proceso = new Process();
-            proceso.StartInfo.FileName = @"E:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\Factura.pdf";
+            proceso.StartInfo.FileName = @"D:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\Factura.pdf";
             proceso.Start();
         }
 

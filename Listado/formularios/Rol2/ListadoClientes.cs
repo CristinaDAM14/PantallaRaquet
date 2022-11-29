@@ -29,13 +29,6 @@ namespace RaquetZone.formularios.Rol2
 
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionClientes GC = new GestionClientes();
-            GC.Show();
-            this.Close();
-        }
-
         private void editarProductos_Click(object sender, EventArgs e)
         {
             string dniText = listaClientes.CurrentRow.Cells[0].Value.ToString();
@@ -104,5 +97,11 @@ namespace RaquetZone.formularios.Rol2
             }
         }
 
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            GestionClientes GC = new GestionClientes();
+            GC.Show();
+            this.Close();
+        }
     }
 }

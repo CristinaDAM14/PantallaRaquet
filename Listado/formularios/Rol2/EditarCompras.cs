@@ -12,22 +12,18 @@ using MaterialSkin;
 
 namespace RaquetZone.formularios.Rol2
 {
-    public partial class EditarClientes : MaterialForm
+    public partial class EditarCompras : MaterialForm
     {
-        
-        public EditarClientes(string dni, string nom, string pass, string num, string tel, string email)
+        public EditarCompras(string id, string fecha, string hora)
         {
             InitializeComponent();
-            dniText.Text = dni;
-            nomText.Text = nom;
-            passText.Text = pass;
-            numText.Text = num;
-            telText.Text = tel;
-            emailText.Text = email;
+            idText.Text = id;
+            fechaText.Text = fecha;
+            horaText.Text = hora;
+
         }
 
-
-        private void EditarClientes_Load(object sender, EventArgs e)
+        private void EditarCompras_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -38,32 +34,27 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            ListadoClientes LC = new ListadoClientes();
+            ListadoCompras LC = new ListadoCompras();
             LC.Show();
             this.Close();
         }
 
         private void editarB_Click(object sender, EventArgs e)
         {
-
-            String url = "http://localhost:8081/cliente/modify" + dniText.Text;
+            String url = "http://localhost:8081/producto/modify" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 
             String datos = @"{
 " + "\n" +
-@"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
-@"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
-@"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-@"        ""numhorascli"": " + Int32.Parse(numText.Text) + "," + "\n" +
-@"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
+@"        ""idcomp"": """ + idText.Text + "\"," + "\n" +
+@"        ""fechacomp"": """ + fechaText.Text + "\"," + "\n" +
+@"        ""horacomp"": """ + horaText.Text + "\"," + "\n" +
 @"    }";
 
             r.putItem(url, datos);
 
             MessageBox.Show("Editado con éxito");
-
         }
     }
-}
+    }

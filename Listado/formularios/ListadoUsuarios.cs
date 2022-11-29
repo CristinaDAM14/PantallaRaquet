@@ -113,13 +113,6 @@ namespace RaquetZone.formularios
             
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
-            this.Close();
-        }
-
         private void buscadorButton_Click(object sender, EventArgs e)
         {
             bool supervisor = false;
@@ -143,6 +136,13 @@ namespace RaquetZone.formularios
                 MessageBox.Show("DNI Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void buttonVolver_Click_1(object sender, EventArgs e)
+        {
+            GestionUsuarios GU1 = new GestionUsuarios();
+            GU1.Show();
+            this.Close();
         }
     }
 }

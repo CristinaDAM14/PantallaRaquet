@@ -30,7 +30,6 @@ namespace RaquetZone.formularios.Rol2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoCompras));
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaCompras = new System.Windows.Forms.DataGridView();
             this.buttonFactura = new MaterialSkin.Controls.MaterialRaisedButton();
             this.radioFecha = new MaterialSkin.Controls.MaterialRadioButton();
@@ -38,22 +37,11 @@ namespace RaquetZone.formularios.Rol2
             this.labelOrdenar = new MaterialSkin.Controls.MaterialLabel();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.editarCompras = new System.Windows.Forms.Button();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVolver.Location = new System.Drawing.Point(15, 555);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(73, 39);
-            this.buttonVolver.TabIndex = 52;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // listaCompras
             // 
@@ -145,18 +133,65 @@ namespace RaquetZone.formularios.Rol2
             this.editarCompras.UseVisualStyleBackColor = true;
             this.editarCompras.Click += new System.EventHandler(this.editarCompras_Click);
             // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(12, 558);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 63;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // buscadorButton
+            // 
+            this.buscadorButton.Depth = 0;
+            this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscadorButton.Location = new System.Drawing.Point(237, 101);
+            this.buscadorButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buscadorButton.Name = "buscadorButton";
+            this.buscadorButton.Primary = true;
+            this.buscadorButton.Size = new System.Drawing.Size(61, 23);
+            this.buscadorButton.TabIndex = 65;
+            this.buscadorButton.Text = "Buscar";
+            this.buscadorButton.UseVisualStyleBackColor = true;
+            this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
+            // 
+            // buscarID
+            // 
+            this.buscarID.Depth = 0;
+            this.buscarID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarID.Hint = "ID";
+            this.buscarID.Location = new System.Drawing.Point(51, 101);
+            this.buscarID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buscarID.Name = "buscarID";
+            this.buscarID.PasswordChar = '\0';
+            this.buscarID.SelectedText = "";
+            this.buscarID.SelectionLength = 0;
+            this.buscarID.SelectionStart = 0;
+            this.buscarID.Size = new System.Drawing.Size(166, 23);
+            this.buscarID.TabIndex = 64;
+            this.buscarID.UseSystemPasswordChar = false;
+            // 
             // ListadoCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.buscadorButton);
+            this.Controls.Add(this.buscarID);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.editarCompras);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.labelOrdenar);
             this.Controls.Add(this.radioID);
             this.Controls.Add(this.radioFecha);
             this.Controls.Add(this.buttonFactura);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.listaCompras);
             this.Name = "ListadoCompras";
             this.Text = "Listado de Compras";
@@ -168,8 +203,6 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         public System.Windows.Forms.DataGridView listaCompras;
         private MaterialSkin.Controls.MaterialRaisedButton buttonFactura;
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
@@ -177,5 +210,8 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel labelOrdenar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private System.Windows.Forms.Button editarCompras;
+        private System.Windows.Forms.Button bVolver;
+        private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
+        private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
     }
 }

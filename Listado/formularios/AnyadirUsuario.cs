@@ -41,12 +41,18 @@ namespace RaquetZone.formularios
 
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
         {
+            GestionUsuarios GU1 = new GestionUsuarios();
+            GU1.Show();
+            this.Close();
+        }
 
+        private void buttonEditar_Click_1(object sender, EventArgs e)
+        {
             String url = "http://localhost:8081/usuario/add";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
+            funciones.conexion r = new funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
@@ -60,15 +66,7 @@ namespace RaquetZone.formularios
 @"    }";
             String res = r.postItem(datos);
 
-            MessageBox.Show("Resultado: " + datos);
-            
-        }
-
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
-            this.Close();
+            MessageBox.Show("usuario añadido a la base de datos");
         }
     }
 }

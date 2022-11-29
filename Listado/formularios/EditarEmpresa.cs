@@ -36,11 +36,18 @@ namespace RaquetZone.formularios
 
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
+            LE1.Show();
+            this.Close();
+        }
+
+        private void buttonEditar_Click_1(object sender, EventArgs e)
         {
             String url = "http://localhost:8081/empresa/modify" + cifText.Text;
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "PUT");
+            funciones.conexion r = new funciones.conexion(url, "PUT");
 
             String datos = @"{
 " + "\n" +
@@ -57,13 +64,5 @@ namespace RaquetZone.formularios
 
             MessageBox.Show("Editado con éxito");
         }
-
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
-            LE1.Show();
-            this.Close();
-        }
-
     }
 }

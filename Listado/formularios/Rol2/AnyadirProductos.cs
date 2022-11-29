@@ -28,34 +28,47 @@ namespace RaquetZone.formularios.Rol2
 
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
+        private void bVolver_Click(object sender, EventArgs e)
         {
             GestionProductos GP = new GestionProductos();
             GP.Show();
             this.Close();
         }
 
-        private void buttonEditar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
+
+            if (iva.Equals("4%")){
+                iva = "4";
+            }
+            else if (iva.Equals("10%"))
+            {
+                iva = "10";
+            }
+            else
+            {
+                iva = "21";
+            }
+
 
             String url = "http://localhost:8081/producto/add";
 
-            RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
+            funciones.conexion r = new funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
 @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
 @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
 @"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
-@"        ""ivaprod"": """ + Double.Parse(ivaText.Text) + "\"," + "\n" +
+@"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
 @"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
-@"        ""stockprod"": """ + Int32.Parse(stockText.Text) + "\"" + "\n" +
+@"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);
 
-            MessageBox.Show("Resultado: " + datos);
-
+            MessageBox.Show("Producto añadido a la base de datos");
         }
     }
 }

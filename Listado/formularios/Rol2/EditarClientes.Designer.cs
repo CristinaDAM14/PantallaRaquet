@@ -29,8 +29,6 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.numText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -45,33 +43,9 @@ namespace RaquetZone.formularios.Rol2
             this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.editarB = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Depth = 0;
-            this.buttonEditar.Location = new System.Drawing.Point(418, 356);
-            this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Primary = true;
-            this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 24;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(198, 356);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 25;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // emailText
             // 
@@ -260,15 +234,47 @@ namespace RaquetZone.formularios.Rol2
             this.materialTabSelector2.Location = new System.Drawing.Point(-3, 174);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector2.Size = new System.Drawing.Size(808, 10);
             this.materialTabSelector2.TabIndex = 44;
             this.materialTabSelector2.Text = "materialTabSelector2";
+            // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(276, 354);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 64;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // editarB
+            // 
+            this.editarB.BackColor = System.Drawing.Color.Transparent;
+            this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
+            this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.FlatAppearance.BorderSize = 0;
+            this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editarB.Location = new System.Drawing.Point(439, 354);
+            this.editarB.Name = "editarB";
+            this.editarB.Size = new System.Drawing.Size(45, 40);
+            this.editarB.TabIndex = 72;
+            this.editarB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editarB.UseVisualStyleBackColor = true;
+            this.editarB.Click += new System.EventHandler(this.editarB_Click);
             // 
             // EditarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.editarB);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.horasLabel);
@@ -277,8 +283,6 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.telLabel);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.dniLabel);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
             this.Controls.Add(this.numText);
@@ -294,9 +298,6 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
         private MaterialSkin.Controls.MaterialSingleLineTextField numText;
@@ -311,5 +312,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel horasLabel;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
+        private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button editarB;
     }
 }

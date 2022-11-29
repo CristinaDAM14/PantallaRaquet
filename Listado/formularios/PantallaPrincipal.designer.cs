@@ -28,33 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.edgeButton = new System.Windows.Forms.Button();
-            this.chromeButton = new System.Windows.Forms.Button();
             this.buttonGE = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGU = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.loginBotton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.loginBotton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
+            this.edgeButton = new System.Windows.Forms.Button();
+            this.chromeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // edgeButton
-            // 
-            this.edgeButton.BackgroundImage = global::Listado.Properties.Resources.medge;
-            this.edgeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.edgeButton.Location = new System.Drawing.Point(545, 336);
-            this.edgeButton.Name = "edgeButton";
-            this.edgeButton.Size = new System.Drawing.Size(36, 32);
-            this.edgeButton.TabIndex = 14;
-            this.edgeButton.UseVisualStyleBackColor = true;
-            // 
-            // chromeButton
-            // 
-            this.chromeButton.BackgroundImage = global::Listado.Properties.Resources.chrome;
-            this.chromeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chromeButton.Location = new System.Drawing.Point(503, 336);
-            this.chromeButton.Name = "chromeButton";
-            this.chromeButton.Size = new System.Drawing.Size(36, 32);
-            this.chromeButton.TabIndex = 13;
-            this.chromeButton.UseVisualStyleBackColor = true;
             // 
             // buttonGE
             // 
@@ -84,16 +64,18 @@
             // 
             // loginBotton
             // 
-            this.loginBotton.Depth = 0;
-            this.loginBotton.Location = new System.Drawing.Point(474, 76);
-            this.loginBotton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.loginBotton.BackColor = System.Drawing.Color.Transparent;
+            this.loginBotton.BackgroundImage = global::Listado.Properties.Resources.cerrar_sesion;
+            this.loginBotton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginBotton.FlatAppearance.BorderSize = 0;
+            this.loginBotton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBotton.Location = new System.Drawing.Point(556, 73);
             this.loginBotton.Name = "loginBotton";
-            this.loginBotton.Primary = true;
-            this.loginBotton.Size = new System.Drawing.Size(114, 32);
-            this.loginBotton.TabIndex = 17;
-            this.loginBotton.Text = "Cerrar Sesión";
+            this.loginBotton.Size = new System.Drawing.Size(34, 32);
+            this.loginBotton.TabIndex = 59;
+            this.loginBotton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.loginBotton.UseVisualStyleBackColor = true;
-            this.loginBotton.Click += new System.EventHandler(this.loginBotton_Click);
+            this.loginBotton.Click += new System.EventHandler(this.loginBotton_Click_1);
             // 
             // noteButton
             // 
@@ -105,14 +87,34 @@
             this.noteButton.TabIndex = 18;
             this.noteButton.UseVisualStyleBackColor = true;
             // 
+            // edgeButton
+            // 
+            this.edgeButton.BackgroundImage = global::Listado.Properties.Resources.medge;
+            this.edgeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.edgeButton.Location = new System.Drawing.Point(545, 336);
+            this.edgeButton.Name = "edgeButton";
+            this.edgeButton.Size = new System.Drawing.Size(36, 32);
+            this.edgeButton.TabIndex = 14;
+            this.edgeButton.UseVisualStyleBackColor = true;
+            // 
+            // chromeButton
+            // 
+            this.chromeButton.BackgroundImage = global::Listado.Properties.Resources.chrome;
+            this.chromeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chromeButton.Location = new System.Drawing.Point(503, 336);
+            this.chromeButton.Name = "chromeButton";
+            this.chromeButton.Size = new System.Drawing.Size(36, 32);
+            this.chromeButton.TabIndex = 13;
+            this.chromeButton.UseVisualStyleBackColor = true;
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 380);
             this.ControlBox = false;
-            this.Controls.Add(this.noteButton);
             this.Controls.Add(this.loginBotton);
+            this.Controls.Add(this.noteButton);
             this.Controls.Add(this.buttonGU);
             this.Controls.Add(this.buttonGE);
             this.Controls.Add(this.edgeButton);
@@ -129,8 +131,8 @@
         private System.Windows.Forms.Button chromeButton;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGE;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGU;
-        private MaterialSkin.Controls.MaterialRaisedButton loginBotton;
         private System.Windows.Forms.Button noteButton;
+        private System.Windows.Forms.Button loginBotton;
     }
 }
 

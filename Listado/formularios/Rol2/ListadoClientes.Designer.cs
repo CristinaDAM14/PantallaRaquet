@@ -30,28 +30,14 @@ namespace RaquetZone.formularios.Rol2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoClientes));
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaClientes = new System.Windows.Forms.DataGridView();
             this.editarProductos = new System.Windows.Forms.Button();
             this.buscarDNI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVolver.Location = new System.Drawing.Point(13, 556);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(73, 39);
-            this.buttonVolver.TabIndex = 50;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // buttonEliminar
             // 
@@ -116,14 +102,29 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.UseVisualStyleBackColor = true;
             this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
             // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(12, 558);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 64;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarDNI);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editarProductos);
             this.Controls.Add(this.listaClientes);
@@ -136,12 +137,11 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private System.Windows.Forms.Button editarProductos;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarDNI;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         public System.Windows.Forms.DataGridView listaClientes;
+        private System.Windows.Forms.Button bVolver;
     }
 }

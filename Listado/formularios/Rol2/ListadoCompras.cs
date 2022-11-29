@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
@@ -39,13 +40,6 @@ namespace RaquetZone.formularios.Rol2
             }
         }
 
-        private void buttonVolver_Click(object sender, EventArgs e)
-        {
-            PantallaPrincipalRol2 P2 = new PantallaPrincipalRol2();
-            P2.Show();
-            this.Close();
-        }
-
         private void MostrarCompras()
         {
             listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarComp();
@@ -58,11 +52,25 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonFactura_Click(object sender, EventArgs e)
         {
-            string id = listaCompras.CurrentRow.Cells[0].Value.ToString();
-            string fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
+            String id = listaCompras.CurrentRow.Cells[0].Value.ToString();
+            String fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
 
+            /*string url = "http://localhost:8081/compras/" + id;
+
+            funciones.conexion r = new funciones.conexion(url, "GET");
+
+            string producto = r.getItem();
+
+            var jprod = JsonConvert.DeserializeObject<funciones.compras>(producto);
+            string descuentoJ = jprod.descuentoprod;
+            string precioJ = jprod.precioprod;
+            string nombreJ = jprod.nombreprod;
+            string cantidadJ = jprod.cantidadprodcomp;
+
+            int suma = Int32.Parse(precioJ) * Int32.Parse(cantidadJ);
+            string total = suma.ToString();
+            */
             funciones.funciones.facturasPDF(id, fecha);
-            MessageBox.Show("Factura creada");
 
         }
 
@@ -105,7 +113,55 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarCompras_Click(object sender, EventArgs e)
         {
+            string id = listaCompras.CurrentRow.Cells[0].Value.ToString();
+            string fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
+            string hora;
 
+            if(listaCompras.CurrentRow.Cells[2].Value == null)
+            {
+                hora = "0";
+            }
+            else
+            {
+            hora = listaCompras.CurrentRow.Cells[2].Value.ToString();
+            }
+            
+
+
+            EditarCompras EC = new EditarCompras(id, fecha, hora);
+            EC.Show();
+            this.Hide();
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            GestionCompras P2 = new GestionCompras();
+            P2.Show();
+            this.Close();
+        }
+
+        private void buscadorButton_Click(object sender, EventArgs e)
+        {
+            bool supervisorClientes = false;
+
+            foreach (DataGridViewRow Row in listaCompras.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                string Valor = Convert.ToString(Row.Cells["idcomp"].Value);
+
+                if (Valor == this.buscarID.Text)
+                {
+                    listaCompras.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
+                    listaCompras.CurrentCell = listaCompras[0, Convert.ToInt32(strFila)];
+                    supervisorClientes = true;
+                }
+            }
+
+            if (supervisorClientes == false)
+            {
+                MessageBox.Show("ID Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

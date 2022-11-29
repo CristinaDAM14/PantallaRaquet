@@ -29,8 +29,6 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEditar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.numText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -38,33 +36,9 @@ namespace RaquetZone.formularios.Rol2
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.buttonAnyadir = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Depth = 0;
-            this.buttonEditar.Location = new System.Drawing.Point(421, 362);
-            this.buttonEditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Primary = true;
-            this.buttonEditar.Size = new System.Drawing.Size(123, 38);
-            this.buttonEditar.TabIndex = 16;
-            this.buttonEditar.Text = "Añadir";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Location = new System.Drawing.Point(201, 362);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(123, 38);
-            this.buttonVolver.TabIndex = 17;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // emailText
             // 
@@ -163,18 +137,48 @@ namespace RaquetZone.formularios.Rol2
             this.materialTabSelector1.Location = new System.Drawing.Point(-7, 177);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(782, 10);
+            this.materialTabSelector1.Size = new System.Drawing.Size(820, 10);
             this.materialTabSelector1.TabIndex = 43;
             this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(279, 360);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 65;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // buttonAnyadir
+            // 
+            this.buttonAnyadir.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAnyadir.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
+            this.buttonAnyadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAnyadir.FlatAppearance.BorderSize = 0;
+            this.buttonAnyadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnyadir.Location = new System.Drawing.Point(421, 362);
+            this.buttonAnyadir.Name = "buttonAnyadir";
+            this.buttonAnyadir.Size = new System.Drawing.Size(45, 40);
+            this.buttonAnyadir.TabIndex = 67;
+            this.buttonAnyadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonAnyadir.UseVisualStyleBackColor = true;
+            this.buttonAnyadir.Click += new System.EventHandler(this.buttonAnyadir_Click);
             // 
             // AnyadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAnyadir);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector1);
-            this.Controls.Add(this.buttonEditar);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
             this.Controls.Add(this.numText);
@@ -189,9 +193,6 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialRaisedButton buttonEditar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
         private MaterialSkin.Controls.MaterialSingleLineTextField numText;
@@ -199,5 +200,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button buttonAnyadir;
     }
 }

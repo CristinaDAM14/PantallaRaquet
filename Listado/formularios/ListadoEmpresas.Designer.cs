@@ -33,9 +33,9 @@ namespace RaquetZone.formularios
             this.listaDatosEmpresas = new System.Windows.Forms.DataGridView();
             this.editar = new System.Windows.Forms.Button();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonVolver = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarCIF = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.bVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatosEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,20 +73,6 @@ namespace RaquetZone.formularios
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Depth = 0;
-            this.buttonVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVolver.Location = new System.Drawing.Point(10, 556);
-            this.buttonVolver.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Primary = true;
-            this.buttonVolver.Size = new System.Drawing.Size(73, 39);
-            this.buttonVolver.TabIndex = 37;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            // 
             // buscadorButton
             // 
             this.buscadorButton.Depth = 0;
@@ -117,14 +103,29 @@ namespace RaquetZone.formularios
             this.buscarCIF.TabIndex = 54;
             this.buscarCIF.UseSystemPasswordChar = false;
             // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(12, 558);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 59;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
             // RaquetZoneEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarCIF);
-            this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.listaDatosEmpresas);
@@ -140,8 +141,8 @@ namespace RaquetZone.formularios
         private System.Windows.Forms.DataGridView listaDatosEmpresas;
         private System.Windows.Forms.Button editar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarCIF;
+        private System.Windows.Forms.Button bVolver;
     }
 }
