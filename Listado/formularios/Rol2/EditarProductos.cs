@@ -20,9 +20,9 @@ namespace RaquetZone.formularios.Rol2
             idText.Text = id;
             nomText.Text = nom;
             categoriaText.Text = cate;
-            preText.Text = precio;
+            precioNum.Value = Int32.Parse(precio);
             ivaBox.Text = iva + "%";
-            desText.Text = descuento;
+            desNum.Value = Int32.Parse(descuento);
             stockNumeric.Value = Int32.Parse(stock);
         }
 
@@ -69,9 +69,9 @@ namespace RaquetZone.formularios.Rol2
 @"        ""idprod"": """ + idText.Text + "\"," + "\n" +
 @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
 @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
-@"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
+@"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
 @"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
-@"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
+@"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
 @"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
 @"    }";
 
@@ -79,6 +79,7 @@ namespace RaquetZone.formularios.Rol2
 
             MessageBox.Show("Editado con éxito");
         }
+
     }
     }
 

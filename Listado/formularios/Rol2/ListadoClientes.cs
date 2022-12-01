@@ -103,5 +103,13 @@ namespace RaquetZone.formularios.Rol2
             GC.Show();
             this.Close();
         }
+
+        private void emailButton_Click(object sender, EventArgs e)
+        {
+            string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
+
+            EmailClientes EC = new EmailClientes(emailText);
+            EC.Show();
+        }
     }
 }

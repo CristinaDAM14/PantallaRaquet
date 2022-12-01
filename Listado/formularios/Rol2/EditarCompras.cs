@@ -18,8 +18,13 @@ namespace RaquetZone.formularios.Rol2
         {
             InitializeComponent();
             idText.Text = id;
-            fechaText.Text = fecha;
-            horaText.Text = hora;
+
+            diaNum.Value = Int32.Parse(fecha.Substring(0, 2));
+            mesNum.Value = Int32.Parse(fecha.Substring(3, 2));
+            anyoNum.Value = Int32.Parse(fecha.Substring(6, 4));
+
+            horaNum.Value = Int32.Parse(hora.Substring(0, 2));
+            minNum.Value = Int32.Parse(hora.Substring(3, 2));
 
         }
 
@@ -41,20 +46,52 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarB_Click(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/producto/modify" + idText.Text;
+            //Preparamos la hora
+            string hora = horaNum.Value.ToString();
+            string min = minNum.Value.ToString();
+
+            if (min.Length == 1)
+            {
+                min = "0" + min;
+            }
+            if (hora.Length == 1)
+            {
+                hora = "0" + hora;
+            }
+
+            string completarHora = hora + ":" + min + ":00";
+
+            //Preparamos la fecha
+            string dia = diaNum.Value.ToString();
+            string mes = mesNum.Value.ToString();
+            string anyo = anyoNum.Value.ToString();
+
+            if (dia.Length == 1)
+            {
+                dia = "0" + dia;
+            }
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+
+            string completarFecha = anyo + "-" + mes + "-" + dia + "T00:00:00.000+00:00";
+
+            String url = "http://localhost:8081/compra/modify" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 
             String datos = @"{
 " + "\n" +
-@"        ""idcomp"": """ + idText.Text + "\"," + "\n" +
-@"        ""fechacomp"": """ + fechaText.Text + "\"," + "\n" +
-@"        ""horacomp"": """ + horaText.Text + "\"," + "\n" +
+@"        ""idcomp"": " + idText.Text + "," + "\n" +
+@"        ""fechacomp"": """ + completarFecha + "\"," + "\n" +
+@"        ""horacomp"": """ + completarHora + "\"" + "\n" +
 @"    }";
 
             r.putItem(url, datos);
 
             MessageBox.Show("Editado con éxito");
+            MessageBox.Show(datos);
         }
     }
     }

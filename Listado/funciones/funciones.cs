@@ -41,7 +41,7 @@ namespace RaquetZone.funciones
         //Lista para las empresas
         public static List<empresa> mostrarEmp()
         {
-            String url = "http://localhost:8081/empresa";
+            String url = "http://localhost:8081/empresas";
 
             conexion r = new conexion(url, "GET");
 
@@ -71,7 +71,7 @@ namespace RaquetZone.funciones
         //Lista para los clientes
         public static List<clientes> mostrarCli()
         {
-            String url = "http://localhost:8081/cliente";
+            String url = "http://localhost:8081/clientes";
 
             conexion r = new conexion(url, "GET");
 
@@ -116,16 +116,17 @@ namespace RaquetZone.funciones
 
         //Enviar emails
 
-        public static void sendEmail(string dirigido, string body)
+        public static void sendEmail(string dirigido, string body, string subject)
         {
             try {
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress("RaquetZone9@gmail.com");
                     mail.To.Add(dirigido);
-                    mail.Subject = body;
+                    mail.Subject = subject;
+                    mail.Body = body;
                     //mail.Body = "<h1>This is body</h1>";
-                    mail.IsBodyHtml = true;
+                    //mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
@@ -156,10 +157,16 @@ namespace RaquetZone.funciones
             doc.Range.Replace("$nombre1", nombre, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$cantidad", cantidad, new FindReplaceOptions(FindReplaceDirection.Forward));
             */
-            doc.Save("Factura.pdf");
+            string nombreFac = "Factura" + id + ".pdf";
+            doc.Save(nombreFac);
+
+            string rutaMala = @"E:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\" + nombreFac;
+            string rutaBuena = @"E:\Clase_Segundo\Interfaces\Listado\Listado\Facturas\" + nombreFac;
+
+            System.IO.File.Move(rutaMala, rutaBuena);
 
             Process proceso = new Process();
-            proceso.StartInfo.FileName = @"D:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\Factura.pdf";
+            proceso.StartInfo.FileName = rutaBuena;
             proceso.Start();
         }
 

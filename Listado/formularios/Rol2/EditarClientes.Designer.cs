@@ -31,7 +31,6 @@ namespace RaquetZone.formularios.Rol2
         {
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.numText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -40,11 +39,13 @@ namespace RaquetZone.formularios.Rol2
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.bVolver = new System.Windows.Forms.Button();
             this.editarB = new System.Windows.Forms.Button();
+            this.bVolver = new System.Windows.Forms.Button();
+            this.numLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.numNum = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numNum)).BeginInit();
             this.SuspendLayout();
             // 
             // emailText
@@ -77,24 +78,10 @@ namespace RaquetZone.formularios.Rol2
             this.telText.TabIndex = 22;
             this.telText.UseSystemPasswordChar = false;
             // 
-            // numText
-            // 
-            this.numText.Depth = 0;
-            this.numText.Hint = "Número de horas";
-            this.numText.Location = new System.Drawing.Point(491, 270);
-            this.numText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.numText.Name = "numText";
-            this.numText.PasswordChar = '\0';
-            this.numText.SelectedText = "";
-            this.numText.SelectionLength = 0;
-            this.numText.SelectionStart = 0;
-            this.numText.Size = new System.Drawing.Size(142, 23);
-            this.numText.TabIndex = 23;
-            this.numText.UseSystemPasswordChar = false;
-            // 
             // passText
             // 
             this.passText.Depth = 0;
+            this.passText.Enabled = false;
             this.passText.Hint = "Contraseña";
             this.passText.Location = new System.Drawing.Point(152, 215);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
@@ -203,19 +190,6 @@ namespace RaquetZone.formularios.Rol2
             this.emailLabel.TabIndex = 30;
             this.emailLabel.Text = "Email";
             // 
-            // horasLabel
-            // 
-            this.horasLabel.AutoSize = true;
-            this.horasLabel.Depth = 0;
-            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horasLabel.Location = new System.Drawing.Point(435, 270);
-            this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.horasLabel.Name = "horasLabel";
-            this.horasLabel.Size = new System.Drawing.Size(50, 19);
-            this.horasLabel.TabIndex = 31;
-            this.horasLabel.Text = "Horas";
-            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = null;
@@ -238,21 +212,6 @@ namespace RaquetZone.formularios.Rol2
             this.materialTabSelector2.TabIndex = 44;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
-            // bVolver
-            // 
-            this.bVolver.BackColor = System.Drawing.Color.Transparent;
-            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
-            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bVolver.FlatAppearance.BorderSize = 0;
-            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVolver.Location = new System.Drawing.Point(276, 354);
-            this.bVolver.Name = "bVolver";
-            this.bVolver.Size = new System.Drawing.Size(45, 40);
-            this.bVolver.TabIndex = 64;
-            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bVolver.UseVisualStyleBackColor = true;
-            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
-            // 
             // editarB
             // 
             this.editarB.BackColor = System.Drawing.Color.Transparent;
@@ -268,16 +227,52 @@ namespace RaquetZone.formularios.Rol2
             this.editarB.UseVisualStyleBackColor = true;
             this.editarB.Click += new System.EventHandler(this.editarB_Click);
             // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(276, 354);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 64;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
+            // numLabel
+            // 
+            this.numLabel.AutoSize = true;
+            this.numLabel.Depth = 0;
+            this.numLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.numLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.numLabel.Location = new System.Drawing.Point(438, 274);
+            this.numLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.numLabel.Name = "numLabel";
+            this.numLabel.Size = new System.Drawing.Size(125, 19);
+            this.numLabel.TabIndex = 74;
+            this.numLabel.Text = "Número de horas";
+            // 
+            // numNum
+            // 
+            this.numNum.Location = new System.Drawing.Point(569, 274);
+            this.numNum.Name = "numNum";
+            this.numNum.Size = new System.Drawing.Size(71, 20);
+            this.numNum.TabIndex = 73;
+            // 
             // EditarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numLabel);
+            this.Controls.Add(this.numNum);
             this.Controls.Add(this.editarB);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
             this.Controls.Add(this.materialTabSelector1);
-            this.Controls.Add(this.horasLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.telLabel);
@@ -285,13 +280,13 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.dniLabel);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
-            this.Controls.Add(this.numText);
             this.Controls.Add(this.passText);
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
             this.Name = "EditarClientes";
             this.Text = "Editar Clientes";
             this.Load += new System.EventHandler(this.EditarClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +295,6 @@ namespace RaquetZone.formularios.Rol2
         #endregion
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
-        private MaterialSkin.Controls.MaterialSingleLineTextField numText;
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
@@ -309,10 +303,11 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel telLabel;
         private MaterialSkin.Controls.MaterialLabel nomLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
-        private MaterialSkin.Controls.MaterialLabel horasLabel;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button editarB;
+        private MaterialSkin.Controls.MaterialLabel numLabel;
+        private System.Windows.Forms.NumericUpDown numNum;
     }
 }

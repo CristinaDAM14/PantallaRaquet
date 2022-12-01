@@ -46,7 +46,7 @@ namespace RaquetZone.formularios.Rol2
 @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
 @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
 @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-@"        ""numhorascli"": " + Int32.Parse(numText.Text) + "," + "\n" +
+@"        ""numhorascli"": " + numNum.Value + "," + "\n" +
 @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
 @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
 @"    }";

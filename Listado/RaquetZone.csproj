@@ -199,6 +199,12 @@
     <Compile Include="formularios\Rol2\EditarProductos.Designer.cs">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\EmailClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\EmailClientes.Designer.cs">
+      <DependentUpon>EmailClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Rol2\GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     <EmbeddedResource Include="formularios\Rol2\EditarProductos.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\EmailClientes.resx">
+      <DependentUpon>EmailClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +439,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\emailClientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\usuarios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

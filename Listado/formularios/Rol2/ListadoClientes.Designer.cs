@@ -32,10 +32,11 @@ namespace RaquetZone.formularios.Rol2
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoClientes));
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaClientes = new System.Windows.Forms.DataGridView();
-            this.editarProductos = new System.Windows.Forms.Button();
             this.buscarDNI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.emailButton = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
+            this.editarProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,18 +60,6 @@ namespace RaquetZone.formularios.Rol2
             this.listaClientes.Name = "listaClientes";
             this.listaClientes.Size = new System.Drawing.Size(944, 360);
             this.listaClientes.TabIndex = 46;
-            // 
-            // editarProductos
-            // 
-            this.editarProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarProductos.BackgroundImage")));
-            this.editarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editarProductos.Location = new System.Drawing.Point(999, 143);
-            this.editarProductos.Name = "editarProductos";
-            this.editarProductos.Size = new System.Drawing.Size(39, 34);
-            this.editarProductos.TabIndex = 47;
-            this.editarProductos.UseVisualStyleBackColor = true;
-            this.editarProductos.Click += new System.EventHandler(this.editarProductos_Click);
             // 
             // buscarDNI
             // 
@@ -102,6 +91,19 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.UseVisualStyleBackColor = true;
             this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
             // 
+            // emailButton
+            // 
+            this.emailButton.BackgroundImage = global::Listado.Properties.Resources.emailClientes;
+            this.emailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.emailButton.FlatAppearance.BorderSize = 0;
+            this.emailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.emailButton.Location = new System.Drawing.Point(999, 183);
+            this.emailButton.Name = "emailButton";
+            this.emailButton.Size = new System.Drawing.Size(39, 34);
+            this.emailButton.TabIndex = 65;
+            this.emailButton.UseVisualStyleBackColor = true;
+            this.emailButton.Click += new System.EventHandler(this.emailButton_Click);
+            // 
             // bVolver
             // 
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
@@ -117,11 +119,24 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
+            // editarProductos
+            // 
+            this.editarProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarProductos.BackgroundImage")));
+            this.editarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editarProductos.Location = new System.Drawing.Point(999, 143);
+            this.editarProductos.Name = "editarProductos";
+            this.editarProductos.Size = new System.Drawing.Size(39, 34);
+            this.editarProductos.TabIndex = 47;
+            this.editarProductos.UseVisualStyleBackColor = true;
+            this.editarProductos.Click += new System.EventHandler(this.editarProductos_Click);
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.emailButton);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarDNI);
@@ -143,5 +158,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         public System.Windows.Forms.DataGridView listaClientes;
         private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button emailButton;
     }
 }

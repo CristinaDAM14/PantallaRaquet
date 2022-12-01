@@ -31,10 +31,9 @@ namespace RaquetZone.formularios
         {
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passwText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iniciarButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contraOlvidada = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.empresaLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dniText
@@ -70,16 +69,6 @@ namespace RaquetZone.formularios
             this.passwText.TabIndex = 2;
             this.passwText.UseSystemPasswordChar = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Listado.Properties.Resources.logo_más_fondo;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 279);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // iniciarButton
             // 
             this.iniciarButton.Depth = 0;
@@ -95,8 +84,10 @@ namespace RaquetZone.formularios
             // 
             // contraOlvidada
             // 
+            this.contraOlvidada.BackColor = System.Drawing.Color.White;
             this.contraOlvidada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.contraOlvidada.Depth = 0;
+            this.contraOlvidada.FlatAppearance.BorderSize = 0;
             this.contraOlvidada.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.contraOlvidada.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contraOlvidada.Location = new System.Drawing.Point(67, 192);
@@ -106,23 +97,31 @@ namespace RaquetZone.formularios
             this.contraOlvidada.Size = new System.Drawing.Size(130, 21);
             this.contraOlvidada.TabIndex = 6;
             this.contraOlvidada.Text = "¿Has olvidado tu contraseña?";
-            this.contraOlvidada.UseVisualStyleBackColor = true;
+            this.contraOlvidada.UseVisualStyleBackColor = false;
             this.contraOlvidada.Click += new System.EventHandler(this.contraOlvidada_Click);
+            // 
+            // empresaLabel
+            // 
+            this.empresaLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empresaLabel.Image = global::Listado.Properties.Resources.logo_más_fondo;
+            this.empresaLabel.Location = new System.Drawing.Point(38, 269);
+            this.empresaLabel.Name = "empresaLabel";
+            this.empresaLabel.Size = new System.Drawing.Size(79, 97);
+            this.empresaLabel.TabIndex = 68;
             // 
             // Login
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(389, 386);
+            this.Controls.Add(this.empresaLabel);
             this.Controls.Add(this.contraOlvidada);
             this.Controls.Add(this.iniciarButton);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwText);
             this.Controls.Add(this.dniText);
             this.Name = "Login";
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,8 +130,8 @@ namespace RaquetZone.formularios
 
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialSingleLineTextField passwText;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialRaisedButton iniciarButton;
         private MaterialSkin.Controls.MaterialRaisedButton contraOlvidada;
+        private System.Windows.Forms.Label empresaLabel;
     }
 }

@@ -31,13 +31,15 @@ namespace RaquetZone.formularios.Rol2
         {
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.numText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nomText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bVolver = new System.Windows.Forms.Button();
             this.buttonAnyadir = new System.Windows.Forms.Button();
+            this.numNum = new System.Windows.Forms.NumericUpDown();
+            this.numLabel = new MaterialSkin.Controls.MaterialLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.numNum)).BeginInit();
             this.SuspendLayout();
             // 
             // emailText
@@ -69,21 +71,6 @@ namespace RaquetZone.formularios.Rol2
             this.telText.Size = new System.Drawing.Size(218, 23);
             this.telText.TabIndex = 14;
             this.telText.UseSystemPasswordChar = false;
-            // 
-            // numText
-            // 
-            this.numText.Depth = 0;
-            this.numText.Hint = "Número de horas";
-            this.numText.Location = new System.Drawing.Point(421, 286);
-            this.numText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.numText.Name = "numText";
-            this.numText.PasswordChar = '\0';
-            this.numText.SelectedText = "";
-            this.numText.SelectionLength = 0;
-            this.numText.SelectionStart = 0;
-            this.numText.Size = new System.Drawing.Size(142, 23);
-            this.numText.TabIndex = 15;
-            this.numText.UseSystemPasswordChar = false;
             // 
             // passText
             // 
@@ -171,36 +158,60 @@ namespace RaquetZone.formularios.Rol2
             this.buttonAnyadir.UseVisualStyleBackColor = true;
             this.buttonAnyadir.Click += new System.EventHandler(this.buttonAnyadir_Click);
             // 
+            // numNum
+            // 
+            this.numNum.Location = new System.Drawing.Point(548, 290);
+            this.numNum.Name = "numNum";
+            this.numNum.Size = new System.Drawing.Size(71, 20);
+            this.numNum.TabIndex = 68;
+            // 
+            // numLabel
+            // 
+            this.numLabel.AutoSize = true;
+            this.numLabel.Depth = 0;
+            this.numLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.numLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.numLabel.Location = new System.Drawing.Point(417, 290);
+            this.numLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.numLabel.Name = "numLabel";
+            this.numLabel.Size = new System.Drawing.Size(125, 19);
+            this.numLabel.TabIndex = 69;
+            this.numLabel.Text = "Número de horas";
+            // 
             // AnyadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numLabel);
+            this.Controls.Add(this.numNum);
             this.Controls.Add(this.buttonAnyadir);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
-            this.Controls.Add(this.numText);
             this.Controls.Add(this.passText);
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
             this.Name = "AnyadirCliente";
             this.Text = "Añadir Cliente";
             this.Load += new System.EventHandler(this.AnyadirCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numNum)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
-        private MaterialSkin.Controls.MaterialSingleLineTextField numText;
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomText;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button buttonAnyadir;
+        private System.Windows.Forms.NumericUpDown numNum;
+        private MaterialSkin.Controls.MaterialLabel numLabel;
     }
 }

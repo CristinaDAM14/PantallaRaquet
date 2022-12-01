@@ -37,18 +37,52 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Preparamos la hora
+            string hora = horaNum.Value.ToString();
+            string min = minNum.Value.ToString();
+
+            if(min.Length == 1)
+            {
+                min = "0" + min;
+            }
+            if (hora.Length == 1)
+            {
+                hora = "0" + hora;
+            }
+
+            string completarHora = hora + ":" + min + ":00";
+
+            //Preparamos la fecha
+            string dia = diaNum.Value.ToString();
+            string mes = mesNum.Value.ToString();
+            string anyo = anyoNum.Value.ToString();
+
+            if (dia.Length == 1)
+            {
+                dia = "0" + dia;
+            }
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+
+            string completarFecha = anyo + "-" + mes + "-" + dia + "T00:00:00.000+00:00";
+            
+            //Hacemos el POST
+
             String url = "http://localhost:8081/compra/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""fechacomp"": """ + fechaText.Text + "\"," + "\n" +
-@"        ""horacomp"": """ + horaText.Text + "\"," + "\n" +
+@"        ""fechacomp"": """ + completarFecha + "\"," + "\n" +
+@"        ""horacomp"": """ + completarHora + "\"" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);
 
+            MessageBox.Show(datos);
             MessageBox.Show("Compra añadida a la base de datos");
         }
     }

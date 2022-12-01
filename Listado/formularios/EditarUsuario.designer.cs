@@ -96,6 +96,7 @@
             // passText
             // 
             this.passText.Depth = 0;
+            this.passText.Enabled = false;
             this.passText.Hint = "Contraseña";
             this.passText.Location = new System.Drawing.Point(143, 220);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
@@ -157,12 +158,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(556, 287);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(31, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(31, 19);
             this.materialLabel1.TabIndex = 45;
             this.materialLabel1.Text = "Rol";
             // 
@@ -170,12 +171,12 @@
             // 
             this.horasLabel.AutoSize = true;
             this.horasLabel.Depth = 0;
-            this.horasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.horasLabel.Location = new System.Drawing.Point(352, 286);
             this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horasLabel.Name = "horasLabel";
-            this.horasLabel.Size = new System.Drawing.Size(66, 18);
+            this.horasLabel.Size = new System.Drawing.Size(69, 19);
             this.horasLabel.TabIndex = 44;
             this.horasLabel.Text = "Teléfono";
             // 
@@ -183,12 +184,12 @@
             // 
             this.emailLabel.AutoSize = true;
             this.emailLabel.Depth = 0;
-            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.emailLabel.Location = new System.Drawing.Point(348, 220);
             this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(71, 18);
+            this.emailLabel.Size = new System.Drawing.Size(73, 19);
             this.emailLabel.TabIndex = 43;
             this.emailLabel.Text = "Dirección";
             // 
@@ -196,12 +197,12 @@
             // 
             this.nomLabel.AutoSize = true;
             this.nomLabel.Depth = 0;
-            this.nomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.nomLabel.Location = new System.Drawing.Point(358, 130);
             this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(62, 18);
+            this.nomLabel.Size = new System.Drawing.Size(63, 19);
             this.nomLabel.TabIndex = 42;
             this.nomLabel.Text = "Nombre";
             // 
@@ -209,12 +210,12 @@
             // 
             this.telLabel.AutoSize = true;
             this.telLabel.Depth = 0;
-            this.telLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.telLabel.Location = new System.Drawing.Point(77, 286);
             this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.telLabel.Name = "telLabel";
-            this.telLabel.Size = new System.Drawing.Size(45, 18);
+            this.telLabel.Size = new System.Drawing.Size(47, 19);
             this.telLabel.TabIndex = 41;
             this.telLabel.Text = "Email";
             // 
@@ -222,12 +223,12 @@
             // 
             this.passLabel.AutoSize = true;
             this.passLabel.Depth = 0;
-            this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.passLabel.Location = new System.Drawing.Point(38, 220);
             this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(85, 18);
+            this.passLabel.Size = new System.Drawing.Size(86, 19);
             this.passLabel.TabIndex = 40;
             this.passLabel.Text = "Contraseña";
             // 
@@ -235,12 +236,12 @@
             // 
             this.dniLabel.AutoSize = true;
             this.dniLabel.Depth = 0;
-            this.dniLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dniLabel.Location = new System.Drawing.Point(90, 130);
             this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.dniLabel.Name = "dniLabel";
-            this.dniLabel.Size = new System.Drawing.Size(33, 18);
+            this.dniLabel.Size = new System.Drawing.Size(34, 19);
             this.dniLabel.TabIndex = 39;
             this.dniLabel.Text = "DNI";
             // 

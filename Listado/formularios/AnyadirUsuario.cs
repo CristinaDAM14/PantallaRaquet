@@ -66,7 +66,7 @@ namespace RaquetZone.formularios
 @"    }";
             String res = r.postItem(datos);
 
-            MessageBox.Show("usuario añadido a la base de datos");
+            MessageBox.Show("Usuario añadido a la base de datos");
         }
     }
 }

@@ -60,9 +60,9 @@ namespace RaquetZone.formularios.Rol2
 " + "\n" +
 @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
 @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
-@"        ""precioprod"": """ + Double.Parse(preText.Text) + "\"," + "\n" +
+@"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
 @"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
-@"        ""descuentoprod"": """ + Double.Parse(desText.Text) + "\"," + "\n" +
+@"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
 @"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
 @"    }";
 

@@ -83,6 +83,15 @@ namespace RaquetZone.formularios
                 }
               
                 listaDatos.DataSource = funciones.funciones.mostrarUsr();
+
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+                if (existe != null)
+
+                {
+                    this.Text = "Listado de Empleados";
+                    EsconderRol3();
+
+                }
             }
             else
             {

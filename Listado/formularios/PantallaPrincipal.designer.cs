@@ -30,6 +30,8 @@
         {
             this.buttonGE = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGU = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.empresaLabel = new System.Windows.Forms.Label();
+            this.usuariosLabel = new System.Windows.Forms.Label();
             this.loginBotton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
             this.edgeButton = new System.Windows.Forms.Button();
@@ -39,28 +41,46 @@
             // buttonGE
             // 
             this.buttonGE.Depth = 0;
-            this.buttonGE.Location = new System.Drawing.Point(191, 226);
+            this.buttonGE.Location = new System.Drawing.Point(202, 157);
             this.buttonGE.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonGE.Name = "buttonGE";
             this.buttonGE.Primary = true;
-            this.buttonGE.Size = new System.Drawing.Size(210, 53);
+            this.buttonGE.Size = new System.Drawing.Size(179, 29);
             this.buttonGE.TabIndex = 15;
-            this.buttonGE.Text = "Gestionar Empresa";
+            this.buttonGE.Text = "Empresas";
             this.buttonGE.UseVisualStyleBackColor = true;
             this.buttonGE.Click += new System.EventHandler(this.buttonGE_Click);
             // 
             // buttonGU
             // 
             this.buttonGU.Depth = 0;
-            this.buttonGU.Location = new System.Drawing.Point(191, 133);
+            this.buttonGU.Location = new System.Drawing.Point(202, 280);
             this.buttonGU.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonGU.Name = "buttonGU";
             this.buttonGU.Primary = true;
-            this.buttonGU.Size = new System.Drawing.Size(210, 53);
+            this.buttonGU.Size = new System.Drawing.Size(179, 29);
             this.buttonGU.TabIndex = 16;
-            this.buttonGU.Text = "Gestionar Usuarios";
+            this.buttonGU.Text = "Usuarios";
             this.buttonGU.UseVisualStyleBackColor = true;
             this.buttonGU.Click += new System.EventHandler(this.buttonGU_Click);
+            // 
+            // empresaLabel
+            // 
+            this.empresaLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empresaLabel.Image = global::Listado.Properties.Resources.empresa;
+            this.empresaLabel.Location = new System.Drawing.Point(260, 99);
+            this.empresaLabel.Name = "empresaLabel";
+            this.empresaLabel.Size = new System.Drawing.Size(57, 55);
+            this.empresaLabel.TabIndex = 67;
+            // 
+            // usuariosLabel
+            // 
+            this.usuariosLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usuariosLabel.Image = global::Listado.Properties.Resources.usuarios;
+            this.usuariosLabel.Location = new System.Drawing.Point(260, 222);
+            this.usuariosLabel.Name = "usuariosLabel";
+            this.usuariosLabel.Size = new System.Drawing.Size(57, 55);
+            this.usuariosLabel.TabIndex = 66;
             // 
             // loginBotton
             // 
@@ -81,7 +101,9 @@
             // 
             this.noteButton.BackgroundImage = global::Listado.Properties.Resources.notepad;
             this.noteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteButton.Location = new System.Drawing.Point(461, 336);
+            this.noteButton.FlatAppearance.BorderSize = 0;
+            this.noteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noteButton.Location = new System.Drawing.Point(552, 259);
             this.noteButton.Name = "noteButton";
             this.noteButton.Size = new System.Drawing.Size(36, 32);
             this.noteButton.TabIndex = 18;
@@ -91,7 +113,9 @@
             // 
             this.edgeButton.BackgroundImage = global::Listado.Properties.Resources.medge;
             this.edgeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.edgeButton.Location = new System.Drawing.Point(545, 336);
+            this.edgeButton.FlatAppearance.BorderSize = 0;
+            this.edgeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edgeButton.Location = new System.Drawing.Point(552, 335);
             this.edgeButton.Name = "edgeButton";
             this.edgeButton.Size = new System.Drawing.Size(36, 32);
             this.edgeButton.TabIndex = 14;
@@ -101,7 +125,9 @@
             // 
             this.chromeButton.BackgroundImage = global::Listado.Properties.Resources.chrome;
             this.chromeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chromeButton.Location = new System.Drawing.Point(503, 336);
+            this.chromeButton.FlatAppearance.BorderSize = 0;
+            this.chromeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chromeButton.Location = new System.Drawing.Point(552, 297);
             this.chromeButton.Name = "chromeButton";
             this.chromeButton.Size = new System.Drawing.Size(36, 32);
             this.chromeButton.TabIndex = 13;
@@ -113,6 +139,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 380);
             this.ControlBox = false;
+            this.Controls.Add(this.empresaLabel);
+            this.Controls.Add(this.usuariosLabel);
             this.Controls.Add(this.loginBotton);
             this.Controls.Add(this.noteButton);
             this.Controls.Add(this.buttonGU);
@@ -133,6 +161,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton buttonGU;
         private System.Windows.Forms.Button noteButton;
         private System.Windows.Forms.Button loginBotton;
+        private System.Windows.Forms.Label usuariosLabel;
+        private System.Windows.Forms.Label empresaLabel;
     }
 }
 

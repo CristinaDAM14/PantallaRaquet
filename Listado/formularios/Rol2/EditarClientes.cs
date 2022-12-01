@@ -21,7 +21,7 @@ namespace RaquetZone.formularios.Rol2
             dniText.Text = dni;
             nomText.Text = nom;
             passText.Text = pass;
-            numText.Text = num;
+            numNum.Value = Int32.Parse(num);
             telText.Text = tel;
             emailText.Text = email;
         }
@@ -55,7 +55,7 @@ namespace RaquetZone.formularios.Rol2
 @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
 @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
 @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-@"        ""numhorascli"": " + Int32.Parse(numText.Text) + "," + "\n" +
+@"        ""numhorascli"": " + numNum.Value + "," + "\n" +
 @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
 @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
 @"    }";
