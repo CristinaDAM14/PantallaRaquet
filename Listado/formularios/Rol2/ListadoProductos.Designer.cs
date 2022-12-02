@@ -81,7 +81,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
             this.buscadorButton.Size = new System.Drawing.Size(61, 23);
-            this.buscadorButton.TabIndex = 55;
+            this.buscadorButton.TabIndex = 2;
             this.buscadorButton.Text = "Buscar";
             this.buscadorButton.UseVisualStyleBackColor = true;
             this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
@@ -99,7 +99,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscarID.SelectionLength = 0;
             this.buscarID.SelectionStart = 0;
             this.buscarID.Size = new System.Drawing.Size(166, 23);
-            this.buscarID.TabIndex = 54;
+            this.buscarID.TabIndex = 1;
             this.buscarID.UseSystemPasswordChar = false;
             // 
             // bVolver

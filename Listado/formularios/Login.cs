@@ -46,7 +46,6 @@ namespace RaquetZone.formularios
             bool tipoRol = persona.Contains(rol);
             bool tipoRol2 = persona.Contains(rol2);
             bool tipoRol1 = persona.Contains(rol1);
-            funciones.funciones F1 = new funciones.funciones();
 
             if (persona == "[]")
             {

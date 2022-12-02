@@ -75,7 +75,7 @@ namespace RaquetZone.formularios
             this.emailText.SelectionLength = 0;
             this.emailText.SelectionStart = 0;
             this.emailText.Size = new System.Drawing.Size(269, 23);
-            this.emailText.TabIndex = 3;
+            this.emailText.TabIndex = 2;
             this.emailText.UseSystemPasswordChar = false;
             // 
             // buttonEnviar
@@ -86,7 +86,7 @@ namespace RaquetZone.formularios
             this.buttonEnviar.Name = "buttonEnviar";
             this.buttonEnviar.Primary = true;
             this.buttonEnviar.Size = new System.Drawing.Size(82, 38);
-            this.buttonEnviar.TabIndex = 4;
+            this.buttonEnviar.TabIndex = 3;
             this.buttonEnviar.Text = "Enviar";
             this.buttonEnviar.UseVisualStyleBackColor = true;
             this.buttonEnviar.Click += new System.EventHandler(this.buttonEnviar_Click);
@@ -101,7 +101,7 @@ namespace RaquetZone.formularios
             this.bVolver.Location = new System.Drawing.Point(100, 257);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(45, 40);
-            this.bVolver.TabIndex = 61;
+            this.bVolver.TabIndex = 4;
             this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);

@@ -110,7 +110,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.Location = new System.Drawing.Point(424, 359);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 40);
-            this.button1.TabIndex = 66;
+            this.button1.TabIndex = 7;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -125,7 +125,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.Location = new System.Drawing.Point(282, 360);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(45, 40);
-            this.bVolver.TabIndex = 65;
+            this.bVolver.TabIndex = 8;
             this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -135,7 +135,7 @@ namespace RaquetZone.formularios.Rol2
             this.stockNumeric.Location = new System.Drawing.Point(687, 247);
             this.stockNumeric.Name = "stockNumeric";
             this.stockNumeric.Size = new System.Drawing.Size(49, 20);
-            this.stockNumeric.TabIndex = 67;
+            this.stockNumeric.TabIndex = 6;
             // 
             // materialLabel1
             // 
@@ -173,7 +173,7 @@ namespace RaquetZone.formularios.Rol2
             this.ivaBox.Location = new System.Drawing.Point(460, 246);
             this.ivaBox.Name = "ivaBox";
             this.ivaBox.Size = new System.Drawing.Size(121, 21);
-            this.ivaBox.TabIndex = 70;
+            this.ivaBox.TabIndex = 5;
             this.ivaBox.Text = "4%";
             // 
             // desNum
@@ -181,14 +181,14 @@ namespace RaquetZone.formularios.Rol2
             this.desNum.Location = new System.Drawing.Point(245, 247);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);
-            this.desNum.TabIndex = 84;
+            this.desNum.TabIndex = 3;
             // 
             // precioNum
             // 
             this.precioNum.Location = new System.Drawing.Point(245, 292);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
-            this.precioNum.TabIndex = 83;
+            this.precioNum.TabIndex = 4;
             // 
             // telLabel
             // 

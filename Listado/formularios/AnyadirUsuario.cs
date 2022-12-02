@@ -48,25 +48,47 @@ namespace RaquetZone.formularios
             this.Close();
         }
 
+
+
         private void buttonEditar_Click_1(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/usuario/add";
+            if (funciones.funciones.IsNumeric(nombreText.Text) == false)
+            {
 
-            funciones.conexion r = new funciones.conexion(url, "POST");
+                if (funciones.funciones.IsNumeric(telText.Text) == true && telText.Text.Length == 9)
+                {
 
-            String datos = @"{
+                    String url = "http://localhost:8081/usuario/add";
+
+                    funciones.conexion r = new funciones.conexion(url, "POST");
+
+                    String datos = @"{
 " + "\n" +
-@"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
-@"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
-@"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
-@"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +
-@"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
-@"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
-@"    }";
-            String res = r.postItem(datos);
+        @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
+        @"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
+        @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
+        @"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +
+        @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
+        @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
+        @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
+        @"    }";
+                    String res = r.postItem(datos);
 
-            MessageBox.Show("Usuario añadido a la base de datos");
+                    MessageBox.Show("Usuario añadido a la base de datos");
+
+                }
+                else
+                {
+                    MessageBox.Show("Formato del número de teléfono mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Formato del nombre incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            
         }
     }
 }

@@ -37,23 +37,33 @@ namespace RaquetZone.formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/empresa/add";
+            if (funciones.funciones.IsNumeric(telText.Text) == true && telText.Text.Length == 9)
+            {
 
-            funciones.conexion r = new funciones.conexion(url, "POST");
+                String url = "http://localhost:8081/empresa/add";
 
-            String datos = @"{
+                funciones.conexion r = new funciones.conexion(url, "POST");
+
+                String datos = @"{
 " + "\n" +
-@"        ""cifemp"": """ + cifText.Text + "\"," + "\n" +
-@"        ""nomemp"": """ + nomText.Text + "\"," + "\n" +
-@"        ""webemp"": """ + webText.Text + "\"," + "\n" +
-@"        ""telemp"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailemp"": """ + emailText.Text + "\"," + "\n" +
-@"        ""direcemp"": """ + direcText.Text + "\"," + "\n" +
-@"        ""activiemp"": """ + actText.Text + "\"" + "\n" +
-@"    }";
-            String res = r.postItem(datos);
+    @"        ""cifemp"": """ + cifText.Text + "\"," + "\n" +
+    @"        ""nomemp"": """ + nomText.Text + "\"," + "\n" +
+    @"        ""webemp"": """ + webText.Text + "\"," + "\n" +
+    @"        ""telemp"": """ + telText.Text + "\"," + "\n" +
+    @"        ""emailemp"": """ + emailText.Text + "\"," + "\n" +
+    @"        ""direcemp"": """ + direcText.Text + "\"," + "\n" +
+    @"        ""activiemp"": """ + actText.Text + "\"" + "\n" +
+    @"    }";
+                String res = r.postItem(datos);
 
-            MessageBox.Show("Empresa añadida a la base de datos");
+                MessageBox.Show("Empresa añadida a la base de datos");
+            }
+            else
+            {
+                MessageBox.Show("Formato del número de teléfono mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+                
         }
     }
 }

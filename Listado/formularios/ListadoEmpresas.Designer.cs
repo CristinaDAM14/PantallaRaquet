@@ -82,7 +82,7 @@ namespace RaquetZone.formularios
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
             this.buscadorButton.Size = new System.Drawing.Size(61, 23);
-            this.buscadorButton.TabIndex = 55;
+            this.buscadorButton.TabIndex = 2;
             this.buscadorButton.Text = "Buscar";
             this.buscadorButton.UseVisualStyleBackColor = true;
             this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
@@ -100,7 +100,7 @@ namespace RaquetZone.formularios
             this.buscarCIF.SelectionLength = 0;
             this.buscarCIF.SelectionStart = 0;
             this.buscarCIF.Size = new System.Drawing.Size(166, 23);
-            this.buscarCIF.TabIndex = 54;
+            this.buscarCIF.TabIndex = 1;
             this.buscarCIF.UseSystemPasswordChar = false;
             // 
             // bVolver

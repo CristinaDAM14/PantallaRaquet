@@ -138,7 +138,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.Location = new System.Drawing.Point(279, 360);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(45, 40);
-            this.bVolver.TabIndex = 65;
+            this.bVolver.TabIndex = 17;
             this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -153,7 +153,7 @@ namespace RaquetZone.formularios.Rol2
             this.buttonAnyadir.Location = new System.Drawing.Point(421, 362);
             this.buttonAnyadir.Name = "buttonAnyadir";
             this.buttonAnyadir.Size = new System.Drawing.Size(45, 40);
-            this.buttonAnyadir.TabIndex = 67;
+            this.buttonAnyadir.TabIndex = 16;
             this.buttonAnyadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonAnyadir.UseVisualStyleBackColor = true;
             this.buttonAnyadir.Click += new System.EventHandler(this.buttonAnyadir_Click);
@@ -163,7 +163,7 @@ namespace RaquetZone.formularios.Rol2
             this.numNum.Location = new System.Drawing.Point(548, 290);
             this.numNum.Name = "numNum";
             this.numNum.Size = new System.Drawing.Size(71, 20);
-            this.numNum.TabIndex = 68;
+            this.numNum.TabIndex = 15;
             // 
             // numLabel
             // 

@@ -86,7 +86,7 @@ namespace RaquetZone.formularios.Rol2
             this.bodyText.Location = new System.Drawing.Point(59, 282);
             this.bodyText.Name = "bodyText";
             this.bodyText.Size = new System.Drawing.Size(492, 177);
-            this.bodyText.TabIndex = 5;
+            this.bodyText.TabIndex = 2;
             this.bodyText.Text = "";
             // 
             // materialLabel1
@@ -123,7 +123,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
             this.materialRaisedButton1.Size = new System.Drawing.Size(77, 36);
-            this.materialRaisedButton1.TabIndex = 8;
+            this.materialRaisedButton1.TabIndex = 3;
             this.materialRaisedButton1.Text = "Enviar";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
@@ -138,7 +138,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.Location = new System.Drawing.Point(12, 457);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(29, 24);
-            this.bVolver.TabIndex = 65;
+            this.bVolver.TabIndex = 4;
             this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);

@@ -37,23 +37,42 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonAnyadir_Click(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/cliente/add";
 
-            funciones.conexion r = new funciones.conexion(url, "POST");
+            if(funciones.funciones.IsNumeric(nomText.Text) == false) {
 
-            String datos = @"{
+            if (funciones.funciones.IsNumeric(telText.Text) == true && telText.Text.Length == 9)
+            {
+
+                String url = "http://localhost:8081/cliente/add";
+
+                funciones.conexion r = new funciones.conexion(url, "POST");
+
+                String datos = @"{
 " + "\n" +
-@"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
-@"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
-@"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-@"        ""numhorascli"": " + numNum.Value + "," + "\n" +
-@"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
-@"    }";
+    @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
+    @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
+    @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
+    @"        ""numhorascli"": " + numNum.Value + "," + "\n" +
+    @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
+    @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
+    @"    }";
 
-            String res = r.postItem(datos);
+                String res = r.postItem(datos);
 
-            MessageBox.Show("Cliente añadido a la base de datos");
+                MessageBox.Show("Cliente añadido a la base de datos");
+
+            }
+            else
+            {
+                MessageBox.Show("Formato del número de teléfono mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
+            else
+            {
+                MessageBox.Show("Formato del nombre incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

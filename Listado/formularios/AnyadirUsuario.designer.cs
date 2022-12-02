@@ -142,7 +142,7 @@
             this.dniText.SelectionLength = 0;
             this.dniText.SelectionStart = 0;
             this.dniText.Size = new System.Drawing.Size(175, 23);
-            this.dniText.TabIndex = 10;
+            this.dniText.TabIndex = 1;
             this.dniText.UseSystemPasswordChar = false;
             // 
             // materialTabSelector1
@@ -177,7 +177,7 @@
             this.buttonEditar.Location = new System.Drawing.Point(416, 359);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(45, 40);
-            this.buttonEditar.TabIndex = 63;
+            this.buttonEditar.TabIndex = 8;
             this.buttonEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonEditar.UseVisualStyleBackColor = true;
             this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click_1);
@@ -192,7 +192,7 @@
             this.bVolver.Location = new System.Drawing.Point(244, 359);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(45, 40);
-            this.bVolver.TabIndex = 62;
+            this.bVolver.TabIndex = 9;
             this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);

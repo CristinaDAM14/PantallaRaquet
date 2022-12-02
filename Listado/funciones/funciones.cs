@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 using Newtonsoft.Json;
-using Aspose.Words.Saving;
-using Aspose.Words.Loading;
 using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Diagnostics;
+using System.IO;
 
 namespace RaquetZone.funciones
 {
@@ -18,7 +17,7 @@ namespace RaquetZone.funciones
     
 
 
-    public class funciones
+    public static class funciones
     {
 
 
@@ -158,17 +157,36 @@ namespace RaquetZone.funciones
             doc.Range.Replace("$cantidad", cantidad, new FindReplaceOptions(FindReplaceDirection.Forward));
             */
             string nombreFac = "Factura" + id + ".pdf";
+
+            string rutaMala = @"D:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\" + nombreFac;
+            string rutaBuena = @"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas\" + nombreFac;
+
+            //Comprobamos primero que no existe el archivo antes de crearlo
+
+            DirectoryInfo di = new DirectoryInfo(@"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
+            foreach (var fi in di.GetFiles())
+            {
+                if (fi.Name.Equals(nombreFac))
+                {
+                    File.Delete(rutaBuena);
+                }
+            }
+
             doc.Save(nombreFac);
-
-            string rutaMala = @"E:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\" + nombreFac;
-            string rutaBuena = @"E:\Clase_Segundo\Interfaces\Listado\Listado\Facturas\" + nombreFac;
-
-            System.IO.File.Move(rutaMala, rutaBuena);
+           
+            File.Move(rutaMala, rutaBuena);
 
             Process proceso = new Process();
             proceso.StartInfo.FileName = rutaBuena;
             proceso.Start();
         }
 
+        public static bool IsNumeric(this string text)
+        {
+            double test;
+            return double.TryParse(text, out test);
+        }
+
     }
+
 }
