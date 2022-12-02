@@ -91,7 +91,6 @@ namespace RaquetZone.formularios.Rol2
             r.putItem(url, datos);
 
             MessageBox.Show("Editado con éxito");
-            MessageBox.Show(datos);
         }
     }
     }

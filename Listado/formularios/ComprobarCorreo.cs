@@ -75,9 +75,6 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-
-            Login PP2 = new Login();
-            PP2.Show();
             this.Close();
 
         }

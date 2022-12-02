@@ -82,7 +82,6 @@ namespace RaquetZone.formularios.Rol2
 
             String res = r.postItem(datos);
 
-            MessageBox.Show(datos);
             MessageBox.Show("Compra añadida a la base de datos");
         }
     }

@@ -54,12 +54,12 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(152, 128);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(22, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(23, 19);
             this.materialLabel1.TabIndex = 49;
             this.materialLabel1.Text = "ID";
             // 
@@ -83,12 +83,12 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.minLabel.AutoSize = true;
             this.minLabel.Depth = 0;
-            this.minLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.minLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.minLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.minLabel.Location = new System.Drawing.Point(251, 206);
             this.minLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.minLabel.Name = "minLabel";
-            this.minLabel.Size = new System.Drawing.Size(53, 18);
+            this.minLabel.Size = new System.Drawing.Size(56, 19);
             this.minLabel.TabIndex = 84;
             this.minLabel.Text = "Minuto";
             // 
@@ -120,12 +120,12 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.anyoLabel.AutoSize = true;
             this.anyoLabel.Depth = 0;
-            this.anyoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.anyoLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.anyoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.anyoLabel.Location = new System.Drawing.Point(568, 206);
             this.anyoLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.anyoLabel.Name = "anyoLabel";
-            this.anyoLabel.Size = new System.Drawing.Size(34, 18);
+            this.anyoLabel.Size = new System.Drawing.Size(36, 19);
             this.anyoLabel.TabIndex = 83;
             this.anyoLabel.Text = "Año";
             // 
@@ -133,12 +133,12 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.mesLabel.AutoSize = true;
             this.mesLabel.Depth = 0;
-            this.mesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.mesLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.mesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mesLabel.Location = new System.Drawing.Point(497, 206);
             this.mesLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.mesLabel.Name = "mesLabel";
-            this.mesLabel.Size = new System.Drawing.Size(37, 18);
+            this.mesLabel.Size = new System.Drawing.Size(38, 19);
             this.mesLabel.TabIndex = 82;
             this.mesLabel.Text = "Mes";
             // 
@@ -146,12 +146,12 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.diaLabel.AutoSize = true;
             this.diaLabel.Depth = 0;
-            this.diaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.diaLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.diaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.diaLabel.Location = new System.Drawing.Point(426, 206);
             this.diaLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.diaLabel.Name = "diaLabel";
-            this.diaLabel.Size = new System.Drawing.Size(30, 18);
+            this.diaLabel.Size = new System.Drawing.Size(31, 19);
             this.diaLabel.TabIndex = 81;
             this.diaLabel.Text = "Día";
             // 
@@ -225,18 +225,19 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.horaLabel.AutoSize = true;
             this.horaLabel.Depth = 0;
-            this.horaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.horaLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.horaLabel.Location = new System.Drawing.Point(177, 206);
             this.horaLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horaLabel.Name = "horaLabel";
-            this.horaLabel.Size = new System.Drawing.Size(41, 18);
+            this.horaLabel.Size = new System.Drawing.Size(42, 19);
             this.horaLabel.TabIndex = 80;
             this.horaLabel.Text = "Hora";
             // 
             // editarB
             // 
             this.editarB.BackColor = System.Drawing.Color.Transparent;
+            this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.editarB.FlatAppearance.BorderSize = 0;
             this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -251,6 +252,7 @@ namespace RaquetZone.formularios.Rol2
             // bVolver
             // 
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
