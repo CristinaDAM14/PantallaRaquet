@@ -66,6 +66,9 @@
             this.Controls.Add(this.buttonAE);
             this.Controls.Add(this.buttonLE);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(600, 360);
+            this.MinimumSize = new System.Drawing.Size(600, 360);
             this.Name = "GestionEmpresas";
             this.Text = "Gestión de Empresas";
             this.Load += new System.EventHandler(this.GestionEmpresas_Load);

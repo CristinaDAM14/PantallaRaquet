@@ -320,6 +320,9 @@
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
             this.Controls.Add(this.rolCombo);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "EditarUsuario";
             this.Text = "Editar Usuario";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);

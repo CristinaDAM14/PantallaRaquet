@@ -128,6 +128,9 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.listaDatos);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1050, 610);
+            this.MinimumSize = new System.Drawing.Size(1050, 610);
             this.Name = "RaquetZoneUsuarios";
             this.Text = "Listado de Usuarios";
             this.Load += new System.EventHandler(this.RaquetZoneUsuarios_Load);

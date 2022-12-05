@@ -66,6 +66,9 @@
             this.Controls.Add(this.buttonAU);
             this.Controls.Add(this.buttonLU);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(600, 360);
+            this.MinimumSize = new System.Drawing.Size(600, 360);
             this.Name = "GestionUsuarios";
             this.Text = "Gestión de Usuarios";
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);

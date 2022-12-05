@@ -214,6 +214,9 @@
             this.Controls.Add(this.passText);
             this.Controls.Add(this.nombreText);
             this.Controls.Add(this.rolCombo);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "AnyadirUsuario";
             this.Text = "Añadir Usuario";
             this.Load += new System.EventHandler(this.AnyadirUsuario_Load);
