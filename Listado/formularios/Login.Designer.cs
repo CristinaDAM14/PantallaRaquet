@@ -77,7 +77,7 @@ namespace RaquetZone.formularios
             this.iniciarButton.Name = "iniciarButton";
             this.iniciarButton.Primary = true;
             this.iniciarButton.Size = new System.Drawing.Size(123, 41);
-            this.iniciarButton.TabIndex = 5;
+            this.iniciarButton.TabIndex = 3;
             this.iniciarButton.Text = "Iniciar Sesión";
             this.iniciarButton.UseVisualStyleBackColor = true;
             this.iniciarButton.Click += new System.EventHandler(this.iniciarButton_Click);
@@ -95,7 +95,7 @@ namespace RaquetZone.formularios
             this.contraOlvidada.Name = "contraOlvidada";
             this.contraOlvidada.Primary = true;
             this.contraOlvidada.Size = new System.Drawing.Size(130, 21);
-            this.contraOlvidada.TabIndex = 6;
+            this.contraOlvidada.TabIndex = 4;
             this.contraOlvidada.Text = "¿Has olvidado tu contraseña?";
             this.contraOlvidada.UseVisualStyleBackColor = false;
             this.contraOlvidada.Click += new System.EventHandler(this.contraOlvidada_Click);
@@ -119,6 +119,9 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.iniciarButton);
             this.Controls.Add(this.passwText);
             this.Controls.Add(this.dniText);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(389, 386);
+            this.MinimumSize = new System.Drawing.Size(389, 386);
             this.Name = "Login";
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.Login_Load);

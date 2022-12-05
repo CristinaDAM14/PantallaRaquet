@@ -33,7 +33,7 @@ namespace RaquetZone.formularios
             string usuario = dniText.Text;
             string password = passwText.Text;
 
-            string url = "http://localhost:8081/usuario/login/?dni=" + usuario + "&password=" + password;
+            string url = "http://localhost:8081/usuario/login?dni=" + usuario + "&password=" + password;
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
 
