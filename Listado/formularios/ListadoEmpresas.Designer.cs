@@ -129,6 +129,7 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.listaDatosEmpresas);
+            this.MaximizeBox = false;
             this.Name = "RaquetZoneEmpresas";
             this.Text = "Listado de Empresas";
             this.Load += new System.EventHandler(this.RaquetZoneEmpresas_Load);

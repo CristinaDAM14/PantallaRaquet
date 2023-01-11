@@ -42,14 +42,14 @@ namespace RaquetZone.formularios
         {
             AnyadirUsuario AU1 = new AnyadirUsuario();
             AU1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonLU_Click_1(object sender, EventArgs e)
         {
             RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
             LU1.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -12,14 +12,14 @@ using MaterialSkin;
 
 namespace RaquetZone.formularios.Rol2
 {
-    public partial class GestionProductos : MaterialForm
+    public partial class GestionServicios : MaterialForm
     {
-        public GestionProductos()
+        public GestionServicios()
         {
             InitializeComponent();
         }
 
-        private void GestionProductos_Load(object sender, EventArgs e)
+        private void GestionServicios_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -28,17 +28,17 @@ namespace RaquetZone.formularios.Rol2
 
         }
 
-        private void buttonAP_Click(object sender, EventArgs e)
+        private void buttonLS_Click(object sender, EventArgs e)
         {
-            AnyadirProductos AP = new AnyadirProductos();
-            AP.Show();
+            ListadoServicios LS = new ListadoServicios();
+            LS.Show();
             this.Close();
         }
 
-        private void buttonLP_Click(object sender, EventArgs e)
+        private void buttonAS_Click(object sender, EventArgs e)
         {
-            ListadoProductos LP = new ListadoProductos();
-            LP.Show();
+            AnyadirServicio AS = new AnyadirServicio();
+            AS.Show();
             this.Close();
         }
     }

@@ -128,6 +128,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editarProductos);
             this.Controls.Add(this.listaProductos);
+            this.MaximizeBox = false;
             this.Name = "ListadoProductos";
             this.Text = "Listado de Productos";
             this.Load += new System.EventHandler(this.ListadoProductos_Load);

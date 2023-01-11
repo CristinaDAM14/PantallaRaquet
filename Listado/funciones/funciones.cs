@@ -113,6 +113,21 @@ namespace RaquetZone.funciones
 
         }
 
+        //Lista para los servicios
+        public static List<servicios> mostrarServicio()
+        {
+            String url = "http://localhost:8081/servicios";
+
+            conexion r = new conexion(url, "GET");
+
+            String Serv = r.getItem();
+
+            List<servicios> RaquetZoneServ = JsonConvert.DeserializeObject<List<servicios>>(Serv);
+
+            return RaquetZoneServ;
+
+        }
+
         //Enviar emails
 
         public static void sendEmail(string dirigido, string body, string subject)
@@ -163,7 +178,7 @@ namespace RaquetZone.funciones
 
             //Comprobamos primero que no existe el archivo antes de crearlo
 
-            DirectoryInfo di = new DirectoryInfo(@"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
+            DirectoryInfo di = new DirectoryInfo(@"E:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
             foreach (var fi in di.GetFiles())
             {
                 if (fi.Name.Equals(nombreFac))

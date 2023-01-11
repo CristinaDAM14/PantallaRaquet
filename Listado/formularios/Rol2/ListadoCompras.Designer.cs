@@ -193,6 +193,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.radioFecha);
             this.Controls.Add(this.buttonFactura);
             this.Controls.Add(this.listaCompras);
+            this.MaximizeBox = false;
             this.Name = "ListadoCompras";
             this.Text = "Listado de Compras";
             this.Load += new System.EventHandler(this.ListadoCompras_Load);

@@ -32,14 +32,14 @@ namespace RaquetZone.formularios
         {
             AnyadirEmpresa AE1 = new AnyadirEmpresa();
             AE1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonLE_Click_1(object sender, EventArgs e)
         {
             RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
             LE1.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

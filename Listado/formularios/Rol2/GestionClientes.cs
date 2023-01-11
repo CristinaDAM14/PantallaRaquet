@@ -32,14 +32,14 @@ namespace RaquetZone.formularios.Rol2
         {
             AnyadirCliente AC = new AnyadirCliente();
             AC.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonLE_Click(object sender, EventArgs e)
         {
             ListadoClientes LC = new ListadoClientes();
             LC.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

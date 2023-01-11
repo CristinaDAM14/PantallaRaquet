@@ -149,9 +149,21 @@ namespace RaquetZone.formularios
 
         private void buttonVolver_Click_1(object sender, EventArgs e)
         {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
             GestionUsuarios GU1 = new GestionUsuarios();
             GU1.Show();
             this.Close();
+            }
+            
+            
         }
     }
 }

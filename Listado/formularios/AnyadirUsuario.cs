@@ -25,7 +25,7 @@ namespace RaquetZone.formularios
             {
 
                 this.Text = "Añadir Empleado";
-                rolCombo.Text = "1";
+                rolCombo.Text = "Empleado";
                 rolCombo.Enabled = false;
 
             }
@@ -43,9 +43,23 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
-            this.Close();
+            
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                GestionUsuarios GU1 = new GestionUsuarios();
+                GU1.Show();
+                this.Close();
+            }
+
+            
         }
 
 
@@ -62,12 +76,14 @@ namespace RaquetZone.formularios
 
                     funciones.conexion r = new funciones.conexion(url, "POST");
 
+                    int num = SeleccionarRol(rolCombo.Text);
+
                     String datos = @"{
 " + "\n" +
         @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
         @"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
         @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
-        @"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +
+        @"        ""rolusr"": """ + num + "\"," + "\n" +
         @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
         @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
         @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
@@ -86,9 +102,28 @@ namespace RaquetZone.formularios
             {
                 MessageBox.Show("Formato del nombre incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-            
+          
         }
+
+        private int SeleccionarRol(string rol)
+        {
+            int num = 0;
+
+            if (rol.Equals("Empleado"))
+            {
+                num = 1;
+            }
+            else if(rol.Equals("Administrador"))
+            {
+                num = 2;
+            }
+            else
+            {
+                num = 3;
+            }
+
+            return num;
+        }
+
     }
 }

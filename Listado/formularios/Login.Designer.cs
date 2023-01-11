@@ -119,6 +119,7 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.iniciarButton);
             this.Controls.Add(this.passwText);
             this.Controls.Add(this.dniText);
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.Login_Load);

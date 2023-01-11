@@ -297,6 +297,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.dniLabel);
             this.Controls.Add(this.categoriaText);
             this.Controls.Add(this.nomText);
+            this.MaximizeBox = false;
             this.Name = "EditarProductos";
             this.Text = "Editar Productos";
             this.Load += new System.EventHandler(this.EditarProductos_Load);

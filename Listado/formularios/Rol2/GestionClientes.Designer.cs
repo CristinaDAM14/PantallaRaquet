@@ -66,6 +66,7 @@ namespace RaquetZone.formularios.Rol2
             this.ClientSize = new System.Drawing.Size(600, 360);
             this.Controls.Add(this.buttonAE);
             this.Controls.Add(this.buttonLE);
+            this.MaximizeBox = false;
             this.Name = "GestionClientes";
             this.Text = "Gestión de Clientes";
             this.Load += new System.EventHandler(this.GestionClientes_Load);

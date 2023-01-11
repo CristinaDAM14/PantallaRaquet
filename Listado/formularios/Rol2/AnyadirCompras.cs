@@ -30,9 +30,21 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionCompras").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
             GestionCompras PP2 = new GestionCompras();
             PP2.Show();
             this.Close();
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

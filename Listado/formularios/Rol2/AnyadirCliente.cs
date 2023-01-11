@@ -30,9 +30,21 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionClientes").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
             GestionClientes GC = new GestionClientes();
             GC.Show();
             this.Close();
+            }
+
+            
         }
 
         private void buttonAnyadir_Click(object sender, EventArgs e)

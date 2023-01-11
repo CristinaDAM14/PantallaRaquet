@@ -21,7 +21,10 @@ namespace RaquetZone.formularios
             dniText.Text = dni;
             nomText.Text = nom;
             passText.Text = pass;
-            rolCombo.Text = rol; 
+
+            string rolCompleto = PasarNumRol(rol);
+
+            rolCombo.Text = rolCompleto; 
             telText.Text = tel;
             emailText.Text = email;
             direccText.Text = direcc;
@@ -58,18 +61,60 @@ namespace RaquetZone.formularios
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 
+            int num = SeleccionarRol(rolCombo.Text);
+
             String body = @"{
 " + "\n" +
 @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
 @"        ""nombreusr"": """ + nomText.Text + "\"," + "\n" +
 @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
-@"        ""rolusr"": """ + Int32.Parse(rolCombo.Text) + "\"," + "\n" +
+@"        ""rolusr"": """ + num + "\"," + "\n" +
 @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
 @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
 @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
 @"    }";
             r.putItem(url, body);
             MessageBox.Show("Editado con éxito");
+        }
+
+        private int SeleccionarRol(string rol)
+        {
+            int num = 0;
+
+            if (rol.Equals("Empleado"))
+            {
+                num = 1;
+            }
+            else if (rol.Equals("Administrador"))
+            {
+                num = 2;
+            }
+            else
+            {
+                num = 3;
+            }
+
+            return num;
+        }
+
+        private string PasarNumRol(string num)
+        {
+            string rol = "";
+
+            if (num.Equals("1"))
+            {
+                rol = "Empleado";
+            }
+            else if (num.Equals("2"))
+            {
+                rol = "Administrador";
+            }
+            else
+            {
+                rol = "SuperAdmin";
+            }
+
+            return rol;
         }
     }
 }

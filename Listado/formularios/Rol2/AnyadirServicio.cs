@@ -12,14 +12,14 @@ using MaterialSkin;
 
 namespace RaquetZone.formularios.Rol2
 {
-    public partial class AnyadirProductos : MaterialForm
+    public partial class AnyadirServicio : MaterialForm
     {
-        public AnyadirProductos()
+        public AnyadirServicio()
         {
             InitializeComponent();
         }
 
-        private void AnyadirProductos_Load(object sender, EventArgs e)
+        private void AnyadirServicio_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
@@ -30,7 +30,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionProductos").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionServicios").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -39,19 +39,19 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-            GestionProductos GP = new GestionProductos();
-            GP.Show();
-            this.Close();
+                GestionServicios GS = new GestionServicios();
+                GS.Show();
+                this.Close();
             }
-
-            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AnyadirButton_Click(object sender, EventArgs e)
         {
+
             string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
 
-            if (iva.Equals("4%")){
+            if (iva.Equals("4%"))
+            {
                 iva = "4";
             }
             else if (iva.Equals("10%"))
@@ -64,23 +64,23 @@ namespace RaquetZone.formularios.Rol2
             }
 
 
-            String url = "http://localhost:8081/producto/add";
+            String url = "http://localhost:8081/servicio/add";
 
             funciones.conexion r = new funciones.conexion(url, "POST");
 
             String datos = @"{
 " + "\n" +
-@"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
-@"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
-@"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
-@"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
-@"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
-@"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
+@"        ""descripcionserv"": """ + desText.Text + "\"," + "\n" +
+@"        ""unidadestiemposerv"": """ + tiempoNumeric.Value + "\"," + "\n" +
+@"        ""precioserv"": """ + precioNum.Value + "\"," + "\n" +
+@"        ""ivaserv"": """ + Double.Parse(iva) + "\"," + "\n" +
+@"        ""descuentoserv"": """ + desNum.Value + "\"" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);
 
-            MessageBox.Show("Producto añadido a la base de datos");
+            MessageBox.Show("Servicio añadido a la base de datos");
+
         }
     }
 }

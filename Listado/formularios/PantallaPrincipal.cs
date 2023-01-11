@@ -51,15 +51,38 @@ namespace RaquetZone.formularios
 
         private void buttonGU_Click(object sender, EventArgs e)
         {
-            GestionUsuarios GU = new GestionUsuarios();
-            GU.Show();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+               GestionUsuarios GU = new GestionUsuarios();
+                GU.Show();
+            }
 
         }
 
         private void buttonGE_Click(object sender, EventArgs e)
         {
-            GestionEmpresas GE = new GestionEmpresas();
-            GE.Show();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionEmpresas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionEmpresas GE = new GestionEmpresas();
+                GE.Show();
+            }
+
+            
         }
 
         private void noteButton_Click(object sender, EventArgs e)

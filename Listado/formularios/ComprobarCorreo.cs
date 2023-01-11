@@ -54,6 +54,7 @@ namespace RaquetZone.formularios
                         string pass = juser.passwordusr;
                         string body = "La contraseña que olvidaste es " + pass;
                         string subject = "Recuperación de contraseña";
+                        Cursor.Current = Cursors.WaitCursor;
                         funciones.funciones.sendEmail(email, body, subject);
                         MessageBox.Show("El email ha sido enviado ");
                     }

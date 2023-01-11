@@ -68,35 +68,102 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonGP_Click(object sender, EventArgs e)
         {
-            GestionProductos GP = new GestionProductos();
-            GP.Show();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionProductos").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionProductos GP = new GestionProductos();
+                GP.Show();
+            }
+
+            
 
         }
 
         private void buttonGU_Click(object sender, EventArgs e)
         {
-            var abrirGU = new GestionUsuarios();
-            abrirGU.Show();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionUsuarios abrirGU = new GestionUsuarios();
+                abrirGU.Show();
+            }
+
+            
         }
 
         private void buttonGC_Click(object sender, EventArgs e)
         {
-            GestionClientes GC = new GestionClientes();
-            GC.Show();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionClientes").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionClientes GC = new GestionClientes();
+                GC.Show();
+            }
+            
 
         }
 
         private void buttonCompras_Click(object sender, EventArgs e)
         {
-            GestionCompras LC = new GestionCompras();
-            LC.Show();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionCompras").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionCompras LC = new GestionCompras();
+                LC.Show();
+            }
+            
         }
 
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
+
             Login LU1 = new Login();
             LU1.Show();
             this.Close();
+        }
+
+        private void Servicios_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionServicios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                GestionServicios GS = new GestionServicios();
+                GS.Show();
+            }
+
+            
         }
     }
 }

@@ -156,6 +156,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.asuntoText);
             this.Controls.Add(this.destinatarioText);
+            this.MaximizeBox = false;
             this.Name = "EmailClientes";
             this.Text = "Enviar email a un cliente";
             this.Load += new System.EventHandler(this.EmailClientes_Load);

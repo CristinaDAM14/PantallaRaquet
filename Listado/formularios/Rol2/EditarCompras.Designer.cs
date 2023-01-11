@@ -283,6 +283,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.idText);
+            this.MaximizeBox = false;
             this.Name = "EditarCompras";
             this.Text = "Editar Compras";
             this.Load += new System.EventHandler(this.EditarCompras_Load);

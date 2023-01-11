@@ -181,6 +181,12 @@
     <Compile Include="formularios\Rol2\AnyadirProductos.Designer.cs">
       <DependentUpon>AnyadirProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\AnyadirServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirServicio.Designer.cs">
+      <DependentUpon>AnyadirServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Rol2\EditarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,12 @@
     </Compile>
     <Compile Include="formularios\Rol2\EditarProductos.Designer.cs">
       <DependentUpon>EditarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\EditarServicios.Designer.cs">
+      <DependentUpon>EditarServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\Rol2\EmailClientes.cs">
       <SubType>Form</SubType>
@@ -247,6 +259,12 @@
     <Compile Include="formularios\PantallaPrincipal.designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\GestionServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\GestionServicios.Designer.cs">
+      <DependentUpon>GestionServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Rol2\ListadoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +282,12 @@
     </Compile>
     <Compile Include="formularios\Rol2\ListadoProductos.Designer.cs">
       <DependentUpon>ListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoServicios.Designer.cs">
+      <DependentUpon>ListadoServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\Rol2\PantallaPrincipalRol2.cs">
       <SubType>Form</SubType>
@@ -290,6 +314,7 @@
     <Compile Include="funciones\funciones.cs" />
     <Compile Include="funciones\productos.cs" />
     <Compile Include="funciones\producto_compra.cs" />
+    <Compile Include="funciones\servicios.cs" />
     <Compile Include="funciones\usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,6 +342,9 @@
     <EmbeddedResource Include="formularios\Rol2\AnyadirProductos.resx">
       <DependentUpon>AnyadirProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\AnyadirServicio.resx">
+      <DependentUpon>AnyadirServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EditarClientes.resx">
       <DependentUpon>EditarClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EditarProductos.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\EditarServicios.resx">
+      <DependentUpon>EditarServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EmailClientes.resx">
       <DependentUpon>EmailClientes.cs</DependentUpon>
@@ -356,6 +387,9 @@
     <EmbeddedResource Include="formularios\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\GestionServicios.resx">
+      <DependentUpon>GestionServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\ListadoClientes.resx">
       <DependentUpon>ListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\ListadoProductos.resx">
       <DependentUpon>ListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\ListadoServicios.resx">
+      <DependentUpon>ListadoServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\PantallaPrincipalRol2.resx">
       <DependentUpon>PantallaPrincipalRol2.cs</DependentUpon>

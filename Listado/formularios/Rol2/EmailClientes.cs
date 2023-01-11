@@ -47,6 +47,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
+                Cursor.Current = Cursors.WaitCursor;
                 funciones.funciones.sendEmail(destinatario, body, asunto);
                 MessageBox.Show("El email ha sido enviado ");
             }         

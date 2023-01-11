@@ -53,9 +53,9 @@
             this.rolCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
+            "Empleado",
+            "Administrador",
+            "SuperAdmin"});
             this.rolCombo.Location = new System.Drawing.Point(603, 285);
             this.rolCombo.Name = "rolCombo";
             this.rolCombo.Size = new System.Drawing.Size(91, 23);
@@ -320,6 +320,7 @@
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
             this.Controls.Add(this.rolCombo);
+            this.MaximizeBox = false;
             this.Name = "EditarUsuario";
             this.Text = "Editar Usuario";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);

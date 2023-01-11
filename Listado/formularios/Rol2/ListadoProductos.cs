@@ -103,9 +103,19 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            GestionProductos GP = new GestionProductos();
-            GP.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionProductos").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                GestionProductos GP = new GestionProductos();
+                GP.Show();
+                this.Close();
+            }
         }
     }
 }

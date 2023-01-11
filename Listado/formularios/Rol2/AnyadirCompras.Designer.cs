@@ -250,6 +250,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.horaLabel);
+            this.MaximizeBox = false;
             this.Name = "AnyadirCompras";
             this.Text = "Añadir Compras";
             this.Load += new System.EventHandler(this.AnyadirCompras_Load);

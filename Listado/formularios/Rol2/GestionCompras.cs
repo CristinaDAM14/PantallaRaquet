@@ -32,14 +32,14 @@ namespace RaquetZone.formularios.Rol2
         {
             ListadoCompras LC = new ListadoCompras();
             LC.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonAC_Click(object sender, EventArgs e)
         {
             AnyadirCompras AC = new AnyadirCompras();
             AC.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

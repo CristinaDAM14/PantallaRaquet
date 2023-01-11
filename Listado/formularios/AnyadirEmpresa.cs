@@ -30,9 +30,21 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-                     GestionEmpresas G1 = new GestionEmpresas();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionEmpresas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                    GestionEmpresas G1 = new GestionEmpresas();
                     G1.Show();
                     this.Close();
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

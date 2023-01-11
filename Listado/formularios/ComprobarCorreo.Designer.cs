@@ -116,6 +116,7 @@ namespace RaquetZone.formularios
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.dniText);
             this.Controls.Add(this.materialLabel1);
+            this.MaximizeBox = false;
             this.Name = "ComprobarCorreo";
             this.Text = "Recuperar Contraseña";
             this.Load += new System.EventHandler(this.ComprobarCorreo_Load);

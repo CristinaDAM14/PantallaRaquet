@@ -235,6 +235,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.categoriaText);
             this.Controls.Add(this.nomText);
+            this.MaximizeBox = false;
             this.Name = "AnyadirProductos";
             this.Text = "Añadir Productos";
             this.Load += new System.EventHandler(this.AnyadirProductos_Load);

@@ -193,6 +193,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.passText);
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.dniText);
+            this.MaximizeBox = false;
             this.Name = "AnyadirCliente";
             this.Text = "Añadir Cliente";
             this.Load += new System.EventHandler(this.AnyadirCliente_Load);

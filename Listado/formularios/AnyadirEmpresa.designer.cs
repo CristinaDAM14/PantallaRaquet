@@ -214,6 +214,7 @@
             this.Controls.Add(this.webText);
             this.Controls.Add(this.nomText);
             this.Controls.Add(this.cifText);
+            this.MaximizeBox = false;
             this.Name = "AnyadirEmpresa";
             this.Text = "Añadir Empresa";
             this.Load += new System.EventHandler(this.AnyadirEmpresa_Load);
