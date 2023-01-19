@@ -68,7 +68,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonGP_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionProductos").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoProductos").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -77,7 +77,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionProductos GP = new GestionProductos();
+                ListadoProductos GP = new ListadoProductos();
                 GP.Show();
             }
 
@@ -88,7 +88,7 @@ namespace RaquetZone.formularios.Rol2
         private void buttonGU_Click(object sender, EventArgs e)
         {
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -97,8 +97,8 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionUsuarios abrirGU = new GestionUsuarios();
-                abrirGU.Show();
+                RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
+                LU1.Show();
             }
 
             
@@ -107,7 +107,7 @@ namespace RaquetZone.formularios.Rol2
         private void buttonGC_Click(object sender, EventArgs e)
         {
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionClientes").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoClientes").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -116,7 +116,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionClientes GC = new GestionClientes();
+                ListadoClientes GC = new ListadoClientes();
                 GC.Show();
             }
             
@@ -125,7 +125,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonCompras_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionCompras").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoCompras").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -134,7 +134,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionCompras LC = new GestionCompras();
+                ListadoCompras LC = new ListadoCompras();
                 LC.Show();
             }
             
@@ -150,7 +150,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void Servicios_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionServicios").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoServicios").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -159,11 +159,27 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionServicios GS = new GestionServicios();
+                ListadoServicios GS = new ListadoServicios();
                 GS.Show();
             }
 
             
+        }
+
+        private void bReservas_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoReservas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoReservas LR = new ListadoReservas();
+                LR.Show();
+            }
         }
     }
 }

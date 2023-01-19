@@ -69,7 +69,7 @@ namespace RaquetZone.funciones
                 }
                 else return null;
             }
-            catch (WebException e)
+            catch (WebException)
             {
 
                 return null;
@@ -140,7 +140,7 @@ namespace RaquetZone.funciones
                 }
                 else return null;
             }
-            catch (WebException e)
+            catch (WebException)
             {
 
                 return null;

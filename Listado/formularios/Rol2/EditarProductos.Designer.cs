@@ -54,6 +54,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // categoriaText
             // 
+            this.categoriaText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriaText.Depth = 0;
             this.categoriaText.Hint = "Categoría";
             this.categoriaText.Location = new System.Drawing.Point(580, 117);
@@ -69,6 +70,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // nomText
             // 
+            this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
             this.nomText.Location = new System.Drawing.Point(294, 117);
@@ -136,6 +138,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // idText
             // 
+            this.idText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.idText.Depth = 0;
             this.idText.Enabled = false;
             this.idText.Hint = "ID";
@@ -177,6 +180,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(282, 362);
@@ -192,6 +196,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarB.BackColor = System.Drawing.Color.Transparent;
             this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarB.FlatAppearance.BorderSize = 0;
             this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarB.Location = new System.Drawing.Point(424, 363);
@@ -217,6 +222,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // ivaBox
             // 
+            this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -255,6 +261,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // stockNumeric
             // 
+            this.stockNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stockNumeric.Location = new System.Drawing.Point(688, 218);
             this.stockNumeric.Name = "stockNumeric";
             this.stockNumeric.Size = new System.Drawing.Size(49, 20);
@@ -262,6 +269,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // precioNum
             // 
+            this.precioNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.precioNum.Location = new System.Drawing.Point(229, 262);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
@@ -269,6 +277,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desNum
             // 
+            this.desNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desNum.Location = new System.Drawing.Point(229, 217);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);

@@ -14,9 +14,6 @@ using System.IO;
 namespace RaquetZone.funciones
 {
 
-    
-
-
     public static class funciones
     {
 
@@ -128,6 +125,32 @@ namespace RaquetZone.funciones
 
         }
 
+        //Lista para las reservas
+        public static List<reservas> mostrarReservas()
+        {
+            String url = "http://localhost:8081/reservas";
+
+            conexion r = new conexion(url, "GET");
+
+            String Reser = r.getItem();
+
+            Reser = Reser.Replace("\"cliente\":{", "");
+            Reser = Reser.Replace("\"servicio\":{", "");
+            Reser = Reser.Replace("},", "");
+            Reser = Reser.Replace("}", "");
+            Reser = Reser.Replace("\"compras\":[]", "");
+            Reser = Reser.Replace("]", "");
+            Reser = Reser.Replace("{", "},{");
+            Reser = Reser.Remove(1, 2);
+            Reser = Reser + "}]";
+            String finalRes = Reser.Replace(" ", "");
+
+            List<reservas> RaquetZoneRes = JsonConvert.DeserializeObject<List<reservas>>(finalRes);
+
+            return RaquetZoneRes;
+
+        }
+
         //Enviar emails
 
         public static void sendEmail(string dirigido, string body, string subject)
@@ -178,7 +201,7 @@ namespace RaquetZone.funciones
 
             //Comprobamos primero que no existe el archivo antes de crearlo
 
-            DirectoryInfo di = new DirectoryInfo(@"E:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
+            DirectoryInfo di = new DirectoryInfo(@"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
             foreach (var fi in di.GetFiles())
             {
                 if (fi.Name.Equals(nombreFac))

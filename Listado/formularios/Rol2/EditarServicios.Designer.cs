@@ -43,6 +43,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.idText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiempoNumeric)).BeginInit();
@@ -50,6 +51,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desNum
             // 
+            this.desNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desNum.Location = new System.Drawing.Point(245, 254);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);
@@ -57,6 +59,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // precioNum
             // 
+            this.precioNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.precioNum.Location = new System.Drawing.Point(245, 299);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
@@ -90,6 +93,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // ivaBox
             // 
+            this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -129,6 +133,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // tiempoNumeric
             // 
+            this.tiempoNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tiempoNumeric.Location = new System.Drawing.Point(532, 299);
             this.tiempoNumeric.Name = "tiempoNumeric";
             this.tiempoNumeric.Size = new System.Drawing.Size(49, 20);
@@ -147,16 +152,17 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desText
             // 
+            this.desText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desText.Depth = 0;
             this.desText.Hint = "Descripción";
-            this.desText.Location = new System.Drawing.Point(284, 132);
+            this.desText.Location = new System.Drawing.Point(375, 132);
             this.desText.MouseState = MaterialSkin.MouseState.HOVER;
             this.desText.Name = "desText";
             this.desText.PasswordChar = '\0';
             this.desText.SelectedText = "";
             this.desText.SelectionLength = 0;
             this.desText.SelectionStart = 0;
-            this.desText.Size = new System.Drawing.Size(368, 23);
+            this.desText.Size = new System.Drawing.Size(299, 23);
             this.desText.TabIndex = 96;
             this.desText.UseSystemPasswordChar = false;
             // 
@@ -165,6 +171,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarS.BackColor = System.Drawing.Color.Transparent;
             this.editarS.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarS.FlatAppearance.BorderSize = 0;
             this.editarS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarS.Location = new System.Drawing.Point(426, 363);
@@ -180,6 +187,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(284, 362);
@@ -205,6 +213,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // idText
             // 
+            this.idText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.idText.Depth = 0;
             this.idText.Enabled = false;
             this.idText.Hint = "ID";
@@ -219,11 +228,25 @@ namespace RaquetZone.formularios.Rol2
             this.idText.TabIndex = 108;
             this.idText.UseSystemPasswordChar = false;
             // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(280, 132);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel4.TabIndex = 110;
+            this.materialLabel4.Text = "Descripción";
+            // 
             // EditarServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.idText);
             this.Controls.Add(this.editarS);
@@ -265,5 +288,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button bVolver;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField idText;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

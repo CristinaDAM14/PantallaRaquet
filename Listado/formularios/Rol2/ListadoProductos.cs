@@ -103,7 +103,12 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionProductos").SingleOrDefault<Form>();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirProductos").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -112,10 +117,20 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                GestionProductos GP = new GestionProductos();
-                GP.Show();
+                AnyadirProductos GP1 = new AnyadirProductos();
+                GP1.Show();
                 this.Close();
             }
+        }
+
+        private void listaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buscarID_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

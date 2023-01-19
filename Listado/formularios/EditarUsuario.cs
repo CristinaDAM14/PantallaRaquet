@@ -42,7 +42,7 @@ namespace RaquetZone.formularios
             if (existe != null)
 
             {
-
+                rolCombo.Enabled = false;
                 this.Text = "Editar Empleado";
 
             }

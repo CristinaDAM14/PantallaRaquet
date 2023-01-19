@@ -33,6 +33,11 @@ namespace RaquetZone.formularios.Rol2
             this.buttonGC = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonGP = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonCompras = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Servicios = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.RZapp = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.productosLabel = new System.Windows.Forms.Label();
             this.clientesLabel = new System.Windows.Forms.Label();
             this.comprasLabel = new System.Windows.Forms.Label();
@@ -41,12 +46,11 @@ namespace RaquetZone.formularios.Rol2
             this.edgeButton = new System.Windows.Forms.Button();
             this.chromeButton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Servicios = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // buttonGU
             // 
+            this.buttonGU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGU.Depth = 0;
             this.buttonGU.Location = new System.Drawing.Point(66, 291);
             this.buttonGU.MouseState = MaterialSkin.MouseState.HOVER;
@@ -60,6 +64,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buttonGC
             // 
+            this.buttonGC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGC.Depth = 0;
             this.buttonGC.Location = new System.Drawing.Point(66, 176);
             this.buttonGC.MouseState = MaterialSkin.MouseState.HOVER;
@@ -73,6 +78,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buttonGP
             // 
+            this.buttonGP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGP.Depth = 0;
             this.buttonGP.Location = new System.Drawing.Point(323, 176);
             this.buttonGP.MouseState = MaterialSkin.MouseState.HOVER;
@@ -86,6 +92,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buttonCompras
             // 
+            this.buttonCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCompras.Depth = 0;
             this.buttonCompras.Location = new System.Drawing.Point(323, 291);
             this.buttonCompras.MouseState = MaterialSkin.MouseState.HOVER;
@@ -96,6 +103,61 @@ namespace RaquetZone.formularios.Rol2
             this.buttonCompras.Text = "Compras";
             this.buttonCompras.UseVisualStyleBackColor = true;
             this.buttonCompras.Click += new System.EventHandler(this.buttonCompras_Click);
+            // 
+            // Servicios
+            // 
+            this.Servicios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Servicios.Depth = 0;
+            this.Servicios.Location = new System.Drawing.Point(573, 176);
+            this.Servicios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Servicios.Name = "Servicios";
+            this.Servicios.Primary = true;
+            this.Servicios.Size = new System.Drawing.Size(179, 29);
+            this.Servicios.TabIndex = 66;
+            this.Servicios.Text = "Servicios";
+            this.Servicios.UseVisualStyleBackColor = true;
+            this.Servicios.Click += new System.EventHandler(this.Servicios_Click);
+            // 
+            // bReservas
+            // 
+            this.bReservas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bReservas.Depth = 0;
+            this.bReservas.Location = new System.Drawing.Point(573, 291);
+            this.bReservas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.bReservas.Name = "bReservas";
+            this.bReservas.Primary = true;
+            this.bReservas.Size = new System.Drawing.Size(179, 29);
+            this.bReservas.TabIndex = 68;
+            this.bReservas.Text = "Reservas";
+            this.bReservas.UseVisualStyleBackColor = true;
+            this.bReservas.Click += new System.EventHandler(this.bReservas_Click);
+            // 
+            // RZapp
+            // 
+            this.RZapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RZapp.Image = global::Listado.Properties.Resources.LogoEscritorio;
+            this.RZapp.Location = new System.Drawing.Point(323, 25);
+            this.RZapp.Name = "RZapp";
+            this.RZapp.Size = new System.Drawing.Size(179, 39);
+            this.RZapp.TabIndex = 70;
+            // 
+            // label2
+            // 
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Image = global::Listado.Properties.Resources.reservas;
+            this.label2.Location = new System.Drawing.Point(632, 233);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 55);
+            this.label2.TabIndex = 69;
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Image = global::Listado.Properties.Resources.Servicios;
+            this.label1.Location = new System.Drawing.Point(632, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 55);
+            this.label1.TabIndex = 67;
             // 
             // productosLabel
             // 
@@ -138,9 +200,10 @@ namespace RaquetZone.formularios.Rol2
             this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
             this.buttonLogin.BackgroundImage = global::Listado.Properties.Resources.cerrar_sesion;
             this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Location = new System.Drawing.Point(744, 73);
+            this.buttonLogin.Location = new System.Drawing.Point(799, 76);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(34, 32);
             this.buttonLogin.TabIndex = 60;
@@ -152,9 +215,10 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.edgeButton.BackgroundImage = global::Listado.Properties.Resources.medge;
             this.edgeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.edgeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.edgeButton.FlatAppearance.BorderSize = 0;
             this.edgeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edgeButton.Location = new System.Drawing.Point(744, 332);
+            this.edgeButton.Location = new System.Drawing.Point(799, 335);
             this.edgeButton.Name = "edgeButton";
             this.edgeButton.Size = new System.Drawing.Size(36, 32);
             this.edgeButton.TabIndex = 11;
@@ -165,9 +229,10 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.chromeButton.BackgroundImage = global::Listado.Properties.Resources.chrome;
             this.chromeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chromeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chromeButton.FlatAppearance.BorderSize = 0;
             this.chromeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chromeButton.Location = new System.Drawing.Point(744, 294);
+            this.chromeButton.Location = new System.Drawing.Point(799, 297);
             this.chromeButton.Name = "chromeButton";
             this.chromeButton.Size = new System.Drawing.Size(36, 32);
             this.chromeButton.TabIndex = 10;
@@ -178,43 +243,25 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.noteButton.BackgroundImage = global::Listado.Properties.Resources.notepad;
             this.noteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.noteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.noteButton.FlatAppearance.BorderSize = 0;
             this.noteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noteButton.Location = new System.Drawing.Point(744, 256);
+            this.noteButton.Location = new System.Drawing.Point(799, 259);
             this.noteButton.Name = "noteButton";
             this.noteButton.Size = new System.Drawing.Size(36, 32);
             this.noteButton.TabIndex = 9;
             this.noteButton.UseVisualStyleBackColor = true;
             this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
             // 
-            // label1
-            // 
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Image = global::Listado.Properties.Resources.producto;
-            this.label1.Location = new System.Drawing.Point(636, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 55);
-            this.label1.TabIndex = 67;
-            // 
-            // Servicios
-            // 
-            this.Servicios.Depth = 0;
-            this.Servicios.Location = new System.Drawing.Point(573, 176);
-            this.Servicios.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Servicios.Name = "Servicios";
-            this.Servicios.Primary = true;
-            this.Servicios.Size = new System.Drawing.Size(179, 29);
-            this.Servicios.TabIndex = 66;
-            this.Servicios.Text = "Servicios";
-            this.Servicios.UseVisualStyleBackColor = true;
-            this.Servicios.Click += new System.EventHandler(this.Servicios_Click);
-            // 
             // PantallaPrincipalRol2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 380);
+            this.ClientSize = new System.Drawing.Size(845, 380);
             this.ControlBox = false;
+            this.Controls.Add(this.RZapp);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.bReservas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Servicios);
             this.Controls.Add(this.productosLabel);
@@ -250,5 +297,8 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Label productosLabel;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton Servicios;
+        private System.Windows.Forms.Label label2;
+        private MaterialSkin.Controls.MaterialRaisedButton bReservas;
+        private System.Windows.Forms.Label RZapp;
     }
 }

@@ -100,7 +100,12 @@ namespace RaquetZone.formularios
         private void bVolver_Click(object sender, EventArgs e)
         {
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionEmpresas").SingleOrDefault<Form>();
+            this.Close();
+        }
+
+        private void Anyadir_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirEmpresa").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -109,11 +114,10 @@ namespace RaquetZone.formularios
             }
             else
             {
-                GestionEmpresas G1 = new GestionEmpresas();
-                G1.Show();
+                AnyadirEmpresa G2 = new AnyadirEmpresa();
+                G2.Show();
                 this.Close();
             }
-
         }
     }
 }

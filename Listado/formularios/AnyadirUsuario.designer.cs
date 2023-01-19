@@ -32,17 +32,25 @@
             this.emailText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.telText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.nombreText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.rolCombo = new System.Windows.Forms.ComboBox();
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
+            this.nombreText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.horasLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.telLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.passLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // direccText
             // 
+            this.direccText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.direccText.Depth = 0;
             this.direccText.Hint = "Dirección";
             this.direccText.Location = new System.Drawing.Point(416, 215);
@@ -58,9 +66,10 @@
             // 
             // emailText
             // 
+            this.emailText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(114, 282);
+            this.emailText.Location = new System.Drawing.Point(119, 282);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
@@ -73,7 +82,10 @@
             // 
             // telText
             // 
+            this.telText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.telText.Depth = 0;
+            this.telText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telText.ForeColor = System.Drawing.SystemColors.ControlText;
             this.telText.Hint = "Teléfono";
             this.telText.Location = new System.Drawing.Point(416, 282);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
@@ -88,9 +100,10 @@
             // 
             // passText
             // 
+            this.passText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.passText.Depth = 0;
             this.passText.Hint = "Contraseña";
-            this.passText.Location = new System.Drawing.Point(114, 215);
+            this.passText.Location = new System.Drawing.Point(119, 215);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
             this.passText.PasswordChar = '\0';
@@ -101,23 +114,9 @@
             this.passText.TabIndex = 3;
             this.passText.UseSystemPasswordChar = false;
             // 
-            // nombreText
-            // 
-            this.nombreText.Depth = 0;
-            this.nombreText.Hint = "Nombre";
-            this.nombreText.Location = new System.Drawing.Point(416, 129);
-            this.nombreText.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nombreText.Name = "nombreText";
-            this.nombreText.PasswordChar = '\0';
-            this.nombreText.SelectedText = "";
-            this.nombreText.SelectionLength = 0;
-            this.nombreText.SelectionStart = 0;
-            this.nombreText.Size = new System.Drawing.Size(282, 23);
-            this.nombreText.TabIndex = 2;
-            this.nombreText.UseSystemPasswordChar = false;
-            // 
             // rolCombo
             // 
+            this.rolCombo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rolCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
@@ -132,6 +131,7 @@
             // 
             // dniText
             // 
+            this.dniText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dniText.Depth = 0;
             this.dniText.Hint = "DNI";
             this.dniText.Location = new System.Drawing.Point(114, 129);
@@ -142,7 +142,7 @@
             this.dniText.SelectionLength = 0;
             this.dniText.SelectionStart = 0;
             this.dniText.Size = new System.Drawing.Size(175, 23);
-            this.dniText.TabIndex = 1;
+            this.dniText.TabIndex = 0;
             this.dniText.UseSystemPasswordChar = false;
             // 
             // materialTabSelector1
@@ -172,6 +172,7 @@
             this.buttonEditar.BackColor = System.Drawing.Color.Transparent;
             this.buttonEditar.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
             this.buttonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Location = new System.Drawing.Point(416, 359);
@@ -187,6 +188,7 @@
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(244, 359);
@@ -197,12 +199,127 @@
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
+            // nombreText
+            // 
+            this.nombreText.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nombreText.Depth = 0;
+            this.nombreText.Hint = "Nombre";
+            this.nombreText.Location = new System.Drawing.Point(416, 129);
+            this.nombreText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nombreText.Name = "nombreText";
+            this.nombreText.PasswordChar = '\0';
+            this.nombreText.SelectedText = "";
+            this.nombreText.SelectionLength = 0;
+            this.nombreText.SelectionStart = 0;
+            this.nombreText.Size = new System.Drawing.Size(282, 23);
+            this.nombreText.TabIndex = 1;
+            this.nombreText.UseSystemPasswordChar = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(557, 283);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(31, 19);
+            this.materialLabel1.TabIndex = 52;
+            this.materialLabel1.Text = "Rol";
+            // 
+            // horasLabel
+            // 
+            this.horasLabel.AutoSize = true;
+            this.horasLabel.Depth = 0;
+            this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.horasLabel.Location = new System.Drawing.Point(341, 281);
+            this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.horasLabel.Name = "horasLabel";
+            this.horasLabel.Size = new System.Drawing.Size(69, 19);
+            this.horasLabel.TabIndex = 51;
+            this.horasLabel.Text = "Teléfono";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Depth = 0;
+            this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.emailLabel.Location = new System.Drawing.Point(337, 215);
+            this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(73, 19);
+            this.emailLabel.TabIndex = 50;
+            this.emailLabel.Text = "Dirección";
+            // 
+            // nomLabel
+            // 
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Depth = 0;
+            this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.nomLabel.Location = new System.Drawing.Point(347, 129);
+            this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(63, 19);
+            this.nomLabel.TabIndex = 49;
+            this.nomLabel.Text = "Nombre";
+            // 
+            // telLabel
+            // 
+            this.telLabel.AutoSize = true;
+            this.telLabel.Depth = 0;
+            this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.telLabel.Location = new System.Drawing.Point(66, 281);
+            this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.telLabel.Name = "telLabel";
+            this.telLabel.Size = new System.Drawing.Size(47, 19);
+            this.telLabel.TabIndex = 48;
+            this.telLabel.Text = "Email";
+            // 
+            // passLabel
+            // 
+            this.passLabel.AutoSize = true;
+            this.passLabel.Depth = 0;
+            this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.passLabel.Location = new System.Drawing.Point(27, 215);
+            this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(86, 19);
+            this.passLabel.TabIndex = 47;
+            this.passLabel.Text = "Contraseña";
+            // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.Depth = 0;
+            this.dniLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.dniLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dniLabel.Location = new System.Drawing.Point(74, 129);
+            this.dniLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(34, 19);
+            this.dniLabel.TabIndex = 46;
+            this.dniLabel.Text = "DNI";
+            // 
             // AnyadirUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.horasLabel);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.nomLabel);
+            this.Controls.Add(this.telLabel);
+            this.Controls.Add(this.passLabel);
+            this.Controls.Add(this.dniLabel);
+            this.Controls.Add(this.nombreText);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
@@ -212,13 +329,13 @@
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.telText);
             this.Controls.Add(this.passText);
-            this.Controls.Add(this.nombreText);
             this.Controls.Add(this.rolCombo);
             this.MaximizeBox = false;
             this.Name = "AnyadirUsuario";
             this.Text = "Añadir Usuario";
             this.Load += new System.EventHandler(this.AnyadirUsuario_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,13 +344,20 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField emailText;
         private MaterialSkin.Controls.MaterialSingleLineTextField telText;
         private MaterialSkin.Controls.MaterialSingleLineTextField passText;
-        private MaterialSkin.Controls.MaterialSingleLineTextField nombreText;
         private System.Windows.Forms.ComboBox rolCombo;
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button buttonEditar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField nombreText;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel horasLabel;
+        private MaterialSkin.Controls.MaterialLabel emailLabel;
+        private MaterialSkin.Controls.MaterialLabel nomLabel;
+        private MaterialSkin.Controls.MaterialLabel telLabel;
+        private MaterialSkin.Controls.MaterialLabel passLabel;
+        private MaterialSkin.Controls.MaterialLabel dniLabel;
     }
 }
 

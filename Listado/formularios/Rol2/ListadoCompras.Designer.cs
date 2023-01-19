@@ -40,6 +40,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +49,12 @@ namespace RaquetZone.formularios.Rol2
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Location = new System.Drawing.Point(51, 140);
             this.listaCompras.Name = "listaCompras";
-            this.listaCompras.Size = new System.Drawing.Size(917, 362);
+            this.listaCompras.Size = new System.Drawing.Size(942, 362);
             this.listaCompras.TabIndex = 51;
             // 
             // buttonFactura
             // 
+            this.buttonFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFactura.Depth = 0;
             this.buttonFactura.Location = new System.Drawing.Point(577, 530);
             this.buttonFactura.MouseState = MaterialSkin.MouseState.HOVER;
@@ -66,6 +68,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // radioFecha
             // 
+            this.radioFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioFecha.Depth = 0;
             this.radioFecha.Font = new System.Drawing.Font("Roboto", 10F);
             this.radioFecha.Location = new System.Drawing.Point(893, 111);
@@ -82,6 +85,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // radioID
             // 
+            this.radioID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioID.Depth = 0;
             this.radioID.Font = new System.Drawing.Font("Roboto", 10F);
             this.radioID.Location = new System.Drawing.Point(818, 111);
@@ -110,6 +114,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Depth = 0;
             this.buttonEliminar.Location = new System.Drawing.Point(342, 530);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -125,8 +130,9 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.editarCompras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarCompras.BackgroundImage")));
             this.editarCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editarCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editarCompras.Location = new System.Drawing.Point(986, 149);
+            this.editarCompras.Location = new System.Drawing.Point(999, 149);
             this.editarCompras.Name = "editarCompras";
             this.editarCompras.Size = new System.Drawing.Size(39, 34);
             this.editarCompras.TabIndex = 58;
@@ -138,6 +144,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(12, 558);
@@ -150,6 +157,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buscadorButton
             // 
+            this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscadorButton.Location = new System.Drawing.Point(237, 101);
@@ -164,6 +172,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buscarID
             // 
+            this.buscarID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscarID.Depth = 0;
             this.buscarID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarID.Hint = "ID";
@@ -178,11 +187,25 @@ namespace RaquetZone.formularios.Rol2
             this.buscarID.TabIndex = 1;
             this.buscarID.UseSystemPasswordChar = false;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(999, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 34);
+            this.button1.TabIndex = 64;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ListadoCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarID);
             this.Controls.Add(this.bVolver);
@@ -214,5 +237,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button bVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
+        private System.Windows.Forms.Button button1;
     }
 }

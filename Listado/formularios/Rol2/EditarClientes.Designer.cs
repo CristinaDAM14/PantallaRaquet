@@ -50,6 +50,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // emailText
             // 
+            this.emailText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
             this.emailText.Location = new System.Drawing.Point(491, 215);
@@ -65,6 +66,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // telText
             // 
+            this.telText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
             this.telText.Location = new System.Drawing.Point(152, 274);
@@ -80,13 +82,14 @@ namespace RaquetZone.formularios.Rol2
             // 
             // passText
             // 
+            this.passText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.passText.Depth = 0;
             this.passText.Enabled = false;
             this.passText.Hint = "Contraseña";
             this.passText.Location = new System.Drawing.Point(152, 215);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
-            this.passText.PasswordChar = '\0';
+            this.passText.PasswordChar = '*';
             this.passText.SelectedText = "";
             this.passText.SelectionLength = 0;
             this.passText.SelectionStart = 0;
@@ -96,6 +99,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // nomText
             // 
+            this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
             this.nomText.Location = new System.Drawing.Point(491, 124);
@@ -111,6 +115,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // dniText
             // 
+            this.dniText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dniText.Depth = 0;
             this.dniText.Enabled = false;
             this.dniText.Hint = "DNI";
@@ -217,6 +222,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarB.BackColor = System.Drawing.Color.Transparent;
             this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarB.FlatAppearance.BorderSize = 0;
             this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarB.Location = new System.Drawing.Point(439, 354);
@@ -232,6 +238,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(276, 354);
@@ -257,6 +264,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // numNum
             // 
+            this.numNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.numNum.Location = new System.Drawing.Point(569, 274);
             this.numNum.Name = "numNum";
             this.numNum.Size = new System.Drawing.Size(71, 20);

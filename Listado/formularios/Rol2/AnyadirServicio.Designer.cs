@@ -41,6 +41,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.desText = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiempoNumeric)).BeginInit();
@@ -48,6 +49,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desNum
             // 
+            this.desNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desNum.Location = new System.Drawing.Point(245, 245);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);
@@ -55,6 +57,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // precioNum
             // 
+            this.precioNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.precioNum.Location = new System.Drawing.Point(245, 290);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
@@ -88,6 +91,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // ivaBox
             // 
+            this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -127,6 +131,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // tiempoNumeric
             // 
+            this.tiempoNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tiempoNumeric.Location = new System.Drawing.Point(532, 290);
             this.tiempoNumeric.Name = "tiempoNumeric";
             this.tiempoNumeric.Size = new System.Drawing.Size(49, 20);
@@ -137,6 +142,7 @@ namespace RaquetZone.formularios.Rol2
             this.AnyadirButton.BackColor = System.Drawing.Color.Transparent;
             this.AnyadirButton.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
             this.AnyadirButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AnyadirButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AnyadirButton.FlatAppearance.BorderSize = 0;
             this.AnyadirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnyadirButton.Location = new System.Drawing.Point(424, 357);
@@ -152,6 +158,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(282, 358);
@@ -175,24 +182,39 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desText
             // 
+            this.desText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desText.Depth = 0;
             this.desText.Hint = "Descripción";
-            this.desText.Location = new System.Drawing.Point(136, 123);
+            this.desText.Location = new System.Drawing.Point(227, 123);
             this.desText.MouseState = MaterialSkin.MouseState.HOVER;
             this.desText.Name = "desText";
             this.desText.PasswordChar = '\0';
             this.desText.SelectedText = "";
             this.desText.SelectionLength = 0;
             this.desText.SelectionStart = 0;
-            this.desText.Size = new System.Drawing.Size(445, 23);
+            this.desText.Size = new System.Drawing.Size(354, 23);
             this.desText.TabIndex = 83;
             this.desText.UseSystemPasswordChar = false;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(132, 123);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel3.TabIndex = 96;
+            this.materialLabel3.Text = "Descripción";
             // 
             // AnyadirServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.desNum);
             this.Controls.Add(this.precioNum);
             this.Controls.Add(this.telLabel);
@@ -230,5 +252,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button bVolver;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
         private MaterialSkin.Controls.MaterialSingleLineTextField desText;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

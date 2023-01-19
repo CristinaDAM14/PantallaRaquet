@@ -36,6 +36,7 @@ namespace RaquetZone.formularios
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarCIF = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.bVolver = new System.Windows.Forms.Button();
+            this.Anyadir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatosEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@ namespace RaquetZone.formularios
             // 
             this.editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar.BackgroundImage")));
             this.editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar.Location = new System.Drawing.Point(999, 142);
             this.editar.Name = "editar";
@@ -62,6 +64,7 @@ namespace RaquetZone.formularios
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Depth = 0;
             this.buttonEliminar.Location = new System.Drawing.Point(457, 522);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -75,6 +78,7 @@ namespace RaquetZone.formularios
             // 
             // buscadorButton
             // 
+            this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscadorButton.Location = new System.Drawing.Point(233, 93);
@@ -108,6 +112,7 @@ namespace RaquetZone.formularios
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(12, 558);
@@ -118,11 +123,25 @@ namespace RaquetZone.formularios
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
+            // Anyadir
+            // 
+            this.Anyadir.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.Anyadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Anyadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Anyadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Anyadir.Location = new System.Drawing.Point(999, 181);
+            this.Anyadir.Name = "Anyadir";
+            this.Anyadir.Size = new System.Drawing.Size(39, 33);
+            this.Anyadir.TabIndex = 60;
+            this.Anyadir.UseVisualStyleBackColor = true;
+            this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
+            // 
             // RaquetZoneEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.Anyadir);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarCIF);
@@ -145,5 +164,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarCIF;
         private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Button Anyadir;
     }
 }

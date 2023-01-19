@@ -50,6 +50,7 @@
             // 
             // rolCombo
             // 
+            this.rolCombo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rolCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
@@ -64,6 +65,7 @@
             // 
             // dniText
             // 
+            this.dniText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dniText.Depth = 0;
             this.dniText.Enabled = false;
             this.dniText.Hint = "DNI";
@@ -80,6 +82,7 @@
             // 
             // nomText
             // 
+            this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
             this.nomText.Location = new System.Drawing.Point(431, 130);
@@ -95,13 +98,14 @@
             // 
             // passText
             // 
+            this.passText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.passText.Depth = 0;
             this.passText.Enabled = false;
             this.passText.Hint = "Contraseña";
             this.passText.Location = new System.Drawing.Point(143, 220);
             this.passText.MouseState = MaterialSkin.MouseState.HOVER;
             this.passText.Name = "passText";
-            this.passText.PasswordChar = '\0';
+            this.passText.PasswordChar = '*';
             this.passText.SelectedText = "";
             this.passText.SelectionLength = 0;
             this.passText.SelectionStart = 0;
@@ -111,6 +115,7 @@
             // 
             // telText
             // 
+            this.telText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
             this.telText.Location = new System.Drawing.Point(431, 286);
@@ -126,6 +131,7 @@
             // 
             // emailText
             // 
+            this.emailText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
             this.emailText.Location = new System.Drawing.Point(143, 287);
@@ -141,6 +147,7 @@
             // 
             // direccText
             // 
+            this.direccText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.direccText.Depth = 0;
             this.direccText.Hint = "Dirección";
             this.direccText.Location = new System.Drawing.Point(431, 220);
@@ -272,6 +279,7 @@
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(240, 360);
@@ -287,6 +295,7 @@
             this.editarB.BackColor = System.Drawing.Color.Transparent;
             this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarB.FlatAppearance.BorderSize = 0;
             this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarB.Location = new System.Drawing.Point(431, 360);

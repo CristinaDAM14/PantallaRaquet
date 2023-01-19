@@ -57,6 +57,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // asuntoText
             // 
+            this.asuntoText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.asuntoText.Depth = 0;
             this.asuntoText.Hint = "";
             this.asuntoText.Location = new System.Drawing.Point(59, 190);
@@ -83,6 +84,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // bodyText
             // 
+            this.bodyText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bodyText.Location = new System.Drawing.Point(59, 282);
             this.bodyText.Name = "bodyText";
             this.bodyText.Size = new System.Drawing.Size(492, 177);
@@ -117,6 +119,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // materialRaisedButton1
             // 
+            this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Location = new System.Drawing.Point(584, 355);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -133,6 +136,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(12, 457);

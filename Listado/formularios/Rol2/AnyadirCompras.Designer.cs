@@ -66,6 +66,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(264, 357);
@@ -81,6 +82,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(424, 357);
@@ -93,6 +95,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // anyoNum
             // 
+            this.anyoNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.anyoNum.Location = new System.Drawing.Point(568, 203);
             this.anyoNum.Maximum = new decimal(new int[] {
             3000,
@@ -115,6 +118,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // mesNum
             // 
+            this.mesNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mesNum.Location = new System.Drawing.Point(494, 203);
             this.mesNum.Maximum = new decimal(new int[] {
             12,
@@ -137,6 +141,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // diaNum
             // 
+            this.diaNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.diaNum.Location = new System.Drawing.Point(423, 203);
             this.diaNum.Maximum = new decimal(new int[] {
             31,
@@ -198,6 +203,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // horaNum
             // 
+            this.horaNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.horaNum.Location = new System.Drawing.Point(178, 203);
             this.horaNum.Maximum = new decimal(new int[] {
             23,
@@ -210,6 +216,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // minNum
             // 
+            this.minNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minNum.Location = new System.Drawing.Point(252, 203);
             this.minNum.Maximum = new decimal(new int[] {
             59,

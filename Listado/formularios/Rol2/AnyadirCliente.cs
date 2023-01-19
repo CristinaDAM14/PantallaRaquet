@@ -30,7 +30,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionClientes").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoClientes").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -39,7 +39,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-            GestionClientes GC = new GestionClientes();
+                ListadoClientes GC = new ListadoClientes();
             GC.Show();
             this.Close();
             }
@@ -50,41 +50,46 @@ namespace RaquetZone.formularios.Rol2
         private void buttonAnyadir_Click(object sender, EventArgs e)
         {
 
-            if(funciones.funciones.IsNumeric(nomText.Text) == false) {
-
-            if (funciones.funciones.IsNumeric(telText.Text) == true && telText.Text.Length == 9)
+            if (funciones.funciones.IsNumeric(nomText.Text) == false)
             {
 
-                String url = "http://localhost:8081/cliente/add";
+                if (funciones.funciones.IsNumeric(telText.Text) == true)
+                {
+                    if (telText.Text.Length == 9)
+                    {
+                        String url = "http://localhost:8081/cliente/add";
 
-                funciones.conexion r = new funciones.conexion(url, "POST");
+                        funciones.conexion r = new funciones.conexion(url, "POST");
 
-                String datos = @"{
-" + "\n" +
-    @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
-    @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
-    @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-    @"        ""numhorascli"": " + numNum.Value + "," + "\n" +
-    @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-    @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
-    @"    }";
+                        String datos = @"{
+                    " + "\n" +
+            @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
+            @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
+            @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
+            @"        ""numhorascli"": " + numNum.Value + "," + "\n" +
+            @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
+            @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
+            @"    }";
 
-                String res = r.postItem(datos);
+                        String res = r.postItem(datos);
 
-                MessageBox.Show("Cliente añadido a la base de datos");
-
+                        MessageBox.Show("Cliente añadido a la base de datos");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Formato del número de teléfono incorrecto, tiene que tener 9 números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato del número de teléfono incorrecto, no puede incluir letras", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             else
-            {
-                MessageBox.Show("Formato del número de teléfono mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                MessageBox.Show("Formato del nombre incorrecto, no puede contener números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            }
-            else
-            {
-                MessageBox.Show("Formato del nombre incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
         }
     }
 }

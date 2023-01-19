@@ -52,7 +52,7 @@ namespace RaquetZone.formularios
         private void buttonGU_Click(object sender, EventArgs e)
         {
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -61,15 +61,16 @@ namespace RaquetZone.formularios
             }
             else
             {
-               GestionUsuarios GU = new GestionUsuarios();
-                GU.Show();
+                RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
+                LU1.Show();
             }
 
         }
 
         private void buttonGE_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionEmpresas").SingleOrDefault<Form>();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneEmpresas").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -78,8 +79,8 @@ namespace RaquetZone.formularios
             }
             else
             {
-                GestionEmpresas GE = new GestionEmpresas();
-                GE.Show();
+                RaquetZoneEmpresas LE1 = new RaquetZoneEmpresas();
+                LE1.Show();
             }
 
             

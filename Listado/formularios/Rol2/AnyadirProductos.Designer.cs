@@ -43,6 +43,8 @@ namespace RaquetZone.formularios.Rol2
             this.precioNum = new System.Windows.Forms.NumericUpDown();
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.stockNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioNum)).BeginInit();
@@ -50,31 +52,33 @@ namespace RaquetZone.formularios.Rol2
             // 
             // categoriaText
             // 
+            this.categoriaText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriaText.Depth = 0;
             this.categoriaText.Hint = "Categoría";
-            this.categoriaText.Location = new System.Drawing.Point(424, 129);
+            this.categoriaText.Location = new System.Drawing.Point(450, 129);
             this.categoriaText.MouseState = MaterialSkin.MouseState.HOVER;
             this.categoriaText.Name = "categoriaText";
             this.categoriaText.PasswordChar = '\0';
             this.categoriaText.SelectedText = "";
             this.categoriaText.SelectionLength = 0;
             this.categoriaText.SelectionStart = 0;
-            this.categoriaText.Size = new System.Drawing.Size(312, 23);
+            this.categoriaText.Size = new System.Drawing.Size(286, 23);
             this.categoriaText.TabIndex = 2;
             this.categoriaText.UseSystemPasswordChar = false;
             // 
             // nomText
             // 
+            this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
-            this.nomText.Location = new System.Drawing.Point(84, 129);
+            this.nomText.Location = new System.Drawing.Point(136, 129);
             this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomText.Name = "nomText";
             this.nomText.PasswordChar = '\0';
             this.nomText.SelectedText = "";
             this.nomText.SelectionLength = 0;
             this.nomText.SelectionStart = 0;
-            this.nomText.Size = new System.Drawing.Size(258, 23);
+            this.nomText.Size = new System.Drawing.Size(206, 23);
             this.nomText.TabIndex = 1;
             this.nomText.UseSystemPasswordChar = false;
             // 
@@ -105,6 +109,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::Listado.Properties.Resources.añadir_blanco;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(424, 359);
@@ -120,6 +125,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(282, 360);
@@ -132,6 +138,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // stockNumeric
             // 
+            this.stockNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
             this.stockNumeric.Location = new System.Drawing.Point(687, 247);
             this.stockNumeric.Name = "stockNumeric";
             this.stockNumeric.Size = new System.Drawing.Size(49, 20);
@@ -165,6 +172,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // ivaBox
             // 
+            this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -178,6 +186,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // desNum
             // 
+            this.desNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.desNum.Location = new System.Drawing.Point(245, 247);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);
@@ -185,6 +194,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // precioNum
             // 
+            this.precioNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.precioNum.Location = new System.Drawing.Point(245, 292);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
@@ -216,11 +226,39 @@ namespace RaquetZone.formularios.Rol2
             this.passLabel.TabIndex = 81;
             this.passLabel.Text = "Descuento";
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(67, 129);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(63, 19);
+            this.materialLabel3.TabIndex = 83;
+            this.materialLabel3.Text = "Nombre";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(378, 129);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(66, 19);
+            this.materialLabel4.TabIndex = 84;
+            this.materialLabel4.Text = "Catgoría";
+            // 
             // AnyadirProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.desNum);
             this.Controls.Add(this.precioNum);
             this.Controls.Add(this.telLabel);
@@ -262,5 +300,7 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.NumericUpDown precioNum;
         private MaterialSkin.Controls.MaterialLabel telLabel;
         private MaterialSkin.Controls.MaterialLabel passLabel;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

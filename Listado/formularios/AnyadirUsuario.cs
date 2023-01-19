@@ -45,16 +45,15 @@ namespace RaquetZone.formularios
         {
             
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
             if (existe != null)
 
             {
                 this.Close();
-
             }
             else
             {
-                GestionUsuarios GU1 = new GestionUsuarios();
+                RaquetZoneUsuarios GU1 = new RaquetZoneUsuarios();
                 GU1.Show();
                 this.Close();
             }
@@ -66,43 +65,49 @@ namespace RaquetZone.formularios
 
         private void buttonEditar_Click_1(object sender, EventArgs e)
         {
+
             if (funciones.funciones.IsNumeric(nombreText.Text) == false)
             {
 
-                if (funciones.funciones.IsNumeric(telText.Text) == true && telText.Text.Length == 9)
+                if (funciones.funciones.IsNumeric(telText.Text) == true)
                 {
+                    if (telText.Text.Length == 9)
+                    {
+                        String url = "http://localhost:8081/usuario/add";
 
-                    String url = "http://localhost:8081/usuario/add";
+                        funciones.conexion r = new funciones.conexion(url, "POST");
 
-                    funciones.conexion r = new funciones.conexion(url, "POST");
+                        int num = SeleccionarRol(rolCombo.Text);
 
-                    int num = SeleccionarRol(rolCombo.Text);
-
-                    String datos = @"{
+                        String datos = @"{
 " + "\n" +
-        @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
-        @"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
-        @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
-        @"        ""rolusr"": """ + num + "\"," + "\n" +
-        @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
-        @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
-        @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
-        @"    }";
-                    String res = r.postItem(datos);
+            @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
+            @"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
+            @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
+            @"        ""rolusr"": """ + num + "\"," + "\n" +
+            @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
+            @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
+            @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
+            @"    }";
+                        r.postItem(datos);
 
-                    MessageBox.Show("Usuario añadido a la base de datos");
-
+                        MessageBox.Show("Usuario añadido a la base de datos");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Formato del número de teléfono incorrecto, tiene que tener 9 números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Formato del número de teléfono mal", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Formato del número de teléfono incorrecto, no puede incluir letras", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Formato del nombre incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Formato del nombre incorrecto, no puede contener números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          
+
         }
 
         private int SeleccionarRol(string rol)

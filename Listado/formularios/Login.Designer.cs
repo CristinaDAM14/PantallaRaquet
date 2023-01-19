@@ -71,6 +71,7 @@ namespace RaquetZone.formularios
             // 
             // iniciarButton
             // 
+            this.iniciarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iniciarButton.Depth = 0;
             this.iniciarButton.Location = new System.Drawing.Point(206, 246);
             this.iniciarButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -86,6 +87,7 @@ namespace RaquetZone.formularios
             // 
             this.contraOlvidada.BackColor = System.Drawing.Color.White;
             this.contraOlvidada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.contraOlvidada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.contraOlvidada.Depth = 0;
             this.contraOlvidada.FlatAppearance.BorderSize = 0;
             this.contraOlvidada.FlatStyle = System.Windows.Forms.FlatStyle.System;

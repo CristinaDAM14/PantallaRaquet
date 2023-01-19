@@ -60,19 +60,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionServicios").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
-                this.Close();
-
-            }
-            else
-            {
-                GestionServicios GS = new GestionServicios();
-                GS.Show();
-                this.Close();
-            }
+            this.Close();
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -111,6 +99,23 @@ namespace RaquetZone.formularios.Rol2
             EditarServicios ES = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
             ES.Show();
             this.Hide();
+        }
+
+        private void Anyadir_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoServicios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                AnyadirServicio AS = new AnyadirServicio();
+                AS.Show();
+                this.Close();
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionEmpresas").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneEmpresas").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -39,7 +39,7 @@ namespace RaquetZone.formularios
             }
             else
             {
-                    GestionEmpresas G1 = new GestionEmpresas();
+                    RaquetZoneEmpresas G1 = new RaquetZoneEmpresas();
                     G1.Show();
                     this.Close();
             }

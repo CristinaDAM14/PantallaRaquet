@@ -45,7 +45,10 @@ namespace RaquetZone.formularios.Rol2
 
         private void MostrarClientes()
         {
-            listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCli();
+            listaClientes.DataSource = funciones.funciones.mostrarCli();
+
+            listaClientes.Columns[2].Visible = false;
+
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -99,19 +102,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionClientes").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
-                this.Close();
-
-            }
-            else
-            {
-                GestionClientes GC = new GestionClientes();
-                GC.Show();
-                this.Close();
-            }
+            this.Close();
         }
 
         private void emailButton_Click(object sender, EventArgs e)
@@ -120,6 +111,23 @@ namespace RaquetZone.formularios.Rol2
 
             EmailClientes EC = new EmailClientes(emailText);
             EC.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirCliente").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                AnyadirCliente GC1 = new AnyadirCliente();
+                GC1.Show();
+                this.Close();
+            }
         }
     }
 }

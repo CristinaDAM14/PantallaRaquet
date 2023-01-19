@@ -50,6 +50,7 @@
             // 
             // direccText
             // 
+            this.direccText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.direccText.Depth = 0;
             this.direccText.Hint = "Dirección";
             this.direccText.Location = new System.Drawing.Point(445, 227);
@@ -65,6 +66,7 @@
             // 
             // emailText
             // 
+            this.emailText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
             this.emailText.Location = new System.Drawing.Point(141, 290);
@@ -80,6 +82,7 @@
             // 
             // telText
             // 
+            this.telText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.telText.Depth = 0;
             this.telText.Hint = "Teléfono";
             this.telText.Location = new System.Drawing.Point(445, 290);
@@ -95,6 +98,7 @@
             // 
             // webText
             // 
+            this.webText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.webText.Depth = 0;
             this.webText.Hint = "Web";
             this.webText.Location = new System.Drawing.Point(141, 223);
@@ -110,6 +114,7 @@
             // 
             // nomText
             // 
+            this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre Social";
             this.nomText.Location = new System.Drawing.Point(449, 130);
@@ -125,6 +130,7 @@
             // 
             // cifText
             // 
+            this.cifText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cifText.Depth = 0;
             this.cifText.Enabled = false;
             this.cifText.Hint = "CIF";
@@ -141,6 +147,7 @@
             // 
             // actiText
             // 
+            this.actiText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.actiText.Depth = 0;
             this.actiText.Hint = "Actividad";
             this.actiText.Location = new System.Drawing.Point(634, 290);
@@ -272,6 +279,7 @@
             this.buttonEditar.BackColor = System.Drawing.Color.Transparent;
             this.buttonEditar.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.buttonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditar.FlatAppearance.BorderSize = 0;
             this.buttonEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditar.Location = new System.Drawing.Point(445, 360);
@@ -287,6 +295,7 @@
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(238, 360);

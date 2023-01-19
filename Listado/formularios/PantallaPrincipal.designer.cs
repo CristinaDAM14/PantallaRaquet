@@ -36,10 +36,12 @@
             this.noteButton = new System.Windows.Forms.Button();
             this.edgeButton = new System.Windows.Forms.Button();
             this.chromeButton = new System.Windows.Forms.Button();
+            this.RZapp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonGE
             // 
+            this.buttonGE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGE.Depth = 0;
             this.buttonGE.Location = new System.Drawing.Point(202, 157);
             this.buttonGE.MouseState = MaterialSkin.MouseState.HOVER;
@@ -53,6 +55,7 @@
             // 
             // buttonGU
             // 
+            this.buttonGU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGU.Depth = 0;
             this.buttonGU.Location = new System.Drawing.Point(202, 280);
             this.buttonGU.MouseState = MaterialSkin.MouseState.HOVER;
@@ -87,6 +90,7 @@
             this.loginBotton.BackColor = System.Drawing.Color.Transparent;
             this.loginBotton.BackgroundImage = global::Listado.Properties.Resources.cerrar_sesion;
             this.loginBotton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.loginBotton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBotton.FlatAppearance.BorderSize = 0;
             this.loginBotton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBotton.Location = new System.Drawing.Point(556, 73);
@@ -101,6 +105,7 @@
             // 
             this.noteButton.BackgroundImage = global::Listado.Properties.Resources.notepad;
             this.noteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.noteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.noteButton.FlatAppearance.BorderSize = 0;
             this.noteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noteButton.Location = new System.Drawing.Point(552, 259);
@@ -113,6 +118,7 @@
             // 
             this.edgeButton.BackgroundImage = global::Listado.Properties.Resources.medge;
             this.edgeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.edgeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.edgeButton.FlatAppearance.BorderSize = 0;
             this.edgeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edgeButton.Location = new System.Drawing.Point(552, 335);
@@ -125,6 +131,7 @@
             // 
             this.chromeButton.BackgroundImage = global::Listado.Properties.Resources.chrome;
             this.chromeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chromeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chromeButton.FlatAppearance.BorderSize = 0;
             this.chromeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chromeButton.Location = new System.Drawing.Point(552, 297);
@@ -133,12 +140,22 @@
             this.chromeButton.TabIndex = 13;
             this.chromeButton.UseVisualStyleBackColor = true;
             // 
+            // RZapp
+            // 
+            this.RZapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RZapp.Image = global::Listado.Properties.Resources.LogoEscritorio;
+            this.RZapp.Location = new System.Drawing.Point(202, 25);
+            this.RZapp.Name = "RZapp";
+            this.RZapp.Size = new System.Drawing.Size(179, 39);
+            this.RZapp.TabIndex = 71;
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 380);
             this.ControlBox = false;
+            this.Controls.Add(this.RZapp);
             this.Controls.Add(this.empresaLabel);
             this.Controls.Add(this.usuariosLabel);
             this.Controls.Add(this.loginBotton);
@@ -163,6 +180,7 @@
         private System.Windows.Forms.Button loginBotton;
         private System.Windows.Forms.Label usuariosLabel;
         private System.Windows.Forms.Label empresaLabel;
+        private System.Windows.Forms.Label RZapp;
     }
 }
 

@@ -36,6 +36,7 @@ namespace RaquetZone.formularios
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarDNI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buttonVolver = new System.Windows.Forms.Button();
+            this.anyadir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@ namespace RaquetZone.formularios
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Depth = 0;
             this.buttonEliminar.Location = new System.Drawing.Point(465, 523);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -64,6 +66,7 @@ namespace RaquetZone.formularios
             // 
             this.editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar.BackgroundImage")));
             this.editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar.Location = new System.Drawing.Point(999, 145);
             this.editar.Name = "editar";
@@ -74,6 +77,7 @@ namespace RaquetZone.formularios
             // 
             // buscadorButton
             // 
+            this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscadorButton.Location = new System.Drawing.Point(236, 96);
@@ -107,6 +111,7 @@ namespace RaquetZone.formularios
             this.buttonVolver.BackColor = System.Drawing.Color.Transparent;
             this.buttonVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.buttonVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVolver.FlatAppearance.BorderSize = 0;
             this.buttonVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVolver.Location = new System.Drawing.Point(12, 558);
@@ -117,11 +122,25 @@ namespace RaquetZone.formularios
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click_1);
             // 
+            // anyadir
+            // 
+            this.anyadir.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.anyadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.anyadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.anyadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anyadir.Location = new System.Drawing.Point(999, 185);
+            this.anyadir.Name = "anyadir";
+            this.anyadir.Size = new System.Drawing.Size(39, 34);
+            this.anyadir.TabIndex = 60;
+            this.anyadir.UseVisualStyleBackColor = true;
+            this.anyadir.Click += new System.EventHandler(this.anyadir_Click);
+            // 
             // RaquetZoneUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.anyadir);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarDNI);
@@ -145,5 +164,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarDNI;
         private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.Button anyadir;
     }
 }

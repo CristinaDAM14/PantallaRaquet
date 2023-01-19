@@ -37,11 +37,13 @@ namespace RaquetZone.formularios.Rol2
             this.emailButton = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
             this.editarProductos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEliminar.Depth = 0;
             this.buttonEliminar.Location = new System.Drawing.Point(453, 520);
             this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -63,6 +65,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buscarDNI
             // 
+            this.buscarDNI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscarDNI.Depth = 0;
             this.buscarDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarDNI.Hint = " DNI";
@@ -79,6 +82,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // buscadorButton
             // 
+            this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscadorButton.Location = new System.Drawing.Point(235, 98);
@@ -95,9 +99,10 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.emailButton.BackgroundImage = global::Listado.Properties.Resources.emailClientes;
             this.emailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.emailButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailButton.FlatAppearance.BorderSize = 0;
             this.emailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.emailButton.Location = new System.Drawing.Point(999, 183);
+            this.emailButton.Location = new System.Drawing.Point(999, 223);
             this.emailButton.Name = "emailButton";
             this.emailButton.Size = new System.Drawing.Size(39, 34);
             this.emailButton.TabIndex = 65;
@@ -109,6 +114,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(12, 558);
@@ -123,6 +129,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.editarProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarProductos.BackgroundImage")));
             this.editarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarProductos.Location = new System.Drawing.Point(999, 143);
             this.editarProductos.Name = "editarProductos";
@@ -131,11 +138,25 @@ namespace RaquetZone.formularios.Rol2
             this.editarProductos.UseVisualStyleBackColor = true;
             this.editarProductos.Click += new System.EventHandler(this.editarProductos_Click);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(999, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 34);
+            this.button1.TabIndex = 66;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.emailButton);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
@@ -160,5 +181,6 @@ namespace RaquetZone.formularios.Rol2
         public System.Windows.Forms.DataGridView listaClientes;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button emailButton;
+        private System.Windows.Forms.Button button1;
     }
 }

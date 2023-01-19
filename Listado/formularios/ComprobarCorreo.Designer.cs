@@ -80,6 +80,7 @@ namespace RaquetZone.formularios
             // 
             // buttonEnviar
             // 
+            this.buttonEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEnviar.Depth = 0;
             this.buttonEnviar.Location = new System.Drawing.Point(246, 259);
             this.buttonEnviar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -96,6 +97,7 @@ namespace RaquetZone.formularios
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(100, 257);

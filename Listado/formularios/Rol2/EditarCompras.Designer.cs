@@ -65,6 +65,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // idText
             // 
+            this.idText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.idText.Depth = 0;
             this.idText.Enabled = false;
             this.idText.Hint = "ID";
@@ -94,6 +95,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // minNum
             // 
+            this.minNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minNum.Location = new System.Drawing.Point(245, 228);
             this.minNum.Maximum = new decimal(new int[] {
             59,
@@ -106,6 +108,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // horaNum
             // 
+            this.horaNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.horaNum.Location = new System.Drawing.Point(171, 228);
             this.horaNum.Maximum = new decimal(new int[] {
             23,
@@ -157,6 +160,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // diaNum
             // 
+            this.diaNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.diaNum.Location = new System.Drawing.Point(416, 228);
             this.diaNum.Maximum = new decimal(new int[] {
             31,
@@ -179,6 +183,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // mesNum
             // 
+            this.mesNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mesNum.Location = new System.Drawing.Point(487, 228);
             this.mesNum.Maximum = new decimal(new int[] {
             12,
@@ -201,6 +206,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // anyoNum
             // 
+            this.anyoNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.anyoNum.Location = new System.Drawing.Point(561, 228);
             this.anyoNum.Maximum = new decimal(new int[] {
             3000,
@@ -239,6 +245,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarB.BackColor = System.Drawing.Color.Transparent;
             this.editarB.BackgroundImage = global::Listado.Properties.Resources.actualizar;
             this.editarB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editarB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editarB.FlatAppearance.BorderSize = 0;
             this.editarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editarB.Location = new System.Drawing.Point(430, 359);
@@ -254,6 +261,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
             this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
             this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bVolver.FlatAppearance.BorderSize = 0;
             this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVolver.Location = new System.Drawing.Point(270, 358);

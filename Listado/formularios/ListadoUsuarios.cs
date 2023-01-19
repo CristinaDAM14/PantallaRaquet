@@ -55,6 +55,9 @@ namespace RaquetZone.formularios
                 EsconderRol3();
 
             }
+            else
+            {
+            }
 
         }
 
@@ -90,6 +93,7 @@ namespace RaquetZone.formularios
                 {
                     this.Text = "Listado de Empleados";
                     EsconderRol3();
+                    
 
                 }
             }
@@ -103,6 +107,8 @@ namespace RaquetZone.formularios
         private void MostrarUsuarios()
         {
             listaDatos.DataSource = funciones.funciones.mostrarUsr();
+
+            listaDatos.Columns[2].Visible = false;
         }
 
         private void EsconderRol3()
@@ -149,7 +155,12 @@ namespace RaquetZone.formularios
 
         private void buttonVolver_Click_1(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "GestionUsuarios").SingleOrDefault<Form>();
+            this.Close();
+        }
+
+        private void anyadir_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirUsuario").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -158,12 +169,10 @@ namespace RaquetZone.formularios
             }
             else
             {
-            GestionUsuarios GU1 = new GestionUsuarios();
-            GU1.Show();
-            this.Close();
+                AnyadirUsuario GU2 = new AnyadirUsuario();
+                GU2.Show();
+                this.Close();
             }
-            
-            
         }
     }
 }
