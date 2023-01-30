@@ -32,7 +32,7 @@ namespace RaquetZone.formularios
 
             EditarEmpresa EU1 = new EditarEmpresa(cif, nom, web, tel, email, direc, acti);
             EU1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void RaquetZoneEmpresas_Load(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace RaquetZone.formularios
             {
                 
 
-                String url = "http://localhost:8081/empresa/delete" + cif;
+                String url = "http://localhost:8081/empresa/delete/" + cif;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 

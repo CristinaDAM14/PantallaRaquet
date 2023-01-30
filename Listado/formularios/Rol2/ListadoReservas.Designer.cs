@@ -62,7 +62,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscarFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscarFecha.Depth = 0;
             this.buscarFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarFecha.Hint = "Escribe la Pista";
+            this.buscarFecha.Hint = "Buscador...";
             this.buscarFecha.Location = new System.Drawing.Point(44, 111);
             this.buscarFecha.MouseState = MaterialSkin.MouseState.HOVER;
             this.buscarFecha.Name = "buscarFecha";
@@ -101,7 +101,7 @@ namespace RaquetZone.formularios.Rol2
             this.radioPista.Checked = true;
             this.radioPista.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioPista.Depth = 0;
-            this.radioPista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioPista.Font = new System.Drawing.Font("Roboto", 10F);
             this.radioPista.Location = new System.Drawing.Point(309, 111);
             this.radioPista.Margin = new System.Windows.Forms.Padding(0);
             this.radioPista.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -118,7 +118,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.radioFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioFecha.Depth = 0;
-            this.radioFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.radioFecha.Font = new System.Drawing.Font("Roboto", 10F);
             this.radioFecha.Location = new System.Drawing.Point(384, 111);
             this.radioFecha.Margin = new System.Windows.Forms.Padding(0);
             this.radioFecha.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -141,6 +141,7 @@ namespace RaquetZone.formularios.Rol2
             this.Anyadir.Size = new System.Drawing.Size(39, 34);
             this.Anyadir.TabIndex = 70;
             this.Anyadir.UseVisualStyleBackColor = true;
+            this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
             // 
             // bVolver
             // 
@@ -169,6 +170,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarReservas.Size = new System.Drawing.Size(39, 34);
             this.editarReservas.TabIndex = 67;
             this.editarReservas.UseVisualStyleBackColor = true;
+            this.editarReservas.Click += new System.EventHandler(this.editarReservas_Click);
             // 
             // ListadoReservas
             // 

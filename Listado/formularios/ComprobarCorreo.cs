@@ -67,7 +67,7 @@ namespace RaquetZone.formularios
                 {
                     MessageBox.Show("La operación se ha detenido");
                 }
-            }catch(ArgumentNullException ex)
+            }catch(ArgumentNullException)
             {
                 MessageBox.Show("La operación se ha detenido, alguno de los datos no están bien");
             }

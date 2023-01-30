@@ -30,21 +30,9 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneEmpresas").SingleOrDefault<Form>();
-            if (existe != null)
 
-            {
                 this.Close();
 
-            }
-            else
-            {
-                    RaquetZoneEmpresas G1 = new RaquetZoneEmpresas();
-                    G1.Show();
-                    this.Close();
-            }
-
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +57,7 @@ namespace RaquetZone.formularios
                 String res = r.postItem(datos);
 
                 MessageBox.Show("Empresa añadida a la base de datos");
+                limpiar();
             }
             else
             {
@@ -76,6 +65,17 @@ namespace RaquetZone.formularios
             }
 
                 
+        }
+
+        private void limpiar()
+        {
+            cifText.Text = "";
+            nomText.Text = "";
+            webText.Text = "";
+            telText.Text = "";
+            emailText.Text = "";
+            direcText.Text = "";
+            actText.Text = "";
         }
     }
 }

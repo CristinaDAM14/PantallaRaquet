@@ -27,6 +27,36 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                editarProductos.Visible = false;
+                editarProductos.Enabled = false;
+                button1.Visible = false;
+                button1.Enabled = false;
+                emailButton.Visible = false;
+                emailButton.Enabled = false;
+                bReservas.Visible = true;
+                bReservas.Enabled = true;
+
+            }
+            else
+            {
+                buttonEliminar.Visible = true;
+                buttonEliminar.Enabled = true;
+                editarProductos.Visible = true;
+                editarProductos.Enabled = true;
+                button1.Visible = true;
+                button1.Enabled = true;
+                emailButton.Visible = true;
+                emailButton.Enabled = true;
+                bReservas.Visible = false;
+                bReservas.Enabled = false;
+            }
+
         }
 
         private void editarProductos_Click(object sender, EventArgs e)
@@ -40,12 +70,12 @@ namespace RaquetZone.formularios.Rol2
 
             EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText);
             EC.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void MostrarClientes()
         {
-            listaClientes.DataSource = funciones.funciones.mostrarCli();
+            listaClientes.DataSource = funciones.funciones.mostrarCliP(TextoCIFC.Text);
 
             listaClientes.Columns[2].Visible = false;
 
@@ -84,7 +114,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
 
-                String url = "http://localhost:8081/cliente/delete" + dni;
+                String url = "http://localhost:8081/cliente/delete/" + dni;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
@@ -92,7 +122,7 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Eliminado");
 
-                listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCli();
+                listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCliP(TextoCIFC.Text);
             }
             else
             {
@@ -128,6 +158,19 @@ namespace RaquetZone.formularios.Rol2
                 GC1.Show();
                 this.Close();
             }
+        }
+
+        private void bReservas_Click(object sender, EventArgs e)
+        {
+            string dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
+
+            AnyadirReservas AR = (AnyadirReservas)Application.OpenForms["AnyadirReservas"];
+            if (Application.OpenForms.OfType<AnyadirReservas>().Any())
+            {
+                AR.conseguirDNI(dni);
+            }
+
+            this.Close();
         }
     }
 }

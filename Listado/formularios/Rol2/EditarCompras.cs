@@ -39,8 +39,6 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            ListadoCompras LC = new ListadoCompras();
-            LC.Show();
             this.Close();
         }
 
@@ -77,7 +75,7 @@ namespace RaquetZone.formularios.Rol2
 
             string completarFecha = anyo + "-" + mes + "-" + dia + "T00:00:00.000+00:00";
 
-            String url = "http://localhost:8081/compra/modify" + idText.Text;
+            String url = "http://localhost:8081/compra/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

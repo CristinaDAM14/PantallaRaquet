@@ -30,20 +30,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoProductos").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
                 this.Close();
-
-            }
-            else
-            {
-            ListadoProductos GP = new ListadoProductos();
-            GP.Show();
-            this.Close();
-            }
-
             
         }
 
@@ -81,6 +68,18 @@ namespace RaquetZone.formularios.Rol2
             String res = r.postItem(datos);
 
             MessageBox.Show("Producto añadido a la base de datos");
+
+            limpiar();
         }
+
+        private void limpiar()
+        {
+            nomText.Text = "";
+            categoriaText.Text = "";
+            precioNum.Value = 0;
+            desNum.Value = 0;
+            stockNumeric.Value = 0;
+        }
+
     }
 }

@@ -30,21 +30,8 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoClientes").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
                 this.Close();
 
-            }
-            else
-            {
-                ListadoClientes GC = new ListadoClientes();
-            GC.Show();
-            this.Close();
-            }
-
-            
         }
 
         private void buttonAnyadir_Click(object sender, EventArgs e)
@@ -66,7 +53,7 @@ namespace RaquetZone.formularios.Rol2
             @"        ""dnicli"": """ + dniText.Text + "\"," + "\n" +
             @"        ""nombrecli"": """ + nomText.Text + "\"," + "\n" +
             @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
-            @"        ""numhorascli"": " + numNum.Value + "," + "\n" +
+            @"        ""numhorascli"": 0," + "\n" +
             @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
             @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
             @"    }";
@@ -74,6 +61,8 @@ namespace RaquetZone.formularios.Rol2
                         String res = r.postItem(datos);
 
                         MessageBox.Show("Cliente añadido a la base de datos");
+
+                        limpiar();
                     }
                     else
                     {
@@ -91,5 +80,15 @@ namespace RaquetZone.formularios.Rol2
                 MessageBox.Show("Formato del nombre incorrecto, no puede contener números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void limpiar()
+        {
+            dniText.Text = "";
+            nomText.Text = "";
+            passText.Text = "";
+            telText.Text = "";
+            emailText.Text = "";
+        }
+
     }
 }

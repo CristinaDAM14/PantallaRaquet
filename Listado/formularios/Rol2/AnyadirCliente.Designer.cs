@@ -37,14 +37,11 @@ namespace RaquetZone.formularios.Rol2
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bVolver = new System.Windows.Forms.Button();
             this.buttonAnyadir = new System.Windows.Forms.Button();
-            this.numNum = new System.Windows.Forms.NumericUpDown();
-            this.numLabel = new MaterialSkin.Controls.MaterialLabel();
             this.emailLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nomLabel = new MaterialSkin.Controls.MaterialLabel();
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.numNum)).BeginInit();
             this.SuspendLayout();
             // 
             // emailText
@@ -170,27 +167,6 @@ namespace RaquetZone.formularios.Rol2
             this.buttonAnyadir.UseVisualStyleBackColor = true;
             this.buttonAnyadir.Click += new System.EventHandler(this.buttonAnyadir_Click);
             // 
-            // numNum
-            // 
-            this.numNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.numNum.Location = new System.Drawing.Point(548, 290);
-            this.numNum.Name = "numNum";
-            this.numNum.Size = new System.Drawing.Size(71, 20);
-            this.numNum.TabIndex = 15;
-            // 
-            // numLabel
-            // 
-            this.numLabel.AutoSize = true;
-            this.numLabel.Depth = 0;
-            this.numLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.numLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.numLabel.Location = new System.Drawing.Point(417, 290);
-            this.numLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.numLabel.Name = "numLabel";
-            this.numLabel.Size = new System.Drawing.Size(125, 19);
-            this.numLabel.TabIndex = 69;
-            this.numLabel.Text = "Número de horas";
-            // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
@@ -266,8 +242,6 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.telLabel);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.dniLabel);
-            this.Controls.Add(this.numLabel);
-            this.Controls.Add(this.numNum);
             this.Controls.Add(this.buttonAnyadir);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector1);
@@ -280,7 +254,6 @@ namespace RaquetZone.formularios.Rol2
             this.Name = "AnyadirCliente";
             this.Text = "Añadir Cliente";
             this.Load += new System.EventHandler(this.AnyadirCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,8 +268,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button buttonAnyadir;
-        private System.Windows.Forms.NumericUpDown numNum;
-        private MaterialSkin.Controls.MaterialLabel numLabel;
         private MaterialSkin.Controls.MaterialLabel emailLabel;
         private MaterialSkin.Controls.MaterialLabel nomLabel;
         private MaterialSkin.Controls.MaterialLabel telLabel;

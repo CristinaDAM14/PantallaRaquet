@@ -30,19 +30,8 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoServicios").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
                 this.Close();
 
-            }
-            else
-            {
-                ListadoServicios GS = new ListadoServicios();
-                GS.Show();
-                this.Close();
-            }
         }
 
         private void AnyadirButton_Click(object sender, EventArgs e)
@@ -81,6 +70,16 @@ namespace RaquetZone.formularios.Rol2
 
             MessageBox.Show("Servicio añadido a la base de datos");
 
+            limpiar();
+
+        }
+
+        private void limpiar()
+        {
+            desText.Text = "";
+            tiempoNumeric.Value = 0;
+            precioNum.Value = 0;
+            desNum.Value = 0;
         }
     }
 }

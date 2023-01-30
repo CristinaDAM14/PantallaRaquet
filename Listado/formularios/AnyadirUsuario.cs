@@ -43,22 +43,7 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            
-
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
-            if (existe != null)
-
-            {
                 this.Close();
-            }
-            else
-            {
-                RaquetZoneUsuarios GU1 = new RaquetZoneUsuarios();
-                GU1.Show();
-                this.Close();
-            }
-
-            
         }
 
 
@@ -92,6 +77,8 @@ namespace RaquetZone.formularios
                         r.postItem(datos);
 
                         MessageBox.Show("Usuario añadido a la base de datos");
+                        
+                        limpiar();
                     }
                     else
                     {
@@ -108,6 +95,16 @@ namespace RaquetZone.formularios
                 MessageBox.Show("Formato del nombre incorrecto, no puede contener números", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void limpiar()
+        {
+            dniText.Text = "";
+            nombreText.Text = "";
+            passText.Text = "";
+            direccText.Text = "";
+            emailText.Text = "";
+            telText.Text = "";
         }
 
         private int SeleccionarRol(string rol)

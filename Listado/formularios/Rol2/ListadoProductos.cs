@@ -18,6 +18,7 @@ namespace RaquetZone.formularios.Rol2
         {
             InitializeComponent();
             Mostrar();
+            
         }
 
         private void ListadoProductos_Load(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
 
-                String url = "http://localhost:8081/producto/delete" + id;
+                String url = "http://localhost:8081/producto/delete/" + id;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
@@ -45,7 +46,7 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Eliminado");
 
-                listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProd();
+                listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProdP(TextoCIFP.Text);
             }
             else
             {
@@ -66,13 +67,13 @@ namespace RaquetZone.formularios.Rol2
 
             EditarProductos EP = new EditarProductos(id, nom, cate, precio, iva, descuento, stock);
             EP.Show();
-            this.Hide();
-            
+            this.Close();
+
         }
 
         private void Mostrar()
         {
-            listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProd();
+            listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProdP(TextoCIFP.Text);
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -121,16 +122,6 @@ namespace RaquetZone.formularios.Rol2
                 GP1.Show();
                 this.Close();
             }
-        }
-
-        private void listaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void buscarID_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -18,7 +18,6 @@ namespace RaquetZone.formularios
         public RaquetZoneUsuarios()
         {
             InitializeComponent();
-            MostrarUsuarios();
             
         }
 
@@ -35,7 +34,7 @@ namespace RaquetZone.formularios
 
             EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc);
             EU1.Show();
-            this.Hide();
+            this.Close();
         }
 
         
@@ -52,11 +51,12 @@ namespace RaquetZone.formularios
 
             {
                 this.Text = "Listado de Empleados";
-                EsconderRol3();
+                MostrarUsuariosP();
 
             }
             else
             {
+                MostrarUsuarios();
             }
 
         }
@@ -76,7 +76,7 @@ namespace RaquetZone.formularios
                 }
                 else
                 {
-                    String url = "http://localhost:8081/usuario/delete" + dni;
+                    String url = "http://localhost:8081/usuario/delete/" + dni;
 
                     funciones.conexion r = new funciones.conexion(url, "DELETE");
                     
@@ -84,17 +84,19 @@ namespace RaquetZone.formularios
 
                     MessageBox.Show("Eliminado");
                 }
-              
-                listaDatos.DataSource = funciones.funciones.mostrarUsr();
 
                 Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
                 if (existe != null)
 
                 {
                     this.Text = "Listado de Empleados";
-                    EsconderRol3();
+                    MostrarUsuariosP();
                     
 
+                }
+                else
+                {
+                    MostrarUsuarios();
                 }
             }
             else
@@ -111,21 +113,11 @@ namespace RaquetZone.formularios
             listaDatos.Columns[2].Visible = false;
         }
 
-        private void EsconderRol3()
+        private void MostrarUsuariosP()
         {
-            foreach (DataGridViewRow Row in listaDatos.Rows)
-            {
-                String strFila = Row.Index.ToString();
-                string Valor = Convert.ToString(Row.Cells["rolusr"].Value);
+            listaDatos.DataSource = funciones.funciones.mostrarUsrP(TextoCIFC.Text);
 
-                if (Valor == "3")
-                {
-                    listaDatos.CurrentCell = null;
-                    listaDatos.Rows[Convert.ToInt32(strFila)].Visible = false;
-                }
-                   
-            }
-            
+            listaDatos.Columns[2].Visible = false;
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)

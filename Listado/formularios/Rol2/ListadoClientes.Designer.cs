@@ -38,6 +38,8 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.editarProductos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,11 +153,44 @@ namespace RaquetZone.formularios.Rol2
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // bReservas
+            // 
+            this.bReservas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bReservas.Depth = 0;
+            this.bReservas.Location = new System.Drawing.Point(453, 520);
+            this.bReservas.MouseState = MaterialSkin.MouseState.HOVER;
+            this.bReservas.Name = "bReservas";
+            this.bReservas.Primary = true;
+            this.bReservas.Size = new System.Drawing.Size(157, 64);
+            this.bReservas.TabIndex = 67;
+            this.bReservas.Text = "Añadir a la Reserva";
+            this.bReservas.UseVisualStyleBackColor = true;
+            this.bReservas.Click += new System.EventHandler(this.bReservas_Click);
+            // 
+            // TextoCIFC
+            // 
+            this.TextoCIFC.Depth = 0;
+            this.TextoCIFC.Enabled = false;
+            this.TextoCIFC.Hint = "";
+            this.TextoCIFC.Location = new System.Drawing.Point(122, 575);
+            this.TextoCIFC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFC.Name = "TextoCIFC";
+            this.TextoCIFC.PasswordChar = '\0';
+            this.TextoCIFC.SelectedText = "";
+            this.TextoCIFC.SelectionLength = 0;
+            this.TextoCIFC.SelectionStart = 0;
+            this.TextoCIFC.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFC.TabIndex = 70;
+            this.TextoCIFC.UseSystemPasswordChar = false;
+            this.TextoCIFC.Visible = false;
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.TextoCIFC);
+            this.Controls.Add(this.bReservas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.emailButton);
             this.Controls.Add(this.bVolver);
@@ -182,5 +217,7 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button emailButton;
         private System.Windows.Forms.Button button1;
+        private MaterialSkin.Controls.MaterialRaisedButton bReservas;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
     }
 }

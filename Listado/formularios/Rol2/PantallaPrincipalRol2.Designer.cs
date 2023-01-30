@@ -46,6 +46,8 @@ namespace RaquetZone.formularios.Rol2
             this.edgeButton = new System.Windows.Forms.Button();
             this.chromeButton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
+            this.empresaLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.comboCIFP2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonGU
@@ -253,12 +255,36 @@ namespace RaquetZone.formularios.Rol2
             this.noteButton.UseVisualStyleBackColor = true;
             this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
             // 
+            // empresaLabel
+            // 
+            this.empresaLabel.AutoSize = true;
+            this.empresaLabel.Depth = 0;
+            this.empresaLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.empresaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.empresaLabel.Location = new System.Drawing.Point(12, 76);
+            this.empresaLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.empresaLabel.Name = "empresaLabel";
+            this.empresaLabel.Size = new System.Drawing.Size(72, 19);
+            this.empresaLabel.TabIndex = 71;
+            this.empresaLabel.Text = "Empresa:";
+            // 
+            // comboCIFP2
+            // 
+            this.comboCIFP2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCIFP2.FormattingEnabled = true;
+            this.comboCIFP2.Location = new System.Drawing.Point(90, 77);
+            this.comboCIFP2.Name = "comboCIFP2";
+            this.comboCIFP2.Size = new System.Drawing.Size(121, 21);
+            this.comboCIFP2.TabIndex = 73;
+            // 
             // PantallaPrincipalRol2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 380);
             this.ControlBox = false;
+            this.Controls.Add(this.comboCIFP2);
+            this.Controls.Add(this.empresaLabel);
             this.Controls.Add(this.RZapp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bReservas);
@@ -279,6 +305,7 @@ namespace RaquetZone.formularios.Rol2
             this.Name = "PantallaPrincipalRol2";
             this.Load += new System.EventHandler(this.PantallaPrincipalRol2_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -300,5 +327,7 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialRaisedButton bReservas;
         private System.Windows.Forms.Label RZapp;
+        private MaterialSkin.Controls.MaterialLabel empresaLabel;
+        public System.Windows.Forms.ComboBox comboCIFP2;
     }
 }

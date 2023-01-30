@@ -21,11 +21,12 @@ namespace RaquetZone.formularios.Rol2
     public partial class PantallaPrincipalRol2 : MaterialForm
     {
         
-        public int rolActual = 2;
-       
+       public int rolActual = 2;
+
         public PantallaPrincipalRol2()
         {
             InitializeComponent();
+
         }
 
 
@@ -64,6 +65,7 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            comboCIFP2.Text = (string)comboCIFP2.Items[0];
         }
 
         private void buttonGP_Click(object sender, EventArgs e)
@@ -78,6 +80,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoProductos GP = new ListadoProductos();
+                GP.TextoCIFP.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 GP.Show();
             }
 
@@ -98,6 +101,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
+                LU1.TextoCIFC.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 LU1.Show();
             }
 
@@ -117,6 +121,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoClientes GC = new ListadoClientes();
+                GC.TextoCIFC.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 GC.Show();
             }
             
@@ -160,6 +165,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoServicios GS = new ListadoServicios();
+                GS.TextoCIFP.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 GS.Show();
             }
 

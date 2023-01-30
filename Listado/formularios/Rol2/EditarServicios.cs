@@ -36,8 +36,6 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            ListadoServicios LS = new ListadoServicios();
-            LS.Show();
             this.Close();
         }
 
@@ -59,7 +57,7 @@ namespace RaquetZone.formularios.Rol2
             }
 
 
-            String url = "http://localhost:8081/servicio/modify" + idText.Text;
+            String url = "http://localhost:8081/servicio/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

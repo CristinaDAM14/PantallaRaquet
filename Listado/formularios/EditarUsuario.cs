@@ -50,14 +50,12 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
-            LU1.Show();
             this.Close();
         }
 
         private void editarB_Click(object sender, EventArgs e)
         {
-            String url = "http://localhost:8081/usuario/modify" + dniText.Text;
+            String url = "http://localhost:8081/usuario/modify/" + dniText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

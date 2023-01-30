@@ -28,9 +28,44 @@ namespace RaquetZone.funciones
 
             String user = r.getItem();
 
+            if (user.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
+                List<usuario> RaquetZoneUsr = JsonConvert.DeserializeObject<List<usuario>>(user);
+
+                return RaquetZoneUsr;
+            }
+            
+
+        }
+
+        //Lista para los empleados de un propietario
+        public static List<usuario> mostrarUsrP(string cif)
+        {
+
+            String url = "http://localhost:8081/empresa/" + cif + "/empleados";
+
+            conexion r = new conexion(url, "GET");
+
+            String user = r.getItem();
+
+            if (user.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<usuario> RaquetZoneUsr = JsonConvert.DeserializeObject<List<usuario>>(user);
 
             return RaquetZoneUsr;
+            }
+
+            
 
         }
 
@@ -43,9 +78,17 @@ namespace RaquetZone.funciones
 
             String compa = r.getItem();
 
+            if (compa.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<empresa> RaquetZoneEmp = JsonConvert.DeserializeObject<List<empresa>>(compa);
 
             return RaquetZoneEmp;
+            }
 
         }
 
@@ -58,9 +101,42 @@ namespace RaquetZone.funciones
 
             String produ = r.getItem();
 
+            if (produ.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<productos> RaquetZoneProd = JsonConvert.DeserializeObject<List<productos>>(produ);
 
             return RaquetZoneProd;
+            }
+
+        }
+
+        //Lista para los productos del propietario
+        public static List<productos> mostrarProdP(string cif)
+        {
+            String url = "http://localhost:8081/empresa/" + cif + "/productos";
+
+            conexion r = new conexion(url, "GET");
+
+            String produ = r.getItem();
+
+            if (produ.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
+            List<productos> RaquetZoneProd = JsonConvert.DeserializeObject<List<productos>>(produ);
+
+            return RaquetZoneProd;
+            }
+
+            
 
         }
 
@@ -73,9 +149,33 @@ namespace RaquetZone.funciones
 
             String persona = r.getItem();
 
+            if (persona.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<clientes> RaquetZoneCli = JsonConvert.DeserializeObject<List<clientes>>(persona);
 
             return RaquetZoneCli;
+            }
+
+        }
+
+        //Lista para los clientes de un propietario
+        public static List<clientes> mostrarCliP(string cif)
+        {
+            String url = "http://localhost:8081/empresa/" + cif + "/clientes";
+
+            conexion r = new conexion(url, "GET");
+
+            String persona = r.getItem();
+
+            List<clientes> RaquetZoneCli = JsonConvert.DeserializeObject<List<clientes>>(persona);
+
+            return RaquetZoneCli;
+           
 
         }
 
@@ -89,9 +189,17 @@ namespace RaquetZone.funciones
 
             String buy = r.getItem();
 
+            if (buy.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<compras> RaquetZoneComp = JsonConvert.DeserializeObject<List<compras>>(buy);
 
             return RaquetZoneComp;
+            }
 
         }
 
@@ -104,9 +212,17 @@ namespace RaquetZone.funciones
 
             String buyF = r.getItem();
 
+            if (buyF.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<compras> RaquetZoneComp = JsonConvert.DeserializeObject<List<compras>>(buyF);
 
             return RaquetZoneComp;
+            }
 
         }
 
@@ -119,9 +235,36 @@ namespace RaquetZone.funciones
 
             String Serv = r.getItem();
 
+            
+            if (Serv.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
             List<servicios> RaquetZoneServ = JsonConvert.DeserializeObject<List<servicios>>(Serv);
 
             return RaquetZoneServ;
+            }
+
+        }
+
+        //Lista para los servicios
+        public static List<servicios> mostrarServicioP(string cif)
+        {
+            String url = "http://localhost:8081/empresa/" + cif + "/servicios";
+
+            conexion r = new conexion(url, "GET");
+
+            String Serv = r.getItem();
+
+            List<servicios> RaquetZoneServ = JsonConvert.DeserializeObject<List<servicios>>(Serv);
+
+            return RaquetZoneServ;
+            
+
+            
 
         }
 
@@ -134,20 +277,28 @@ namespace RaquetZone.funciones
 
             String Reser = r.getItem();
 
-            Reser = Reser.Replace("\"cliente\":{", "");
-            Reser = Reser.Replace("\"servicio\":{", "");
-            Reser = Reser.Replace("},", "");
-            Reser = Reser.Replace("}", "");
-            Reser = Reser.Replace("\"compras\":[]", "");
-            Reser = Reser.Replace("]", "");
-            Reser = Reser.Replace("{", "},{");
-            Reser = Reser.Remove(1, 2);
-            Reser = Reser + "}]";
-            String finalRes = Reser.Replace(" ", "");
+            if (Reser.Equals("[]"))
+            {
+                return null;
+                
+            }
+            else
+            {
+                Reser = Reser.Replace("\"cliente\":{", "");
+                Reser = Reser.Replace("\"servicio\":{", "");
+                Reser = Reser.Replace("},", "");
+                Reser = Reser.Replace("}", "");
+                Reser = Reser.Replace("\"idserv\":", ",\"idserv\":");
+                Reser = Reser.Replace("]", "");
+                Reser = Reser.Replace("{", "},{");
+                Reser = Reser.Remove(1, 2);
+                Reser = Reser + "}]";
+                String finalRes = Reser.Replace(" ", "");
 
-            List<reservas> RaquetZoneRes = JsonConvert.DeserializeObject<List<reservas>>(finalRes);
+                List<reservas> RaquetZoneRes = JsonConvert.DeserializeObject<List<reservas>>(finalRes);
 
-            return RaquetZoneRes;
+                return RaquetZoneRes;
+            }
 
         }
 

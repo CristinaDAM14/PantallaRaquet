@@ -14,9 +14,25 @@ namespace RaquetZone.formularios.Rol2
 {
     public partial class EditarReservas : MaterialForm
     {
-        public EditarReservas()
+        public EditarReservas(string id, string num, string fecha, string hora, string dniCli, string idSer)
         {
             InitializeComponent();
+
+            idText.Text = id;
+            pistaNumeric.Value = Int32.Parse(num);
+
+
+
+            diaNum.Value = Int32.Parse(fecha.Substring(8, 2));
+            mesNum.Value = Int32.Parse(fecha.Substring(5, 2));
+            anyoNum.Value = Int32.Parse(fecha.Substring(0, 4));
+
+            horaNum.Value = Int32.Parse(hora.Substring(0, 2));
+            minNum.Value = Int32.Parse(hora.Substring(3, 2));
+
+            dniText.Text = dniCli;
+            idServi.Text = idSer;
+
         }
 
         private void EditarReservas_Load(object sender, EventArgs e)
@@ -26,5 +42,66 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
         }
+
+        private void editarB_Click(object sender, EventArgs e)
+        {
+            //Preparamos la hora
+            string hora = horaNum.Value.ToString();
+            string min = minNum.Value.ToString();
+
+            if (min.Length == 1)
+            {
+                min = "0" + min;
+            }
+            if (hora.Length == 1)
+            {
+                hora = "0" + hora;
+            }
+
+            string completarHora = hora + ":" + min + ":00";
+
+            //Preparamos la fecha
+            string dia = diaNum.Value.ToString();
+            string mes = mesNum.Value.ToString();
+            string anyo = anyoNum.Value.ToString();
+
+            if (dia.Length == 1)
+            {
+                dia = "0" + dia;
+            }
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+
+            string completarFecha = anyo + "-" + mes + "-" + dia;
+
+            String url = "http://localhost:8081/reserva/modify/" + idText.Text;
+
+            funciones.conexion r = new funciones.conexion(url, "PUT");
+
+            String datos = @" {
+            " + "\n" +
+            @"        ""idRes"": " +  idText.Text + "," + "\n" +
+            @"        ""numPista"": " + pistaNumeric.Value + "," + "\n" +
+            @"        ""fechaRes"": """ + completarFecha + "\"," + "\n" +
+            @"        ""horaRes"": """ + completarHora + "\"," + "\n" +
+            @"        ""cliente"": {" + "\n" +
+            @"            ""dnicli"": """ + dniText.Text +"\"" + "\n" +
+            @"        }," + "\n" +
+            @"        ""servicio"": {" + "\n" +
+            @"            ""idserv"": " + idServi.Text + "" + "\n" +
+            @"        }" + "\n" +
+            @"    }"; ;
+
+            r.putItem(url, datos);
+
+            MessageBox.Show("Editado con éxito");
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
-}
+    }

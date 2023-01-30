@@ -38,15 +38,13 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            ListadoClientes LC = new ListadoClientes();
-            LC.Show();
             this.Close();
         }
 
         private void editarB_Click(object sender, EventArgs e)
         {
 
-            String url = "http://localhost:8081/cliente/modify" + dniText.Text;
+            String url = "http://localhost:8081/cliente/modify/" + dniText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

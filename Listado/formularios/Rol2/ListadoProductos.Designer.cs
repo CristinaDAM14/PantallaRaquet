@@ -37,6 +37,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.bVolver = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,6 @@ namespace RaquetZone.formularios.Rol2
             this.listaProductos.Name = "listaProductos";
             this.listaProductos.Size = new System.Drawing.Size(945, 360);
             this.listaProductos.TabIndex = 41;
-            this.listaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaProductos_CellContentClick);
             // 
             // editarProductos
             // 
@@ -107,7 +107,6 @@ namespace RaquetZone.formularios.Rol2
             this.buscarID.Size = new System.Drawing.Size(166, 23);
             this.buscarID.TabIndex = 1;
             this.buscarID.UseSystemPasswordChar = false;
-            this.buscarID.Click += new System.EventHandler(this.buscarID_Click);
             // 
             // bVolver
             // 
@@ -138,11 +137,29 @@ namespace RaquetZone.formularios.Rol2
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TextoCIFP
+            // 
+            this.TextoCIFP.Depth = 0;
+            this.TextoCIFP.Enabled = false;
+            this.TextoCIFP.Hint = "";
+            this.TextoCIFP.Location = new System.Drawing.Point(110, 575);
+            this.TextoCIFP.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFP.Name = "TextoCIFP";
+            this.TextoCIFP.PasswordChar = '\0';
+            this.TextoCIFP.SelectedText = "";
+            this.TextoCIFP.SelectionLength = 0;
+            this.TextoCIFP.SelectionStart = 0;
+            this.TextoCIFP.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFP.TabIndex = 70;
+            this.TextoCIFP.UseSystemPasswordChar = false;
+            this.TextoCIFP.Visible = false;
+            // 
             // ListadoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.TextoCIFP);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
@@ -167,5 +184,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button button1;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
     }
 }

@@ -37,8 +37,6 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            ListadoProductos LP = new ListadoProductos();
-            LP.Show();
             this.Close();
         }
 
@@ -60,7 +58,7 @@ namespace RaquetZone.formularios.Rol2
                 iva = "21";
             }
 
-            String url = "http://localhost:8081/producto/modify" + idText.Text;
+            String url = "http://localhost:8081/producto/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

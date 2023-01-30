@@ -37,6 +37,7 @@ namespace RaquetZone.formularios
             this.buscarDNI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.anyadir = new System.Windows.Forms.Button();
+            this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +136,29 @@ namespace RaquetZone.formularios
             this.anyadir.UseVisualStyleBackColor = true;
             this.anyadir.Click += new System.EventHandler(this.anyadir_Click);
             // 
+            // TextoCIFC
+            // 
+            this.TextoCIFC.Depth = 0;
+            this.TextoCIFC.Enabled = false;
+            this.TextoCIFC.Hint = "";
+            this.TextoCIFC.Location = new System.Drawing.Point(128, 564);
+            this.TextoCIFC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFC.Name = "TextoCIFC";
+            this.TextoCIFC.PasswordChar = '\0';
+            this.TextoCIFC.SelectedText = "";
+            this.TextoCIFC.SelectionLength = 0;
+            this.TextoCIFC.SelectionStart = 0;
+            this.TextoCIFC.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFC.TabIndex = 71;
+            this.TextoCIFC.UseSystemPasswordChar = false;
+            this.TextoCIFC.Visible = false;
+            // 
             // RaquetZoneUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.anyadir);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buscadorButton);
@@ -165,5 +184,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarDNI;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button anyadir;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
     }
 }

@@ -36,7 +36,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
 
-                String url = "http://localhost:8081/reservas/delete" + id;
+                String url = "http://localhost:8081/reserva/delete/" + id;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
@@ -44,7 +44,7 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Eliminado");
 
-                listaReservas.DataSource = RaquetZone.funciones.funciones.mostrarProd();
+                MostrarReservas();
             }
             else
             {
@@ -132,6 +132,27 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void editarReservas_Click(object sender, EventArgs e)
+        {
+            string idText = listaReservas.CurrentRow.Cells[0].Value.ToString();
+            string numText = listaReservas.CurrentRow.Cells[1].Value.ToString();
+            string fechaText = listaReservas.CurrentRow.Cells[2].Value.ToString();
+            string horaText = listaReservas.CurrentRow.Cells[3].Value.ToString();
+            string dniCliText = listaReservas.CurrentRow.Cells[4].Value.ToString();
+            string idSerText = listaReservas.CurrentRow.Cells[10].Value.ToString();
+
+            EditarReservas EC = new EditarReservas(idText, numText, fechaText, horaText, dniCliText, idSerText);
+            EC.Show();
+            this.Close();
+        }
+
+        private void Anyadir_Click(object sender, EventArgs e)
+        {
+            AnyadirReservas AR = new AnyadirReservas();
+            AR.Show();
             this.Close();
         }
     }

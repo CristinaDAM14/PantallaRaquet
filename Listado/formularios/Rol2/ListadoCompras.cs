@@ -82,7 +82,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
 
-                String url = "http://localhost:8081/compra/delete" + id;
+                String url = "http://localhost:8081/compra/delete/" + id;
 
                 funciones.conexion r = new funciones.conexion(url, "DELETE");
 
@@ -130,7 +130,7 @@ namespace RaquetZone.formularios.Rol2
 
             EditarCompras EC = new EditarCompras(id, fecha, hora);
             EC.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void bVolver_Click(object sender, EventArgs e)

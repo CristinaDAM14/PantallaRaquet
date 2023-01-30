@@ -34,6 +34,7 @@ namespace RaquetZone.formularios
             this.iniciarButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.contraOlvidada = new MaterialSkin.Controls.MaterialRaisedButton();
             this.empresaLabel = new System.Windows.Forms.Label();
+            this.comboCIF = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dniText
@@ -111,11 +112,22 @@ namespace RaquetZone.formularios
             this.empresaLabel.Size = new System.Drawing.Size(79, 97);
             this.empresaLabel.TabIndex = 68;
             // 
+            // comboCIF
+            // 
+            this.comboCIF.Enabled = false;
+            this.comboCIF.FormattingEnabled = true;
+            this.comboCIF.Location = new System.Drawing.Point(140, 345);
+            this.comboCIF.Name = "comboCIF";
+            this.comboCIF.Size = new System.Drawing.Size(121, 21);
+            this.comboCIF.TabIndex = 70;
+            this.comboCIF.Visible = false;
+            // 
             // Login
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(389, 386);
+            this.Controls.Add(this.comboCIF);
             this.Controls.Add(this.empresaLabel);
             this.Controls.Add(this.contraOlvidada);
             this.Controls.Add(this.iniciarButton);
@@ -136,5 +148,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialRaisedButton iniciarButton;
         private MaterialSkin.Controls.MaterialRaisedButton contraOlvidada;
         private System.Windows.Forms.Label empresaLabel;
+        public System.Windows.Forms.ComboBox comboCIF;
     }
 }
