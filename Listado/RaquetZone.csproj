@@ -175,6 +175,12 @@
     <Compile Include="formularios\Rol2\AnyadirCompras.Designer.cs">
       <DependentUpon>AnyadirCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\Rol2\AnyadirComprasProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\AnyadirComprasProd.Designer.cs">
+      <DependentUpon>AnyadirComprasProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\Rol2\AnyadirProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,12 @@
     </Compile>
     <Compile Include="formularios\Rol2\ListadoCompras.Designer.cs">
       <DependentUpon>ListadoCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoComprasSolas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\ListadoComprasSolas.Designer.cs">
+      <DependentUpon>ListadoComprasSolas.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\Rol2\ListadoProductos.cs">
       <SubType>Form</SubType>
@@ -366,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\ListadoCompras.resx">
       <DependentUpon>ListadoCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\ListadoComprasSolas.resx">
+      <DependentUpon>ListadoComprasSolas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\ListadoProductos.resx">
       <DependentUpon>ListadoProductos.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace RaquetZone.formularios.Rol2
         public ListadoClientes()
         {
             InitializeComponent();
-            MostrarClientes();
+            
         }
 
         private void ListadoClientes_Load(object sender, EventArgs e)
@@ -26,6 +26,8 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+
+            MostrarClientes();
 
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
             if (existe != null)
@@ -75,9 +77,18 @@ namespace RaquetZone.formularios.Rol2
 
         private void MostrarClientes()
         {
-            listaClientes.DataSource = funciones.funciones.mostrarCliP(TextoCIFC.Text);
+            if (funciones.funciones.mostrarCliP(TextoCIFC.Text) == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaClientes.DataSource = funciones.funciones.mostrarCliP(TextoCIFC.Text);
 
-            listaClientes.Columns[2].Visible = false;
+                listaClientes.Columns[2].Visible = false;
+            }
+
+            
 
         }
 

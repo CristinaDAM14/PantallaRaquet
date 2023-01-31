@@ -50,6 +50,8 @@ namespace RaquetZone.formularios.Rol2
             this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.bCliente = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.crearB = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horaNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diaNum)).BeginInit();
@@ -338,7 +340,7 @@ namespace RaquetZone.formularios.Rol2
             this.dniText.SelectedText = "";
             this.dniText.SelectionLength = 0;
             this.dniText.SelectionStart = 0;
-            this.dniText.Size = new System.Drawing.Size(194, 23);
+            this.dniText.Size = new System.Drawing.Size(135, 23);
             this.dniText.TabIndex = 110;
             this.dniText.UseSystemPasswordChar = false;
             // 
@@ -358,7 +360,7 @@ namespace RaquetZone.formularios.Rol2
             // bCliente
             // 
             this.bCliente.Depth = 0;
-            this.bCliente.Location = new System.Drawing.Point(687, 107);
+            this.bCliente.Location = new System.Drawing.Point(629, 107);
             this.bCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.bCliente.Name = "bCliente";
             this.bCliente.Primary = true;
@@ -368,11 +370,43 @@ namespace RaquetZone.formularios.Rol2
             this.bCliente.UseVisualStyleBackColor = true;
             this.bCliente.Click += new System.EventHandler(this.bCliente_Click);
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(15, 392);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFAnyadir.TabIndex = 133;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
+            // crearB
+            // 
+            this.crearB.Depth = 0;
+            this.crearB.Location = new System.Drawing.Point(704, 107);
+            this.crearB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.crearB.Name = "crearB";
+            this.crearB.Primary = true;
+            this.crearB.Size = new System.Drawing.Size(69, 23);
+            this.crearB.TabIndex = 134;
+            this.crearB.Text = "Crear";
+            this.crearB.UseVisualStyleBackColor = true;
+            this.crearB.Click += new System.EventHandler(this.crearB_Click);
+            // 
             // AnyadirReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.crearB);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.bCliente);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.minLabel);
@@ -431,5 +465,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton bCliente;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
+        private MaterialSkin.Controls.MaterialRaisedButton crearB;
     }
 }

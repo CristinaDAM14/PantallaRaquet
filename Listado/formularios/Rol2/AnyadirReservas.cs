@@ -39,6 +39,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoServicios LS = new ListadoServicios();
+                LS.TextoCIFP.Text = TextoCIFAnyadir.Text;
                 LS.Show();
             }
         }
@@ -55,6 +56,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoClientes LC = new ListadoClientes();
+                LC.TextoCIFC.Text = TextoCIFAnyadir.Text;
                 LC.Show();
             }
         }
@@ -137,7 +139,7 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Reserva añadida a la base de datos");
 
-                limpiar();
+                //limpiar();
 
                 //POST NOTIFICACIONES
 
@@ -169,5 +171,10 @@ namespace RaquetZone.formularios.Rol2
             pistaNumeric.Value = 0;
         }
 
+        private void crearB_Click(object sender, EventArgs e)
+        {
+            AnyadirCliente AC = new AnyadirCliente();
+            AC.Show();
+        }
     }
 }

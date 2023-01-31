@@ -130,7 +130,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonCompras_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoCompras").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoComprasSolas").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -139,7 +139,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                ListadoCompras LC = new ListadoCompras();
+                ListadoComprasSolas LC = new ListadoComprasSolas();
                 LC.Show();
             }
             
@@ -184,6 +184,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoReservas LR = new ListadoReservas();
+                LR.TextoCIFC.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 LR.Show();
             }
         }

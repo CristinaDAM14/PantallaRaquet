@@ -18,7 +18,6 @@ namespace RaquetZone.formularios.Rol2
         public ListadoCompras()
         {
             InitializeComponent();
-            MostrarCompras();
         }
 
         private void ListadoCompras_Load(object sender, EventArgs e)
@@ -28,21 +27,24 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
-            if(radioID.Checked == true)
-            {
-                radioFecha.Checked = false;
-                MostrarCompras();
-            }
-            else if(radioFecha.Checked == true)
-            {
-                radioID.Checked = false;
-                MostrarComprasPorFecha();
-            }
+            MostrarCompras();
         }
 
         private void MostrarCompras()
         {
-            listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarComp();
+            if (funciones.funciones.mostrarCompProd() == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Compras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarCompProd();
+                listaCompras.Columns[2].Visible = false;
+                listaCompras.Columns[9].Visible = false;
+                listaCompras.Columns[14].Visible = false;
+            }
+
+            
         }
 
         private void MostrarComprasPorFecha()
@@ -52,8 +54,13 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonFactura_Click(object sender, EventArgs e)
         {
-            String id = listaCompras.CurrentRow.Cells[0].Value.ToString();
-            String fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
+            String id = listaCompras.CurrentRow.Cells[1].Value.ToString();
+            String fecha = listaCompras.CurrentRow.Cells[10].Value.ToString();
+            String nombre = listaCompras.CurrentRow.Cells[3].Value.ToString();
+            String descuento = listaCompras.CurrentRow.Cells[7].Value.ToString();
+            String precio = listaCompras.CurrentRow.Cells[5].Value.ToString();
+            String cliente = listaCompras.CurrentRow.Cells[13].Value.ToString();
+            String cantidad = listaCompras.CurrentRow.Cells[18].Value.ToString();
 
             /*string url = "http://localhost:8081/compras/" + id;
 
@@ -70,7 +77,7 @@ namespace RaquetZone.formularios.Rol2
             int suma = Int32.Parse(precioJ) * Int32.Parse(cantidadJ);
             string total = suma.ToString();
             */
-            funciones.funciones.facturasPDF(id, fecha);
+            funciones.funciones.facturasPDF(id, fecha, nombre, descuento, precio, cliente, cantidad);
 
         }
 
@@ -90,20 +97,8 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Eliminado");
 
-                if (radioID.Checked == true)
-                {
-                    radioFecha.Checked = false;
-                    MostrarCompras();
-                }
-                else if (radioFecha.Checked == true)
-                {
-                    radioID.Checked = false;
-                    MostrarComprasPorFecha();
-                }
-                else
-                {
-                    MostrarCompras();
-                }
+                MostrarCompras();
+
             }
             else
             {

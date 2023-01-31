@@ -35,7 +35,6 @@ namespace RaquetZone.formularios.Rol2
             this.radioFecha = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioID = new MaterialSkin.Controls.MaterialRadioButton();
             this.labelOrdenar = new MaterialSkin.Controls.MaterialLabel();
-            this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.editarCompras = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -56,7 +55,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.buttonFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFactura.Depth = 0;
-            this.buttonFactura.Location = new System.Drawing.Point(577, 530);
+            this.buttonFactura.Location = new System.Drawing.Point(432, 523);
             this.buttonFactura.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonFactura.Name = "buttonFactura";
             this.buttonFactura.Primary = true;
@@ -111,20 +110,6 @@ namespace RaquetZone.formularios.Rol2
             this.labelOrdenar.Size = new System.Drawing.Size(91, 19);
             this.labelOrdenar.TabIndex = 56;
             this.labelOrdenar.Text = "Ordenar por:";
-            // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEliminar.Depth = 0;
-            this.buttonEliminar.Location = new System.Drawing.Point(342, 530);
-            this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Primary = true;
-            this.buttonEliminar.Size = new System.Drawing.Size(157, 64);
-            this.buttonEliminar.TabIndex = 57;
-            this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // editarCompras
             // 
@@ -210,7 +195,6 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.buscarID);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.editarCompras);
-            this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.labelOrdenar);
             this.Controls.Add(this.radioID);
             this.Controls.Add(this.radioFecha);
@@ -218,7 +202,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.listaCompras);
             this.MaximizeBox = false;
             this.Name = "ListadoCompras";
-            this.Text = "Listado de Compras";
+            this.Text = "Listado de compras finalizadas";
             this.Load += new System.EventHandler(this.ListadoCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).EndInit();
             this.ResumeLayout(false);
@@ -232,7 +216,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
         private MaterialSkin.Controls.MaterialRadioButton radioID;
         private MaterialSkin.Controls.MaterialLabel labelOrdenar;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private System.Windows.Forms.Button editarCompras;
         private System.Windows.Forms.Button bVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;

@@ -39,6 +39,7 @@ namespace RaquetZone.formularios.Rol2
             this.Anyadir = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
             this.editarReservas = new System.Windows.Forms.Button();
+            this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaReservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,11 +173,29 @@ namespace RaquetZone.formularios.Rol2
             this.editarReservas.UseVisualStyleBackColor = true;
             this.editarReservas.Click += new System.EventHandler(this.editarReservas_Click);
             // 
+            // TextoCIFC
+            // 
+            this.TextoCIFC.Depth = 0;
+            this.TextoCIFC.Enabled = false;
+            this.TextoCIFC.Hint = "";
+            this.TextoCIFC.Location = new System.Drawing.Point(137, 567);
+            this.TextoCIFC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFC.Name = "TextoCIFC";
+            this.TextoCIFC.PasswordChar = '\0';
+            this.TextoCIFC.SelectedText = "";
+            this.TextoCIFC.SelectionLength = 0;
+            this.TextoCIFC.SelectionStart = 0;
+            this.TextoCIFC.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFC.TabIndex = 76;
+            this.TextoCIFC.UseSystemPasswordChar = false;
+            this.TextoCIFC.Visible = false;
+            // 
             // ListadoReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.radioPista);
             this.Controls.Add(this.radioFecha);
             this.Controls.Add(this.Anyadir);
@@ -205,5 +224,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.DataGridView listaReservas;
         private MaterialSkin.Controls.MaterialRadioButton radioPista;
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
     }
 }

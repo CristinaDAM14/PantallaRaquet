@@ -70,7 +70,15 @@ namespace RaquetZone.formularios
 
         private void MostrarEmpresas()
         {
-            listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
+            if (funciones.funciones.mostrarEmp() == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Empresas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
+            }
+
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)

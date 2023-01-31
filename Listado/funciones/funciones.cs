@@ -172,9 +172,17 @@ namespace RaquetZone.funciones
 
             String persona = r.getItem();
 
-            List<clientes> RaquetZoneCli = JsonConvert.DeserializeObject<List<clientes>>(persona);
+            if (persona.Equals("[]"))
+            {
+                return null;
 
-            return RaquetZoneCli;
+            }
+            else
+            {
+                List<clientes> RaquetZoneCli = JsonConvert.DeserializeObject<List<clientes>>(persona);
+
+                return RaquetZoneCli;
+            }
            
 
         }
@@ -226,6 +234,45 @@ namespace RaquetZone.funciones
 
         }
 
+        //Lista para las compras ordenadas por fecha
+        public static List<producto_compra> mostrarCompProd()
+        {
+            String url = "http://localhost:8081/producto_compras";
+
+            conexion r = new conexion(url, "GET");
+
+            String buyCP = r.getItem();
+
+            if (buyCP.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
+                buyCP = buyCP.Replace("\"cliente\":{", "");
+                buyCP = buyCP.Replace("\"producto\":{", "");
+                buyCP = buyCP.Replace("\"compra\":{", "");
+                buyCP = buyCP.Replace("\"id\":{", "");
+                buyCP = buyCP.Replace("},", "");
+                buyCP = buyCP.Replace("}", "");
+                buyCP = buyCP.Replace("\"idprod\":", ",\"idprod\":");
+                buyCP = buyCP.Replace("\"idcomp\":", ",\"idcomp\":");
+                buyCP = buyCP.Replace("\"cantidadprodcomp\":", ",\"cantidadprodcomp\":");
+                buyCP = buyCP.Replace("]", "");
+                buyCP = buyCP.Replace("{", "},{");
+                buyCP = buyCP.Remove(1, 2);
+                buyCP = buyCP + "}]";
+                String finalCP = buyCP.Replace(" ", "");
+
+
+                List<producto_compra> RaquetZoneComp = JsonConvert.DeserializeObject<List<producto_compra>>(finalCP);
+
+                return RaquetZoneComp;
+            }
+
+        }
+
         //Lista para los servicios
         public static List<servicios> mostrarServicio()
         {
@@ -259,12 +306,17 @@ namespace RaquetZone.funciones
 
             String Serv = r.getItem();
 
-            List<servicios> RaquetZoneServ = JsonConvert.DeserializeObject<List<servicios>>(Serv);
+            if (Serv.Equals("[]"))
+            {
+                return null;
 
-            return RaquetZoneServ;
-            
+            }
+            else
+            {
+                List<servicios> RaquetZoneServ = JsonConvert.DeserializeObject<List<servicios>>(Serv);
 
-            
+                return RaquetZoneServ;
+            }
 
         }
 
@@ -331,20 +383,41 @@ namespace RaquetZone.funciones
 
         //Crear PDF's y editarlos
 
-        public static void facturasPDF(string id, string fecha)
+        public static void facturasPDF(string id, string fecha, string nombre, string descuento, string precio, string cliente, string cantidad)
         {
 
             // string descuento, string total, string precio, string nombre, string cantidad
 
+            double pre = Double.Parse(precio);
+            double can = Double.Parse(cantidad);
+            double des = Double.Parse(descuento);
+            double tot = 0;
+            string predes = "";
+
+            if (des != 0)
+            {
+                tot = (des / 100 * pre) * can;
+            }
+            else
+            {
+                tot = pre * can;
+            }
+
+            string total = tot.ToString();
+             predes = tot.ToString();
+
+
             Document doc = new Document("Factura.docx");
-            doc.Range.Replace("$nombre", id, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$nombre", nombre, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$fecha", fecha, new FindReplaceOptions(FindReplaceDirection.Forward));
-            /*doc.Range.Replace("$descuento", descuento, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$descuento", descuento, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$precio", precio, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$total", total, new FindReplaceOptions(FindReplaceDirection.Forward));
-            doc.Range.Replace("$nombre1", nombre, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$id", id, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$cantidad", cantidad, new FindReplaceOptions(FindReplaceDirection.Forward));
-            */
+            doc.Range.Replace("$cliente", cliente, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("predes", predes, new FindReplaceOptions(FindReplaceDirection.Forward));
+
             string nombreFac = "Factura" + id + ".pdf";
 
             string rutaMala = @"D:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\" + nombreFac;

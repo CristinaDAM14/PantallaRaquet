@@ -126,7 +126,14 @@ namespace RaquetZone.formularios.Rol2
 
         private void MostrarReservas()
         {
-            listaReservas.DataSource = funciones.funciones.mostrarReservas();
+            if (funciones.funciones.mostrarReservas() == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Reservas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaReservas.DataSource = funciones.funciones.mostrarReservas();
+            }
 
         }
 
@@ -152,6 +159,7 @@ namespace RaquetZone.formularios.Rol2
         private void Anyadir_Click(object sender, EventArgs e)
         {
             AnyadirReservas AR = new AnyadirReservas();
+            AR.TextoCIFAnyadir.Text = TextoCIFC.Text;
             AR.Show();
             this.Close();
         }

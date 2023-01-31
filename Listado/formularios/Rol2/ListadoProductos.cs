@@ -73,7 +73,15 @@ namespace RaquetZone.formularios.Rol2
 
         private void Mostrar()
         {
-            listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProdP(TextoCIFP.Text);
+            if (funciones.funciones.mostrarProdP(TextoCIFP.Text) == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Productos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaProductos.DataSource = RaquetZone.funciones.funciones.mostrarProdP(TextoCIFP.Text);
+            }
+
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)

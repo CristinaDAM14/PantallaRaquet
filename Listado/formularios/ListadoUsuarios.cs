@@ -108,16 +108,34 @@ namespace RaquetZone.formularios
 
         private void MostrarUsuarios()
         {
-            listaDatos.DataSource = funciones.funciones.mostrarUsr();
+            if (funciones.funciones.mostrarUsr() == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Usuarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaDatos.DataSource = funciones.funciones.mostrarUsr();
 
-            listaDatos.Columns[2].Visible = false;
+                listaDatos.Columns[2].Visible = false;
+            }
+
         }
 
         private void MostrarUsuariosP()
         {
-            listaDatos.DataSource = funciones.funciones.mostrarUsrP(TextoCIFC.Text);
 
-            listaDatos.Columns[2].Visible = false;
+            if (funciones.funciones.mostrarUsrP(TextoCIFC.Text) == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                listaDatos.DataSource = funciones.funciones.mostrarUsrP(TextoCIFC.Text);
+
+                listaDatos.Columns[2].Visible = false;
+            }
+
+            
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)

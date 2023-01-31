@@ -8,8 +8,8 @@ namespace RaquetZone.funciones
 {
     public class producto_compra
     {
-        public string idprodcomp { get; set; }
-        public string cantidadprodcomp { get; set; }
+        public string idProducto { get; set; }
+        public string idCompra { get; set; }
         public string idprod { get; set; }
         public string nombreprod { get; set; }
         public string categoriaprod { get; set; }
@@ -23,6 +23,13 @@ namespace RaquetZone.funciones
         public string fechacomp { get; set; }
         public string horacomp { get; set; }
 
+        public string dnicli { get; set; }
+        public string nombrecli { get; set; }
+        public string passwordcli { get; set; }
+        public int numhorascli { get; set; }
+        public string telefonocli { get; set; }
+        public string emailcli { get; set; }
+        public string cantidadprodcomp { get; set; }
 
     }
 }

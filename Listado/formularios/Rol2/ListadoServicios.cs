@@ -81,7 +81,15 @@ namespace RaquetZone.formularios.Rol2
 
         private void MostrarServicios()
         {
-            ListaServicios.DataSource = funciones.funciones.mostrarServicioP(TextoCIFP.Text);
+            if(funciones.funciones.mostrarServicioP(TextoCIFP.Text) == null)
+            {
+                MessageBox.Show("No tienes ningún dato de Servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ListaServicios.DataSource = funciones.funciones.mostrarServicioP(TextoCIFP.Text);
+            }
+            
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
