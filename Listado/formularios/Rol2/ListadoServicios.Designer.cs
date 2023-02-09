@@ -31,7 +31,7 @@ namespace RaquetZone.formularios.Rol2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoServicios));
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.buscarNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ListaServicios = new System.Windows.Forms.DataGridView();
             this.buttonVolver = new System.Windows.Forms.Button();
@@ -57,22 +57,22 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.UseVisualStyleBackColor = true;
             this.buscadorButton.Click += new System.EventHandler(this.buscadorButton_Click);
             // 
-            // buscarID
+            // buscarNombre
             // 
-            this.buscarID.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarID.Depth = 0;
-            this.buscarID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarID.Hint = " ID";
-            this.buscarID.Location = new System.Drawing.Point(46, 86);
-            this.buscarID.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buscarID.Name = "buscarID";
-            this.buscarID.PasswordChar = '\0';
-            this.buscarID.SelectedText = "";
-            this.buscarID.SelectionLength = 0;
-            this.buscarID.SelectionStart = 0;
-            this.buscarID.Size = new System.Drawing.Size(166, 23);
-            this.buscarID.TabIndex = 60;
-            this.buscarID.UseSystemPasswordChar = false;
+            this.buscarNombre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarNombre.Depth = 0;
+            this.buscarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarNombre.Hint = " Nombre";
+            this.buscarNombre.Location = new System.Drawing.Point(46, 86);
+            this.buscarNombre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buscarNombre.Name = "buscarNombre";
+            this.buscarNombre.PasswordChar = '\0';
+            this.buscarNombre.SelectedText = "";
+            this.buscarNombre.SelectionLength = 0;
+            this.buscarNombre.SelectionStart = 0;
+            this.buscarNombre.Size = new System.Drawing.Size(166, 23);
+            this.buscarNombre.TabIndex = 60;
+            this.buscarNombre.UseSystemPasswordChar = false;
             // 
             // buttonEliminar
             // 
@@ -93,6 +93,7 @@ namespace RaquetZone.formularios.Rol2
             this.ListaServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaServicios.Location = new System.Drawing.Point(41, 127);
             this.ListaServicios.Name = "ListaServicios";
+            this.ListaServicios.RowTemplate.ReadOnly = true;
             this.ListaServicios.Size = new System.Drawing.Size(943, 360);
             this.ListaServicios.TabIndex = 59;
             // 
@@ -179,7 +180,7 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.Anyadir);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buscadorButton);
-            this.Controls.Add(this.buscarID);
+            this.Controls.Add(this.buscarNombre);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.ListaServicios);
@@ -195,7 +196,7 @@ namespace RaquetZone.formularios.Rol2
 
         private System.Windows.Forms.Button buttonVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
-        private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
+        private MaterialSkin.Controls.MaterialSingleLineTextField buscarNombre;
         private MaterialSkin.Controls.MaterialRaisedButton buttonEliminar;
         private System.Windows.Forms.Button editar;
         private System.Windows.Forms.DataGridView ListaServicios;

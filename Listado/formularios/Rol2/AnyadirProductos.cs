@@ -30,8 +30,22 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoProductos").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoProductos GP = new ListadoProductos();
+                GP.TextoCIFP.Text = cifEmpresa.Text;
+                GP.Show();
                 this.Close();
-            
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,7 +76,10 @@ namespace RaquetZone.formularios.Rol2
 @"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
 @"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
 @"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
-@"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
+@"        ""stockprod"": """ + stockNumeric.Value + "\"," + "\n" +
+@"        ""empresa"": {" + "\n" +
+@"            ""cifemp"": " + cifEmpresa.Text + "" + "\n" +
+@"        }" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);

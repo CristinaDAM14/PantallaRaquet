@@ -50,6 +50,7 @@ namespace RaquetZone.formularios.Rol2
             this.mesNum = new System.Windows.Forms.NumericUpDown();
             this.anyoNum = new System.Windows.Forms.NumericUpDown();
             this.horaLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pistaNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horaNum)).BeginInit();
@@ -372,11 +373,29 @@ namespace RaquetZone.formularios.Rol2
             this.horaLabel.TabIndex = 105;
             this.horaLabel.Text = "Hora";
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(78, 382);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.TabIndex = 110;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
             // EditarReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.minLabel);
             this.Controls.Add(this.minNum);
             this.Controls.Add(this.horaNum);
@@ -434,5 +453,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.NumericUpDown mesNum;
         private System.Windows.Forms.NumericUpDown anyoNum;
         private MaterialSkin.Controls.MaterialLabel horaLabel;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
     }
 }

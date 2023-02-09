@@ -32,26 +32,30 @@ namespace RaquetZone.formularios.Rol2
             if (existe != null)
 
             {
-                buttonEliminar.Visible = false;
-                buttonEliminar.Enabled = false;
                 editarCompras.Visible = false;
                 editarCompras.Enabled = false;
                 button1.Visible = false;
                 button1.Enabled = false;
-                butonAnyadir2.Visible = true;
-                butonAnyadir2.Enabled = true;
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                facturaB.Visible = false;
+                facturaB.Enabled = false;
+                AnyadirCompra.Visible = true;
+                AnyadirCompra.Enabled = true;
 
             }
             else
             {
-                buttonEliminar.Visible = true;
-                buttonEliminar.Enabled = true;
                 editarCompras.Visible = true;
                 editarCompras.Enabled = true;
                 button1.Visible = true;
                 button1.Enabled = true;
-                butonAnyadir2.Visible = false;
-                butonAnyadir2.Enabled = false;
+                buttonEliminar.Visible = true;
+                buttonEliminar.Enabled = true;
+                facturaB.Visible = true;
+                facturaB.Enabled = true;
+                AnyadirCompra.Visible = false;
+                AnyadirCompra.Enabled = false;
             }
         }
 
@@ -64,6 +68,42 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarComp();
+
+                List<string> clientesC = new List<string>();
+                clientesC.AddRange(funciones.funciones.comprasClientes(TextoCIFP.Text));
+                int contador = 0;
+                int controlFila = 0;
+                bool existe = false;
+
+                foreach (DataGridViewRow row in listaCompras.Rows)
+                {
+
+                    string codigo = Convert.ToString(row.Cells["dnicli"].Value);
+
+                    do
+                    {
+                        if (codigo.Equals(clientesC[contador]))
+                        {
+                            existe = true;
+                        }
+                        contador++;
+
+                    } while (contador != clientesC.Count);
+
+                    if(existe == false)
+                    {
+                        listaCompras.ClearSelection();
+                        listaCompras.CurrentCell = null;
+                        listaCompras.Rows[controlFila].Visible = false;
+                    }
+                    else
+                    {
+                        existe = false;
+                    }
+                    controlFila++;
+                    contador = 0;
+
+                }
             }
 
 
@@ -81,6 +121,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 AnyadirCompras P23 = new AnyadirCompras();
+                P23.TextoCIFAnyadir.Text = TextoCIFP.Text;
                 P23.Show();
                 this.Close();
             }
@@ -102,10 +143,21 @@ namespace RaquetZone.formularios.Rol2
             }
 
 
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarCompras").SingleOrDefault<Form>();
+            if (existe != null)
 
-            EditarCompras EC = new EditarCompras(id, fecha, hora);
-            EC.Show();
-            this.Close();
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarCompras EC = new EditarCompras(id, fecha, hora);
+                EC.TextoCIFAnyadir.Text = TextoCIFP.Text;
+                EC.Show();
+                this.Close();
+            }
+          
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -192,10 +244,24 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                ListadoCompras LC = new ListadoCompras();
+                LC.TextoCIFP.Text = TextoCIFP.Text;
             LC.Show();
             this.Close();
             }
             
+        }
+
+        private void AnyadirCompra_Click_1(object sender, EventArgs e)
+        {
+            string idC = listaCompras.CurrentRow.Cells[0].Value.ToString();
+
+            AnyadirComprasProd AR = (AnyadirComprasProd)Application.OpenForms["AnyadirComprasProd"];
+            if (Application.OpenForms.OfType<AnyadirComprasProd>().Any())
+            {
+                AR.conseguirIDCompra(idC);
+            }
+
+            this.Close();
         }
     }
 }

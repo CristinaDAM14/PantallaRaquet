@@ -140,6 +140,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListadoComprasSolas LC = new ListadoComprasSolas();
+                LC.TextoCIFP.Text = comboCIFP2.GetItemText(comboCIFP2.SelectedItem);
                 LC.Show();
             }
             

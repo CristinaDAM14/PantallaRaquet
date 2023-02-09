@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
 
             MostrarClientes();
 
+            Form existe1 = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirCompras").SingleOrDefault<Form>();
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
             if (existe != null)
 
@@ -41,8 +42,29 @@ namespace RaquetZone.formularios.Rol2
                 button1.Enabled = false;
                 emailButton.Visible = false;
                 emailButton.Enabled = false;
+                anyadirCompra.Visible = false;
+                anyadirCompra.Enabled = false;
                 bReservas.Visible = true;
                 bReservas.Enabled = true;
+
+            }
+            else if (existe1 != null)
+
+            {
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                editarProductos.Visible = false;
+                editarProductos.Enabled = false;
+                button1.Visible = false;
+                button1.Enabled = false;
+                emailButton.Visible = false;
+                emailButton.Enabled = false;
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                anyadirCompra.Visible = true;
+                anyadirCompra.Enabled = true;
+                bReservas.Visible = false;
+                bReservas.Enabled = false;
 
             }
             else
@@ -55,6 +77,8 @@ namespace RaquetZone.formularios.Rol2
                 button1.Enabled = true;
                 emailButton.Visible = true;
                 emailButton.Enabled = true;
+                anyadirCompra.Visible = false;
+                anyadirCompra.Enabled = false;
                 bReservas.Visible = false;
                 bReservas.Enabled = false;
             }
@@ -70,9 +94,20 @@ namespace RaquetZone.formularios.Rol2
             string telText = listaClientes.CurrentRow.Cells[4].Value.ToString();
             string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
 
-            EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText);
-            EC.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarClientes").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText);
+                EC.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                EC.Show();
+                this.Close();
+            }
         }
 
         private void MostrarClientes()
@@ -166,6 +201,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 AnyadirCliente GC1 = new AnyadirCliente();
+                GC1.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 GC1.Show();
                 this.Close();
             }
@@ -177,6 +213,19 @@ namespace RaquetZone.formularios.Rol2
 
             AnyadirReservas AR = (AnyadirReservas)Application.OpenForms["AnyadirReservas"];
             if (Application.OpenForms.OfType<AnyadirReservas>().Any())
+            {
+                AR.conseguirDNI(dni);
+            }
+
+            this.Close();
+        }
+
+        private void anyadirCompra_Click(object sender, EventArgs e)
+        {
+            string dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
+
+            AnyadirCompras AR = (AnyadirCompras)Application.OpenForms["AnyadirCompras"];
+            if (Application.OpenForms.OfType<AnyadirCompras>().Any())
             {
                 AR.conseguirDNI(dni);
             }

@@ -40,6 +40,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1 = new System.Windows.Forms.Button();
             this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.anyadirCompra = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaClientes.Location = new System.Drawing.Point(49, 143);
             this.listaClientes.Name = "listaClientes";
+            this.listaClientes.RowTemplate.ReadOnly = true;
             this.listaClientes.Size = new System.Drawing.Size(944, 360);
             this.listaClientes.TabIndex = 46;
             // 
@@ -184,11 +186,26 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFC.UseSystemPasswordChar = false;
             this.TextoCIFC.Visible = false;
             // 
+            // anyadirCompra
+            // 
+            this.anyadirCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.anyadirCompra.Depth = 0;
+            this.anyadirCompra.Location = new System.Drawing.Point(453, 520);
+            this.anyadirCompra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.anyadirCompra.Name = "anyadirCompra";
+            this.anyadirCompra.Primary = true;
+            this.anyadirCompra.Size = new System.Drawing.Size(157, 64);
+            this.anyadirCompra.TabIndex = 71;
+            this.anyadirCompra.Text = "Añadir a la Compra";
+            this.anyadirCompra.UseVisualStyleBackColor = true;
+            this.anyadirCompra.Click += new System.EventHandler(this.anyadirCompra_Click);
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.anyadirCompra);
             this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.bReservas);
             this.Controls.Add(this.button1);
@@ -219,5 +236,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button button1;
         private MaterialSkin.Controls.MaterialRaisedButton bReservas;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
+        private MaterialSkin.Controls.MaterialRaisedButton anyadirCompra;
     }
 }

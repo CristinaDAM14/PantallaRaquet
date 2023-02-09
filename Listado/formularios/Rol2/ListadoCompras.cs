@@ -28,6 +28,7 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
             MostrarCompras();
+
         }
 
         private void MostrarCompras()
@@ -62,70 +63,8 @@ namespace RaquetZone.formularios.Rol2
             String cliente = listaCompras.CurrentRow.Cells[13].Value.ToString();
             String cantidad = listaCompras.CurrentRow.Cells[18].Value.ToString();
 
-            /*string url = "http://localhost:8081/compras/" + id;
-
-            funciones.conexion r = new funciones.conexion(url, "GET");
-
-            string producto = r.getItem();
-
-            var jprod = JsonConvert.DeserializeObject<funciones.compras>(producto);
-            string descuentoJ = jprod.descuentoprod;
-            string precioJ = jprod.precioprod;
-            string nombreJ = jprod.nombreprod;
-            string cantidadJ = jprod.cantidadprodcomp;
-
-            int suma = Int32.Parse(precioJ) * Int32.Parse(cantidadJ);
-            string total = suma.ToString();
-            */
             funciones.funciones.facturasPDF(id, fecha, nombre, descuento, precio, cliente, cantidad);
 
-        }
-
-        private void buttonEliminar_Click(object sender, EventArgs e)
-        {
-            String id = listaCompras.CurrentRow.Cells[0].Value.ToString();
-
-            if (MessageBox.Show("¿Quieres eliminar la compra con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-
-
-                String url = "http://localhost:8081/compra/delete/" + id;
-
-                funciones.conexion r = new funciones.conexion(url, "DELETE");
-
-                r.deleteItem(url);
-
-                MessageBox.Show("Eliminado");
-
-                MostrarCompras();
-
-            }
-            else
-            {
-                MessageBox.Show("La operación se ha detenido, no se ha eliminado la compra");
-            }
-        }
-
-        private void editarCompras_Click(object sender, EventArgs e)
-        {
-            string id = listaCompras.CurrentRow.Cells[0].Value.ToString();
-            string fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
-            string hora;
-
-            if(listaCompras.CurrentRow.Cells[2].Value == null)
-            {
-                hora = "0";
-            }
-            else
-            {
-            hora = listaCompras.CurrentRow.Cells[2].Value.ToString();
-            }
-            
-
-
-            EditarCompras EC = new EditarCompras(id, fecha, hora);
-            EC.Show();
-            this.Close();
         }
 
         private void bVolver_Click(object sender, EventArgs e)
@@ -159,7 +98,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirCompras").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirComprasProd").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -168,10 +107,13 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                AnyadirCompras P23 = new AnyadirCompras();
+                AnyadirComprasProd P23 = new AnyadirComprasProd();
+                P23.cifEmpresa.Text = TextoCIFP.Text;
                 P23.Show();
                 this.Close();
             }
         }
+
     }
-}
+    }
+

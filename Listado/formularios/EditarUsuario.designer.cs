@@ -46,6 +46,7 @@
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.bVolver = new System.Windows.Forms.Button();
             this.editarB = new System.Windows.Forms.Button();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // rolCombo
@@ -306,11 +307,29 @@
             this.editarB.UseVisualStyleBackColor = true;
             this.editarB.Click += new System.EventHandler(this.editarB_Click);
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(81, 377);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.TabIndex = 72;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.editarB);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.materialTabSelector2);
@@ -357,5 +376,6 @@
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button editarB;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
     }
 }

@@ -44,6 +44,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.idText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiempoNumeric)).BeginInit();
@@ -241,11 +242,29 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel4.TabIndex = 110;
             this.materialLabel4.Text = "Descripción";
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(136, 380);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.TabIndex = 111;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
             // EditarServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.idText);
@@ -289,5 +308,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField idText;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
     }
 }

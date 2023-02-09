@@ -43,7 +43,21 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                RaquetZoneUsuarios LU1 = new RaquetZoneUsuarios();
+                LU1.TextoCIFC.Text = TextoCIFAnyadir.Text;
+                LU1.Show();
                 this.Close();
+            }
         }
 
 

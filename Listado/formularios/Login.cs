@@ -64,16 +64,12 @@ namespace RaquetZone.formularios
             }
             else if (tipoRol2 == true)
             {
-                String url2 = "http://localhost:8081/empresas";
+               String url2 = "http://localhost:8081/empresas";
 
                 funciones.conexion r2 = new funciones.conexion(url2, "GET");
 
                 string compa = r2.getItem();
 
-                bool existe = compa.Contains(usuario);
-
-                if (existe == true)
-                {
                     var matches = Regex.Matches(compa, @"cifemp[\s\S]{0,3}([A-Z0-9]{1,15})[\s\S]");
                     List<string> rescateCIF = new List<string>();
                     var rescateCIF1 = matches.Cast<Match>().SelectMany(o => o.Groups.Cast<Capture>().Skip(1).Select(c => c.Value));
@@ -82,6 +78,7 @@ namespace RaquetZone.formularios
 
                     int contador = 0;
                     bool comprobacion = false;
+                    int vacio = 0;
 
                     do
                     {
@@ -99,6 +96,7 @@ namespace RaquetZone.formularios
                             if (comprobacion == true)
                             {
                                 comboCIF.Items.Add(rescateCIF[contador]);
+                                vacio++;
                             }
                             comprobacion = false;
                             SEmpresa = "";
@@ -107,21 +105,22 @@ namespace RaquetZone.formularios
 
                     } while (contador != rescateCIF.Count);
 
-
-                    MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    if (vacio == 0)
+                    {
+                        MessageBox.Show("Acabas de intentar iniciar sesión con el DNI " + usuario + ", pero este usuario no está vinculado a ninguna empresa ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                MessageBox.Show("Acabas de iniciar sesión con el DNI " + usuario, "Sesión iniciada", MessageBoxButtons.OK, MessageBoxIcon.None);
                 Rol2.PantallaPrincipalRol2 P2 = new Rol2.PantallaPrincipalRol2();
-                    
+
                     foreach (var item in comboCIF.Items)
                     {
                         P2.comboCIFP2.Items.Add(item);
                     }
                     P2.Show();
-                this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Acabas de intentar iniciar sesión con el DNI " + usuario + ", pero este usuario no está vinculado a ninguna empresa ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }       
+                    this.Hide();
+                    }    
             }
             else if (tipoRol1 == true)
             {
@@ -136,6 +135,5 @@ namespace RaquetZone.formularios
             CC.Show();
 
         }
-
     }
 }

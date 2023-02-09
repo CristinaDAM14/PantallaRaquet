@@ -38,6 +38,7 @@ namespace RaquetZone.formularios
             this.buttonVolver = new System.Windows.Forms.Button();
             this.anyadir = new System.Windows.Forms.Button();
             this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.bvacaciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace RaquetZone.formularios
             this.listaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaDatos.Location = new System.Drawing.Point(50, 145);
             this.listaDatos.Name = "listaDatos";
+            this.listaDatos.RowTemplate.ReadOnly = true;
             this.listaDatos.Size = new System.Drawing.Size(943, 360);
             this.listaDatos.TabIndex = 0;
             // 
@@ -153,11 +155,25 @@ namespace RaquetZone.formularios
             this.TextoCIFC.UseSystemPasswordChar = false;
             this.TextoCIFC.Visible = false;
             // 
+            // bvacaciones
+            // 
+            this.bvacaciones.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.bvacaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bvacaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bvacaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bvacaciones.Location = new System.Drawing.Point(999, 225);
+            this.bvacaciones.Name = "bvacaciones";
+            this.bvacaciones.Size = new System.Drawing.Size(39, 34);
+            this.bvacaciones.TabIndex = 72;
+            this.bvacaciones.UseVisualStyleBackColor = true;
+            this.bvacaciones.Click += new System.EventHandler(this.bvacaciones_Click);
+            // 
             // RaquetZoneUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.bvacaciones);
             this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.anyadir);
             this.Controls.Add(this.buttonVolver);
@@ -185,5 +201,6 @@ namespace RaquetZone.formularios
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button anyadir;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
+        private System.Windows.Forms.Button bvacaciones;
     }
 }

@@ -32,9 +32,20 @@ namespace RaquetZone.formularios
             string direcc = listaDatos.CurrentRow.Cells[6].Value.ToString();
 
 
-            EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc);
-            EU1.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarUsuario").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc);
+                EU1.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                EU1.Show();
+                this.Close();
+            }
         }
 
         
@@ -52,11 +63,15 @@ namespace RaquetZone.formularios
             {
                 this.Text = "Listado de Empleados";
                 MostrarUsuariosP();
+                bvacaciones.Visible = true;
+                bvacaciones.Enabled = true;
 
             }
             else
             {
                 MostrarUsuarios();
+                bvacaciones.Visible = false;
+                bvacaciones.Enabled = false;
             }
 
         }
@@ -180,7 +195,35 @@ namespace RaquetZone.formularios
             else
             {
                 AnyadirUsuario GU2 = new AnyadirUsuario();
+                GU2.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 GU2.Show();
+                this.Close();
+            }
+        }
+
+
+        private void bvacaciones_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "CalendarioHorario").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                this.Close();
+
+            }
+            else
+            {
+                List<string> dniUser = listaDatos.Rows.Cast<DataGridViewRow>().Select(r => Convert.ToString(r.Cells["dniusr"].Value)).ToArray().ToList();
+
+                Rol2.CalendarioHorario CH = new Rol2.CalendarioHorario();
+                
+                for (int i = 0; i < dniUser.Count; i++)
+                {
+                    CH.boxEmpleados.Items.Add(dniUser[i]);
+                }
+
+                CH.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                CH.Show();
                 this.Close();
             }
         }

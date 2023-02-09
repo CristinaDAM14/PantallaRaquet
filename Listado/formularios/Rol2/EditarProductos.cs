@@ -37,7 +37,20 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoProductos").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoProductos GP = new ListadoProductos();
+                GP.TextoCIFP.Text = TextoCIFAnyadir.Text;
+                GP.Show();
+                this.Close();
+            }
         }
 
         private void editarB_Click(object sender, EventArgs e)

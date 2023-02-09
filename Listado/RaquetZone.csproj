@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +28,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,6 +62,18 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Calendario">
+      <HintPath>C:\Users\dam_gjc\Desktop\Calendario\Calendario.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform, Version=1.0.5586.30548, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core.Common.0.1.4\lib\net45\Core.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Portable, Version=1.0.5586.30548, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core.Common.0.1.4\lib\net45\Core.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.iCal, Version=1.0.2.575, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DDay.iCal.1.0.2.575\lib\DDay.iCal.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -77,14 +92,41 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms, Version=20.4460.0.49, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Core.WinForms.20.4.0.49\lib\net46\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms, Version=20.4451.0.49, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.20.4.0.49\lib\netstandard2.0\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.4460.0.49, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.4.0.49\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=20.4460.0.49, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfInput.WinForms.20.4.0.49\lib\net46\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=20.4460.0.49, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.20.4.0.49\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -119,6 +161,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -128,6 +171,18 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
@@ -198,6 +253,12 @@
     </Compile>
     <Compile Include="formularios\Rol2\AnyadirServicio.Designer.cs">
       <DependentUpon>AnyadirServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\Rol2\CalendarioHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\Rol2\CalendarioHorario.Designer.cs">
+      <DependentUpon>CalendarioHorario.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\Rol2\EditarClientes.cs">
       <SubType>Form</SubType>
@@ -306,6 +367,7 @@
     </Compile>
     <Compile Include="funciones\empresa.cs" />
     <Compile Include="funciones\funciones.cs" />
+    <Compile Include="funciones\horarios.cs" />
     <Compile Include="funciones\productos.cs" />
     <Compile Include="funciones\producto_compra.cs" />
     <Compile Include="funciones\reservas.cs" />
@@ -334,6 +396,9 @@
     <EmbeddedResource Include="formularios\Rol2\AnyadirCompras.resx">
       <DependentUpon>AnyadirCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\AnyadirComprasProd.resx">
+      <DependentUpon>AnyadirComprasProd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\AnyadirProductos.resx">
       <DependentUpon>AnyadirProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\AnyadirServicio.resx">
       <DependentUpon>AnyadirServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\Rol2\CalendarioHorario.resx">
+      <DependentUpon>CalendarioHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\Rol2\EditarClientes.resx">
       <DependentUpon>EditarClientes.cs</DependentUpon>
@@ -499,5 +567,26 @@
   <ItemGroup>
     <None Include="img\LogoEscritorio.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\trofeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\trofeo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cumple.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net461\System.Runtime.WindowsRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net461\System.Runtime.WindowsRuntime.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net461\System.Runtime.WindowsRuntime.targets" Condition="Exists('..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net461\System.Runtime.WindowsRuntime.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" />
 </Project>

@@ -94,6 +94,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaReservas.Location = new System.Drawing.Point(44, 149);
             this.listaReservas.Name = "listaReservas";
+            this.listaReservas.RowTemplate.ReadOnly = true;
             this.listaReservas.Size = new System.Drawing.Size(945, 360);
             this.listaReservas.TabIndex = 66;
             // 

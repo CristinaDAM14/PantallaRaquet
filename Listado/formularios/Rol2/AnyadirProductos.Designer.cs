@@ -45,6 +45,8 @@ namespace RaquetZone.formularios.Rol2
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.cifEmpresa = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.stockNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioNum)).BeginInit();
@@ -252,11 +254,43 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel4.TabIndex = 84;
             this.materialLabel4.Text = "Catgoría";
             // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(428, 293);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(68, 19);
+            this.materialLabel5.TabIndex = 86;
+            this.materialLabel5.Text = "Empresa";
+            // 
+            // cifEmpresa
+            // 
+            this.cifEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cifEmpresa.Depth = 0;
+            this.cifEmpresa.Enabled = false;
+            this.cifEmpresa.Hint = "";
+            this.cifEmpresa.Location = new System.Drawing.Point(502, 293);
+            this.cifEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cifEmpresa.Name = "cifEmpresa";
+            this.cifEmpresa.PasswordChar = '\0';
+            this.cifEmpresa.SelectedText = "";
+            this.cifEmpresa.SelectionLength = 0;
+            this.cifEmpresa.SelectionStart = 0;
+            this.cifEmpresa.Size = new System.Drawing.Size(234, 23);
+            this.cifEmpresa.TabIndex = 85;
+            this.cifEmpresa.UseSystemPasswordChar = false;
+            // 
             // AnyadirProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.cifEmpresa);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.desNum);
@@ -302,5 +336,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        public MaterialSkin.Controls.MaterialSingleLineTextField cifEmpresa;
     }
 }

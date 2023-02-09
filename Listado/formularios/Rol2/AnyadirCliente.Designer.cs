@@ -42,6 +42,7 @@ namespace RaquetZone.formularios.Rol2
             this.telLabel = new MaterialSkin.Controls.MaterialLabel();
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // emailText
@@ -232,11 +233,29 @@ namespace RaquetZone.formularios.Rol2
             this.dniLabel.TabIndex = 75;
             this.dniLabel.Text = "DNI";
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(423, 286);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.TabIndex = 80;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
             // AnyadirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.telLabel);
@@ -273,5 +292,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel telLabel;
         private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel dniLabel;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
     }
 }

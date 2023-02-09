@@ -17,7 +17,7 @@ namespace RaquetZone.formularios.Rol2
         public ListadoProductos()
         {
             InitializeComponent();
-            Mostrar();
+
             
         }
 
@@ -28,6 +28,7 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            Mostrar();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -65,9 +66,20 @@ namespace RaquetZone.formularios.Rol2
             string descuento = listaProductos.CurrentRow.Cells[5].Value.ToString();
             string stock = listaProductos.CurrentRow.Cells[6].Value.ToString();
 
-            EditarProductos EP = new EditarProductos(id, nom, cate, precio, iva, descuento, stock);
-            EP.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarProductos").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarProductos EP = new EditarProductos(id, nom, cate, precio, iva, descuento, stock);
+                EP.TextoCIFAnyadir.Text = TextoCIFP.Text;
+                EP.Show();
+                this.Close();
+            }
 
         }
 
@@ -92,19 +104,19 @@ namespace RaquetZone.formularios.Rol2
             foreach (DataGridViewRow Row in listaProductos.Rows)
             {
                 String strFila = Row.Index.ToString();
-                string Valor = Convert.ToString(Row.Cells["idprod"].Value);
+                string Valor = Convert.ToString(Row.Cells["nombreprod"].Value);
 
-                if (Valor == this.buscarID.Text)
+                if (Valor == this.buscarNombre.Text)
                 {
                     listaProductos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
-                    listaProductos.CurrentCell = listaProductos[0, Convert.ToInt32(strFila)];
+                    listaProductos.CurrentCell = listaProductos[1, Convert.ToInt32(strFila)];
                     supervisorProductos = true;
                 }
             }
 
             if (supervisorProductos == false)
             {
-                MessageBox.Show("ID Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nombre Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -127,6 +139,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 AnyadirProductos GP1 = new AnyadirProductos();
+                GP1.cifEmpresa.Text = TextoCIFP.Text;
                 GP1.Show();
                 this.Close();
             }

@@ -88,6 +88,8 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 ListaServicios.DataSource = funciones.funciones.mostrarServicioP(TextoCIFP.Text);
+
+                ListaServicios.Columns[0].Visible = false;
             }
             
         }
@@ -104,19 +106,19 @@ namespace RaquetZone.formularios.Rol2
             foreach (DataGridViewRow Row in ListaServicios.Rows)
             {
                 String strFila = Row.Index.ToString();
-                string Valor = Convert.ToString(Row.Cells["idserv"].Value);
+                string Valor = Convert.ToString(Row.Cells["descripcionserv"].Value);
 
-                if (Valor == this.buscarID.Text)
+                if (Valor == this.buscarNombre.Text)
                 {
                     ListaServicios.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.ForestGreen;
-                    ListaServicios.CurrentCell = ListaServicios[0, Convert.ToInt32(strFila)];
+                    ListaServicios.CurrentCell = ListaServicios[1, Convert.ToInt32(strFila)];
                     supervisorServicios = true;
                 }
             }
 
             if (supervisorServicios == false)
             {
-                MessageBox.Show("ID Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nombre Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -130,14 +132,24 @@ namespace RaquetZone.formularios.Rol2
             string ivaText = ListaServicios.CurrentRow.Cells[4].Value.ToString();
             string descuentoText = ListaServicios.CurrentRow.Cells[5].Value.ToString();
 
-            EditarServicios ES = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
-            ES.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarServicios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarServicios GS = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
+                GS.TextoCIFAnyadir.Text = TextoCIFP.Text;
+                GS.Show();
+            }
         }
 
         private void Anyadir_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoServicios").SingleOrDefault<Form>();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirServicio").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -147,6 +159,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 AnyadirServicio AS = new AnyadirServicio();
+                AS.TextoCIFAnyadir.Text = TextoCIFP.Text;
                 AS.Show();
                 this.Close();
             }

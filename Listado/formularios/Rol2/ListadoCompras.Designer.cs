@@ -29,17 +29,16 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoCompras));
             this.listaCompras = new System.Windows.Forms.DataGridView();
             this.buttonFactura = new MaterialSkin.Controls.MaterialRaisedButton();
             this.radioFecha = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioID = new MaterialSkin.Controls.MaterialRadioButton();
             this.labelOrdenar = new MaterialSkin.Controls.MaterialLabel();
-            this.editarCompras = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.button1 = new System.Windows.Forms.Button();
+            this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +47,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Location = new System.Drawing.Point(51, 140);
             this.listaCompras.Name = "listaCompras";
+            this.listaCompras.RowTemplate.ReadOnly = true;
             this.listaCompras.Size = new System.Drawing.Size(942, 362);
             this.listaCompras.TabIndex = 51;
             // 
@@ -111,19 +111,6 @@ namespace RaquetZone.formularios.Rol2
             this.labelOrdenar.TabIndex = 56;
             this.labelOrdenar.Text = "Ordenar por:";
             // 
-            // editarCompras
-            // 
-            this.editarCompras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editarCompras.BackgroundImage")));
-            this.editarCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editarCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editarCompras.Location = new System.Drawing.Point(999, 149);
-            this.editarCompras.Name = "editarCompras";
-            this.editarCompras.Size = new System.Drawing.Size(39, 34);
-            this.editarCompras.TabIndex = 58;
-            this.editarCompras.UseVisualStyleBackColor = true;
-            this.editarCompras.Click += new System.EventHandler(this.editarCompras_Click);
-            // 
             // bVolver
             // 
             this.bVolver.BackColor = System.Drawing.Color.Transparent;
@@ -178,23 +165,40 @@ namespace RaquetZone.formularios.Rol2
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(999, 189);
+            this.button1.Location = new System.Drawing.Point(999, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 34);
             this.button1.TabIndex = 64;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TextoCIFP
+            // 
+            this.TextoCIFP.Depth = 0;
+            this.TextoCIFP.Enabled = false;
+            this.TextoCIFP.Hint = "";
+            this.TextoCIFP.Location = new System.Drawing.Point(121, 564);
+            this.TextoCIFP.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFP.Name = "TextoCIFP";
+            this.TextoCIFP.PasswordChar = '\0';
+            this.TextoCIFP.SelectedText = "";
+            this.TextoCIFP.SelectionLength = 0;
+            this.TextoCIFP.SelectionStart = 0;
+            this.TextoCIFP.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFP.TabIndex = 71;
+            this.TextoCIFP.UseSystemPasswordChar = false;
+            this.TextoCIFP.Visible = false;
+            // 
             // ListadoCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.TextoCIFP);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buscadorButton);
             this.Controls.Add(this.buscarID);
             this.Controls.Add(this.bVolver);
-            this.Controls.Add(this.editarCompras);
             this.Controls.Add(this.labelOrdenar);
             this.Controls.Add(this.radioID);
             this.Controls.Add(this.radioFecha);
@@ -216,10 +220,10 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
         private MaterialSkin.Controls.MaterialRadioButton radioID;
         private MaterialSkin.Controls.MaterialLabel labelOrdenar;
-        private System.Windows.Forms.Button editarCompras;
         private System.Windows.Forms.Button bVolver;
         private MaterialSkin.Controls.MaterialRaisedButton buscadorButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarID;
         private System.Windows.Forms.Button button1;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
     }
 }

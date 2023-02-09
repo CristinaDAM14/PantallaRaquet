@@ -45,6 +45,7 @@ namespace RaquetZone.formularios
             this.listaDatosEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaDatosEmpresas.Location = new System.Drawing.Point(47, 142);
             this.listaDatosEmpresas.Name = "listaDatosEmpresas";
+            this.listaDatosEmpresas.RowTemplate.ReadOnly = true;
             this.listaDatosEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaDatosEmpresas.Size = new System.Drawing.Size(946, 360);
             this.listaDatosEmpresas.TabIndex = 2;

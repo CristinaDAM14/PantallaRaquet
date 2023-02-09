@@ -143,6 +143,16 @@ namespace Listado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cumple {
+            get {
+                object obj = ResourceManager.GetObject("cumple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emailClientes {
             get {
                 object obj = ResourceManager.GetObject("emailClientes", resourceCulture);
@@ -276,6 +286,26 @@ namespace Listado.Properties {
         internal static System.Drawing.Bitmap Servicios {
             get {
                 object obj = ResourceManager.GetObject("Servicios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trofeo {
+            get {
+                object obj = ResourceManager.GetObject("trofeo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trofeo1 {
+            get {
+                object obj = ResourceManager.GetObject("trofeo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

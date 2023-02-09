@@ -101,7 +101,20 @@ namespace RaquetZone.formularios.Rol2
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoReservas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoReservas LR = new ListadoReservas();
+                LR.TextoCIFC.Text = TextoCIFAnyadir.Text;
+                LR.Show();
+                this.Close();
+            }
         }
     }
     }

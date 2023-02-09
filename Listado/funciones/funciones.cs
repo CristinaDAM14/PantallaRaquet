@@ -10,6 +10,7 @@ using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace RaquetZone.funciones
 {
@@ -131,7 +132,12 @@ namespace RaquetZone.funciones
             }
             else
             {
-            List<productos> RaquetZoneProd = JsonConvert.DeserializeObject<List<productos>>(produ);
+                produ = produ.Replace("\"empresa\":{", "");
+                produ = produ.Replace("]}", "]");
+                produ = produ.Replace("}}", "}");
+
+
+                List<productos> RaquetZoneProd = JsonConvert.DeserializeObject<List<productos>>(produ);
 
             return RaquetZoneProd;
             }
@@ -204,12 +210,63 @@ namespace RaquetZone.funciones
             }
             else
             {
-            List<compras> RaquetZoneComp = JsonConvert.DeserializeObject<List<compras>>(buy);
+                buy = buy.Replace("\"cliente\":{", "");
+                buy = buy.Replace("}}", "}");
+
+                List<compras> RaquetZoneComp = JsonConvert.DeserializeObject<List<compras>>(buy);
 
             return RaquetZoneComp;
             }
 
         }
+
+        //Recoger clientes para compras
+        public static List<string> comprasClientes(string cif)
+        {
+            String url2 = "http://localhost:8081/compras";
+
+            conexion r2 = new conexion(url2, "GET");
+
+            string compa = r2.getItem();
+
+            var matches = Regex.Matches(compa, @"dnicli[\s\S]{0,3}([A-Z0-9]{1,15})[\s\S]");
+            List<string> sacarCliente = new List<string>();
+            List<string> ListaFinal = new List<string>();
+            var sacarCliente1 = matches.Cast<Match>().SelectMany(o => o.Groups.Cast<Capture>().Skip(1).Select(c => c.Value));
+
+            sacarCliente.AddRange(sacarCliente1);
+
+            int contador = 0;
+            int vacio = 0;
+
+            String urlSE = "http://localhost:8081/empresa/" + cif + "/clientes";
+
+            conexion r3 = new conexion(urlSE, "GET");
+
+            string SCC = r3.getItem();
+
+            do
+            {
+
+                if (SCC.Contains(sacarCliente[contador]))
+                {
+                    ListaFinal.Add(sacarCliente[contador]);
+                    vacio++;
+                }
+                contador++;
+            } while (contador != sacarCliente.Count);
+            
+            if(vacio == 0)
+            {
+                return null;
+            }
+            else
+            {
+                List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
+                return ListaSinRepeticiones;
+            }
+        }
+        
 
         //Lista para las compras ordenadas por fecha
         public static List<compras> mostrarCompFecha()
@@ -261,6 +318,7 @@ namespace RaquetZone.funciones
                 buyCP = buyCP.Replace("\"cantidadprodcomp\":", ",\"cantidadprodcomp\":");
                 buyCP = buyCP.Replace("]", "");
                 buyCP = buyCP.Replace("{", "},{");
+                buyCP = buyCP.Replace("\"empresa\":},{", "");
                 buyCP = buyCP.Remove(1, 2);
                 buyCP = buyCP + "}]";
                 String finalCP = buyCP.Replace(" ", "");
@@ -320,6 +378,66 @@ namespace RaquetZone.funciones
 
         }
 
+        //Lista para los horarios
+        /*public static List<string> mostrarHorarios()
+        {
+            String url = "http://localhost:8081/horarios";
+
+            conexion r = new conexion(url, "GET");
+
+            String Hora = r.getItem();
+
+            var matches = Regex.Matches(Hora, @"dniusr[\s\S]{0,3}([A-Z0-9]{1,15})[\s\S]");
+            List<string> sacarUsuario = new List<string>();
+            List<string> ListaFinal = new List<string>();
+            var sacarUsuario1 = matches.Cast<Match>().SelectMany(o => o.Groups.Cast<Capture>().Skip(1).Select(c => c.Value));
+
+            sacarUsuario.AddRange(sacarUsuario1);
+
+            int contador = 0;
+            int vacio = 0;
+
+            String urlSE = "http://localhost:8081/empresa/" + cif + "/clientes";
+
+            conexion r3 = new conexion(urlSE, "GET");
+
+            string SCC = r3.getItem();
+
+            do
+            {
+
+                if (SCC.Contains(sacarCliente[contador]))
+                {
+                    ListaFinal.Add(sacarCliente[contador]);
+                    vacio++;
+                }
+                contador++;
+            } while (contador != sacarCliente.Count);
+
+            if (vacio == 0)
+            {
+                return null;
+            }
+            else
+            {
+                List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
+                return ListaSinRepeticiones;
+            }
+
+            if (Hora.Equals("[]"))
+            {
+                return null;
+
+            }
+            else
+            {
+                List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
+                List<horarios> RaquetZoneHora = JsonConvert.DeserializeObject<List<horarios>>(Hora);
+                return RaquetZoneHora;
+            }
+
+        }*/
+
         //Lista para las reservas
         public static List<reservas> mostrarReservas()
         {
@@ -338,6 +456,8 @@ namespace RaquetZone.funciones
             {
                 Reser = Reser.Replace("\"cliente\":{", "");
                 Reser = Reser.Replace("\"servicio\":{", "");
+                Reser = Reser.Replace("\"empresa\":{", "");
+                Reser = Reser.Replace("\"usuario\":{", ",");
                 Reser = Reser.Replace("},", "");
                 Reser = Reser.Replace("}", "");
                 Reser = Reser.Replace("\"idserv\":", ",\"idserv\":");
@@ -388,10 +508,13 @@ namespace RaquetZone.funciones
 
             // string descuento, string total, string precio, string nombre, string cantidad
 
-            double pre = Double.Parse(precio);
-            double can = Double.Parse(cantidad);
-            double des = Double.Parse(descuento);
-            double tot = 0;
+            precio = precio.Replace(".", ",");
+            descuento = descuento.Replace(".", ",");
+
+            float pre = float.Parse(precio);
+            float can = float.Parse(cantidad);
+            float des = float.Parse(descuento);
+            float tot = 0;
             string predes = "";
 
             if (des != 0)

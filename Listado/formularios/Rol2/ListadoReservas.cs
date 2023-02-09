@@ -17,7 +17,6 @@ namespace RaquetZone.formularios.Rol2
         public ListadoReservas()
         {
             InitializeComponent();
-            MostrarReservas();
         }
 
         private void ListadoReservas_Load(object sender, EventArgs e)
@@ -26,6 +25,7 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+            MostrarReservas();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -133,6 +133,7 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 listaReservas.DataSource = funciones.funciones.mostrarReservas();
+                listaReservas.Columns[0].Visible = false;
             }
 
         }
@@ -151,17 +152,40 @@ namespace RaquetZone.formularios.Rol2
             string dniCliText = listaReservas.CurrentRow.Cells[4].Value.ToString();
             string idSerText = listaReservas.CurrentRow.Cells[10].Value.ToString();
 
-            EditarReservas EC = new EditarReservas(idText, numText, fechaText, horaText, dniCliText, idSerText);
-            EC.Show();
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarReservas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                EditarReservas EC = new EditarReservas(idText, numText, fechaText, horaText, dniCliText, idSerText);
+                EC.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                EC.Show();
+                this.Close();
+            }
+
         }
 
         private void Anyadir_Click(object sender, EventArgs e)
         {
-            AnyadirReservas AR = new AnyadirReservas();
-            AR.TextoCIFAnyadir.Text = TextoCIFC.Text;
-            AR.Show();
-            this.Close();
+
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                AnyadirReservas AR = new AnyadirReservas();
+                AR.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                AR.Show();
+                this.Close();
+            }
         }
     }
 }

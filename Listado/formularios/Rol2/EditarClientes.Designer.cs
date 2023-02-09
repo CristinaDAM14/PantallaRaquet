@@ -45,6 +45,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.numLabel = new MaterialSkin.Controls.MaterialLabel();
             this.numNum = new System.Windows.Forms.NumericUpDown();
+            this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.numNum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,11 +271,29 @@ namespace RaquetZone.formularios.Rol2
             this.numNum.Size = new System.Drawing.Size(71, 20);
             this.numNum.TabIndex = 73;
             // 
+            // TextoCIFAnyadir
+            // 
+            this.TextoCIFAnyadir.Depth = 0;
+            this.TextoCIFAnyadir.Enabled = false;
+            this.TextoCIFAnyadir.Hint = "";
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(93, 371);
+            this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
+            this.TextoCIFAnyadir.PasswordChar = '\0';
+            this.TextoCIFAnyadir.SelectedText = "";
+            this.TextoCIFAnyadir.SelectionLength = 0;
+            this.TextoCIFAnyadir.SelectionStart = 0;
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.TabIndex = 75;
+            this.TextoCIFAnyadir.UseSystemPasswordChar = false;
+            this.TextoCIFAnyadir.Visible = false;
+            // 
             // EditarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.numLabel);
             this.Controls.Add(this.numNum);
             this.Controls.Add(this.editarB);
@@ -318,5 +337,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button editarB;
         private MaterialSkin.Controls.MaterialLabel numLabel;
         private System.Windows.Forms.NumericUpDown numNum;
+        public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
     }
 }

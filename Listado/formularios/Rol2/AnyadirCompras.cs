@@ -25,12 +25,24 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
-
         }
 
         private void bVolver_Click(object sender, EventArgs e)
         {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoComprasSolas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoComprasSolas LC = new ListadoComprasSolas();
+                LC.TextoCIFP.Text = TextoCIFAnyadir.Text;
+                LC.Show();
                 this.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +87,10 @@ namespace RaquetZone.formularios.Rol2
             String datos = @"{
 " + "\n" +
 @"        ""fechacomp"": """ + completarFecha + "\"," + "\n" +
-@"        ""horacomp"": """ + completarHora + "\"" + "\n" +
+@"        ""horacomp"": """ + completarHora + "\"," + "\n" +
+@"        ""cliente"": {" + "\n" +
+@"            ""dnicli"": """ + dniText.Text + "\"" + "\n" +
+@"        }" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);
@@ -89,9 +104,50 @@ namespace RaquetZone.formularios.Rol2
         {
             horaNum.Value = 0;
             minNum.Value = 0;
-            diaNum.Value = 0;
-            mesNum.Value = 0;
-            anyoNum.Value = 0;
+            diaNum.Value = 1;
+            mesNum.Value = 1;
+            anyoNum.Value = 2000;
+            dniText.Text = "";
+        }
+
+        private void bCliente_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoClientes").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoClientes LC = new ListadoClientes();
+                LC.TextoCIFC.Text = TextoCIFAnyadir.Text;
+                LC.Show();
+            }
+        }
+
+        private void crearB_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoClientes").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ListadoClientes LC = new ListadoClientes();
+                LC.TextoCIFC.Text = TextoCIFAnyadir.Text;
+                LC.Show();
+            }
+
+        }
+
+        public void conseguirDNI(string dni)
+        {
+            dniText.Text = dni;
         }
     }
 }
