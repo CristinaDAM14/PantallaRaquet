@@ -18,7 +18,8 @@ namespace RaquetZone.funciones
         public string telefonousr { get; set; }
         public string emailusr { get; set; }
         public string direccionusr { get; set; }
-        
+        public string activo { get; set; }
+
     }
 
 }

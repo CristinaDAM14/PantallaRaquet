@@ -57,7 +57,7 @@ namespace RaquetZone.formularios.Rol2
                 {
                     if (telText.Text.Length == 9)
                     {
-                        String url = "http://localhost:8081/cliente/add";
+                        String url = "http://localhost:8081/empresa/" + TextoCIFAnyadir.Text + "/cliente";
 
                         funciones.conexion r = new funciones.conexion(url, "POST");
 
@@ -68,8 +68,13 @@ namespace RaquetZone.formularios.Rol2
             @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
             @"        ""numhorascli"": 0," + "\n" +
             @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-            @"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
-            @"    }";
+            @"        ""emailcli"": """ + emailText.Text + "\"," + "\n" +
+            @"        ""empresa"": [" + "\n" +
+            @"            {" + "\n" +
+            @"                ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+            @"            }" + "\n" +
+            @"            ]" + "\n" +
+            @"}";
 
                         String res = r.postItem(datos);
 

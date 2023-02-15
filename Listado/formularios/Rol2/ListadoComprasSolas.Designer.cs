@@ -94,6 +94,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // listaCompras
             // 
+            this.listaCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Location = new System.Drawing.Point(47, 144);
             this.listaCompras.Name = "listaCompras";
@@ -191,7 +192,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // facturaB
             // 
-            this.facturaB.BackgroundImage = global::Listado.Properties.Resources.BAnyadir;
+            this.facturaB.BackgroundImage = global::Listado.Properties.Resources.facturas;
             this.facturaB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.facturaB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.facturaB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -207,14 +208,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFP.Depth = 0;
             this.TextoCIFP.Enabled = false;
             this.TextoCIFP.Hint = "";
-            this.TextoCIFP.Location = new System.Drawing.Point(123, 562);
+            this.TextoCIFP.Location = new System.Drawing.Point(147, 105);
             this.TextoCIFP.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFP.Name = "TextoCIFP";
             this.TextoCIFP.PasswordChar = '\0';
             this.TextoCIFP.SelectedText = "";
             this.TextoCIFP.SelectionLength = 0;
             this.TextoCIFP.SelectionStart = 0;
-            this.TextoCIFP.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFP.Size = new System.Drawing.Size(47, 23);
             this.TextoCIFP.TabIndex = 77;
             this.TextoCIFP.UseSystemPasswordChar = false;
             this.TextoCIFP.Visible = false;

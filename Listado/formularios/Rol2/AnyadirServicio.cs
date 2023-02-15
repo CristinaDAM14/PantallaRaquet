@@ -76,7 +76,10 @@ namespace RaquetZone.formularios.Rol2
 @"        ""unidadestiemposerv"": """ + tiempoNumeric.Value + "\"," + "\n" +
 @"        ""precioserv"": """ + precioNum.Value + "\"," + "\n" +
 @"        ""ivaserv"": """ + Double.Parse(iva) + "\"," + "\n" +
-@"        ""descuentoserv"": """ + desNum.Value + "\"" + "\n" +
+@"        ""descuentoserv"": """ + desNum.Value + "\"," + "\n" +
+@"        ""empresa"": {" + "\n" +
+@"            ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+@"        }" + "\n" +
 @"    }";
 
             String res = r.postItem(datos);

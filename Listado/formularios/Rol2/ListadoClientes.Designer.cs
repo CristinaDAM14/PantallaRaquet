@@ -41,6 +41,9 @@ namespace RaquetZone.formularios.Rol2
             this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.anyadirCompra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.botonInactivo = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.radioActivos = new MaterialSkin.Controls.MaterialRadioButton();
+            this.radioInactivos = new MaterialSkin.Controls.MaterialRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +63,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // listaClientes
             // 
+            this.listaClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaClientes.Location = new System.Drawing.Point(49, 143);
             this.listaClientes.Name = "listaClientes";
@@ -174,14 +178,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFC.Depth = 0;
             this.TextoCIFC.Enabled = false;
             this.TextoCIFC.Hint = "";
-            this.TextoCIFC.Location = new System.Drawing.Point(122, 575);
+            this.TextoCIFC.Location = new System.Drawing.Point(147, 98);
             this.TextoCIFC.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFC.Name = "TextoCIFC";
             this.TextoCIFC.PasswordChar = '\0';
             this.TextoCIFC.SelectedText = "";
             this.TextoCIFC.SelectionLength = 0;
             this.TextoCIFC.SelectionStart = 0;
-            this.TextoCIFC.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFC.Size = new System.Drawing.Size(48, 23);
             this.TextoCIFC.TabIndex = 70;
             this.TextoCIFC.UseSystemPasswordChar = false;
             this.TextoCIFC.Visible = false;
@@ -200,11 +204,62 @@ namespace RaquetZone.formularios.Rol2
             this.anyadirCompra.UseVisualStyleBackColor = true;
             this.anyadirCompra.Click += new System.EventHandler(this.anyadirCompra_Click);
             // 
+            // botonInactivo
+            // 
+            this.botonInactivo.Depth = 0;
+            this.botonInactivo.Location = new System.Drawing.Point(716, 117);
+            this.botonInactivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.botonInactivo.Name = "botonInactivo";
+            this.botonInactivo.Primary = true;
+            this.botonInactivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.botonInactivo.Size = new System.Drawing.Size(92, 23);
+            this.botonInactivo.TabIndex = 81;
+            this.botonInactivo.Text = "Actualizar";
+            this.botonInactivo.UseVisualStyleBackColor = true;
+            this.botonInactivo.Click += new System.EventHandler(this.botonInactivo_Click);
+            // 
+            // radioActivos
+            // 
+            this.radioActivos.Checked = true;
+            this.radioActivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioActivos.Depth = 0;
+            this.radioActivos.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioActivos.Location = new System.Drawing.Point(811, 114);
+            this.radioActivos.Margin = new System.Windows.Forms.Padding(0);
+            this.radioActivos.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioActivos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioActivos.Name = "radioActivos";
+            this.radioActivos.Ripple = true;
+            this.radioActivos.Size = new System.Drawing.Size(89, 26);
+            this.radioActivos.TabIndex = 80;
+            this.radioActivos.TabStop = true;
+            this.radioActivos.Text = "Activos";
+            this.radioActivos.UseVisualStyleBackColor = true;
+            // 
+            // radioInactivos
+            // 
+            this.radioInactivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioInactivos.Depth = 0;
+            this.radioInactivos.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioInactivos.Location = new System.Drawing.Point(900, 114);
+            this.radioInactivos.Margin = new System.Windows.Forms.Padding(0);
+            this.radioInactivos.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioInactivos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioInactivos.Name = "radioInactivos";
+            this.radioInactivos.Ripple = true;
+            this.radioInactivos.Size = new System.Drawing.Size(93, 26);
+            this.radioInactivos.TabIndex = 79;
+            this.radioInactivos.Text = "Inactivos";
+            this.radioInactivos.UseVisualStyleBackColor = true;
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.botonInactivo);
+            this.Controls.Add(this.radioActivos);
+            this.Controls.Add(this.radioInactivos);
             this.Controls.Add(this.anyadirCompra);
             this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.bReservas);
@@ -237,5 +292,8 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton bReservas;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
         private MaterialSkin.Controls.MaterialRaisedButton anyadirCompra;
+        private MaterialSkin.Controls.MaterialRaisedButton botonInactivo;
+        private MaterialSkin.Controls.MaterialRadioButton radioActivos;
+        private MaterialSkin.Controls.MaterialRadioButton radioInactivos;
     }
 }

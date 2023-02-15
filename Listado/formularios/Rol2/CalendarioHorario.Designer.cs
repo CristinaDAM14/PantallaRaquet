@@ -34,13 +34,16 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.boxEmpleados = new System.Windows.Forms.ComboBox();
             this.anyadirVaca = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.bTrofeo = new System.Windows.Forms.Button();
             this.bcumple = new System.Windows.Forms.Button();
+            this.mMostrar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sfCalendar1
             // 
+            this.sfCalendar1.AllowMultipleSelection = true;
             this.sfCalendar1.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.sfCalendar1.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.sfCalendar1.Location = new System.Drawing.Point(56, 152);
@@ -62,12 +65,14 @@ namespace RaquetZone.formularios.Rol2
             this.sfCalendar1.Style.Cell.SelectedCellForeColor = System.Drawing.Color.Black;
             this.sfCalendar1.Style.Cell.SelectedCellHoverBorderColor = System.Drawing.Color.MediumSpringGreen;
             this.sfCalendar1.Style.Cell.TodayFont = new System.Drawing.Font("Segoe UI", 14F);
+            this.sfCalendar1.Style.Cell.TrailingCellBackColor = System.Drawing.Color.White;
             this.sfCalendar1.Style.Cell.TrailingCellFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.sfCalendar1.Style.Cell.TrailingCellForeColor = System.Drawing.Color.DarkGray;
             this.sfCalendar1.Style.Cell.WeekNumberFont = new System.Drawing.Font("Segoe UI", 14F);
             this.sfCalendar1.Style.Footer.BackColor = System.Drawing.Color.White;
             this.sfCalendar1.Style.Footer.ForeColor = System.Drawing.Color.White;
             this.sfCalendar1.Style.Footer.HoverBackColor = System.Drawing.Color.White;
-            this.sfCalendar1.Style.Footer.HoverForeColor = System.Drawing.Color.DimGray;
+            this.sfCalendar1.Style.Footer.HoverForeColor = System.Drawing.Color.Gray;
             this.sfCalendar1.Style.Header.BackColor = System.Drawing.Color.PaleGreen;
             this.sfCalendar1.Style.Header.DayNamesBackColor = System.Drawing.Color.PaleGreen;
             this.sfCalendar1.Style.Header.DayNamesFont = new System.Drawing.Font("Segoe UI", 12F);
@@ -110,6 +115,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // boxEmpleados
             // 
+            this.boxEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.boxEmpleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxEmpleados.FormattingEnabled = true;
             this.boxEmpleados.Location = new System.Drawing.Point(142, 87);
@@ -119,6 +125,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // anyadirVaca
             // 
+            this.anyadirVaca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.anyadirVaca.Depth = 0;
             this.anyadirVaca.Location = new System.Drawing.Point(163, 613);
             this.anyadirVaca.MouseState = MaterialSkin.MouseState.HOVER;
@@ -130,23 +137,25 @@ namespace RaquetZone.formularios.Rol2
             this.anyadirVaca.UseVisualStyleBackColor = true;
             this.anyadirVaca.Click += new System.EventHandler(this.anyadirVaca_Click);
             // 
-            // materialRaisedButton2
+            // bEliminar
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(444, 613);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(121, 45);
-            this.materialRaisedButton2.TabIndex = 79;
-            this.materialRaisedButton2.Text = "Eliminar";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
+            this.bEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEliminar.Depth = 0;
+            this.bEliminar.Location = new System.Drawing.Point(444, 613);
+            this.bEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Primary = true;
+            this.bEliminar.Size = new System.Drawing.Size(121, 45);
+            this.bEliminar.TabIndex = 79;
+            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.UseVisualStyleBackColor = true;
+            this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
             // 
             // bTrofeo
             // 
             this.bTrofeo.BackgroundImage = global::Listado.Properties.Resources.trofeo1;
             this.bTrofeo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bTrofeo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bTrofeo.Location = new System.Drawing.Point(602, 111);
             this.bTrofeo.Name = "bTrofeo";
             this.bTrofeo.Size = new System.Drawing.Size(39, 35);
@@ -158,6 +167,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.bcumple.BackgroundImage = global::Listado.Properties.Resources.cumple;
             this.bcumple.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bcumple.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bcumple.Location = new System.Drawing.Point(647, 111);
             this.bcumple.Name = "bcumple";
             this.bcumple.Size = new System.Drawing.Size(39, 35);
@@ -165,14 +175,46 @@ namespace RaquetZone.formularios.Rol2
             this.bcumple.UseVisualStyleBackColor = true;
             this.bcumple.Click += new System.EventHandler(this.bcumple_Click);
             // 
+            // mMostrar
+            // 
+            this.mMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mMostrar.Depth = 0;
+            this.mMostrar.Location = new System.Drawing.Point(290, 86);
+            this.mMostrar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mMostrar.Name = "mMostrar";
+            this.mMostrar.Primary = true;
+            this.mMostrar.Size = new System.Drawing.Size(79, 22);
+            this.mMostrar.TabIndex = 82;
+            this.mMostrar.Text = "Mostrar";
+            this.mMostrar.UseVisualStyleBackColor = true;
+            this.mMostrar.Click += new System.EventHandler(this.mMostrar_Click_1);
+            // 
+            // bVolver
+            // 
+            this.bVolver.BackColor = System.Drawing.Color.Transparent;
+            this.bVolver.BackgroundImage = global::Listado.Properties.Resources.icono_volver;
+            this.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bVolver.FlatAppearance.BorderSize = 0;
+            this.bVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVolver.Location = new System.Drawing.Point(12, 626);
+            this.bVolver.Name = "bVolver";
+            this.bVolver.Size = new System.Drawing.Size(45, 40);
+            this.bVolver.TabIndex = 83;
+            this.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
+            // 
             // CalendarioHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 678);
+            this.Controls.Add(this.bVolver);
+            this.Controls.Add(this.mMostrar);
             this.Controls.Add(this.bcumple);
             this.Controls.Add(this.bTrofeo);
-            this.Controls.Add(this.materialRaisedButton2);
+            this.Controls.Add(this.bEliminar);
             this.Controls.Add(this.anyadirVaca);
             this.Controls.Add(this.boxEmpleados);
             this.Controls.Add(this.materialLabel1);
@@ -193,8 +235,10 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public System.Windows.Forms.ComboBox boxEmpleados;
         private MaterialSkin.Controls.MaterialRaisedButton anyadirVaca;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialRaisedButton bEliminar;
         private System.Windows.Forms.Button bTrofeo;
         private System.Windows.Forms.Button bcumple;
+        private MaterialSkin.Controls.MaterialRaisedButton mMostrar;
+        private System.Windows.Forms.Button bVolver;
     }
 }

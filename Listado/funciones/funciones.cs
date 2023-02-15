@@ -236,6 +236,11 @@ namespace RaquetZone.funciones
 
             sacarCliente.AddRange(sacarCliente1);
 
+            if(sacarCliente.Count == 0)
+            {
+                return null;
+            }
+            else {
             int contador = 0;
             int vacio = 0;
 
@@ -264,6 +269,7 @@ namespace RaquetZone.funciones
             {
                 List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
                 return ListaSinRepeticiones;
+            }
             }
         }
         
@@ -310,6 +316,7 @@ namespace RaquetZone.funciones
                 buyCP = buyCP.Replace("\"cliente\":{", "");
                 buyCP = buyCP.Replace("\"producto\":{", "");
                 buyCP = buyCP.Replace("\"compra\":{", "");
+                buyCP = buyCP.Replace("\"empresa\":[{", "");
                 buyCP = buyCP.Replace("\"id\":{", "");
                 buyCP = buyCP.Replace("},", "");
                 buyCP = buyCP.Replace("}", "");
@@ -318,7 +325,6 @@ namespace RaquetZone.funciones
                 buyCP = buyCP.Replace("\"cantidadprodcomp\":", ",\"cantidadprodcomp\":");
                 buyCP = buyCP.Replace("]", "");
                 buyCP = buyCP.Replace("{", "},{");
-                buyCP = buyCP.Replace("\"empresa\":},{", "");
                 buyCP = buyCP.Remove(1, 2);
                 buyCP = buyCP + "}]";
                 String finalCP = buyCP.Replace(" ", "");
@@ -378,66 +384,6 @@ namespace RaquetZone.funciones
 
         }
 
-        //Lista para los horarios
-        /*public static List<string> mostrarHorarios()
-        {
-            String url = "http://localhost:8081/horarios";
-
-            conexion r = new conexion(url, "GET");
-
-            String Hora = r.getItem();
-
-            var matches = Regex.Matches(Hora, @"dniusr[\s\S]{0,3}([A-Z0-9]{1,15})[\s\S]");
-            List<string> sacarUsuario = new List<string>();
-            List<string> ListaFinal = new List<string>();
-            var sacarUsuario1 = matches.Cast<Match>().SelectMany(o => o.Groups.Cast<Capture>().Skip(1).Select(c => c.Value));
-
-            sacarUsuario.AddRange(sacarUsuario1);
-
-            int contador = 0;
-            int vacio = 0;
-
-            String urlSE = "http://localhost:8081/empresa/" + cif + "/clientes";
-
-            conexion r3 = new conexion(urlSE, "GET");
-
-            string SCC = r3.getItem();
-
-            do
-            {
-
-                if (SCC.Contains(sacarCliente[contador]))
-                {
-                    ListaFinal.Add(sacarCliente[contador]);
-                    vacio++;
-                }
-                contador++;
-            } while (contador != sacarCliente.Count);
-
-            if (vacio == 0)
-            {
-                return null;
-            }
-            else
-            {
-                List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
-                return ListaSinRepeticiones;
-            }
-
-            if (Hora.Equals("[]"))
-            {
-                return null;
-
-            }
-            else
-            {
-                List<string> ListaSinRepeticiones = ListaFinal.Distinct().ToList();
-                List<horarios> RaquetZoneHora = JsonConvert.DeserializeObject<List<horarios>>(Hora);
-                return RaquetZoneHora;
-            }
-
-        }*/
-
         //Lista para las reservas
         public static List<reservas> mostrarReservas()
         {
@@ -456,6 +402,7 @@ namespace RaquetZone.funciones
             {
                 Reser = Reser.Replace("\"cliente\":{", "");
                 Reser = Reser.Replace("\"servicio\":{", "");
+                Reser = Reser.Replace("\"empresa\":[{", "");
                 Reser = Reser.Replace("\"empresa\":{", "");
                 Reser = Reser.Replace("\"usuario\":{", ",");
                 Reser = Reser.Replace("},", "");

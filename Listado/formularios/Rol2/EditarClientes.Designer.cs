@@ -46,6 +46,8 @@ namespace RaquetZone.formularios.Rol2
             this.numLabel = new MaterialSkin.Controls.MaterialLabel();
             this.numNum = new System.Windows.Forms.NumericUpDown();
             this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.activo = new MaterialSkin.Controls.MaterialLabel();
+            this.actiBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numNum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,14 +56,14 @@ namespace RaquetZone.formularios.Rol2
             this.emailText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emailText.Depth = 0;
             this.emailText.Hint = "Email";
-            this.emailText.Location = new System.Drawing.Point(491, 215);
+            this.emailText.Location = new System.Drawing.Point(439, 215);
             this.emailText.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailText.Name = "emailText";
             this.emailText.PasswordChar = '\0';
             this.emailText.SelectedText = "";
             this.emailText.SelectionLength = 0;
             this.emailText.SelectionStart = 0;
-            this.emailText.Size = new System.Drawing.Size(239, 23);
+            this.emailText.Size = new System.Drawing.Size(288, 23);
             this.emailText.TabIndex = 21;
             this.emailText.UseSystemPasswordChar = false;
             // 
@@ -103,14 +105,14 @@ namespace RaquetZone.formularios.Rol2
             this.nomText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nomText.Depth = 0;
             this.nomText.Hint = "Nombre";
-            this.nomText.Location = new System.Drawing.Point(491, 124);
+            this.nomText.Location = new System.Drawing.Point(439, 124);
             this.nomText.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomText.Name = "nomText";
             this.nomText.PasswordChar = '\0';
             this.nomText.SelectedText = "";
             this.nomText.SelectionLength = 0;
             this.nomText.SelectionStart = 0;
-            this.nomText.Size = new System.Drawing.Size(239, 23);
+            this.nomText.Size = new System.Drawing.Size(288, 23);
             this.nomText.TabIndex = 19;
             this.nomText.UseSystemPasswordChar = false;
             // 
@@ -176,7 +178,7 @@ namespace RaquetZone.formularios.Rol2
             this.nomLabel.Depth = 0;
             this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.nomLabel.Location = new System.Drawing.Point(422, 124);
+            this.nomLabel.Location = new System.Drawing.Point(370, 124);
             this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomLabel.Name = "nomLabel";
             this.nomLabel.Size = new System.Drawing.Size(63, 19);
@@ -189,7 +191,7 @@ namespace RaquetZone.formularios.Rol2
             this.emailLabel.Depth = 0;
             this.emailLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.emailLabel.Location = new System.Drawing.Point(438, 215);
+            this.emailLabel.Location = new System.Drawing.Point(386, 215);
             this.emailLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(47, 19);
@@ -256,7 +258,7 @@ namespace RaquetZone.formularios.Rol2
             this.numLabel.Depth = 0;
             this.numLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.numLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.numLabel.Location = new System.Drawing.Point(438, 274);
+            this.numLabel.Location = new System.Drawing.Point(386, 274);
             this.numLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.numLabel.Name = "numLabel";
             this.numLabel.Size = new System.Drawing.Size(125, 19);
@@ -266,9 +268,9 @@ namespace RaquetZone.formularios.Rol2
             // numNum
             // 
             this.numNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.numNum.Location = new System.Drawing.Point(569, 274);
+            this.numNum.Location = new System.Drawing.Point(517, 274);
             this.numNum.Name = "numNum";
-            this.numNum.Size = new System.Drawing.Size(71, 20);
+            this.numNum.Size = new System.Drawing.Size(45, 20);
             this.numNum.TabIndex = 73;
             // 
             // TextoCIFAnyadir
@@ -276,7 +278,7 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(93, 371);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(235, 274);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';
@@ -288,11 +290,40 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.UseSystemPasswordChar = false;
             this.TextoCIFAnyadir.Visible = false;
             // 
+            // activo
+            // 
+            this.activo.AutoSize = true;
+            this.activo.Depth = 0;
+            this.activo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.activo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.activo.Location = new System.Drawing.Point(584, 274);
+            this.activo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.activo.Name = "activo";
+            this.activo.Size = new System.Drawing.Size(52, 19);
+            this.activo.TabIndex = 77;
+            this.activo.Text = "Activo";
+            // 
+            // actiBox
+            // 
+            this.actiBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.actiBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.actiBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actiBox.FormattingEnabled = true;
+            this.actiBox.Items.AddRange(new object[] {
+            "Activo",
+            "No Activo"});
+            this.actiBox.Location = new System.Drawing.Point(642, 273);
+            this.actiBox.Name = "actiBox";
+            this.actiBox.Size = new System.Drawing.Size(85, 23);
+            this.actiBox.TabIndex = 76;
+            // 
             // EditarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.activo);
+            this.Controls.Add(this.actiBox);
             this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.numLabel);
             this.Controls.Add(this.numNum);
@@ -338,5 +369,7 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel numLabel;
         private System.Windows.Forms.NumericUpDown numNum;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
+        private MaterialSkin.Controls.MaterialLabel activo;
+        private System.Windows.Forms.ComboBox actiBox;
     }
 }

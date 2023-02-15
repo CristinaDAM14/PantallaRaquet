@@ -238,7 +238,7 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(423, 286);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(260, 286);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';

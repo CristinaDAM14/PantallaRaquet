@@ -14,7 +14,7 @@ namespace RaquetZone.formularios
 {
     public partial class EditarUsuario : MaterialForm
     {
-        public EditarUsuario(string dni, string nom, string pass, string rol, string tel, string email, string direcc)
+        public EditarUsuario(string dni, string nom, string pass, string rol, string tel, string email, string direcc, string activo)
         {
             InitializeComponent();
 
@@ -28,6 +28,16 @@ namespace RaquetZone.formularios
             telText.Text = tel;
             emailText.Text = email;
             direccText.Text = direcc;
+            if (activo.Equals("true"))
+            {
+                actiBox.SelectedItem = "Activo";
+            }
+            else
+            {
+                actiBox.SelectedItem = "No Activo";
+            }
+           
+
         }
         
 
@@ -68,6 +78,12 @@ namespace RaquetZone.formularios
 
         private void editarB_Click(object sender, EventArgs e)
         {
+            string numActi = "false";
+
+            if (actiBox.GetItemText(actiBox.SelectedItem).Equals("Activo")){
+                numActi = "true";
+            }
+
             String url = "http://localhost:8081/usuario/modify/" + dniText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
@@ -82,7 +98,13 @@ namespace RaquetZone.formularios
 @"        ""rolusr"": """ + num + "\"," + "\n" +
 @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
 @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
-@"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
+@"        ""direccionusr"": """ + direccText.Text + "\"," + "\n" +
+@"        ""activo"": " + numActi + "," + "\n" +
+@"        ""empresa"": [" + "\n" +
+@"            {" + "\n" +
+@"     ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+@"            }" + "\n" +
+@"        ]" + "\n" +
 @"    }";
             r.putItem(url, body);
             MessageBox.Show("Editado con éxito");

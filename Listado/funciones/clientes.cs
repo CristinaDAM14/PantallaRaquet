@@ -16,5 +16,7 @@ namespace RaquetZone.funciones
         public string telefonocli { get; set; }
         public string emailcli { get; set; }
 
+        public string activo { get; set; }
+
     }
 }

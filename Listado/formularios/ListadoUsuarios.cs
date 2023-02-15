@@ -14,11 +14,11 @@ namespace RaquetZone.formularios
 {
     public partial class RaquetZoneUsuarios : MaterialForm
     {
-     
+
         public RaquetZoneUsuarios()
         {
             InitializeComponent();
-            
+
         }
 
         private void editar_Click(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace RaquetZone.formularios
             string tel = listaDatos.CurrentRow.Cells[4].Value.ToString();
             string email = listaDatos.CurrentRow.Cells[5].Value.ToString();
             string direcc = listaDatos.CurrentRow.Cells[6].Value.ToString();
+            string activo = listaDatos.CurrentRow.Cells[7].Value.ToString();
 
 
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarUsuario").SingleOrDefault<Form>();
@@ -41,37 +42,59 @@ namespace RaquetZone.formularios
             }
             else
             {
-                EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc);
+                EditarUsuario EU1 = new EditarUsuario(dni, nom, pass, rol, tel, email, direcc, activo);
                 EU1.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 EU1.Show();
                 this.Close();
             }
         }
 
-        
+
 
         private void RaquetZoneUsuarios_Load(object sender, EventArgs e)
         {
             var skinmanager = MaterialSkinManager.Instance;
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE); 
-            
+            skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+
+            Form existe1 = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
-            if (existe != null)
+
+            if (existe1 != null)
+            {
+                this.Text = "Listado de Empleados";
+                MostrarUsuariosP();
+                verActivos();
+                bvacaciones.Visible = false;
+                bvacaciones.Enabled = false;
+                anyadir.Visible = false;
+                anyadir.Enabled = false;
+                editar.Visible = false;
+                editar.Enabled = false;
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                bReservas.Visible = true;
+                bReservas.Enabled = true;
+            }
+            else if (existe != null)
 
             {
                 this.Text = "Listado de Empleados";
                 MostrarUsuariosP();
-                bvacaciones.Visible = true;
-                bvacaciones.Enabled = true;
+                verActivos();
+                bReservas.Visible = false;
+                bReservas.Enabled = false;
 
             }
             else
             {
                 MostrarUsuarios();
+                verActivos();
                 bvacaciones.Visible = false;
                 bvacaciones.Enabled = false;
+                bReservas.Visible = false;
+                bReservas.Enabled = false;
             }
 
         }
@@ -83,9 +106,9 @@ namespace RaquetZone.formularios
 
             if (MessageBox.Show("¿Quieres eliminar el usuario con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-            
 
-                if( rol == "3")
+
+                if (rol == "3")
                 {
                     MessageBox.Show("No puedes eliminar un SuperAdmin");
                 }
@@ -94,7 +117,7 @@ namespace RaquetZone.formularios
                     String url = "http://localhost:8081/usuario/delete/" + dni;
 
                     funciones.conexion r = new funciones.conexion(url, "DELETE");
-                    
+
                     r.deleteItem(url);
 
                     MessageBox.Show("Eliminado");
@@ -106,7 +129,7 @@ namespace RaquetZone.formularios
                 {
                     this.Text = "Listado de Empleados";
                     MostrarUsuariosP();
-                    
+
 
                 }
                 else
@@ -150,7 +173,7 @@ namespace RaquetZone.formularios
                 listaDatos.Columns[2].Visible = false;
             }
 
-            
+
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -168,10 +191,10 @@ namespace RaquetZone.formularios
                     listaDatos.CurrentCell = listaDatos[0, Convert.ToInt32(strFila)];
                     supervisor = true;
                 }
-              
+
             }
 
-            if(supervisor == false)
+            if (supervisor == false)
             {
                 MessageBox.Show("DNI Inválido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -216,7 +239,7 @@ namespace RaquetZone.formularios
                 List<string> dniUser = listaDatos.Rows.Cast<DataGridViewRow>().Select(r => Convert.ToString(r.Cells["dniusr"].Value)).ToArray().ToList();
 
                 Rol2.CalendarioHorario CH = new Rol2.CalendarioHorario();
-                
+
                 for (int i = 0; i < dniUser.Count; i++)
                 {
                     CH.boxEmpleados.Items.Add(dniUser[i]);
@@ -225,6 +248,99 @@ namespace RaquetZone.formularios
                 CH.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 CH.Show();
                 this.Close();
+            }
+        }
+
+        private void bReservas_Click(object sender, EventArgs e)
+        {
+            string dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
+
+            Rol2.AnyadirReservas AR = (Rol2.AnyadirReservas)Application.OpenForms["AnyadirReservas"];
+            if (Application.OpenForms.OfType<Rol2.AnyadirReservas>().Any())
+            {
+                AR.conseguirDNIUsuario(dni);
+            }
+
+            this.Close();
+        }
+
+        public void verActivos()
+        {
+            listaDatos.ClearSelection();
+
+            if (radioActivos.Checked == true)
+            {
+
+
+                foreach (DataGridViewRow row in listaDatos.Rows)
+                {
+
+                    string codigo = Convert.ToString(row.Cells["activo"].Value);
+
+                    if (codigo.Equals("false"))
+                    {
+
+                        listaDatos.CurrentCell = null;
+                        row.Visible = false;
+
+                        if (listaDatos.CurrentRow != null)
+                        {
+
+                            int fila = listaDatos.CurrentRow.Index;
+
+                            listaDatos.CurrentCell = null;
+
+                            row.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        row.Visible = true;
+                    }
+
+                }
+            }
+        }
+
+        public void verInactivos()
+        {
+            foreach (DataGridViewRow row in listaDatos.Rows)
+            {
+
+                string codigo = Convert.ToString(row.Cells["activo"].Value);
+
+                if (codigo.Equals("true"))
+                {
+
+                    listaDatos.CurrentCell = null;
+                    row.Visible = false;
+
+                    if (listaDatos.CurrentRow != null)
+                    {
+
+                        int fila = listaDatos.CurrentRow.Index;
+
+                        listaDatos.CurrentCell = null;
+
+                        row.Visible = false;
+                    }
+                }
+                else
+                {
+                    row.Visible = true;
+                }
+            }
+        }
+
+        private void botonInactivo_Click(object sender, EventArgs e)
+        {
+            if(radioActivos.Checked == true)
+            {
+                verActivos();
+            }
+            else
+            {
+                verInactivos();
             }
         }
     }

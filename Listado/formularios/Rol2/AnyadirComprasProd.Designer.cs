@@ -183,14 +183,14 @@ namespace RaquetZone.formularios.Rol2
             this.cifEmpresa.Depth = 0;
             this.cifEmpresa.Enabled = false;
             this.cifEmpresa.Hint = "";
-            this.cifEmpresa.Location = new System.Drawing.Point(76, 390);
+            this.cifEmpresa.Location = new System.Drawing.Point(331, 142);
             this.cifEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
             this.cifEmpresa.Name = "cifEmpresa";
             this.cifEmpresa.PasswordChar = '\0';
             this.cifEmpresa.SelectedText = "";
             this.cifEmpresa.SelectionLength = 0;
             this.cifEmpresa.SelectionStart = 0;
-            this.cifEmpresa.Size = new System.Drawing.Size(158, 23);
+            this.cifEmpresa.Size = new System.Drawing.Size(115, 23);
             this.cifEmpresa.TabIndex = 137;
             this.cifEmpresa.UseSystemPasswordChar = false;
             this.cifEmpresa.Visible = false;

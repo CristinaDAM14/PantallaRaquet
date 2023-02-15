@@ -46,6 +46,7 @@ namespace RaquetZone.formularios.Rol2
                 anyadirCompra.Enabled = false;
                 bReservas.Visible = true;
                 bReservas.Enabled = true;
+                verActivos();
 
             }
             else if (existe1 != null)
@@ -65,22 +66,16 @@ namespace RaquetZone.formularios.Rol2
                 anyadirCompra.Enabled = true;
                 bReservas.Visible = false;
                 bReservas.Enabled = false;
+                verActivos();
 
             }
             else
             {
-                buttonEliminar.Visible = true;
-                buttonEliminar.Enabled = true;
-                editarProductos.Visible = true;
-                editarProductos.Enabled = true;
-                button1.Visible = true;
-                button1.Enabled = true;
-                emailButton.Visible = true;
-                emailButton.Enabled = true;
                 anyadirCompra.Visible = false;
                 anyadirCompra.Enabled = false;
                 bReservas.Visible = false;
                 bReservas.Enabled = false;
+                verActivos();
             }
 
         }
@@ -93,6 +88,7 @@ namespace RaquetZone.formularios.Rol2
             string numText = listaClientes.CurrentRow.Cells[3].Value.ToString();
             string telText = listaClientes.CurrentRow.Cells[4].Value.ToString();
             string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
+            string activo = listaClientes.CurrentRow.Cells[6].Value.ToString();
 
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarClientes").SingleOrDefault<Form>();
             if (existe != null)
@@ -103,7 +99,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText);
+                EditarClientes EC = new EditarClientes(dniText, nomText, passText, numText, telText, emailText, activo);
                 EC.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 EC.Show();
                 this.Close();
@@ -231,6 +227,86 @@ namespace RaquetZone.formularios.Rol2
             }
 
             this.Close();
+        }
+
+        public void verActivos()
+        {
+            listaClientes.ClearSelection();
+
+            if (radioActivos.Checked == true)
+            {
+
+
+                foreach (DataGridViewRow row in listaClientes.Rows)
+                {
+
+                    string codigo = Convert.ToString(row.Cells["activo"].Value);
+
+                    if (codigo.Equals("false"))
+                    {
+
+                        listaClientes.CurrentCell = null;
+                        row.Visible = false;
+
+                        if (listaClientes.CurrentRow != null)
+                        {
+
+                            int fila = listaClientes.CurrentRow.Index;
+
+                            listaClientes.CurrentCell = null;
+
+                            row.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        row.Visible = true;
+                    }
+
+                }
+            }
+        }
+
+        public void verInactivos()
+        {
+            foreach (DataGridViewRow row in listaClientes.Rows)
+            {
+
+                string codigo = Convert.ToString(row.Cells["activo"].Value);
+
+                if (codigo.Equals("true"))
+                {
+
+                    listaClientes.CurrentCell = null;
+                    row.Visible = false;
+
+                    if (listaClientes.CurrentRow != null)
+                    {
+
+                        int fila = listaClientes.CurrentRow.Index;
+
+                        listaClientes.CurrentCell = null;
+
+                        row.Visible = false;
+                    }
+                }
+                else
+                {
+                    row.Visible = true;
+                }
+            }
+        }
+
+        private void botonInactivo_Click(object sender, EventArgs e)
+        {
+            if (radioActivos.Checked == true)
+            {
+                verActivos();
+            }
+            else
+            {
+                verInactivos();
+            }
         }
     }
 }

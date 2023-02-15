@@ -91,6 +91,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // listaReservas
             // 
+            this.listaReservas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaReservas.Location = new System.Drawing.Point(44, 149);
             this.listaReservas.Name = "listaReservas";
@@ -179,14 +180,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFC.Depth = 0;
             this.TextoCIFC.Enabled = false;
             this.TextoCIFC.Hint = "";
-            this.TextoCIFC.Location = new System.Drawing.Point(137, 567);
+            this.TextoCIFC.Location = new System.Drawing.Point(157, 111);
             this.TextoCIFC.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFC.Name = "TextoCIFC";
             this.TextoCIFC.PasswordChar = '\0';
             this.TextoCIFC.SelectedText = "";
             this.TextoCIFC.SelectionLength = 0;
             this.TextoCIFC.SelectionStart = 0;
-            this.TextoCIFC.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFC.Size = new System.Drawing.Size(36, 23);
             this.TextoCIFC.TabIndex = 76;
             this.TextoCIFC.UseSystemPasswordChar = false;
             this.TextoCIFC.Visible = false;

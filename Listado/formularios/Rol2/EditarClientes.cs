@@ -15,7 +15,7 @@ namespace RaquetZone.formularios.Rol2
     public partial class EditarClientes : MaterialForm
     {
         
-        public EditarClientes(string dni, string nom, string pass, string num, string tel, string email)
+        public EditarClientes(string dni, string nom, string pass, string num, string tel, string email, string activo)
         {
             InitializeComponent();
             dniText.Text = dni;
@@ -24,6 +24,14 @@ namespace RaquetZone.formularios.Rol2
             numNum.Value = Int32.Parse(num);
             telText.Text = tel;
             emailText.Text = email;
+            if (activo.Equals("true"))
+            {
+                actiBox.SelectedItem = "Activo";
+            }
+            else
+            {
+                actiBox.SelectedItem = "No Activo";
+            }
         }
 
 
@@ -57,6 +65,13 @@ namespace RaquetZone.formularios.Rol2
         private void editarB_Click(object sender, EventArgs e)
         {
 
+            string numActi = "false";
+
+            if (actiBox.GetItemText(actiBox.SelectedItem).Equals("Activo"))
+            {
+                numActi = "true";
+            }
+
             String url = "http://localhost:8081/cliente/modify/" + dniText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
@@ -68,8 +83,9 @@ namespace RaquetZone.formularios.Rol2
 @"        ""passwordcli"": """ + passText.Text + "\"," + "\n" +
 @"        ""numhorascli"": " + numNum.Value + "," + "\n" +
 @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
-@"        ""emailcli"": """ + emailText.Text + "\"" + "\n" +
-@"    }";
+@"        ""emailcli"": """ + emailText.Text + "\"," + "\n" +
+@"        ""activo"": " + numActi + "" + "\n" +
+            @"    }";
 
             r.putItem(url, datos);
 

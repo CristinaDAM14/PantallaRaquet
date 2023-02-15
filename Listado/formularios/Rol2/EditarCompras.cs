@@ -14,7 +14,7 @@ namespace RaquetZone.formularios.Rol2
 {
     public partial class EditarCompras : MaterialForm
     {
-        public EditarCompras(string id, string fecha, string hora)
+        public EditarCompras(string id, string fecha, string hora, string dni)
         {
             InitializeComponent();
             idText.Text = id;
@@ -25,6 +25,8 @@ namespace RaquetZone.formularios.Rol2
 
             horaNum.Value = Int32.Parse(hora.Substring(0, 2));
             minNum.Value = Int32.Parse(hora.Substring(3, 2));
+
+            dniText.Text = dni;
 
         }
 
@@ -96,7 +98,15 @@ namespace RaquetZone.formularios.Rol2
 " + "\n" +
 @"        ""idcomp"": " + idText.Text + "," + "\n" +
 @"        ""fechacomp"": """ + completarFecha + "\"," + "\n" +
-@"        ""horacomp"": """ + completarHora + "\"" + "\n" +
+@"        ""horacomp"": """ + completarHora + "\"," + "\n" +
+@"        ""cliente"": {" + "\n" +
+@"            ""dnicli"": """ + dniText.Text + "\"," + "\n" +
+@"            ""empresa"": [" + "\n" +
+@"                {" + "\n" +
+@"                    ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+@"                }" + "\n" +
+@"            ]" + "\n" +
+@"        }" + "\n" +
 @"    }";
 
             r.putItem(url, datos);

@@ -47,6 +47,9 @@
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.dniLabel = new MaterialSkin.Controls.MaterialLabel();
             this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.bEmpresa = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.labelEmpresa = new MaterialSkin.Controls.MaterialLabel();
+            this.textEmpresa = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // direccText
@@ -61,7 +64,7 @@
             this.direccText.SelectedText = "";
             this.direccText.SelectionLength = 0;
             this.direccText.SelectionStart = 0;
-            this.direccText.Size = new System.Drawing.Size(282, 23);
+            this.direccText.Size = new System.Drawing.Size(128, 23);
             this.direccText.TabIndex = 4;
             this.direccText.UseSystemPasswordChar = false;
             // 
@@ -88,7 +91,7 @@
             this.telText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telText.ForeColor = System.Drawing.SystemColors.ControlText;
             this.telText.Hint = "Teléfono";
-            this.telText.Location = new System.Drawing.Point(416, 282);
+            this.telText.Location = new System.Drawing.Point(632, 215);
             this.telText.MouseState = MaterialSkin.MouseState.HOVER;
             this.telText.Name = "telText";
             this.telText.PasswordChar = '\0';
@@ -118,17 +121,17 @@
             // rolCombo
             // 
             this.rolCombo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rolCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rolCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolCombo.FormattingEnabled = true;
             this.rolCombo.Items.AddRange(new object[] {
             "Empleado",
             "Administrador",
             "SuperAdmin"});
-            this.rolCombo.Location = new System.Drawing.Point(594, 282);
+            this.rolCombo.Location = new System.Drawing.Point(374, 283);
             this.rolCombo.Name = "rolCombo";
-            this.rolCombo.Size = new System.Drawing.Size(104, 23);
+            this.rolCombo.Size = new System.Drawing.Size(110, 23);
             this.rolCombo.TabIndex = 7;
-            this.rolCombo.Text = "Rol";
             // 
             // dniText
             // 
@@ -212,7 +215,7 @@
             this.nombreText.SelectedText = "";
             this.nombreText.SelectionLength = 0;
             this.nombreText.SelectionStart = 0;
-            this.nombreText.Size = new System.Drawing.Size(282, 23);
+            this.nombreText.Size = new System.Drawing.Size(344, 23);
             this.nombreText.TabIndex = 1;
             this.nombreText.UseSystemPasswordChar = false;
             // 
@@ -222,7 +225,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(557, 283);
+            this.materialLabel1.Location = new System.Drawing.Point(337, 281);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(31, 19);
@@ -235,7 +238,7 @@
             this.horasLabel.Depth = 0;
             this.horasLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horasLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horasLabel.Location = new System.Drawing.Point(341, 281);
+            this.horasLabel.Location = new System.Drawing.Point(557, 215);
             this.horasLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horasLabel.Name = "horasLabel";
             this.horasLabel.Size = new System.Drawing.Size(69, 19);
@@ -261,7 +264,7 @@
             this.nomLabel.Depth = 0;
             this.nomLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.nomLabel.Location = new System.Drawing.Point(347, 129);
+            this.nomLabel.Location = new System.Drawing.Point(337, 129);
             this.nomLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.nomLabel.Name = "nomLabel";
             this.nomLabel.Size = new System.Drawing.Size(63, 19);
@@ -312,7 +315,7 @@
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(78, 376);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(213, 283);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';
@@ -324,12 +327,58 @@
             this.TextoCIFAnyadir.UseSystemPasswordChar = false;
             this.TextoCIFAnyadir.Visible = false;
             // 
+            // bEmpresa
+            // 
+            this.bEmpresa.Depth = 0;
+            this.bEmpresa.Location = new System.Drawing.Point(691, 283);
+            this.bEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.bEmpresa.Name = "bEmpresa";
+            this.bEmpresa.Primary = true;
+            this.bEmpresa.Size = new System.Drawing.Size(69, 23);
+            this.bEmpresa.TabIndex = 140;
+            this.bEmpresa.Text = "Buscar";
+            this.bEmpresa.UseVisualStyleBackColor = true;
+            this.bEmpresa.Click += new System.EventHandler(this.bEmpresa_Click);
+            // 
+            // labelEmpresa
+            // 
+            this.labelEmpresa.AutoSize = true;
+            this.labelEmpresa.Depth = 0;
+            this.labelEmpresa.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmpresa.Location = new System.Drawing.Point(499, 284);
+            this.labelEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelEmpresa.Name = "labelEmpresa";
+            this.labelEmpresa.Size = new System.Drawing.Size(68, 19);
+            this.labelEmpresa.TabIndex = 139;
+            this.labelEmpresa.Text = "Empresa";
+            // 
+            // textEmpresa
+            // 
+            this.textEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textEmpresa.Depth = 0;
+            this.textEmpresa.Enabled = false;
+            this.textEmpresa.Hint = "CIF Empresa";
+            this.textEmpresa.Location = new System.Drawing.Point(573, 283);
+            this.textEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textEmpresa.Name = "textEmpresa";
+            this.textEmpresa.PasswordChar = '\0';
+            this.textEmpresa.SelectedText = "";
+            this.textEmpresa.SelectionLength = 0;
+            this.textEmpresa.SelectionStart = 0;
+            this.textEmpresa.Size = new System.Drawing.Size(112, 23);
+            this.textEmpresa.TabIndex = 138;
+            this.textEmpresa.UseSystemPasswordChar = false;
+            // 
             // AnyadirUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bEmpresa);
+            this.Controls.Add(this.labelEmpresa);
+            this.Controls.Add(this.textEmpresa);
             this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.horasLabel);
@@ -378,6 +427,9 @@
         private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel dniLabel;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
+        private MaterialSkin.Controls.MaterialRaisedButton bEmpresa;
+        private MaterialSkin.Controls.MaterialLabel labelEmpresa;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textEmpresa;
     }
 }
 

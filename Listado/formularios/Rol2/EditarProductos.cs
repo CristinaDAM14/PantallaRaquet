@@ -83,7 +83,10 @@ namespace RaquetZone.formularios.Rol2
 @"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
 @"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
 @"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
-@"        ""stockprod"": """ + stockNumeric.Value + "\"" + "\n" +
+@"        ""stockprod"": """ + stockNumeric.Value + "\"," + "\n" +
+@"        ""empresa"": {" + "\n" +
+@"            ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+@"        }" + "\n" +
 @"    }";
 
             r.putItem(url, datos);

@@ -175,6 +175,7 @@ namespace RaquetZone.formularios.Rol2
             // ivaBox
             // 
             this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ivaBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -184,7 +185,6 @@ namespace RaquetZone.formularios.Rol2
             this.ivaBox.Name = "ivaBox";
             this.ivaBox.Size = new System.Drawing.Size(121, 21);
             this.ivaBox.TabIndex = 5;
-            this.ivaBox.Text = "4%";
             // 
             // desNum
             // 
@@ -247,12 +247,12 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(378, 129);
+            this.materialLabel4.Location = new System.Drawing.Point(370, 129);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(66, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(74, 19);
             this.materialLabel4.TabIndex = 84;
-            this.materialLabel4.Text = "Catgoría";
+            this.materialLabel4.Text = "Categoría";
             // 
             // materialLabel5
             // 

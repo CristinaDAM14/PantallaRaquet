@@ -42,6 +42,22 @@ namespace RaquetZone.formularios
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirUsuario").SingleOrDefault<Form>();
+            if (existe != null)              
+            {
+                buttonEliminar.Visible = false;
+                buttonEliminar.Enabled = false;
+                editar.Visible = false;
+                editar.Enabled = false;
+                Anyadir.Visible = false;
+                Anyadir.Enabled = false;
+
+            }
+            else
+            {
+                blEmpresa.Visible = false;
+                blEmpresa.Enabled = false;
+            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -77,6 +93,7 @@ namespace RaquetZone.formularios
             else
             {
                 listaDatosEmpresas.DataSource = RaquetZone.funciones.funciones.mostrarEmp();
+
             }
 
         }
@@ -127,5 +144,19 @@ namespace RaquetZone.formularios
                 this.Close();
             }
         }
+
+        private void blEmpresa_Click(object sender, EventArgs e)
+        {
+            string cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
+
+            AnyadirUsuario AR = (AnyadirUsuario)Application.OpenForms["AnyadirUsuario"];
+            if (Application.OpenForms.OfType<AnyadirUsuario>().Any())
+            {
+                AR.conseguirCIF(cif);
+            }
+
+            this.Close();
+        }
     }
-}
+    }
+

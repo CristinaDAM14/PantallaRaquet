@@ -57,6 +57,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // listaProductos
             // 
+            this.listaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaProductos.Location = new System.Drawing.Point(48, 141);
             this.listaProductos.Name = "listaProductos";
@@ -143,14 +144,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFP.Depth = 0;
             this.TextoCIFP.Enabled = false;
             this.TextoCIFP.Hint = "";
-            this.TextoCIFP.Location = new System.Drawing.Point(110, 575);
+            this.TextoCIFP.Location = new System.Drawing.Point(157, 93);
             this.TextoCIFP.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFP.Name = "TextoCIFP";
             this.TextoCIFP.PasswordChar = '\0';
             this.TextoCIFP.SelectedText = "";
             this.TextoCIFP.SelectionLength = 0;
             this.TextoCIFP.SelectionStart = 0;
-            this.TextoCIFP.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFP.Size = new System.Drawing.Size(30, 23);
             this.TextoCIFP.TabIndex = 70;
             this.TextoCIFP.UseSystemPasswordChar = false;
             this.TextoCIFP.Visible = false;

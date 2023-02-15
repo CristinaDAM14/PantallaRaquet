@@ -37,11 +37,13 @@ namespace RaquetZone.formularios
             this.buscarCIF = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.bVolver = new System.Windows.Forms.Button();
             this.Anyadir = new System.Windows.Forms.Button();
+            this.blEmpresa = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaDatosEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
             // listaDatosEmpresas
             // 
+            this.listaDatosEmpresas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaDatosEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaDatosEmpresas.Location = new System.Drawing.Point(47, 142);
             this.listaDatosEmpresas.Name = "listaDatosEmpresas";
@@ -137,11 +139,26 @@ namespace RaquetZone.formularios
             this.Anyadir.UseVisualStyleBackColor = true;
             this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
             // 
+            // blEmpresa
+            // 
+            this.blEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blEmpresa.Depth = 0;
+            this.blEmpresa.Location = new System.Drawing.Point(457, 522);
+            this.blEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.blEmpresa.Name = "blEmpresa";
+            this.blEmpresa.Primary = true;
+            this.blEmpresa.Size = new System.Drawing.Size(157, 64);
+            this.blEmpresa.TabIndex = 61;
+            this.blEmpresa.Text = "Añadir empresa";
+            this.blEmpresa.UseVisualStyleBackColor = true;
+            this.blEmpresa.Click += new System.EventHandler(this.blEmpresa_Click);
+            // 
             // RaquetZoneEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.blEmpresa);
             this.Controls.Add(this.Anyadir);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.buscadorButton);
@@ -166,5 +183,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialSingleLineTextField buscarCIF;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Button Anyadir;
+        private MaterialSkin.Controls.MaterialRaisedButton blEmpresa;
     }
 }

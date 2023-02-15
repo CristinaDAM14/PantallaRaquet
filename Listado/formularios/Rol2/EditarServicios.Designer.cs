@@ -95,6 +95,7 @@ namespace RaquetZone.formularios.Rol2
             // ivaBox
             // 
             this.ivaBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ivaBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ivaBox.FormattingEnabled = true;
             this.ivaBox.Items.AddRange(new object[] {
             "4%",
@@ -104,7 +105,6 @@ namespace RaquetZone.formularios.Rol2
             this.ivaBox.Name = "ivaBox";
             this.ivaBox.Size = new System.Drawing.Size(121, 21);
             this.ivaBox.TabIndex = 99;
-            this.ivaBox.Text = "4%";
             // 
             // materialLabel2
             // 
@@ -247,7 +247,7 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(136, 380);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(590, 132);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';

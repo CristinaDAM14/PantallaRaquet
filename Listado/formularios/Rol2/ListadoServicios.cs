@@ -144,6 +144,7 @@ namespace RaquetZone.formularios.Rol2
                 EditarServicios GS = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
                 GS.TextoCIFAnyadir.Text = TextoCIFP.Text;
                 GS.Show();
+                this.Close();
             }
         }
 

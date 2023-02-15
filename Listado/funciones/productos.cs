@@ -9,7 +9,7 @@ namespace RaquetZone.funciones
     public class productos
     {
 
-        //public long idprod { get; set; }
+        public long idprod { get; set; }
         public string nombreprod { get; set; }
         public string categoriaprod { get; set; }
         public double precioprod { get; set; }

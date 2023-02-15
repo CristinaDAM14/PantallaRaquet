@@ -71,6 +71,11 @@ namespace RaquetZone.formularios.Rol2
             idServi.Text = id;
         }
 
+        public void conseguirDNIUsuario(string dniU)
+        {
+            textUsuario.Text = dniU;
+        }
+
         private void bVolver_Click(object sender, EventArgs e)
         {
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ListadoReservas").SingleOrDefault<Form>();
@@ -91,7 +96,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarB_Click(object sender, EventArgs e)
         {
-            if (dniText.Text.Equals("") || idServi.Text.Equals(""))
+            if (dniText.Text.Equals("") || idServi.Text.Equals("") || textUsuario.Text.Equals(""))
             {
                 MessageBox.Show("No puedes dejar los campos de DNI y/o ID vacíos");
             }
@@ -133,8 +138,6 @@ namespace RaquetZone.formularios.Rol2
 
                 funciones.conexion r = new funciones.conexion(url, "POST");
 
-
-
                 String datos = @" {
             " + "\n" +
                 @"        ""numPista"": " + pistaNumeric.Value + "," + "\n" +
@@ -145,14 +148,20 @@ namespace RaquetZone.formularios.Rol2
                 @"        }," + "\n" +
                 @"        ""servicio"": {" + "\n" +
                 @"            ""idserv"": " + idServi.Text + "" + "\n" +
+                @"        }," + "\n" +
+                @"            ""empresa"": {" + "\n" +
+                @"                ""cifemp"": "+ TextoCIFAnyadir.Text + "" + "\n" +
+                @"        }," + "\n" +
+                @"        ""usuario"": {" + "\n" +
+                @"            ""dniusr"": """ +  textUsuario.Text + "\"" + "\n" +
                 @"        }" + "\n" +
-                @"    }"; ;
+                @"}";
 
                 r.postItem(datos);
 
                 MessageBox.Show("Reserva añadida a la base de datos");
 
-                //limpiar();
+                limpiar();
 
                 //POST NOTIFICACIONES
 
@@ -176,18 +185,53 @@ namespace RaquetZone.formularios.Rol2
         {
             idServi.Text = "";
             dniText.Text = "";
-            horaNum.Value = 0;
-            minNum.Value = 0;
-            diaNum.Value = 0;
-            mesNum.Value = 0;
-            anyoNum.Value = 0;
-            pistaNumeric.Value = 0;
+            textUsuario.Text = "";
+            horaNum.Value = 1;
+            minNum.Value = 1;
+            diaNum.Value = 1;
+            mesNum.Value = 1;
+            anyoNum.Value = 2000;
+            pistaNumeric.Value = 1;
         }
 
         private void crearB_Click(object sender, EventArgs e)
         {
             AnyadirCliente AC = new AnyadirCliente();
             AC.Show();
+        }
+
+        private void crearUsuario_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirUsuario").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                AnyadirUsuario RU = new AnyadirUsuario();
+                RU.TextoCIFAnyadir.Text = TextoCIFAnyadir.Text;
+                RU.Show();
+            }
+        }
+
+        private void buscarUsuario_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneUsuarios").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                RaquetZoneUsuarios RU = new RaquetZoneUsuarios();
+                RU.TextoCIFC.Text = TextoCIFAnyadir.Text;
+                RU.Show();
+            }
         }
     }
 }

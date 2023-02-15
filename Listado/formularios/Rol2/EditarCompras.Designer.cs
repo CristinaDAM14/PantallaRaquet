@@ -44,6 +44,8 @@ namespace RaquetZone.formularios.Rol2
             this.editarB = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
             this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.dniText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horaNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diaNum)).BeginInit();
@@ -278,23 +280,55 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(123, 359);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(202, 128);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';
             this.TextoCIFAnyadir.SelectedText = "";
             this.TextoCIFAnyadir.SelectionLength = 0;
             this.TextoCIFAnyadir.SelectionStart = 0;
-            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(52, 23);
             this.TextoCIFAnyadir.TabIndex = 85;
             this.TextoCIFAnyadir.UseSystemPasswordChar = false;
             this.TextoCIFAnyadir.Visible = false;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(401, 128);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(34, 19);
+            this.materialLabel2.TabIndex = 87;
+            this.materialLabel2.Text = "DNI";
+            // 
+            // dniText
+            // 
+            this.dniText.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dniText.Depth = 0;
+            this.dniText.Enabled = false;
+            this.dniText.Hint = "DNI";
+            this.dniText.Location = new System.Drawing.Point(441, 128);
+            this.dniText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.dniText.Name = "dniText";
+            this.dniText.PasswordChar = '\0';
+            this.dniText.SelectedText = "";
+            this.dniText.SelectionLength = 0;
+            this.dniText.SelectionStart = 0;
+            this.dniText.Size = new System.Drawing.Size(177, 23);
+            this.dniText.TabIndex = 86;
+            this.dniText.UseSystemPasswordChar = false;
             // 
             // EditarCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.dniText);
             this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.minLabel);
             this.Controls.Add(this.minNum);
@@ -341,5 +375,7 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.NumericUpDown anyoNum;
         private MaterialSkin.Controls.MaterialLabel horaLabel;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField dniText;
     }
 }

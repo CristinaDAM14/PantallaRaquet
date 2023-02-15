@@ -52,6 +52,10 @@ namespace RaquetZone.formularios.Rol2
             this.bCliente = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.crearB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.buscarUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.textUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.crearUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horaNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diaNum)).BeginInit();
@@ -66,7 +70,7 @@ namespace RaquetZone.formularios.Rol2
             this.minLabel.Depth = 0;
             this.minLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.minLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minLabel.Location = new System.Drawing.Point(177, 225);
+            this.minLabel.Location = new System.Drawing.Point(177, 268);
             this.minLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.minLabel.Name = "minLabel";
             this.minLabel.Size = new System.Drawing.Size(56, 19);
@@ -76,7 +80,7 @@ namespace RaquetZone.formularios.Rol2
             // minNum
             // 
             this.minNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minNum.Location = new System.Drawing.Point(171, 247);
+            this.minNum.Location = new System.Drawing.Point(171, 290);
             this.minNum.Maximum = new decimal(new int[] {
             59,
             0,
@@ -89,7 +93,7 @@ namespace RaquetZone.formularios.Rol2
             // horaNum
             // 
             this.horaNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.horaNum.Location = new System.Drawing.Point(97, 247);
+            this.horaNum.Location = new System.Drawing.Point(97, 290);
             this.horaNum.Maximum = new decimal(new int[] {
             23,
             0,
@@ -105,7 +109,7 @@ namespace RaquetZone.formularios.Rol2
             this.anyoLabel.Depth = 0;
             this.anyoLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.anyoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.anyoLabel.Location = new System.Drawing.Point(494, 225);
+            this.anyoLabel.Location = new System.Drawing.Point(494, 268);
             this.anyoLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.anyoLabel.Name = "anyoLabel";
             this.anyoLabel.Size = new System.Drawing.Size(36, 19);
@@ -118,7 +122,7 @@ namespace RaquetZone.formularios.Rol2
             this.mesLabel.Depth = 0;
             this.mesLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.mesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mesLabel.Location = new System.Drawing.Point(423, 225);
+            this.mesLabel.Location = new System.Drawing.Point(423, 268);
             this.mesLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.mesLabel.Name = "mesLabel";
             this.mesLabel.Size = new System.Drawing.Size(38, 19);
@@ -131,7 +135,7 @@ namespace RaquetZone.formularios.Rol2
             this.diaLabel.Depth = 0;
             this.diaLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.diaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.diaLabel.Location = new System.Drawing.Point(352, 225);
+            this.diaLabel.Location = new System.Drawing.Point(352, 268);
             this.diaLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.diaLabel.Name = "diaLabel";
             this.diaLabel.Size = new System.Drawing.Size(31, 19);
@@ -141,7 +145,7 @@ namespace RaquetZone.formularios.Rol2
             // diaNum
             // 
             this.diaNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.diaNum.Location = new System.Drawing.Point(342, 247);
+            this.diaNum.Location = new System.Drawing.Point(342, 290);
             this.diaNum.Maximum = new decimal(new int[] {
             31,
             0,
@@ -164,7 +168,7 @@ namespace RaquetZone.formularios.Rol2
             // mesNum
             // 
             this.mesNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mesNum.Location = new System.Drawing.Point(413, 247);
+            this.mesNum.Location = new System.Drawing.Point(413, 290);
             this.mesNum.Maximum = new decimal(new int[] {
             12,
             0,
@@ -187,7 +191,7 @@ namespace RaquetZone.formularios.Rol2
             // anyoNum
             // 
             this.anyoNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.anyoNum.Location = new System.Drawing.Point(487, 247);
+            this.anyoNum.Location = new System.Drawing.Point(487, 290);
             this.anyoNum.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -213,7 +217,7 @@ namespace RaquetZone.formularios.Rol2
             this.horaLabel.Depth = 0;
             this.horaLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horaLabel.Location = new System.Drawing.Point(103, 225);
+            this.horaLabel.Location = new System.Drawing.Point(103, 268);
             this.horaLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horaLabel.Name = "horaLabel";
             this.horaLabel.Size = new System.Drawing.Size(42, 19);
@@ -226,7 +230,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(94, 107);
+            this.materialLabel4.Location = new System.Drawing.Point(97, 137);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(81, 19);
@@ -239,7 +243,7 @@ namespace RaquetZone.formularios.Rol2
             this.idServi.Depth = 0;
             this.idServi.Enabled = false;
             this.idServi.Hint = "ID Servicio";
-            this.idServi.Location = new System.Drawing.Point(181, 107);
+            this.idServi.Location = new System.Drawing.Point(184, 137);
             this.idServi.MouseState = MaterialSkin.MouseState.HOVER;
             this.idServi.Name = "idServi";
             this.idServi.PasswordChar = '\0';
@@ -256,7 +260,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(598, 248);
+            this.materialLabel3.Location = new System.Drawing.Point(598, 291);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(100, 19);
@@ -266,7 +270,7 @@ namespace RaquetZone.formularios.Rol2
             // pistaNumeric
             // 
             this.pistaNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pistaNumeric.Location = new System.Drawing.Point(704, 247);
+            this.pistaNumeric.Location = new System.Drawing.Point(704, 290);
             this.pistaNumeric.Name = "pistaNumeric";
             this.pistaNumeric.Size = new System.Drawing.Size(49, 20);
             this.pistaNumeric.TabIndex = 117;
@@ -307,7 +311,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.materialTabSelector2.BaseTabControl = null;
             this.materialTabSelector2.Depth = 0;
-            this.materialTabSelector2.Location = new System.Drawing.Point(-1, 170);
+            this.materialTabSelector2.Location = new System.Drawing.Point(1, 212);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
             this.materialTabSelector2.Size = new System.Drawing.Size(812, 10);
@@ -347,7 +351,7 @@ namespace RaquetZone.formularios.Rol2
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(269, 107);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(272, 137);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -375,14 +379,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(15, 392);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(602, 164);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';
             this.TextoCIFAnyadir.SelectedText = "";
             this.TextoCIFAnyadir.SelectionLength = 0;
             this.TextoCIFAnyadir.SelectionStart = 0;
-            this.TextoCIFAnyadir.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(15, 23);
             this.TextoCIFAnyadir.TabIndex = 133;
             this.TextoCIFAnyadir.UseSystemPasswordChar = false;
             this.TextoCIFAnyadir.Visible = false;
@@ -400,11 +404,71 @@ namespace RaquetZone.formularios.Rol2
             this.crearB.UseVisualStyleBackColor = true;
             this.crearB.Click += new System.EventHandler(this.crearB_Click);
             // 
+            // buscarUsuario
+            // 
+            this.buscarUsuario.Depth = 0;
+            this.buscarUsuario.Location = new System.Drawing.Point(629, 163);
+            this.buscarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buscarUsuario.Name = "buscarUsuario";
+            this.buscarUsuario.Primary = true;
+            this.buscarUsuario.Size = new System.Drawing.Size(69, 23);
+            this.buscarUsuario.TabIndex = 137;
+            this.buscarUsuario.Text = "Buscar";
+            this.buscarUsuario.UseVisualStyleBackColor = true;
+            this.buscarUsuario.Click += new System.EventHandler(this.buscarUsuario_Click);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(396, 164);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(90, 19);
+            this.materialLabel1.TabIndex = 136;
+            this.materialLabel1.Text = "DNI Usuario";
+            // 
+            // textUsuario
+            // 
+            this.textUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textUsuario.Depth = 0;
+            this.textUsuario.Enabled = false;
+            this.textUsuario.Hint = "DNI Usuario";
+            this.textUsuario.Location = new System.Drawing.Point(492, 164);
+            this.textUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.PasswordChar = '\0';
+            this.textUsuario.SelectedText = "";
+            this.textUsuario.SelectionLength = 0;
+            this.textUsuario.SelectionStart = 0;
+            this.textUsuario.Size = new System.Drawing.Size(134, 23);
+            this.textUsuario.TabIndex = 135;
+            this.textUsuario.UseSystemPasswordChar = false;
+            // 
+            // crearUsuario
+            // 
+            this.crearUsuario.Depth = 0;
+            this.crearUsuario.Location = new System.Drawing.Point(704, 163);
+            this.crearUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.crearUsuario.Name = "crearUsuario";
+            this.crearUsuario.Primary = true;
+            this.crearUsuario.Size = new System.Drawing.Size(69, 23);
+            this.crearUsuario.TabIndex = 138;
+            this.crearUsuario.Text = "Crear";
+            this.crearUsuario.UseVisualStyleBackColor = true;
+            this.crearUsuario.Click += new System.EventHandler(this.crearUsuario_Click);
+            // 
             // AnyadirReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.crearUsuario);
+            this.Controls.Add(this.buscarUsuario);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.crearB);
             this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.bCliente);
@@ -467,5 +531,9 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton bCliente;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFAnyadir;
         private MaterialSkin.Controls.MaterialRaisedButton crearB;
+        private MaterialSkin.Controls.MaterialRaisedButton buscarUsuario;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textUsuario;
+        private MaterialSkin.Controls.MaterialRaisedButton crearUsuario;
     }
 }

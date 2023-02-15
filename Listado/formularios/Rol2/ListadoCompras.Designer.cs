@@ -44,6 +44,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             // listaCompras
             // 
+            this.listaCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaCompras.Location = new System.Drawing.Point(51, 140);
             this.listaCompras.Name = "listaCompras";
@@ -177,14 +178,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFP.Depth = 0;
             this.TextoCIFP.Enabled = false;
             this.TextoCIFP.Hint = "";
-            this.TextoCIFP.Location = new System.Drawing.Point(121, 564);
+            this.TextoCIFP.Location = new System.Drawing.Point(164, 101);
             this.TextoCIFP.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFP.Name = "TextoCIFP";
             this.TextoCIFP.PasswordChar = '\0';
             this.TextoCIFP.SelectedText = "";
             this.TextoCIFP.SelectionLength = 0;
             this.TextoCIFP.SelectionStart = 0;
-            this.TextoCIFP.Size = new System.Drawing.Size(218, 23);
+            this.TextoCIFP.Size = new System.Drawing.Size(35, 23);
             this.TextoCIFP.TabIndex = 71;
             this.TextoCIFP.UseSystemPasswordChar = false;
             this.TextoCIFP.Visible = false;

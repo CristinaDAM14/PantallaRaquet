@@ -39,6 +39,17 @@ namespace RaquetZone.formularios
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
 
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+            if (existe != null)
+            {
+                textEmpresa.Visible = false;
+                textEmpresa.Enabled = false;
+                bEmpresa.Visible = false;
+                bEmpresa.Enabled = false;
+                labelEmpresa.Visible = false;
+                labelEmpresa.Enabled = false;
+
+            } 
         }
 
         private void bVolver_Click(object sender, EventArgs e)
@@ -72,7 +83,12 @@ namespace RaquetZone.formularios
                 {
                     if (telText.Text.Length == 9)
                     {
-                        String url = "http://localhost:8081/usuario/add";
+                        if (textEmpresa.Text.Equals(""))
+                        {
+                            MessageBox.Show("No puedes dejar el campo de la empresa vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else {
+                        String url = "http://localhost:8081/empresa/" + textEmpresa.Text + "/usuario";
 
                         funciones.conexion r = new funciones.conexion(url, "POST");
 
@@ -86,13 +102,19 @@ namespace RaquetZone.formularios
             @"        ""rolusr"": """ + num + "\"," + "\n" +
             @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
             @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
-            @"        ""direccionusr"": """ + direccText.Text + "\"" + "\n" +
-            @"    }";
+            @"        ""direccionusr"": """ + direccText.Text + "\"," + "\n" +
+            @"        ""empresa"": [" + "\n" +
+            @"            {" + "\n" +
+            @"                ""cifemp"": """ + textEmpresa.Text + "\"" + "\n" +
+            @"            }" + "\n" +
+            @"            ]" + "\n" +
+            @"}";
                         r.postItem(datos);
 
                         MessageBox.Show("Usuario añadido a la base de datos");
                         
                         limpiar();
+                    }
                     }
                     else
                     {
@@ -119,6 +141,7 @@ namespace RaquetZone.formularios
             direccText.Text = "";
             emailText.Text = "";
             telText.Text = "";
+            textEmpresa.Text = "";
         }
 
         private int SeleccionarRol(string rol)
@@ -141,5 +164,25 @@ namespace RaquetZone.formularios
             return num;
         }
 
+        public void conseguirCIF(string cif)
+        {
+            textEmpresa.Text = cif;
+        }
+
+        private void bEmpresa_Click(object sender, EventArgs e)
+        {
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneEmpresas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                RaquetZoneEmpresas RU = new RaquetZoneEmpresas();
+                RU.Show();
+            }
+        }
     }
 }

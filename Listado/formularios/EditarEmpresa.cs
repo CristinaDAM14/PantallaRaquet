@@ -38,7 +38,19 @@ namespace RaquetZone.formularios
 
         private void bVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "RaquetZoneEmpresas").SingleOrDefault<Form>();
+            if (existe != null)
+
+            {
+                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                RaquetZoneEmpresas LU1 = new RaquetZoneEmpresas();
+                LU1.Show();
+                this.Close();
+            }
         }
 
         private void buttonEditar_Click_1(object sender, EventArgs e)

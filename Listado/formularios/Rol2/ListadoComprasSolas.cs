@@ -67,9 +67,15 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarComp();
 
-                List<string> clientesC = new List<string>();
+                if(funciones.funciones.comprasClientes(TextoCIFP.Text) == null)
+                {
+                    MessageBox.Show("No tienes ningún dato de Compras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else {
+
+                    listaCompras.DataSource = RaquetZone.funciones.funciones.mostrarComp();
+                    List<string> clientesC = new List<string>();
                 clientesC.AddRange(funciones.funciones.comprasClientes(TextoCIFP.Text));
                 int contador = 0;
                 int controlFila = 0;
@@ -105,6 +111,7 @@ namespace RaquetZone.formularios.Rol2
 
                 }
             }
+            }
 
 
         }
@@ -131,6 +138,7 @@ namespace RaquetZone.formularios.Rol2
         {
             string id = listaCompras.CurrentRow.Cells[0].Value.ToString();
             string fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
+            string dni = listaCompras.CurrentRow.Cells[3].Value.ToString();
             string hora;
 
             if (listaCompras.CurrentRow.Cells[2].Value == null)
@@ -152,7 +160,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                EditarCompras EC = new EditarCompras(id, fecha, hora);
+                EditarCompras EC = new EditarCompras(id, fecha, hora, dni);
                 EC.TextoCIFAnyadir.Text = TextoCIFP.Text;
                 EC.Show();
                 this.Close();

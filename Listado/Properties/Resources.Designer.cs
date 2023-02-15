@@ -103,6 +103,16 @@ namespace Listado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendario {
+            get {
+                object obj = ResourceManager.GetObject("calendario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion {
             get {
                 object obj = ResourceManager.GetObject("cerrar_sesion", resourceCulture);
@@ -186,6 +196,16 @@ namespace Listado.Properties {
         internal static System.Drawing.Bitmap empresa {
             get {
                 object obj = ResourceManager.GetObject("empresa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap facturas {
+            get {
+                object obj = ResourceManager.GetObject("facturas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

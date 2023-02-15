@@ -378,14 +378,14 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFAnyadir.Depth = 0;
             this.TextoCIFAnyadir.Enabled = false;
             this.TextoCIFAnyadir.Hint = "";
-            this.TextoCIFAnyadir.Location = new System.Drawing.Point(78, 382);
+            this.TextoCIFAnyadir.Location = new System.Drawing.Point(149, 115);
             this.TextoCIFAnyadir.MouseState = MaterialSkin.MouseState.HOVER;
             this.TextoCIFAnyadir.Name = "TextoCIFAnyadir";
             this.TextoCIFAnyadir.PasswordChar = '\0';
             this.TextoCIFAnyadir.SelectedText = "";
             this.TextoCIFAnyadir.SelectionLength = 0;
             this.TextoCIFAnyadir.SelectionStart = 0;
-            this.TextoCIFAnyadir.Size = new System.Drawing.Size(64, 23);
+            this.TextoCIFAnyadir.Size = new System.Drawing.Size(48, 23);
             this.TextoCIFAnyadir.TabIndex = 110;
             this.TextoCIFAnyadir.UseSystemPasswordChar = false;
             this.TextoCIFAnyadir.Visible = false;
