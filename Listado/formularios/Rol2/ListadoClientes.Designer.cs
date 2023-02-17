@@ -44,6 +44,7 @@ namespace RaquetZone.formularios.Rol2
             this.botonInactivo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.radioActivos = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioInactivos = new MaterialSkin.Controls.MaterialRadioButton();
+            this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaClientes.Location = new System.Drawing.Point(49, 143);
             this.listaClientes.Name = "listaClientes";
             this.listaClientes.RowTemplate.ReadOnly = true;
+            this.listaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaClientes.Size = new System.Drawing.Size(944, 360);
             this.listaClientes.TabIndex = 46;
             // 
@@ -93,7 +95,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscadorButton.Location = new System.Drawing.Point(235, 98);
+            this.buscadorButton.Location = new System.Drawing.Point(221, 98);
             this.buscadorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
@@ -252,11 +254,27 @@ namespace RaquetZone.formularios.Rol2
             this.radioInactivos.Text = "Inactivos";
             this.radioInactivos.UseVisualStyleBackColor = true;
             // 
+            // limpiarB
+            // 
+            this.limpiarB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limpiarB.Depth = 0;
+            this.limpiarB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limpiarB.Location = new System.Drawing.Point(288, 98);
+            this.limpiarB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.limpiarB.Name = "limpiarB";
+            this.limpiarB.Primary = true;
+            this.limpiarB.Size = new System.Drawing.Size(61, 23);
+            this.limpiarB.TabIndex = 82;
+            this.limpiarB.Text = "Limpiar";
+            this.limpiarB.UseVisualStyleBackColor = true;
+            this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
+            // 
             // ListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.limpiarB);
             this.Controls.Add(this.botonInactivo);
             this.Controls.Add(this.radioActivos);
             this.Controls.Add(this.radioInactivos);
@@ -295,5 +313,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton botonInactivo;
         private MaterialSkin.Controls.MaterialRadioButton radioActivos;
         private MaterialSkin.Controls.MaterialRadioButton radioInactivos;
+        private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
     }
 }

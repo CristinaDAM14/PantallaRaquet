@@ -22,17 +22,36 @@ namespace RaquetZone.formularios
 
         private void editar_Click(object sender, EventArgs e)
         {
-            string cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
-            string nom = listaDatosEmpresas.CurrentRow.Cells[1].Value.ToString();
-            string web = listaDatosEmpresas.CurrentRow.Cells[2].Value.ToString();
-            string tel = listaDatosEmpresas.CurrentRow.Cells[3].Value.ToString();
-            string email = listaDatosEmpresas.CurrentRow.Cells[4].Value.ToString();
-            string direc = listaDatosEmpresas.CurrentRow.Cells[5].Value.ToString();
-            string acti = listaDatosEmpresas.CurrentRow.Cells[6].Value.ToString();
 
-            EditarEmpresa EU1 = new EditarEmpresa(cif, nom, web, tel, email, direc, acti);
-            EU1.Show();
-            this.Close();
+            if (listaDatosEmpresas.CurrentRow != null)
+            {
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarEmpresa").SingleOrDefault<Form>();
+                if (existe != null)
+
+                {
+                    MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    string cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
+                    string nom = listaDatosEmpresas.CurrentRow.Cells[1].Value.ToString();
+                    string web = listaDatosEmpresas.CurrentRow.Cells[2].Value.ToString();
+                    string tel = listaDatosEmpresas.CurrentRow.Cells[3].Value.ToString();
+                    string email = listaDatosEmpresas.CurrentRow.Cells[4].Value.ToString();
+                    string direc = listaDatosEmpresas.CurrentRow.Cells[5].Value.ToString();
+                    string acti = listaDatosEmpresas.CurrentRow.Cells[6].Value.ToString();
+
+                    EditarEmpresa EU1 = new EditarEmpresa(cif, nom, web, tel, email, direc, acti);
+                    EU1.Show();
+                    this.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RaquetZoneEmpresas_Load(object sender, EventArgs e)
@@ -62,7 +81,9 @@ namespace RaquetZone.formularios
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-             String cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
+            if (listaDatosEmpresas.CurrentRow != null)
+            {
+            String cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
 
             if (MessageBox.Show("¿Quieres eliminar la empresa con CIF " + cif + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -82,6 +103,14 @@ namespace RaquetZone.formularios
             {
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado la empresa");
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void MostrarEmpresas()
@@ -130,23 +159,28 @@ namespace RaquetZone.formularios
 
         private void Anyadir_Click(object sender, EventArgs e)
         {
+
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirEmpresa").SingleOrDefault<Form>();
             if (existe != null)
 
             {
-                this.Close();
+                    MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+                }
             else
             {
                 AnyadirEmpresa G2 = new AnyadirEmpresa();
                 G2.Show();
                 this.Close();
             }
+
+            
         }
 
         private void blEmpresa_Click(object sender, EventArgs e)
         {
+            if (listaDatosEmpresas.CurrentRow != null)
+            {
             string cif = listaDatosEmpresas.CurrentRow.Cells[0].Value.ToString();
 
             AnyadirUsuario AR = (AnyadirUsuario)Application.OpenForms["AnyadirUsuario"];
@@ -156,6 +190,23 @@ namespace RaquetZone.formularios
             }
 
             this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaDatosEmpresas.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaDatosEmpresas.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
+            }
         }
     }
     }

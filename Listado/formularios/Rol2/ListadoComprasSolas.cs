@@ -118,6 +118,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirCompras").SingleOrDefault<Form>();
             if (existe != null)
 
@@ -132,10 +133,16 @@ namespace RaquetZone.formularios.Rol2
                 P23.Show();
                 this.Close();
             }
+            
+
+            
         }
 
         private void editarCompras_Click(object sender, EventArgs e)
         {
+            if (listaCompras.CurrentRow != null)
+            {
+
             string id = listaCompras.CurrentRow.Cells[0].Value.ToString();
             string fecha = listaCompras.CurrentRow.Cells[1].Value.ToString();
             string dni = listaCompras.CurrentRow.Cells[3].Value.ToString();
@@ -165,6 +172,13 @@ namespace RaquetZone.formularios.Rol2
                 EC.Show();
                 this.Close();
             }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
           
         }
 
@@ -204,6 +218,8 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            if (listaCompras.CurrentRow != null)
+            {
             String id = listaCompras.CurrentRow.Cells[0].Value.ToString();
 
             if (MessageBox.Show("¿Quieres eliminar la compra con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -237,6 +253,14 @@ namespace RaquetZone.formularios.Rol2
             {
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado la compra");
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void facturaB_Click(object sender, EventArgs e)
@@ -257,10 +281,15 @@ namespace RaquetZone.formularios.Rol2
             this.Close();
             }
             
+
+            
+            
         }
 
         private void AnyadirCompra_Click_1(object sender, EventArgs e)
         {
+            if (listaCompras.CurrentRow != null)
+            {
             string idC = listaCompras.CurrentRow.Cells[0].Value.ToString();
 
             AnyadirComprasProd AR = (AnyadirComprasProd)Application.OpenForms["AnyadirComprasProd"];
@@ -270,6 +299,23 @@ namespace RaquetZone.formularios.Rol2
             }
 
             this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaCompras.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaCompras.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
+            }
         }
     }
 }

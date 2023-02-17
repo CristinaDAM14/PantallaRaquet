@@ -161,7 +161,7 @@ namespace RaquetZone.formularios.Rol2
 
                 MessageBox.Show("Reserva añadida a la base de datos");
 
-                limpiar();
+                
 
                 //POST NOTIFICACIONES
 
@@ -179,6 +179,8 @@ namespace RaquetZone.formularios.Rol2
 
                 r2.postItem(datoNoti);
             }
+            
+            limpiar();
         }
 
         private void limpiar()

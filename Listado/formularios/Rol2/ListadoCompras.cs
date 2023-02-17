@@ -55,6 +55,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonFactura_Click(object sender, EventArgs e)
         {
+            if (listaCompras.CurrentRow != null)
+            {
+
             String id = listaCompras.CurrentRow.Cells[1].Value.ToString();
             String fecha = listaCompras.CurrentRow.Cells[10].Value.ToString();
             String nombre = listaCompras.CurrentRow.Cells[3].Value.ToString();
@@ -64,6 +67,13 @@ namespace RaquetZone.formularios.Rol2
             String cantidad = listaCompras.CurrentRow.Cells[18].Value.ToString();
 
             funciones.funciones.facturasPDF(id, fecha, nombre, descuento, precio, cliente, cantidad);
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
 
         }
 
@@ -98,6 +108,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirComprasProd").SingleOrDefault<Form>();
             if (existe != null)
 
@@ -114,6 +125,14 @@ namespace RaquetZone.formularios.Rol2
             }
         }
 
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaCompras.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaCompras.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
     }
     }
 

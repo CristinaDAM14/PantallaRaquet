@@ -76,18 +76,21 @@ namespace RaquetZone.formularios
         private void buttonEditar_Click_1(object sender, EventArgs e)
         {
 
-            if (funciones.funciones.IsNumeric(nombreText.Text) == false)
+            Form existe1 = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
+
+                if (funciones.funciones.IsNumeric(nombreText.Text) == false)
             {
 
                 if (funciones.funciones.IsNumeric(telText.Text) == true)
                 {
                     if (telText.Text.Length == 9)
                     {
-                        if (textEmpresa.Text.Equals(""))
+                        if (textEmpresa.Text.Equals("") && existe1 == null)
                         {
                             MessageBox.Show("No puedes dejar el campo de la empresa vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        else {
+                        else if (!textEmpresa.Text.Equals(""))
+                        {
                         String url = "http://localhost:8081/empresa/" + textEmpresa.Text + "/usuario";
 
                         funciones.conexion r = new funciones.conexion(url, "POST");
@@ -103,6 +106,7 @@ namespace RaquetZone.formularios
             @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
             @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
             @"        ""direccionusr"": """ + direccText.Text + "\"," + "\n" +
+            @"        ""activo"": "" true ""," + "\n" +
             @"        ""empresa"": [" + "\n" +
             @"            {" + "\n" +
             @"                ""cifemp"": """ + textEmpresa.Text + "\"" + "\n" +
@@ -114,7 +118,37 @@ namespace RaquetZone.formularios
                         MessageBox.Show("Usuario añadido a la base de datos");
                         
                         limpiar();
-                    }
+                        }
+                        else
+                        {
+                            String url = "http://localhost:8081/empresa/" + TextoCIFAnyadir.Text + "/usuario";
+
+                            funciones.conexion r = new funciones.conexion(url, "POST");
+
+                            int num = SeleccionarRol(rolCombo.Text);
+
+                            String datos = @"{
+" + "\n" +
+                @"        ""dniusr"": """ + dniText.Text + "\"," + "\n" +
+                @"        ""nombreusr"": """ + nombreText.Text + "\"," + "\n" +
+                @"        ""passwordusr"": """ + passText.Text + "\"," + "\n" +
+                @"        ""rolusr"": """ + num + "\"," + "\n" +
+                @"        ""telefonousr"": """ + telText.Text + "\"," + "\n" +
+                @"        ""emailusr"": """ + emailText.Text + "\"," + "\n" +
+                @"        ""direccionusr"": """ + direccText.Text + "\"," + "\n" +
+                @"        ""activo"": "" true ""," + "\n" +
+                @"        ""empresa"": [" + "\n" +
+                @"            {" + "\n" +
+                @"                ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+                @"            }" + "\n" +
+                @"            ]" + "\n" +
+                @"}";
+                            r.postItem(datos);
+
+                            MessageBox.Show("Usuario añadido a la base de datos");
+
+                            limpiar();
+                        }
                     }
                     else
                     {

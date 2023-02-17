@@ -82,6 +82,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarProductos_Click(object sender, EventArgs e)
         {
+            if (listaClientes.CurrentRow != null)
+            {
+
             string dniText = listaClientes.CurrentRow.Cells[0].Value.ToString();
             string nomText = listaClientes.CurrentRow.Cells[1].Value.ToString();
             string passText = listaClientes.CurrentRow.Cells[2].Value.ToString();
@@ -104,6 +107,14 @@ namespace RaquetZone.formularios.Rol2
                 EC.Show();
                 this.Close();
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void MostrarClientes()
@@ -150,26 +161,36 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            String dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
-
-            if (MessageBox.Show("¿Quieres eliminar el cliente con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (listaClientes.CurrentRow != null)
             {
 
+                 String dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
 
-                String url = "http://localhost:8081/cliente/delete/" + dni;
+                if (MessageBox.Show("¿Quieres eliminar el cliente con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
 
-                RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
-                r.deleteItem(url);
+                    String url = "http://localhost:8081/cliente/delete/" + dni;
 
-                MessageBox.Show("Eliminado");
+                    RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
-                listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCliP(TextoCIFC.Text);
+                    r.deleteItem(url);
+
+                    MessageBox.Show("Eliminado");
+
+                    listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCliP(TextoCIFC.Text);
+                }
+                else
+                {
+                    MessageBox.Show("La operación se ha detenido, no se ha eliminado al cliente");
+                }
             }
             else
             {
-                MessageBox.Show("La operación se ha detenido, no se ha eliminado al cliente");
+                MessageBox.Show("Selecciona un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            
         }
 
         private void bVolver_Click(object sender, EventArgs e)
@@ -179,10 +200,20 @@ namespace RaquetZone.formularios.Rol2
 
         private void emailButton_Click(object sender, EventArgs e)
         {
+            if (listaClientes.CurrentRow != null)
+            {
             string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
 
             EmailClientes EC = new EmailClientes(emailText);
             EC.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -205,19 +236,32 @@ namespace RaquetZone.formularios.Rol2
 
         private void bReservas_Click(object sender, EventArgs e)
         {
-            string dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
-
-            AnyadirReservas AR = (AnyadirReservas)Application.OpenForms["AnyadirReservas"];
-            if (Application.OpenForms.OfType<AnyadirReservas>().Any())
+            if (listaClientes.CurrentRow != null)
             {
-                AR.conseguirDNI(dni);
+                string dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
+
+                AnyadirReservas AR = (AnyadirReservas)Application.OpenForms["AnyadirReservas"];
+                if (Application.OpenForms.OfType<AnyadirReservas>().Any())
+                {
+                    AR.conseguirDNI(dni);
+                }
+
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Close();
+            
         }
 
         private void anyadirCompra_Click(object sender, EventArgs e)
         {
+            if (listaClientes.CurrentRow != null)
+            {
+
             string dni = listaClientes.CurrentRow.Cells[0].Value.ToString();
 
             AnyadirCompras AR = (AnyadirCompras)Application.OpenForms["AnyadirCompras"];
@@ -227,6 +271,13 @@ namespace RaquetZone.formularios.Rol2
             }
 
             this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         public void verActivos()
@@ -306,6 +357,15 @@ namespace RaquetZone.formularios.Rol2
             else
             {
                 verInactivos();
+            }
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaClientes.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaClientes.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
             }
         }
     }

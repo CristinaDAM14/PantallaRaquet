@@ -316,7 +316,7 @@ namespace RaquetZone.funciones
                 buyCP = buyCP.Replace("\"cliente\":{", "");
                 buyCP = buyCP.Replace("\"producto\":{", "");
                 buyCP = buyCP.Replace("\"compra\":{", "");
-                buyCP = buyCP.Replace("\"empresa\":[{", "");
+                buyCP = buyCP.Replace("\"empresa\":{", "");
                 buyCP = buyCP.Replace("\"id\":{", "");
                 buyCP = buyCP.Replace("},", "");
                 buyCP = buyCP.Replace("}", "");

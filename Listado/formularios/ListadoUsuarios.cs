@@ -23,6 +23,9 @@ namespace RaquetZone.formularios
 
         private void editar_Click(object sender, EventArgs e)
         {
+            if (listaDatos.CurrentRow != null)
+            {
+
             string dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
             string nom = listaDatos.CurrentRow.Cells[1].Value.ToString();
             string pass = listaDatos.CurrentRow.Cells[2].Value.ToString();
@@ -47,6 +50,14 @@ namespace RaquetZone.formularios
                 EU1.Show();
                 this.Close();
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
 
@@ -101,6 +112,8 @@ namespace RaquetZone.formularios
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            if (listaDatos.CurrentRow != null)
+            {
             String dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
             String rol = listaDatos.CurrentRow.Cells[3].Value.ToString();
 
@@ -142,6 +155,14 @@ namespace RaquetZone.formularios
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado al usuario");
             }
 
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+
         }
 
         private void MostrarUsuarios()
@@ -178,6 +199,8 @@ namespace RaquetZone.formularios
 
         private void buscadorButton_Click(object sender, EventArgs e)
         {
+            
+
             bool supervisor = false;
 
             foreach (DataGridViewRow Row in listaDatos.Rows)
@@ -208,20 +231,22 @@ namespace RaquetZone.formularios
 
         private void anyadir_Click(object sender, EventArgs e)
         {
+
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirUsuario").SingleOrDefault<Form>();
-            if (existe != null)
+                        if (existe != null)
 
-            {
-                this.Close();
+                        {
+                            this.Close();
 
-            }
-            else
-            {
-                AnyadirUsuario GU2 = new AnyadirUsuario();
-                GU2.TextoCIFAnyadir.Text = TextoCIFC.Text;
-                GU2.Show();
-                this.Close();
-            }
+                        }
+                        else
+                        {
+                            AnyadirUsuario GU2 = new AnyadirUsuario();
+                            GU2.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                            GU2.Show();
+                            this.Close();
+                        }
+            
         }
 
 
@@ -253,7 +278,10 @@ namespace RaquetZone.formularios
 
         private void bReservas_Click(object sender, EventArgs e)
         {
-            string dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
+            if (listaDatos.CurrentRow != null)
+            {
+
+                string dni = listaDatos.CurrentRow.Cells[0].Value.ToString();
 
             Rol2.AnyadirReservas AR = (Rol2.AnyadirReservas)Application.OpenForms["AnyadirReservas"];
             if (Application.OpenForms.OfType<Rol2.AnyadirReservas>().Any())
@@ -262,6 +290,14 @@ namespace RaquetZone.formularios
             }
 
             this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            
         }
 
         public void verActivos()
@@ -341,6 +377,15 @@ namespace RaquetZone.formularios
             else
             {
                 verInactivos();
+            }
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaDatos.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaDatos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
             }
         }
     }

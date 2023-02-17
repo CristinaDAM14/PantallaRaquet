@@ -40,6 +40,7 @@ namespace RaquetZone.formularios.Rol2
             this.bVolver = new System.Windows.Forms.Button();
             this.editarReservas = new System.Windows.Forms.Button();
             this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaReservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscadorButton.Location = new System.Drawing.Point(230, 111);
+            this.buscadorButton.Location = new System.Drawing.Point(216, 111);
             this.buscadorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
@@ -96,6 +97,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaReservas.Location = new System.Drawing.Point(44, 149);
             this.listaReservas.Name = "listaReservas";
             this.listaReservas.RowTemplate.ReadOnly = true;
+            this.listaReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaReservas.Size = new System.Drawing.Size(945, 360);
             this.listaReservas.TabIndex = 66;
             // 
@@ -105,7 +107,7 @@ namespace RaquetZone.formularios.Rol2
             this.radioPista.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioPista.Depth = 0;
             this.radioPista.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioPista.Location = new System.Drawing.Point(309, 111);
+            this.radioPista.Location = new System.Drawing.Point(839, 120);
             this.radioPista.Margin = new System.Windows.Forms.Padding(0);
             this.radioPista.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radioPista.MouseState = MaterialSkin.MouseState.HOVER;
@@ -122,7 +124,7 @@ namespace RaquetZone.formularios.Rol2
             this.radioFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioFecha.Depth = 0;
             this.radioFecha.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioFecha.Location = new System.Drawing.Point(384, 111);
+            this.radioFecha.Location = new System.Drawing.Point(914, 120);
             this.radioFecha.Margin = new System.Windows.Forms.Padding(0);
             this.radioFecha.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radioFecha.MouseState = MaterialSkin.MouseState.HOVER;
@@ -192,11 +194,27 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFC.UseSystemPasswordChar = false;
             this.TextoCIFC.Visible = false;
             // 
+            // limpiarB
+            // 
+            this.limpiarB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limpiarB.Depth = 0;
+            this.limpiarB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limpiarB.Location = new System.Drawing.Point(283, 111);
+            this.limpiarB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.limpiarB.Name = "limpiarB";
+            this.limpiarB.Primary = true;
+            this.limpiarB.Size = new System.Drawing.Size(61, 23);
+            this.limpiarB.TabIndex = 80;
+            this.limpiarB.Text = "Limpiar";
+            this.limpiarB.UseVisualStyleBackColor = true;
+            this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
+            // 
             // ListadoReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.limpiarB);
             this.Controls.Add(this.TextoCIFC);
             this.Controls.Add(this.radioPista);
             this.Controls.Add(this.radioFecha);
@@ -227,5 +245,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRadioButton radioPista;
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
+        private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
     }
 }

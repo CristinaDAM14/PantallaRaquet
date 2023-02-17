@@ -21,7 +21,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            String id = ListaServicios.CurrentRow.Cells[0].Value.ToString();
+            if (ListaServicios.CurrentRow != null)
+            {
+                String id = ListaServicios.CurrentRow.Cells[0].Value.ToString();
 
             if (MessageBox.Show("¿Quieres eliminar el servicio con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -41,6 +43,14 @@ namespace RaquetZone.formularios.Rol2
             {
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado al servicio");
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void ListadoServicios_Load(object sender, EventArgs e)
@@ -125,49 +135,65 @@ namespace RaquetZone.formularios.Rol2
 
         private void editar_Click(object sender, EventArgs e)
         {
-            string idText = ListaServicios.CurrentRow.Cells[0].Value.ToString();
-            string desText = ListaServicios.CurrentRow.Cells[1].Value.ToString();
-            string tiempoText = ListaServicios.CurrentRow.Cells[2].Value.ToString();
-            string precioText = ListaServicios.CurrentRow.Cells[3].Value.ToString();
-            string ivaText = ListaServicios.CurrentRow.Cells[4].Value.ToString();
-            string descuentoText = ListaServicios.CurrentRow.Cells[5].Value.ToString();
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarServicios").SingleOrDefault<Form>();
-            if (existe != null)
-
+            if (ListaServicios.CurrentRow != null)
             {
-                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string idText = ListaServicios.CurrentRow.Cells[0].Value.ToString();
+                string desText = ListaServicios.CurrentRow.Cells[1].Value.ToString();
+                string tiempoText = ListaServicios.CurrentRow.Cells[2].Value.ToString();
+                string precioText = ListaServicios.CurrentRow.Cells[3].Value.ToString();
+                string ivaText = ListaServicios.CurrentRow.Cells[4].Value.ToString();
+                string descuentoText = ListaServicios.CurrentRow.Cells[5].Value.ToString();
+
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarServicios").SingleOrDefault<Form>();
+                if (existe != null)
+
+                {
+                    MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    EditarServicios GS = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
+                    GS.TextoCIFAnyadir.Text = TextoCIFP.Text;
+                    GS.Show();
+                    this.Close();
+                }
 
             }
             else
             {
-                EditarServicios GS = new EditarServicios(idText, desText, tiempoText, precioText, ivaText, descuentoText);
-                GS.TextoCIFAnyadir.Text = TextoCIFP.Text;
-                GS.Show();
-                this.Close();
+                MessageBox.Show("Selecciona un servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void Anyadir_Click(object sender, EventArgs e)
         {
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirServicio").SingleOrDefault<Form>();
-            if (existe != null)
 
-            {
-                this.Close();
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirServicio").SingleOrDefault<Form>();
+                if (existe != null)
 
-            }
-            else
-            {
-                AnyadirServicio AS = new AnyadirServicio();
-                AS.TextoCIFAnyadir.Text = TextoCIFP.Text;
-                AS.Show();
-                this.Close();
-            }
+                {
+                    this.Close();
+
+                }
+                else
+                {
+                    AnyadirServicio AS = new AnyadirServicio();
+                    AS.TextoCIFAnyadir.Text = TextoCIFP.Text;
+                    AS.Show();
+                    this.Close();
+                }
+
+            
         }
 
         private void bReservas_Click(object sender, EventArgs e)
         {
+            if (ListaServicios.CurrentRow != null)
+            {
+                
             string id = ListaServicios.CurrentRow.Cells[0].Value.ToString();
 
             AnyadirReservas AR = (AnyadirReservas)Application.OpenForms["AnyadirReservas"];
@@ -177,6 +203,21 @@ namespace RaquetZone.formularios.Rol2
             }
 
             this.Close();
+           
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in ListaServicios.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                ListaServicios.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
+            }
         }
     }
 }

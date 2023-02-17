@@ -39,6 +39,7 @@ namespace RaquetZone.formularios.Rol2
             this.Anyadir = new System.Windows.Forms.Button();
             this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.ListaServicios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscadorButton.Location = new System.Drawing.Point(232, 86);
+            this.buscadorButton.Location = new System.Drawing.Point(218, 86);
             this.buscadorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
@@ -95,6 +96,7 @@ namespace RaquetZone.formularios.Rol2
             this.ListaServicios.Location = new System.Drawing.Point(41, 127);
             this.ListaServicios.Name = "ListaServicios";
             this.ListaServicios.RowTemplate.ReadOnly = true;
+            this.ListaServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListaServicios.Size = new System.Drawing.Size(943, 360);
             this.ListaServicios.TabIndex = 59;
             // 
@@ -171,11 +173,27 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFP.UseSystemPasswordChar = false;
             this.TextoCIFP.Visible = false;
             // 
+            // limpiarB
+            // 
+            this.limpiarB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limpiarB.Depth = 0;
+            this.limpiarB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limpiarB.Location = new System.Drawing.Point(285, 86);
+            this.limpiarB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.limpiarB.Name = "limpiarB";
+            this.limpiarB.Primary = true;
+            this.limpiarB.Size = new System.Drawing.Size(61, 23);
+            this.limpiarB.TabIndex = 80;
+            this.limpiarB.Text = "Limpiar";
+            this.limpiarB.UseVisualStyleBackColor = true;
+            this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
+            // 
             // ListadoServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 571);
+            this.Controls.Add(this.limpiarB);
             this.Controls.Add(this.TextoCIFP);
             this.Controls.Add(this.bReservas);
             this.Controls.Add(this.Anyadir);
@@ -204,5 +222,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button Anyadir;
         private MaterialSkin.Controls.MaterialRaisedButton bReservas;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
+        private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
     }
 }

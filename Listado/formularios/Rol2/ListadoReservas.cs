@@ -30,26 +30,36 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            String id = listaReservas.CurrentRow.Cells[0].Value.ToString();
 
-            if (MessageBox.Show("¿Quieres eliminar la reserva con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (listaReservas.CurrentRow != null)
             {
+                String id = listaReservas.CurrentRow.Cells[0].Value.ToString();
+
+                if (MessageBox.Show("¿Quieres eliminar la reserva con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
 
 
-                String url = "http://localhost:8081/reserva/delete/" + id;
+                    String url = "http://localhost:8081/reserva/delete/" + id;
 
-                RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+                    RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
-                r.deleteItem(url);
+                    r.deleteItem(url);
 
-                MessageBox.Show("Eliminado");
+                    MessageBox.Show("Eliminado");
 
-                MostrarReservas();
+                    MostrarReservas();
+                }
+                else
+                {
+                    MessageBox.Show("La operación se ha detenido, no se ha eliminado el producto");
+                }
+
             }
             else
             {
-                MessageBox.Show("La operación se ha detenido, no se ha eliminado el producto");
+                MessageBox.Show("Selecciona una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -145,7 +155,10 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarReservas_Click(object sender, EventArgs e)
         {
-            string idText = listaReservas.CurrentRow.Cells[0].Value.ToString();
+
+            if (listaReservas.CurrentRow != null)
+            {
+               string idText = listaReservas.CurrentRow.Cells[0].Value.ToString();
             string numText = listaReservas.CurrentRow.Cells[1].Value.ToString();
             string fechaText = listaReservas.CurrentRow.Cells[2].Value.ToString();
             string horaText = listaReservas.CurrentRow.Cells[3].Value.ToString();
@@ -167,24 +180,42 @@ namespace RaquetZone.formularios.Rol2
                 this.Close();
             }
 
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+
         }
 
         private void Anyadir_Click(object sender, EventArgs e)
         {
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
-            if (existe != null)
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirReservas").SingleOrDefault<Form>();
+                if (existe != null)
 
-            {
-                MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    MessageBox.Show("Esa ventana ya está abierta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
-            else
+                }
+                else
+                {
+                    AnyadirReservas AR = new AnyadirReservas();
+                    AR.TextoCIFAnyadir.Text = TextoCIFC.Text;
+                    AR.Show();
+                    this.Close();
+                }
+
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaReservas.Rows)
             {
-                AnyadirReservas AR = new AnyadirReservas();
-                AR.TextoCIFAnyadir.Text = TextoCIFC.Text;
-                AR.Show();
-                this.Close();
+                String strFila = Row.Index.ToString();
+                listaReservas.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
             }
         }
     }

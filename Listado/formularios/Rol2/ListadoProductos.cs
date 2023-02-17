@@ -33,6 +33,8 @@ namespace RaquetZone.formularios.Rol2
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
+            if (listaProductos.CurrentRow != null)
+            {
             String id = listaProductos.CurrentRow.Cells[0].Value.ToString();
 
             if (MessageBox.Show("¿Quieres eliminar el producto con ID " + id + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -53,11 +55,20 @@ namespace RaquetZone.formularios.Rol2
             {
                 MessageBox.Show("La operación se ha detenido, no se ha eliminado el producto");
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void editarProductos_Click(object sender, EventArgs e)
         {
-
+            if (listaProductos.CurrentRow != null)
+            {
             string id = listaProductos.CurrentRow.Cells[0].Value.ToString();
             string nom = listaProductos.CurrentRow.Cells[1].Value.ToString();
             string cate = listaProductos.CurrentRow.Cells[2].Value.ToString();
@@ -80,6 +91,14 @@ namespace RaquetZone.formularios.Rol2
                 EP.Show();
                 this.Close();
             }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
 
         }
 
@@ -129,6 +148,7 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AnyadirProductos").SingleOrDefault<Form>();
             if (existe != null)
 
@@ -142,6 +162,17 @@ namespace RaquetZone.formularios.Rol2
                 GP1.cifEmpresa.Text = TextoCIFP.Text;
                 GP1.Show();
                 this.Close();
+            }
+
+            
+        }
+
+        private void limpiarB_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow Row in listaProductos.Rows)
+            {
+                String strFila = Row.Index.ToString();
+                listaProductos.Rows[Convert.ToInt32(strFila)].DefaultCellStyle.BackColor = Color.White;
             }
         }
     }

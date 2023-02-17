@@ -43,6 +43,7 @@ namespace RaquetZone.formularios.Rol2
             this.facturaB = new System.Windows.Forms.Button();
             this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.AnyadirCompra = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@ namespace RaquetZone.formularios.Rol2
             this.buscadorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buscadorButton.Depth = 0;
             this.buscadorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscadorButton.Location = new System.Drawing.Point(233, 105);
+            this.buscadorButton.Location = new System.Drawing.Point(219, 105);
             this.buscadorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.buscadorButton.Name = "buscadorButton";
             this.buscadorButton.Primary = true;
@@ -99,6 +100,7 @@ namespace RaquetZone.formularios.Rol2
             this.listaCompras.Location = new System.Drawing.Point(47, 144);
             this.listaCompras.Name = "listaCompras";
             this.listaCompras.RowTemplate.ReadOnly = true;
+            this.listaCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaCompras.Size = new System.Drawing.Size(942, 362);
             this.listaCompras.TabIndex = 67;
             // 
@@ -234,11 +236,27 @@ namespace RaquetZone.formularios.Rol2
             this.AnyadirCompra.UseVisualStyleBackColor = true;
             this.AnyadirCompra.Click += new System.EventHandler(this.AnyadirCompra_Click_1);
             // 
+            // limpiarB
+            // 
+            this.limpiarB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.limpiarB.Depth = 0;
+            this.limpiarB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limpiarB.Location = new System.Drawing.Point(286, 105);
+            this.limpiarB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.limpiarB.Name = "limpiarB";
+            this.limpiarB.Primary = true;
+            this.limpiarB.Size = new System.Drawing.Size(61, 23);
+            this.limpiarB.TabIndex = 80;
+            this.limpiarB.Text = "Limpiar";
+            this.limpiarB.UseVisualStyleBackColor = true;
+            this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
+            // 
             // ListadoComprasSolas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 610);
+            this.Controls.Add(this.limpiarB);
             this.Controls.Add(this.AnyadirCompra);
             this.Controls.Add(this.TextoCIFP);
             this.Controls.Add(this.facturaB);
@@ -275,5 +293,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button facturaB;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
         private MaterialSkin.Controls.MaterialRaisedButton AnyadirCompra;
+        private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
     }
 }

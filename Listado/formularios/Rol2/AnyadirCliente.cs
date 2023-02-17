@@ -69,6 +69,7 @@ namespace RaquetZone.formularios.Rol2
             @"        ""numhorascli"": 0," + "\n" +
             @"        ""telefonocli"": """ + telText.Text + "\"," + "\n" +
             @"        ""emailcli"": """ + emailText.Text + "\"," + "\n" +
+            @"        ""activo"": "" true ""," + "\n" +
             @"        ""empresa"": [" + "\n" +
             @"            {" + "\n" +
             @"                ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
