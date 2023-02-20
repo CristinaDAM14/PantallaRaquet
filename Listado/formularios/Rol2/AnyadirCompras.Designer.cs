@@ -103,12 +103,12 @@ namespace RaquetZone.formularios.Rol2
             this.anyoNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.anyoNum.Location = new System.Drawing.Point(548, 234);
             this.anyoNum.Maximum = new decimal(new int[] {
-            3000,
+            2025,
             0,
             0,
             0});
             this.anyoNum.Minimum = new decimal(new int[] {
-            1950,
+            2000,
             0,
             0,
             0});

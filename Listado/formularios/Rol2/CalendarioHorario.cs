@@ -11,6 +11,8 @@ using MaterialSkin.Controls;
 using MaterialSkin;
 using Syncfusion.WinForms.Input;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -37,7 +39,7 @@ namespace RaquetZone.formularios.Rol2
         {
             String fecha = sfCalendar1.SelectedDate.Value.ToString("yyyy-MM-dd");
 
-            String url = "http://localhost:8081/horario/add";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "horario/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 
@@ -60,7 +62,12 @@ namespace RaquetZone.formularios.Rol2
             SpecialDate trofeo = new SpecialDate();
             List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
-            Image image1 = Image.FromFile("D:\\Clase_Segundo\\Interfaces\\Listado\\Listado\\img\\trofeo1.png");
+            string basePath = Application.StartupPath;
+            string relativePath = @"imgCalendario\trofeo1.png";
+
+            string fullPath = Path.Combine(basePath, relativePath);
+
+            Image image1 = Image.FromFile(fullPath);
 
             trofeo.BackColor = Color.White;
             trofeo.Font = new Font("Segoe UI", 6F, FontStyle.Italic, GraphicsUnit.Point, ((byte)(0)));
@@ -81,7 +88,12 @@ namespace RaquetZone.formularios.Rol2
             SpecialDate trofeo = new SpecialDate();
             List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
-            Image image2 = Image.FromFile("D:\\Clase_Segundo\\Interfaces\\Listado\\Listado\\img\\cumple.png");
+            string basePath = Application.StartupPath;
+            string relativePath = @"imgCalendario\cumple.png";
+
+            string fullPath = Path.Combine(basePath, relativePath);
+
+            Image image2 = Image.FromFile(fullPath);
 
             trofeo.BackColor = Color.White;
             trofeo.Font = new Font("Segoe UI", 6F, FontStyle.Italic, GraphicsUnit.Point, ((byte)(0)));
@@ -99,7 +111,7 @@ namespace RaquetZone.formularios.Rol2
 
         public List<string> listadoFechas()
         {
-            String url2 = "http://localhost:8081/usuario/" + boxEmpleados.GetItemText(boxEmpleados.SelectedItem) + "/horarios";
+            String url2 = ConfigurationManager.AppSettings["AccesoBD"] + "usuario/" + boxEmpleados.GetItemText(boxEmpleados.SelectedItem) + "/horarios";
 
             funciones.conexion r2 = new funciones.conexion(url2, "GET");
 
@@ -193,7 +205,7 @@ namespace RaquetZone.formularios.Rol2
                 List<string> fechas = new List<string>();
                 fechas.AddRange(listadoFechas());
 
-                String url2 = "http://localhost:8081/usuario/" + boxEmpleados.GetItemText(boxEmpleados.SelectedItem) + "/horarios";
+                String url2 = ConfigurationManager.AppSettings["AccesoBD"] + "usuario/" + boxEmpleados.GetItemText(boxEmpleados.SelectedItem) + "/horarios";
 
                 funciones.conexion r2 = new funciones.conexion(url2, "GET");
 
@@ -226,7 +238,7 @@ namespace RaquetZone.formularios.Rol2
 
                 } while (finiquitao != true);
 
-                String url = "http://localhost:8081/horario/delete/" + idFecha;
+                String url = ConfigurationManager.AppSettings["AccesoBD"] + "horario/delete/" + idFecha;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 

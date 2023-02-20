@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.sfCalendar1 = new Syncfusion.WinForms.Input.SfCalendar();
             this.TextoCIFAnyadir = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,6 +40,7 @@ namespace RaquetZone.formularios.Rol2
             this.bcumple = new System.Windows.Forms.Button();
             this.mMostrar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.bVolver = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // sfCalendar1
@@ -160,6 +162,7 @@ namespace RaquetZone.formularios.Rol2
             this.bTrofeo.Name = "bTrofeo";
             this.bTrofeo.Size = new System.Drawing.Size(39, 35);
             this.bTrofeo.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.bTrofeo, "Añadir torneo al calendario");
             this.bTrofeo.UseVisualStyleBackColor = true;
             this.bTrofeo.Click += new System.EventHandler(this.bTrofeo_Click);
             // 
@@ -172,6 +175,7 @@ namespace RaquetZone.formularios.Rol2
             this.bcumple.Name = "bcumple";
             this.bcumple.Size = new System.Drawing.Size(39, 35);
             this.bcumple.TabIndex = 81;
+            this.toolTip1.SetToolTip(this.bcumple, "Añadir cumpleaños al calendario");
             this.bcumple.UseVisualStyleBackColor = true;
             this.bcumple.Click += new System.EventHandler(this.bcumple_Click);
             // 
@@ -186,6 +190,7 @@ namespace RaquetZone.formularios.Rol2
             this.mMostrar.Size = new System.Drawing.Size(79, 22);
             this.mMostrar.TabIndex = 82;
             this.mMostrar.Text = "Mostrar";
+            this.toolTip1.SetToolTip(this.mMostrar, "Mostrar vacaciones");
             this.mMostrar.UseVisualStyleBackColor = true;
             this.mMostrar.Click += new System.EventHandler(this.mMostrar_Click_1);
             // 
@@ -240,5 +245,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button bcumple;
         private MaterialSkin.Controls.MaterialRaisedButton mMostrar;
         private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
     public partial class EditarReservas : MaterialForm
     {
-        public EditarReservas(string id, string num, string fecha, string hora, string dniCli, string idSer)
+        public EditarReservas(string id, string num, string fecha, string hora, string dniCli, string idSer, string dniUser)
         {
             InitializeComponent();
 
@@ -27,11 +28,26 @@ namespace RaquetZone.formularios.Rol2
             mesNum.Value = Int32.Parse(fecha.Substring(5, 2));
             anyoNum.Value = Int32.Parse(fecha.Substring(0, 4));
 
-            horaNum.Value = Int32.Parse(hora.Substring(0, 2));
-            minNum.Value = Int32.Parse(hora.Substring(3, 2));
-
+            string horaDada = hora.Substring(0, 5);
             dniText.Text = dniCli;
             idServi.Text = idSer;
+            textUsuario.Text = dniUser;
+            
+            //seleccionar combobox
+            bool comprobador = false;
+            int contador = 0;
+
+            do
+            {
+
+                if (horaBox.Items[contador].Equals(horaDada))
+                {
+                    comprobador = true;
+                    horaBox.Text = (string)horaBox.Items[contador];
+                }
+                contador++;
+
+            } while (comprobador != true);
 
         }
 
@@ -46,19 +62,7 @@ namespace RaquetZone.formularios.Rol2
         private void editarB_Click(object sender, EventArgs e)
         {
             //Preparamos la hora
-            string hora = horaNum.Value.ToString();
-            string min = minNum.Value.ToString();
-
-            if (min.Length == 1)
-            {
-                min = "0" + min;
-            }
-            if (hora.Length == 1)
-            {
-                hora = "0" + hora;
-            }
-
-            string completarHora = hora + ":" + min + ":00";
+            string completarHora = horaBox.GetItemText(horaBox.SelectedItem) + ":00";
 
             //Preparamos la fecha
             string dia = diaNum.Value.ToString();
@@ -76,7 +80,7 @@ namespace RaquetZone.formularios.Rol2
 
             string completarFecha = anyo + "-" + mes + "-" + dia;
 
-            String url = "http://localhost:8081/reserva/modify/" + idText.Text;
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "reserva/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 
@@ -91,8 +95,14 @@ namespace RaquetZone.formularios.Rol2
             @"        }," + "\n" +
             @"        ""servicio"": {" + "\n" +
             @"            ""idserv"": " + idServi.Text + "" + "\n" +
+            @"        }," + "\n" +
+            @"            ""empresa"": {" + "\n" +
+            @"                ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
+            @"        }," + "\n" +
+            @"        ""usuario"": {" + "\n" +
+            @"            ""dniusr"": """ + textUsuario.Text + "\"" + "\n" +
             @"        }" + "\n" +
-            @"    }"; ;
+            @"}";
 
             r.putItem(url, datos);
 

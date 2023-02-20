@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -90,7 +91,7 @@ namespace RaquetZone.formularios.Rol2
 
             string completarFecha = anyo + "-" + mes + "-" + dia + "T00:00:00.000+00:00";
 
-            String url = "http://localhost:8081/compra/modify/" + idText.Text;
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "compra/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 

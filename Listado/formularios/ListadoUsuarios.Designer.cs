@@ -29,6 +29,7 @@ namespace RaquetZone.formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaquetZoneUsuarios));
             this.listaDatos = new System.Windows.Forms.DataGridView();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,6 +45,7 @@ namespace RaquetZone.formularios
             this.radioInactivos = new MaterialSkin.Controls.MaterialRadioButton();
             this.botonInactivo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,7 @@ namespace RaquetZone.formularios
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(39, 34);
             this.editar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.editar, "Editar usuario");
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
@@ -142,6 +145,7 @@ namespace RaquetZone.formularios
             this.anyadir.Name = "anyadir";
             this.anyadir.Size = new System.Drawing.Size(39, 34);
             this.anyadir.TabIndex = 60;
+            this.toolTip1.SetToolTip(this.anyadir, "Añadir usuario");
             this.anyadir.UseVisualStyleBackColor = true;
             this.anyadir.Click += new System.EventHandler(this.anyadir_Click);
             // 
@@ -172,6 +176,7 @@ namespace RaquetZone.formularios
             this.bvacaciones.Name = "bvacaciones";
             this.bvacaciones.Size = new System.Drawing.Size(39, 34);
             this.bvacaciones.TabIndex = 72;
+            this.toolTip1.SetToolTip(this.bvacaciones, "Ver calendario de vacaciones");
             this.bvacaciones.UseVisualStyleBackColor = true;
             this.bvacaciones.Click += new System.EventHandler(this.bvacaciones_Click);
             // 
@@ -249,6 +254,7 @@ namespace RaquetZone.formularios
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 79;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -296,5 +302,6 @@ namespace RaquetZone.formularios
         private MaterialSkin.Controls.MaterialRadioButton radioInactivos;
         private MaterialSkin.Controls.MaterialRaisedButton botonInactivo;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

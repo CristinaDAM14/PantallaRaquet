@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -41,7 +42,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
 
-                String url = "http://localhost:8081/producto/delete/" + id;
+                String url = ConfigurationManager.AppSettings["AccesoBD"] + "producto/delete/" + id;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 

@@ -11,6 +11,8 @@ using Aspose.Words.Replacing;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Configuration;
 
 namespace RaquetZone.funciones
 {
@@ -23,7 +25,7 @@ namespace RaquetZone.funciones
         public static List<usuario> mostrarUsr()
         {
 
-            String url = "http://localhost:8081/usuarios";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "usuarios";
 
             conexion r = new conexion(url, "GET");
 
@@ -48,7 +50,7 @@ namespace RaquetZone.funciones
         public static List<usuario> mostrarUsrP(string cif)
         {
 
-            String url = "http://localhost:8081/empresa/" + cif + "/empleados";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + cif + "/empleados";
 
             conexion r = new conexion(url, "GET");
 
@@ -73,7 +75,7 @@ namespace RaquetZone.funciones
         //Lista para las empresas
         public static List<empresa> mostrarEmp()
         {
-            String url = "http://localhost:8081/empresas";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresas";
 
             conexion r = new conexion(url, "GET");
 
@@ -96,7 +98,7 @@ namespace RaquetZone.funciones
         //Lista para los productos
         public static List<productos> mostrarProd()
         {
-            String url = "http://localhost:8081/productos";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "productos";
 
             conexion r = new conexion(url, "GET");
 
@@ -119,7 +121,7 @@ namespace RaquetZone.funciones
         //Lista para los productos del propietario
         public static List<productos> mostrarProdP(string cif)
         {
-            String url = "http://localhost:8081/empresa/" + cif + "/productos";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + cif + "/productos";
 
             conexion r = new conexion(url, "GET");
 
@@ -149,7 +151,7 @@ namespace RaquetZone.funciones
         //Lista para los clientes
         public static List<clientes> mostrarCli()
         {
-            String url = "http://localhost:8081/clientes";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "clientes";
 
             conexion r = new conexion(url, "GET");
 
@@ -172,7 +174,7 @@ namespace RaquetZone.funciones
         //Lista para los clientes de un propietario
         public static List<clientes> mostrarCliP(string cif)
         {
-            String url = "http://localhost:8081/empresa/" + cif + "/clientes";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + cif + "/clientes";
 
             conexion r = new conexion(url, "GET");
 
@@ -197,7 +199,7 @@ namespace RaquetZone.funciones
         //Lista para las compras
         public static List<compras> mostrarComp()
         {
-            String url = "http://localhost:8081/compras";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "compras";
 
             conexion r = new conexion(url, "GET");
 
@@ -223,7 +225,7 @@ namespace RaquetZone.funciones
         //Recoger clientes para compras
         public static List<string> comprasClientes(string cif)
         {
-            String url2 = "http://localhost:8081/compras";
+            String url2 = ConfigurationManager.AppSettings["AccesoBD"] + "compras";
 
             conexion r2 = new conexion(url2, "GET");
 
@@ -244,7 +246,7 @@ namespace RaquetZone.funciones
             int contador = 0;
             int vacio = 0;
 
-            String urlSE = "http://localhost:8081/empresa/" + cif + "/clientes";
+            String urlSE = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + cif + "/clientes";
 
             conexion r3 = new conexion(urlSE, "GET");
 
@@ -277,7 +279,7 @@ namespace RaquetZone.funciones
         //Lista para las compras ordenadas por fecha
         public static List<compras> mostrarCompFecha()
         {
-            String url = "http://localhost:8081/compras/fecha";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "compras/fecha";
 
             conexion r = new conexion(url, "GET");
 
@@ -300,7 +302,7 @@ namespace RaquetZone.funciones
         //Lista para las compras ordenadas por fecha
         public static List<producto_compra> mostrarCompProd()
         {
-            String url = "http://localhost:8081/producto_compras";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "producto_compras";
 
             conexion r = new conexion(url, "GET");
 
@@ -340,7 +342,7 @@ namespace RaquetZone.funciones
         //Lista para los servicios
         public static List<servicios> mostrarServicio()
         {
-            String url = "http://localhost:8081/servicios";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "servicios";
 
             conexion r = new conexion(url, "GET");
 
@@ -364,7 +366,7 @@ namespace RaquetZone.funciones
         //Lista para los servicios
         public static List<servicios> mostrarServicioP(string cif)
         {
-            String url = "http://localhost:8081/empresa/" + cif + "/servicios";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + cif + "/servicios";
 
             conexion r = new conexion(url, "GET");
 
@@ -387,7 +389,7 @@ namespace RaquetZone.funciones
         //Lista para las reservas
         public static List<reservas> mostrarReservas()
         {
-            String url = "http://localhost:8081/reservas";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "reservas";
 
             conexion r = new conexion(url, "GET");
 
@@ -486,16 +488,27 @@ namespace RaquetZone.funciones
             doc.Range.Replace("$id", id, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$cantidad", cantidad, new FindReplaceOptions(FindReplaceDirection.Forward));
             doc.Range.Replace("$cliente", cliente, new FindReplaceOptions(FindReplaceDirection.Forward));
-            doc.Range.Replace("predes", predes, new FindReplaceOptions(FindReplaceDirection.Forward));
+            doc.Range.Replace("$predes", predes, new FindReplaceOptions(FindReplaceDirection.Forward));
 
             string nombreFac = "Factura" + id + ".pdf";
 
-            string rutaMala = @"D:\Clase_Segundo\Interfaces\Listado\Listado\bin\Debug\" + nombreFac;
-            string rutaBuena = @"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas\" + nombreFac;
+            string basePath = Application.StartupPath;
+            string relativePath = nombreFac;
+            string relativePath1 = @"Facturas\" + nombreFac;
+
+            string fullPath = Path.Combine(basePath, relativePath);
+            string fullPath1 = Path.Combine(basePath, relativePath1);
+
+            string rutaMala = fullPath;
+            string rutaBuena = fullPath1;
 
             //Comprobamos primero que no existe el archivo antes de crearlo
 
-            DirectoryInfo di = new DirectoryInfo(@"D:\Clase_Segundo\Interfaces\Listado\Listado\Facturas");
+            string relativePath2 = @"Facturas";
+
+            string fullPath2 = Path.Combine(basePath, relativePath2);
+
+            DirectoryInfo di = new DirectoryInfo(fullPath2);
             foreach (var fi in di.GetFiles())
             {
                 if (fi.Name.Equals(nombreFac))

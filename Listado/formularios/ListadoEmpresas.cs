@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios
 {
@@ -89,7 +90,7 @@ namespace RaquetZone.formularios
             {
                 
 
-                String url = "http://localhost:8081/empresa/delete/" + cif;
+                String url = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/delete/" + cif;
 
                 RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 

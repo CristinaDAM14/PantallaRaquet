@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoServicios));
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -40,6 +41,7 @@ namespace RaquetZone.formularios.Rol2
             this.bReservas = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ListaServicios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +128,7 @@ namespace RaquetZone.formularios.Rol2
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(39, 34);
             this.editar.TabIndex = 62;
+            this.toolTip1.SetToolTip(this.editar, "Editar servicio");
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
@@ -139,6 +142,7 @@ namespace RaquetZone.formularios.Rol2
             this.Anyadir.Name = "Anyadir";
             this.Anyadir.Size = new System.Drawing.Size(39, 34);
             this.Anyadir.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.Anyadir, "Añadir servicio");
             this.Anyadir.UseVisualStyleBackColor = true;
             this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
             // 
@@ -185,6 +189,7 @@ namespace RaquetZone.formularios.Rol2
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 80;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -223,5 +228,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRaisedButton bReservas;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

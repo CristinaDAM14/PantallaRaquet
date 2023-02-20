@@ -29,9 +29,6 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
-            this.minLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.minNum = new System.Windows.Forms.NumericUpDown();
-            this.horaNum = new System.Windows.Forms.NumericUpDown();
             this.anyoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.mesLabel = new MaterialSkin.Controls.MaterialLabel();
             this.diaLabel = new MaterialSkin.Controls.MaterialLabel();
@@ -56,52 +53,12 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.textUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.crearUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horaNum)).BeginInit();
+            this.horaBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.diaNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anyoNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pistaNumeric)).BeginInit();
             this.SuspendLayout();
-            // 
-            // minLabel
-            // 
-            this.minLabel.AutoSize = true;
-            this.minLabel.Depth = 0;
-            this.minLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.minLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minLabel.Location = new System.Drawing.Point(177, 268);
-            this.minLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.minLabel.Name = "minLabel";
-            this.minLabel.Size = new System.Drawing.Size(56, 19);
-            this.minLabel.TabIndex = 130;
-            this.minLabel.Text = "Minuto";
-            // 
-            // minNum
-            // 
-            this.minNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minNum.Location = new System.Drawing.Point(171, 290);
-            this.minNum.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.minNum.Name = "minNum";
-            this.minNum.Size = new System.Drawing.Size(57, 20);
-            this.minNum.TabIndex = 122;
-            // 
-            // horaNum
-            // 
-            this.horaNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.horaNum.Location = new System.Drawing.Point(97, 290);
-            this.horaNum.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.horaNum.Name = "horaNum";
-            this.horaNum.Size = new System.Drawing.Size(57, 20);
-            this.horaNum.TabIndex = 121;
             // 
             // anyoLabel
             // 
@@ -193,12 +150,12 @@ namespace RaquetZone.formularios.Rol2
             this.anyoNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.anyoNum.Location = new System.Drawing.Point(487, 290);
             this.anyoNum.Maximum = new decimal(new int[] {
-            3000,
+            2025,
             0,
             0,
             0});
             this.anyoNum.Minimum = new decimal(new int[] {
-            1950,
+            2000,
             0,
             0,
             0});
@@ -217,7 +174,7 @@ namespace RaquetZone.formularios.Rol2
             this.horaLabel.Depth = 0;
             this.horaLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.horaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.horaLabel.Location = new System.Drawing.Point(103, 268);
+            this.horaLabel.Location = new System.Drawing.Point(166, 268);
             this.horaLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.horaLabel.Name = "horaLabel";
             this.horaLabel.Size = new System.Drawing.Size(42, 19);
@@ -460,11 +417,30 @@ namespace RaquetZone.formularios.Rol2
             this.crearUsuario.UseVisualStyleBackColor = true;
             this.crearUsuario.Click += new System.EventHandler(this.crearUsuario_Click);
             // 
+            // horaBox
+            // 
+            this.horaBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.horaBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.horaBox.FormattingEnabled = true;
+            this.horaBox.Items.AddRange(new object[] {
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00"});
+            this.horaBox.Location = new System.Drawing.Point(127, 291);
+            this.horaBox.Name = "horaBox";
+            this.horaBox.Size = new System.Drawing.Size(121, 21);
+            this.horaBox.TabIndex = 139;
+            // 
             // AnyadirReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.horaBox);
             this.Controls.Add(this.crearUsuario);
             this.Controls.Add(this.buscarUsuario);
             this.Controls.Add(this.materialLabel1);
@@ -473,9 +449,6 @@ namespace RaquetZone.formularios.Rol2
             this.Controls.Add(this.TextoCIFAnyadir);
             this.Controls.Add(this.bCliente);
             this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.minLabel);
-            this.Controls.Add(this.minNum);
-            this.Controls.Add(this.horaNum);
             this.Controls.Add(this.anyoLabel);
             this.Controls.Add(this.mesLabel);
             this.Controls.Add(this.diaLabel);
@@ -495,8 +468,6 @@ namespace RaquetZone.formularios.Rol2
             this.Name = "AnyadirReservas";
             this.Text = "Añadir Reservas";
             this.Load += new System.EventHandler(this.AnyadirReservas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.minNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horaNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diaNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anyoNum)).EndInit();
@@ -507,10 +478,6 @@ namespace RaquetZone.formularios.Rol2
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialLabel minLabel;
-        private System.Windows.Forms.NumericUpDown minNum;
-        private System.Windows.Forms.NumericUpDown horaNum;
         private MaterialSkin.Controls.MaterialLabel anyoLabel;
         private MaterialSkin.Controls.MaterialLabel mesLabel;
         private MaterialSkin.Controls.MaterialLabel diaLabel;
@@ -535,5 +502,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField textUsuario;
         private MaterialSkin.Controls.MaterialRaisedButton crearUsuario;
+        private System.Windows.Forms.ComboBox horaBox;
     }
 }

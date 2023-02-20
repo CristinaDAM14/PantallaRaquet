@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 using System.Text.RegularExpressions;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -109,7 +110,7 @@ namespace RaquetZone.formularios.Rol2
 
                 string idProducto = sacarIDProducto();
 
-                 String url = "http://localhost:8081/producto_compra/add";
+                 String url = ConfigurationManager.AppSettings["AccesoBD"] + "producto_compra/add";
 
                  funciones.conexion r = new funciones.conexion(url, "POST");
 

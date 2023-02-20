@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -169,16 +170,36 @@ namespace RaquetZone.formularios.Rol2
                 if (MessageBox.Show("¿Quieres eliminar el cliente con DNI " + dni + "?", "Eliminar", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
 
+                    string dniText = listaClientes.CurrentRow.Cells[0].Value.ToString();
+                    string nomText = listaClientes.CurrentRow.Cells[1].Value.ToString();
+                    string passText = listaClientes.CurrentRow.Cells[2].Value.ToString();
+                    string numText = listaClientes.CurrentRow.Cells[3].Value.ToString();
+                    string telText = listaClientes.CurrentRow.Cells[4].Value.ToString();
+                    string emailText = listaClientes.CurrentRow.Cells[5].Value.ToString();
+                    string activo = listaClientes.CurrentRow.Cells[6].Value.ToString();
 
-                    String url = "http://localhost:8081/cliente/delete/" + dni;
 
-                    RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
+                    String url = ConfigurationManager.AppSettings["AccesoBD"] + "cliente/modify/" + dniText;
 
-                    r.deleteItem(url);
+                    funciones.conexion r = new funciones.conexion(url, "PUT");
+
+                    String datos = @"{
+                    " + "\n" +
+        @"        ""dnicli"": """ + dniText + "\"," + "\n" +
+        @"        ""nombrecli"": """ + nomText + "\"," + "\n" +
+        @"        ""passwordcli"": """ + passText + "\"," + "\n" +
+        @"        ""numhorascli"": " + Int32.Parse(numText) + "," + "\n" +
+        @"        ""telefonocli"": """ + telText + "\"," + "\n" +
+        @"        ""emailcli"": """ + emailText + "\"," + "\n" +
+        @"        ""activo"": """ + false + "\"" + "\n" +
+                    @"    }";
+
+                    r.putItem(url, datos);
 
                     MessageBox.Show("Eliminado");
 
                     listaClientes.DataSource = RaquetZone.funciones.funciones.mostrarCliP(TextoCIFC.Text);
+                    verActivos();
                 }
                 else
                 {

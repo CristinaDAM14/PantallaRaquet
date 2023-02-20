@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoReservas));
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarFecha = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -41,6 +42,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarReservas = new System.Windows.Forms.Button();
             this.TextoCIFC = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaReservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,6 +147,7 @@ namespace RaquetZone.formularios.Rol2
             this.Anyadir.Name = "Anyadir";
             this.Anyadir.Size = new System.Drawing.Size(39, 34);
             this.Anyadir.TabIndex = 70;
+            this.toolTip1.SetToolTip(this.Anyadir, "Añadir reserva");
             this.Anyadir.UseVisualStyleBackColor = true;
             this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
             // 
@@ -174,6 +177,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarReservas.Name = "editarReservas";
             this.editarReservas.Size = new System.Drawing.Size(39, 34);
             this.editarReservas.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.editarReservas, "Editar reserva");
             this.editarReservas.UseVisualStyleBackColor = true;
             this.editarReservas.Click += new System.EventHandler(this.editarReservas_Click);
             // 
@@ -246,5 +250,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRadioButton radioFecha;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFC;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios
 {
@@ -127,14 +128,39 @@ namespace RaquetZone.formularios
                 }
                 else
                 {
-                    String url = "http://localhost:8081/usuario/delete/" + dni;
+                        string dni1 = listaDatos.CurrentRow.Cells[0].Value.ToString();
+                        string nom = listaDatos.CurrentRow.Cells[1].Value.ToString();
+                        string pass = listaDatos.CurrentRow.Cells[2].Value.ToString();
+                        string rol1 = listaDatos.CurrentRow.Cells[3].Value.ToString();
+                        string tel = listaDatos.CurrentRow.Cells[4].Value.ToString();
+                        string email = listaDatos.CurrentRow.Cells[5].Value.ToString();
+                        string direcc = listaDatos.CurrentRow.Cells[6].Value.ToString();
+                        string activo = listaDatos.CurrentRow.Cells[7].Value.ToString();
 
-                    funciones.conexion r = new funciones.conexion(url, "DELETE");
+                        String url = ConfigurationManager.AppSettings["AccesoBD"] + "usuario/modify/" + dni1;
 
-                    r.deleteItem(url);
+                        funciones.conexion r = new funciones.conexion(url, "PUT");
 
-                    MessageBox.Show("Eliminado");
-                }
+                        String body = @"{
+" + "\n" +
+            @"        ""dniusr"": """ + dni1 + "\"," + "\n" +
+            @"        ""nombreusr"": """ + nom + "\"," + "\n" +
+            @"        ""passwordusr"": """ + pass + "\"," + "\n" +
+            @"        ""rolusr"": """ + Int32.Parse(rol1) + "\"," + "\n" +
+            @"        ""telefonousr"": """ + tel + "\"," + "\n" +
+            @"        ""emailusr"": """ + email + "\"," + "\n" +
+            @"        ""direccionusr"": """ + direcc + "\"," + "\n" +
+            @"        ""activo"": """ + false + "\"," + "\n" +
+            @"        ""empresa"": [" + "\n" +
+            @"            {" + "\n" +
+            @"     ""cifemp"": """ + TextoCIFC.Text + "\"" + "\n" +
+            @"            }" + "\n" +
+            @"        ]" + "\n" +
+            @"    }";
+                        r.putItem(url, body);
+
+                        MessageBox.Show("Eliminado");
+                
 
                 Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "PantallaPrincipalRol2").SingleOrDefault<Form>();
                 if (existe != null)
@@ -142,13 +168,16 @@ namespace RaquetZone.formularios
                 {
                     this.Text = "Listado de Empleados";
                     MostrarUsuariosP();
+                    verActivos();
 
 
-                }
+                        }
                 else
                 {
                     MostrarUsuarios();
-                }
+                    verActivos();
+                        }
+                    }
             }
             else
             {
@@ -176,6 +205,7 @@ namespace RaquetZone.formularios
                 listaDatos.DataSource = funciones.funciones.mostrarUsr();
 
                 listaDatos.Columns[2].Visible = false;
+                listaDatos.Columns[3].Visible = false;
             }
 
         }
@@ -192,6 +222,7 @@ namespace RaquetZone.formularios
                 listaDatos.DataSource = funciones.funciones.mostrarUsrP(TextoCIFC.Text);
 
                 listaDatos.Columns[2].Visible = false;
+                listaDatos.Columns[3].Visible = false;
             }
 
 

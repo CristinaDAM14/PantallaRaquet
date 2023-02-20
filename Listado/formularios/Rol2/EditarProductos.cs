@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Text.RegularExpressions;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -55,8 +57,9 @@ namespace RaquetZone.formularios.Rol2
 
         private void editarB_Click(object sender, EventArgs e)
         {
-
-            string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
+            if (ValidarNombre(categoriaText.Text) == true)
+            {
+                string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
 
             if (iva.Equals("4%"))
             {
@@ -71,7 +74,7 @@ namespace RaquetZone.formularios.Rol2
                 iva = "21";
             }
 
-            String url = "http://localhost:8081/producto/modify/" + idText.Text;
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "producto/modify/" + idText.Text;
 
             funciones.conexion r = new funciones.conexion(url, "PUT");
 
@@ -93,7 +96,18 @@ namespace RaquetZone.formularios.Rol2
 
             MessageBox.Show("Editado con éxito");
         }
+            else
+            {
+                MessageBox.Show("Formato de la categoría incorrecto,", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        //Validaciones
+        public bool ValidarNombre(string nombre)
+        {
+            bool contieneSoloLetras = Regex.IsMatch(nombre, @"^[a-zA-Z]+$");
+            return contieneSoloLetras;
+        }
     }
     }
 

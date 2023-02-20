@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios
 {
@@ -40,7 +41,7 @@ namespace RaquetZone.formularios
                 if (MessageBox.Show("DNI: " + usuario + "\n Email: " + email + "\n ¿Estás seguro de que estos son tus datos?", "Recuperación de contraseña", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
 
-                    string url = "http://localhost:8081/usuario/" + usuario;
+                    string url = ConfigurationManager.AppSettings["AccesoBD"] + "usuario/" + usuario;
 
                     funciones.conexion r = new funciones.conexion(url, "GET");
 

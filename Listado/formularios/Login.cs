@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 using System.Text.RegularExpressions;
+using System.Configuration;
 
 namespace RaquetZone.formularios
 {
@@ -34,7 +35,7 @@ namespace RaquetZone.formularios
             string usuario = dniText.Text;
             string password = passwText.Text;
 
-            string url = "http://localhost:8081/usuario/login/?dni=" + usuario + "&password=" + password;
+            string url = ConfigurationManager.AppSettings["AccesoBD"] + "usuario/login/?dni=" + usuario + "&password=" + password;
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "GET");
 
@@ -64,7 +65,7 @@ namespace RaquetZone.formularios
             }
             else if (tipoRol2 == true)
             {
-               String url2 = "http://localhost:8081/empresas";
+               String url2 = ConfigurationManager.AppSettings["AccesoBD"] + "empresas";
 
                 funciones.conexion r2 = new funciones.conexion(url2, "GET");
 
@@ -83,7 +84,7 @@ namespace RaquetZone.formularios
                     do
                     {
                         
-                        String urlSE = "http://localhost:8081/empresa/" + rescateCIF[contador] + "/propietarios";
+                        String urlSE = ConfigurationManager.AppSettings["AccesoBD"] + "empresa/" + rescateCIF[contador] + "/propietarios";
 
                         funciones.conexion r3 = new funciones.conexion(urlSE, "GET");
 

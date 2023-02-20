@@ -104,7 +104,7 @@ namespace RaquetZone.formularios.Rol2
             this.telLabel.Depth = 0;
             this.telLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.telLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.telLabel.Location = new System.Drawing.Point(145, 263);
+            this.telLabel.Location = new System.Drawing.Point(146, 282);
             this.telLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.telLabel.Name = "telLabel";
             this.telLabel.Size = new System.Drawing.Size(52, 19);
@@ -158,7 +158,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.materialTabSelector1.BaseTabControl = null;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(25, 176);
+            this.materialTabSelector1.Location = new System.Drawing.Point(26, 192);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(732, 10);
@@ -169,7 +169,7 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.materialTabSelector2.BaseTabControl = null;
             this.materialTabSelector2.Depth = 0;
-            this.materialTabSelector2.Location = new System.Drawing.Point(-4, 176);
+            this.materialTabSelector2.Location = new System.Drawing.Point(-2, 192);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
             this.materialTabSelector2.Size = new System.Drawing.Size(812, 10);
@@ -214,7 +214,7 @@ namespace RaquetZone.formularios.Rol2
             this.passLabel.Depth = 0;
             this.passLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.passLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.passLabel.Location = new System.Drawing.Point(116, 215);
+            this.passLabel.Location = new System.Drawing.Point(117, 234);
             this.passLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(81, 19);
@@ -230,7 +230,7 @@ namespace RaquetZone.formularios.Rol2
             "4%",
             "10%",
             "21%"});
-            this.ivaBox.Location = new System.Drawing.Point(461, 217);
+            this.ivaBox.Location = new System.Drawing.Point(462, 236);
             this.ivaBox.Name = "ivaBox";
             this.ivaBox.Size = new System.Drawing.Size(121, 21);
             this.ivaBox.TabIndex = 78;
@@ -241,7 +241,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(422, 219);
+            this.materialLabel2.Location = new System.Drawing.Point(423, 238);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(33, 19);
@@ -254,7 +254,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(634, 219);
+            this.materialLabel3.Location = new System.Drawing.Point(635, 238);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(48, 19);
@@ -264,7 +264,7 @@ namespace RaquetZone.formularios.Rol2
             // stockNumeric
             // 
             this.stockNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stockNumeric.Location = new System.Drawing.Point(688, 218);
+            this.stockNumeric.Location = new System.Drawing.Point(689, 237);
             this.stockNumeric.Name = "stockNumeric";
             this.stockNumeric.Size = new System.Drawing.Size(49, 20);
             this.stockNumeric.TabIndex = 75;
@@ -272,7 +272,7 @@ namespace RaquetZone.formularios.Rol2
             // precioNum
             // 
             this.precioNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.precioNum.Location = new System.Drawing.Point(229, 262);
+            this.precioNum.Location = new System.Drawing.Point(230, 281);
             this.precioNum.Name = "precioNum";
             this.precioNum.Size = new System.Drawing.Size(49, 20);
             this.precioNum.TabIndex = 79;
@@ -280,7 +280,7 @@ namespace RaquetZone.formularios.Rol2
             // desNum
             // 
             this.desNum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.desNum.Location = new System.Drawing.Point(229, 217);
+            this.desNum.Location = new System.Drawing.Point(230, 236);
             this.desNum.Name = "desNum";
             this.desNum.Size = new System.Drawing.Size(49, 20);
             this.desNum.TabIndex = 80;

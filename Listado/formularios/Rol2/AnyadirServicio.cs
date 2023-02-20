@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -66,7 +67,7 @@ namespace RaquetZone.formularios.Rol2
             }
 
 
-            String url = "http://localhost:8081/servicio/add";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "servicio/add";
 
             funciones.conexion r = new funciones.conexion(url, "POST");
 

@@ -29,6 +29,7 @@ namespace RaquetZone.formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaquetZoneEmpresas));
             this.listaDatosEmpresas = new System.Windows.Forms.DataGridView();
             this.editar = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@ namespace RaquetZone.formularios
             this.Anyadir = new System.Windows.Forms.Button();
             this.blEmpresa = new MaterialSkin.Controls.MaterialRaisedButton();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaDatosEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@ namespace RaquetZone.formularios
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(39, 33);
             this.editar.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.editar, "Editar empresa");
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
@@ -137,6 +140,7 @@ namespace RaquetZone.formularios
             this.Anyadir.Name = "Anyadir";
             this.Anyadir.Size = new System.Drawing.Size(39, 33);
             this.Anyadir.TabIndex = 60;
+            this.toolTip1.SetToolTip(this.Anyadir, "Añadir empresa");
             this.Anyadir.UseVisualStyleBackColor = true;
             this.Anyadir.Click += new System.EventHandler(this.Anyadir_Click);
             // 
@@ -166,6 +170,7 @@ namespace RaquetZone.formularios
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 80;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -202,5 +207,6 @@ namespace RaquetZone.formularios
         private System.Windows.Forms.Button Anyadir;
         private MaterialSkin.Controls.MaterialRaisedButton blEmpresa;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

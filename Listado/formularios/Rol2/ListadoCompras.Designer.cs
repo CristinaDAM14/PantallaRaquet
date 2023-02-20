@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listaCompras = new System.Windows.Forms.DataGridView();
             this.buttonFactura = new MaterialSkin.Controls.MaterialRaisedButton();
             this.radioFecha = new MaterialSkin.Controls.MaterialRadioButton();
@@ -40,6 +41,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1 = new System.Windows.Forms.Button();
             this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,6 +174,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 34);
             this.button1.TabIndex = 64;
+            this.toolTip1.SetToolTip(this.button1, "Añadir compras finalizadas");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -204,6 +207,7 @@ namespace RaquetZone.formularios.Rol2
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 80;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -245,5 +249,6 @@ namespace RaquetZone.formularios.Rol2
         private System.Windows.Forms.Button button1;
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

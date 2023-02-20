@@ -74,9 +74,19 @@ namespace RaquetZone.formularios.Rol2
             // 
             this.cantidadNum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cantidadNum.Location = new System.Drawing.Point(575, 272);
+            this.cantidadNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.cantidadNum.Name = "cantidadNum";
             this.cantidadNum.Size = new System.Drawing.Size(49, 20);
             this.cantidadNum.TabIndex = 89;
+            this.cantidadNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // passLabel
             // 

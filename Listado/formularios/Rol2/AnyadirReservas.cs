@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -25,6 +26,8 @@ namespace RaquetZone.formularios.Rol2
             skinmanager.AddFormToManage(this);
             skinmanager.Theme = MaterialSkinManager.Themes.LIGHT;
             skinmanager.ColorScheme = new ColorScheme(Primary.Green500, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Orange100, TextShade.WHITE);
+
+            horaBox.Text = (string)horaBox.Items[0];
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -104,19 +107,7 @@ namespace RaquetZone.formularios.Rol2
             {
 
                 //Preparamos la hora
-                string hora = horaNum.Value.ToString();
-                string min = minNum.Value.ToString();
-
-                if (min.Length == 1)
-                {
-                    min = "0" + min;
-                }
-                if (hora.Length == 1)
-                {
-                    hora = "0" + hora;
-                }
-
-                string completarHora = hora + ":" + min + ":00";
+                string completarHora = horaBox.GetItemText(horaBox.SelectedItem) + ":00";
 
                 //Preparamos la fecha
                 string dia = diaNum.Value.ToString();
@@ -134,7 +125,7 @@ namespace RaquetZone.formularios.Rol2
 
                 string completarFecha = anyo + "-" + mes + "-" + dia;
 
-                String url = "http://localhost:8081/reserva/add";
+                String url = ConfigurationManager.AppSettings["AccesoBD"] + "reserva/add";
 
                 funciones.conexion r = new funciones.conexion(url, "POST");
 
@@ -150,7 +141,7 @@ namespace RaquetZone.formularios.Rol2
                 @"            ""idserv"": " + idServi.Text + "" + "\n" +
                 @"        }," + "\n" +
                 @"            ""empresa"": {" + "\n" +
-                @"                ""cifemp"": "+ TextoCIFAnyadir.Text + "" + "\n" +
+                @"                ""cifemp"": """ + TextoCIFAnyadir.Text + "\"" + "\n" +
                 @"        }," + "\n" +
                 @"        ""usuario"": {" + "\n" +
                 @"            ""dniusr"": """ +  textUsuario.Text + "\"" + "\n" +
@@ -165,7 +156,7 @@ namespace RaquetZone.formularios.Rol2
 
                 //POST NOTIFICACIONES
 
-                String url2 = "http://localhost:9000/notificaciones/add";
+                String url2 = ConfigurationManager.AppSettings["AccesoBDNotificaciones"] + "notificaciones/add";
 
                 funciones.conexion r2 = new funciones.conexion(url2, "POST");
 
@@ -188,8 +179,7 @@ namespace RaquetZone.formularios.Rol2
             idServi.Text = "";
             dniText.Text = "";
             textUsuario.Text = "";
-            horaNum.Value = 1;
-            minNum.Value = 1;
+            horaBox.Text = (string)horaBox.Items[0];
             diaNum.Value = 1;
             mesNum.Value = 1;
             anyoNum.Value = 2000;

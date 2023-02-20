@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -39,7 +40,7 @@ namespace RaquetZone.formularios.Rol2
                 {
 
 
-                    String url = "http://localhost:8081/reserva/delete/" + id;
+                    String url = ConfigurationManager.AppSettings["AccesoBD"] + "reserva/delete/" + id;
 
                     RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "DELETE");
 
@@ -47,7 +48,6 @@ namespace RaquetZone.formularios.Rol2
 
                     MessageBox.Show("Eliminado");
 
-                    MostrarReservas();
                 }
                 else
                 {
@@ -59,7 +59,9 @@ namespace RaquetZone.formularios.Rol2
             {
                 MessageBox.Show("Selecciona una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+            MostrarReservas();
+
         }
 
         private void buscadorButton_Click(object sender, EventArgs e)
@@ -163,9 +165,10 @@ namespace RaquetZone.formularios.Rol2
             string fechaText = listaReservas.CurrentRow.Cells[2].Value.ToString();
             string horaText = listaReservas.CurrentRow.Cells[3].Value.ToString();
             string dniCliText = listaReservas.CurrentRow.Cells[4].Value.ToString();
-            string idSerText = listaReservas.CurrentRow.Cells[10].Value.ToString();
+            string idSerText = listaReservas.CurrentRow.Cells[6].Value.ToString();
+            string dniUser = listaReservas.CurrentRow.Cells[9].Value.ToString();
 
-            Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarReservas").SingleOrDefault<Form>();
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "EditarReservas").SingleOrDefault<Form>();
             if (existe != null)
 
             {
@@ -174,7 +177,7 @@ namespace RaquetZone.formularios.Rol2
             }
             else
             {
-                EditarReservas EC = new EditarReservas(idText, numText, fechaText, horaText, dniCliText, idSerText);
+                EditarReservas EC = new EditarReservas(idText, numText, fechaText, horaText, dniCliText, idSerText, dniUser);
                 EC.TextoCIFAnyadir.Text = TextoCIFC.Text;
                 EC.Show();
                 this.Close();

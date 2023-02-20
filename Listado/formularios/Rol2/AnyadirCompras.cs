@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -80,7 +81,7 @@ namespace RaquetZone.formularios.Rol2
             
             //Hacemos el POST
 
-            String url = "http://localhost:8081/compra/add";
+            String url = ConfigurationManager.AppSettings["AccesoBD"] + "compra/add";
 
             RaquetZone.funciones.conexion r = new RaquetZone.funciones.conexion(url, "POST");
 

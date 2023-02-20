@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
+using System.Text.RegularExpressions;
 using MaterialSkin;
+using System.Configuration;
 
 namespace RaquetZone.formularios.Rol2
 {
@@ -50,43 +52,52 @@ namespace RaquetZone.formularios.Rol2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
-
-            if (iva.Equals("4%")){
-                iva = "4";
-            }
-            else if (iva.Equals("10%"))
+            if (ValidarNombre(categoriaText.Text) == true)
             {
-                iva = "10";
+
+                string iva = ivaBox.GetItemText(ivaBox.SelectedItem);
+
+                if (iva.Equals("4%"))
+                {
+                    iva = "4";
+                }
+                else if (iva.Equals("10%"))
+                {
+                    iva = "10";
+                }
+                else
+                {
+                    iva = "21";
+                }
+
+
+                String url = ConfigurationManager.AppSettings["AccesoBD"] + "producto/add";
+
+                funciones.conexion r = new funciones.conexion(url, "POST");
+
+                String datos = @"{
+" + "\n" +
+    @"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
+    @"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
+    @"        ""precioprod"": " + precioNum.Value + "," + "\n" +
+    @"        ""ivaprod"": " + Double.Parse(iva) + "," + "\n" +
+    @"        ""descuentoprod"": " + desNum.Value + "," + "\n" +
+    @"        ""stockprod"": " + stockNumeric.Value + "," + "\n" +
+    @"        ""empresa"": {" + "\n" +
+    @"            ""cifemp"": """ + cifEmpresa.Text + "\"" + "\n" +
+    @"        }" + "\n" +
+    @"    }";
+
+                String res = r.postItem(datos);
+
+                MessageBox.Show("Producto añadido a la base de datos");
+
+                limpiar();
             }
             else
             {
-                iva = "21";
+                MessageBox.Show("Formato de la categoría incorrecto,", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-            String url = "http://localhost:8081/producto/add";
-
-            funciones.conexion r = new funciones.conexion(url, "POST");
-
-            String datos = @"{
-" + "\n" +
-@"        ""nombreprod"": """ + nomText.Text + "\"," + "\n" +
-@"        ""categoriaprod"": """ + categoriaText.Text + "\"," + "\n" +
-@"        ""precioprod"": """ + precioNum.Value + "\"," + "\n" +
-@"        ""ivaprod"": """ + Double.Parse(iva) + "\"," + "\n" +
-@"        ""descuentoprod"": """ + desNum.Value + "\"," + "\n" +
-@"        ""stockprod"": """ + stockNumeric.Value + "\"," + "\n" +
-@"        ""empresa"": {" + "\n" +
-@"            ""cifemp"": " + cifEmpresa.Text + "" + "\n" +
-@"        }" + "\n" +
-@"    }";
-
-            String res = r.postItem(datos);
-
-            MessageBox.Show("Producto añadido a la base de datos");
-
-            limpiar();
         }
 
         private void limpiar()
@@ -96,6 +107,13 @@ namespace RaquetZone.formularios.Rol2
             precioNum.Value = 0;
             desNum.Value = 0;
             stockNumeric.Value = 0;
+        }
+
+        //Validaciones
+        public bool ValidarNombre(string nombre)
+        {
+            bool contieneSoloLetras = Regex.IsMatch(nombre, @"^[a-zA-Z]+$");
+            return contieneSoloLetras;
         }
 
     }

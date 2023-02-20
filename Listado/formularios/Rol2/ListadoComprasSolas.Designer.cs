@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoComprasSolas));
             this.buscadorButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buscarID = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -44,6 +45,7 @@ namespace RaquetZone.formularios.Rol2
             this.TextoCIFP = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.AnyadirCompra = new MaterialSkin.Controls.MaterialRaisedButton();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +132,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarCompras.Name = "editarCompras";
             this.editarCompras.Size = new System.Drawing.Size(39, 34);
             this.editarCompras.TabIndex = 70;
+            this.toolTip1.SetToolTip(this.editarCompras, "Editar compras");
             this.editarCompras.UseVisualStyleBackColor = true;
             this.editarCompras.Click += new System.EventHandler(this.editarCompras_Click);
             // 
@@ -143,6 +146,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 34);
             this.button1.TabIndex = 72;
+            this.toolTip1.SetToolTip(this.button1, "Añadir compras");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -202,6 +206,7 @@ namespace RaquetZone.formularios.Rol2
             this.facturaB.Name = "facturaB";
             this.facturaB.Size = new System.Drawing.Size(39, 34);
             this.facturaB.TabIndex = 76;
+            this.toolTip1.SetToolTip(this.facturaB, "Crear y gestionar facturas");
             this.facturaB.UseVisualStyleBackColor = true;
             this.facturaB.Click += new System.EventHandler(this.facturaB_Click);
             // 
@@ -248,6 +253,7 @@ namespace RaquetZone.formularios.Rol2
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 80;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -294,5 +300,6 @@ namespace RaquetZone.formularios.Rol2
         public MaterialSkin.Controls.MaterialSingleLineTextField TextoCIFP;
         private MaterialSkin.Controls.MaterialRaisedButton AnyadirCompra;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

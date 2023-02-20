@@ -45,7 +45,6 @@ namespace RaquetZone.formularios.Rol2
             this.passLabel = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.cifEmpresa = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.stockNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desNum)).BeginInit();
@@ -57,14 +56,14 @@ namespace RaquetZone.formularios.Rol2
             this.categoriaText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriaText.Depth = 0;
             this.categoriaText.Hint = "Categoría";
-            this.categoriaText.Location = new System.Drawing.Point(450, 129);
+            this.categoriaText.Location = new System.Drawing.Point(460, 129);
             this.categoriaText.MouseState = MaterialSkin.MouseState.HOVER;
             this.categoriaText.Name = "categoriaText";
             this.categoriaText.PasswordChar = '\0';
             this.categoriaText.SelectedText = "";
             this.categoriaText.SelectionLength = 0;
             this.categoriaText.SelectionStart = 0;
-            this.categoriaText.Size = new System.Drawing.Size(286, 23);
+            this.categoriaText.Size = new System.Drawing.Size(276, 23);
             this.categoriaText.TabIndex = 2;
             this.categoriaText.UseSystemPasswordChar = false;
             // 
@@ -141,9 +140,9 @@ namespace RaquetZone.formularios.Rol2
             // stockNumeric
             // 
             this.stockNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stockNumeric.Location = new System.Drawing.Point(687, 247);
+            this.stockNumeric.Location = new System.Drawing.Point(460, 295);
             this.stockNumeric.Name = "stockNumeric";
-            this.stockNumeric.Size = new System.Drawing.Size(49, 20);
+            this.stockNumeric.Size = new System.Drawing.Size(121, 20);
             this.stockNumeric.TabIndex = 6;
             // 
             // materialLabel1
@@ -152,7 +151,7 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(633, 248);
+            this.materialLabel1.Location = new System.Drawing.Point(406, 296);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(48, 19);
@@ -247,25 +246,12 @@ namespace RaquetZone.formularios.Rol2
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(370, 129);
+            this.materialLabel4.Location = new System.Drawing.Point(380, 129);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(74, 19);
             this.materialLabel4.TabIndex = 84;
             this.materialLabel4.Text = "Categoría";
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(428, 293);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(68, 19);
-            this.materialLabel5.TabIndex = 86;
-            this.materialLabel5.Text = "Empresa";
             // 
             // cifEmpresa
             // 
@@ -273,23 +259,23 @@ namespace RaquetZone.formularios.Rol2
             this.cifEmpresa.Depth = 0;
             this.cifEmpresa.Enabled = false;
             this.cifEmpresa.Hint = "";
-            this.cifEmpresa.Location = new System.Drawing.Point(502, 293);
+            this.cifEmpresa.Location = new System.Drawing.Point(687, 129);
             this.cifEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
             this.cifEmpresa.Name = "cifEmpresa";
             this.cifEmpresa.PasswordChar = '\0';
             this.cifEmpresa.SelectedText = "";
             this.cifEmpresa.SelectionLength = 0;
             this.cifEmpresa.SelectionStart = 0;
-            this.cifEmpresa.Size = new System.Drawing.Size(234, 23);
+            this.cifEmpresa.Size = new System.Drawing.Size(49, 23);
             this.cifEmpresa.TabIndex = 85;
             this.cifEmpresa.UseSystemPasswordChar = false;
+            this.cifEmpresa.Visible = false;
             // 
             // AnyadirProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.cifEmpresa);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
@@ -336,7 +322,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialLabel passLabel;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
         public MaterialSkin.Controls.MaterialSingleLineTextField cifEmpresa;
     }
 }

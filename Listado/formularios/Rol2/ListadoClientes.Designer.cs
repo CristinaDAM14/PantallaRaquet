@@ -29,6 +29,7 @@ namespace RaquetZone.formularios.Rol2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoClientes));
             this.buttonEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaClientes = new System.Windows.Forms.DataGridView();
@@ -45,6 +46,7 @@ namespace RaquetZone.formularios.Rol2
             this.radioActivos = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioInactivos = new MaterialSkin.Controls.MaterialRadioButton();
             this.limpiarB = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.listaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +118,7 @@ namespace RaquetZone.formularios.Rol2
             this.emailButton.Name = "emailButton";
             this.emailButton.Size = new System.Drawing.Size(39, 34);
             this.emailButton.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.emailButton, "Enviar correo a un cliente");
             this.emailButton.UseVisualStyleBackColor = true;
             this.emailButton.Click += new System.EventHandler(this.emailButton_Click);
             // 
@@ -145,6 +148,7 @@ namespace RaquetZone.formularios.Rol2
             this.editarProductos.Name = "editarProductos";
             this.editarProductos.Size = new System.Drawing.Size(39, 34);
             this.editarProductos.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.editarProductos, "Editar clientes");
             this.editarProductos.UseVisualStyleBackColor = true;
             this.editarProductos.Click += new System.EventHandler(this.editarProductos_Click);
             // 
@@ -158,6 +162,7 @@ namespace RaquetZone.formularios.Rol2
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 34);
             this.button1.TabIndex = 66;
+            this.toolTip1.SetToolTip(this.button1, "Añadir clientes");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -266,6 +271,7 @@ namespace RaquetZone.formularios.Rol2
             this.limpiarB.Size = new System.Drawing.Size(61, 23);
             this.limpiarB.TabIndex = 82;
             this.limpiarB.Text = "Limpiar";
+            this.toolTip1.SetToolTip(this.limpiarB, "Limpiar búsquedas");
             this.limpiarB.UseVisualStyleBackColor = true;
             this.limpiarB.Click += new System.EventHandler(this.limpiarB_Click);
             // 
@@ -314,5 +320,6 @@ namespace RaquetZone.formularios.Rol2
         private MaterialSkin.Controls.MaterialRadioButton radioActivos;
         private MaterialSkin.Controls.MaterialRadioButton radioInactivos;
         private MaterialSkin.Controls.MaterialRaisedButton limpiarB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
